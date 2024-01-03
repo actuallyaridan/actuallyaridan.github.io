@@ -1,0 +1,66 @@
+body {}
+
+h1,
+p.checkBack,
+p.bottomText {
+  color: white;
+  font-family: Jost, sans-serif;
+  text-align: center;
+}
+
+h1{
+  font-weight: bold;
+}
+
+p.checkBack{
+  color: rgb(222, 222, 222);
+}
+
+p.bottomText{
+  color: rgba(146, 146, 146, 0.61);
+}
+
+.boxAlignment {
+  position: relative;
+  height: 80vh;
+}
+
+.containerCenterer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.constructionBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: moz-fit-content;
+  width: fit-content;
+  height: moz-fit-content;
+  height: fit-content;
+  padding-left: 5%;
+  padding-right: 5%;
+  border-radius: 12px;
+}
+
+.gradientBackgroundAnimation {
+  background: linear-gradient(300deg, #000000, #710a97, #000000);
+  background-size: 180% 180%;
+  animation: gradient-animation 18s ease infinite;
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
