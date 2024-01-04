@@ -27,7 +27,6 @@ div.langWrapper{
   background-color: rgba(0, 0, 0, 0.327);
   padding: 12px;
   text-decoration: none;
-  border-radius: 12px;
   width: moz-fit-content;
   width: fit-content;
   height: moz-fit-content;
@@ -36,6 +35,14 @@ div.langWrapper{
   font-size: initial;
   cursor: pointer;
   transition: background-color .2s;
+}
+
+.dropButton{
+  border-radius: 12px 12px 12px 12px;
+}
+
+.dropButtonPressed{
+  border-radius: 12px 12px 0px 0px;
 }
 
 /* Dropdown button on hover & focus */
@@ -59,7 +66,7 @@ div.langWrapper{
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
   right: 0;
-  border-radius: 12px;
+  border-radius: 0px 0px 12px 12px;
 }
 
 /* Links inside the dropdown */
@@ -86,7 +93,10 @@ div.langWrapper{
 }
 
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
-.show {display:block;}
+.show {
+  display:block;
+  
+}
 
 
 h1{
@@ -110,7 +120,7 @@ p.bottomText{
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  height: 98vh;
 }
 
 .constructionBox {
