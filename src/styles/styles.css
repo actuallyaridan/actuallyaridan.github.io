@@ -18,6 +18,7 @@ body {}
 header{
   background-color: #00000070;
   position: sticky;
+  -webkit-backdrop-filter: saturate(180%) blur(20px); 
   backdrop-filter: saturate(180%) blur(20px); 
   top: 0;
   margin: 12px;
