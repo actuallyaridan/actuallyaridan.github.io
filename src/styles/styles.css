@@ -26,6 +26,10 @@ header{
   border-radius: 12px;
 }
 
+body{
+  height: fit-content;
+}
+
 /*Scales down emojis*/
 img.emoji {
    height: 1em;
@@ -37,11 +41,54 @@ img.emoji {
 
 /*Styling for general text*/
 h1,
-p.checkBack,
-p.bottomText {
+p, a{
   color: white;
   font-family: Jost, sans-serif;
   text-align: center;
+}
+
+p.subTitle{
+  color: rgb(182, 182, 182);
+}
+
+div.project{
+  background-color: #00000070;
+  padding: 12px;
+  margin: 12px;
+  border-radius: 12px;
+  text-align: left;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-self: center;
+}
+
+div.project>p{
+  text-align: left;
+  margin: 12px;
+  color: rgb(188, 188, 188);
+}
+
+div.project>div{
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  flex-direction: row;
+  background-color: #00000059;
+  padding: 8px;
+  margin: 8px;
+  border-radius: 12px;
+}
+
+div.project>div>p{
+  text-align: left;
+  margin: 12px;
+  color: rgb(188, 188, 188);
+}
+
+div.project>p.projectName{
+  color: white;
 }
 
 /*Adding a wrapper for the language selector*/
@@ -159,12 +206,6 @@ p.checkBack{
 /*Make the text that has general information about the site slightly darker and slighly transparent*/
 p.bottomText{
   color: rgba(146, 146, 146, 0.61);
-}
-
-/*Fixes the animation. If any other value, the animation would show up 3 times*/
-.boxAlignment {
-  position: relative;
-  height: 80vh;
 }
 
 /*Makes the text centered*/
