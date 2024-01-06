@@ -16,8 +16,9 @@ body {}
 }
 
 header{
-  background-color: #00000025;
+  background-color: #00000070;
   position: sticky;
+  backdrop-filter: saturate(180%) blur(20px); 
   top: 0;
   margin: 12px;
   padding: 12px;
