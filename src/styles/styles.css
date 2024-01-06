@@ -1,5 +1,21 @@
 body {}
 
+/*Import the local Jost font files instead of using Google Fonts to use them*/
+@font-face {
+  font-family: Jost;
+  font-style: normal;
+  font-display: swap; /*When using swap as font-display, the browser will render the text with the fallback font and once it loads Jost, it'll swap over to it. Makes the site feel faster*/
+  src: url(fonts/Jost-VariableFont_wght.ttf);
+}
+
+@font-face {
+  font-family: Jost;
+  font-style: italic;
+  font-display: swap; /*When using swap as font-display, the browser will render the text with the fallback font and once it loads Jost, it'll swap over to it. Makes the site feel faster*/
+  src: url(fonts/Jost-Italic-VariableFont_wght.ttf);
+}
+
+/*Scales down emojis*/
 img.emoji {
    height: 1em;
    width: 1em;
@@ -8,6 +24,7 @@ img.emoji {
   pointer-events: none; 
 }
 
+/*Styling for general text*/
 h1,
 p.checkBack,
 p.bottomText {
@@ -16,11 +33,13 @@ p.bottomText {
   text-align: center;
 }
 
+/*Adding a wrapper for the language selector*/
 div.langWrapper{
   display: flex;
   flex-direction: row-reverse;
 }
 
+/*Styling the language selector button*/
 .lang{
   color: white;
   font-family: Jost, sans-serif;
@@ -37,16 +56,18 @@ div.langWrapper{
   transition: background-color .2s;
 }
 
+/*More styling for the language slector button*/
 .dropButton{
   border-radius: 12px 12px 12px 12px;
   min-width: 166px;
 }
 
+/*Styling for the language slector button that gets added when pressed using JS and removed once depressed*/
 .dropButtonPressed{
   border-radius: 12px 12px 0px 0px;
 }
 
-/* Dropdown button on hover & focus */
+/*Styling for the language slector button on hover and focus */
 .lang:hover, .lang:focus {
   background-color: rgba(0, 0, 0, 0.476);
   transition: background-color .2s;
@@ -99,24 +120,28 @@ div.langWrapper{
   width: 166px;
 }
 
-
+/*Make the title bold*/
 h1{
   font-weight: bold;
 }
 
+/*Make the text that says "Please check back later" slightly darker*/
 p.checkBack{
   color: rgb(222, 222, 222);
 }
 
+/*Make the text that has general information about the site slightly darker and slighly transparent*/
 p.bottomText{
   color: rgba(146, 146, 146, 0.61);
 }
 
+/*Fixes the animation. If any other value, the animation would show up 3 times*/
 .boxAlignment {
   position: relative;
   height: 80vh;
 }
 
+/*Makes the text centered*/
 .containerCenterer {
   display: flex;
   align-items: center;
@@ -124,6 +149,7 @@ p.bottomText{
   height: 98vh;
 }
 
+/*Makes the text centered and adds padding*/
 .constructionBox {
   display: flex;
   align-items: center;
@@ -137,12 +163,14 @@ p.bottomText{
   border-radius: 12px;
 }
 
+/*The animation itself*/
 .gradientBackgroundAnimation {
   background: linear-gradient(300deg, #000000, #710a97, #000000);
   background-size: 180% 180%;
   animation: gradient-animation 18s ease infinite;
 }
 
+/*Keyframes for the animation*/
 @keyframes gradient-animation {
   0% {
     background-position: 0% 50%;
