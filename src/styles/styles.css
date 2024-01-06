@@ -15,6 +15,15 @@ body {}
   src: url(fonts/Jost-Italic-VariableFont_wght.ttf);
 }
 
+header{
+  background-color: #00000025;
+  position: sticky;
+  top: 0;
+  margin: 12px;
+  padding: 12px;
+  border-radius: 12px;
+}
+
 /*Scales down emojis*/
 img.emoji {
    height: 1em;
@@ -157,7 +166,6 @@ p.bottomText{
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 98vh;
 }
 
 /*Makes the text centered and adds padding*/
