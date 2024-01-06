@@ -39,8 +39,13 @@ div.langWrapper{
   flex-direction: row-reverse;
 }
 
+.navWrapper{
+  display: flex;
+  position: float;
+}
+
 /*Styling the language selector button*/
-.lang{
+.lang, .navButton{
   color: white;
   font-family: Jost, sans-serif;
   background-color: rgba(0, 0, 0, 0.327);
@@ -54,6 +59,12 @@ div.langWrapper{
   font-size: initial;
   cursor: pointer;
   transition: background-color .2s;
+}
+
+.navButton{
+  border-radius: 12px 12px 12px 12px;
+  padding: 12px;
+  margin-right:12px;
 }
 
 /*More styling for the language slector button*/
