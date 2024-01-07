@@ -291,6 +291,85 @@ div.mobileMenu>a{
   margin-top: 8px;
 }
 
+.socialMedias{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 12px;
+}
+
+.socialMedia{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 12px;
+  margin: 12px;
+  border-radius: 12px;
+}
+
+.twitter{
+  background-color: #1da0f280;
+  border: #1da0f280 2px solid;
+  transition: background-color 0.2s;
+}
+
+.twitter:hover{
+  background-color: #1da0f2c7;
+  transition: background-color 0.2s;
+}
+
+.threads{
+  background-color: #00000080;
+  border: #00000080 2px solid;
+  transition: background-color 0.2s;
+}
+
+.threads:hover{
+  background-color: #000000c7;
+  transition: background-color 0.2s;
+}
+
+.instagram{
+  background-color: #FB783380;
+  border: #FB783380 2px solid;
+  transition: background-color 0.2s;
+}
+
+.instagram:hover{
+  background-color: #FB7833c7;
+  transition: background-color 0.2s;
+}
+
+.email{
+  background-color: #c7161080;
+  border: #c7161080 2px solid;
+  transition: background-color 0.2s;
+}
+
+.email:hover{
+  background-color: #c71610c7;
+  transition: background-color 0.2s;
+}
+
+.imessage{
+  background-color: #53d76980;
+  border: #53d76980 2px solid;
+  transition: background-color 0.2s;
+}
+
+.imessage:hover{
+  background-color: #53d769c7;
+  transition: background-color 0.2s;
+}
+
+
+.socialMedia{
+text-align: center;
+text-decoration: none;
+}
+
 /*Keyframes for the animation*/
 @keyframes gradient-animation {
   0% {
