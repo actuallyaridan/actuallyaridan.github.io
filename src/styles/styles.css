@@ -30,6 +30,10 @@ body{
   height: fit-content;
 }
 
+.gradientBackgroundAnimation{
+  background: #710a97;
+}
+
 /*Scales down emojis*/
 img.emoji {
    height: 1em;
