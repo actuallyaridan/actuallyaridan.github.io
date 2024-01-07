@@ -8,6 +8,7 @@
     <title>Erfarenhet — actuallyaridan</title>
     <link href="../src/styles/styles.css" rel="stylesheet">
     <script src="../src/scripts/dropDownMenu.js"></script>
+    <script src="../src/scripts/mobileMenu.js"></script>
     <script src="../src/scripts/twimojiFix.js"></script>
     <link rel="apple-touch-icon" sizes="180x180" href="../src/favicons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="../src/favicons/favicon-32x32.png">
@@ -34,6 +35,12 @@
                 <a class="navButton" href="projects.html">🛠️ Projekt</a>
             </div>
             <div class="navWrapperMobile">
+                <button onclick="toggleMenu()" class="navButton" >＝ Meny</a>
+            </div>
+            <div class="mobileMenu" id="mobileMenuID">
+                <a class="navButton" href="index.html">🏠 Hem</a>
+                <a class="navButton" href="socialmedia.html">💬 Sociala medier</a>
+                <a class="navButton activeChoice" href="experiences.html">🧠 Erfarenhet</a>
                 <a class="navButton" href="projects.html">🛠️ Projekt</a>
             </div>
         </nav>
