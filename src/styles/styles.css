@@ -75,6 +75,7 @@ div.project>div{
   justify-content: center;
   align-self: center;
   flex-direction: row;
+  flex-wrap: wrap;
   background-color: #00000059;
   padding: 8px;
   margin: 8px;
@@ -82,13 +83,37 @@ div.project>div{
 }
 
 div.project>div>p{
-  text-align: left;
+  text-align: center;
   margin: 12px;
   color: rgb(188, 188, 188);
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+div.project>div>p>a{
+  text-align: center;
+  color: rgb(188, 188, 188);
+  white-space: nowrap;
+  text-decoration: none;
+  transition: color .2s;
+}
+
+div.project>div>p>a:hover{
+  color: white;
+  transition: color .2s;
 }
 
 div.project>p.projectName{
   color: white;
+}
+
+.WIP{
+  color: orange !important;
+}
+
+
+.completed{
+  color: green !important;
 }
 
 /*Adding a wrapper for the language selector*/
@@ -128,7 +153,6 @@ div.langWrapper{
 /*More styling for the language slector button*/
 .dropButton{
   border-radius: 12px 12px 12px 12px;
-  min-width: 166px;
 }
 
 /*Styling for the language slector button that gets added when pressed using JS and removed once depressed*/
@@ -160,7 +184,7 @@ div.langWrapper{
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
   right: 0;
-  border-radius: 0px 0px 12px 12px;
+  border-radius: 12px 0px 12px 12px;
 }
 
 /* Links inside the dropdown */
@@ -169,6 +193,7 @@ div.langWrapper{
   transition: background-color .2s;
   padding: 12px 16px;
   text-decoration: none;
+  text-align: left;
   display: block;
   color: white;
   font-family: Jost, sans-serif;
@@ -192,7 +217,6 @@ div.langWrapper{
   display:block;
   width: 166px;
 }
-
 /*Make the title bold*/
 h1{
   font-weight: bold;
@@ -206,6 +230,10 @@ p.checkBack{
 /*Make the text that has general information about the site slightly darker and slighly transparent*/
 p.bottomText{
   color: rgba(146, 146, 146, 0.61);
+}
+
+.boxAlignment{
+  min-height: 80vh;
 }
 
 /*Makes the text centered*/
@@ -236,6 +264,28 @@ p.bottomText{
   animation: gradient-animation 18s ease infinite;
 }
 
+.mobileMenu{
+  display: none;
+  flex-direction: row;
+  margin: 12px;
+  margin-top: 18px;
+  justify-content: center;
+  justify-items: center;
+  flex-wrap: wrap;
+}
+
+.showMenu{
+  display: flex;
+}
+
+
+div.mobileMenu>a{
+  text-align: center;
+  margin-right: 9px;
+  margin-left: 8px;
+  margin-top: 8px;
+}
+
 /*Keyframes for the animation*/
 @keyframes gradient-animation {
   0% {
@@ -248,5 +298,27 @@ p.bottomText{
 
   100% {
     background-position: 0% 50%;
+  }
+}
+
+@media only screen and (width>=712px) {
+  
+  div.navWrapperMobile {
+    display: none;
+  }
+  div.mobileMenu{
+    display: none;
+  }
+  div.navWrapper {
+    display: flex;
+  }
+}
+
+@media only screen and (width<=711px) {
+  div.navWrapper {
+    display: none;
+  }
+  div.navWrapperMobile {
+    display: flex;
   }
 }
