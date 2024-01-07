@@ -56,7 +56,8 @@ p.subTitle{
 }
 
 div.project{
-  background-color: #00000070;
+  background-color: #12021880;
+  border: #12021880 2px solid;
   padding: 12px;
   margin: 12px;
   border-radius: 12px;
@@ -134,7 +135,7 @@ div.langWrapper{
 .lang, .navButton{
   color: white;
   font-family: Jost, sans-serif;
-  background-color: rgba(0, 0, 0, 0.327);
+  background-color: #12021880;
   padding: 12px;
   text-decoration: none;
   width: -moz-fit-content;
@@ -147,6 +148,7 @@ div.langWrapper{
   transition: background-color .2s;
   font-size: initial;
   touch-action: manipulation;
+  border: #12021880 2px solid;
 }
 
 .navButton{
@@ -165,9 +167,9 @@ div.langWrapper{
   border-radius: 12px 12px 0px 0px;
 }
 
-/*Styling for the language slector button on hover and focus */
+/*Styling for the language selector button on hover and focus */
 .lang:hover, .lang:focus, .navButton:hover, .navButton:focus {
-  background-color: rgba(0, 0, 0, 0.476);
+  background-color: #120218db;
   transition: background-color .2s;
 }
 
