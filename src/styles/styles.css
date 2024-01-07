@@ -306,7 +306,7 @@ div.mobileMenu>a{
   }
 }
 
-@media only screen and (width>712px) {
+@media only screen and (width>=712px) {
   
   div.navWrapperMobile {
     display: none;
@@ -319,7 +319,7 @@ div.mobileMenu>a{
   }
 }
 
-@media only screen and (width<711px) {
+@media only screen and (width<=711px) {
   div.navWrapper {
     display: none;
   }
