@@ -408,7 +408,7 @@ div.socialMedias{
   align-items: center;
   flex-direction: column;
   background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  background-color: rgba(18, 18, 18, 0.83); /* Black w/ opacity */
   -webkit-backdrop-filter: saturate(180%) blur(20px); 
   backdrop-filter: saturate(180%) blur(20px); 
   padding: 12px;
@@ -420,6 +420,9 @@ div.socialMedias{
   padding: 12px;
   background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
   border-radius: 12px;
+  margin: 12px;
+  margin-left: 24px;
+  margin-right: 24px;
 }
 
 
@@ -434,10 +437,7 @@ div.socialMedias{
 }
 
 .buttonsEmail{
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  -webkit-backdrop-filter: saturate(180%) blur(20px); 
-  backdrop-filter: saturate(180%) blur(20px); 
+  background-color: #21002d;
   display: flex;
   flex-direction: row;
   justify-content: center;
