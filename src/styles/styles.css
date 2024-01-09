@@ -15,6 +15,15 @@ body {}
   src: url(fonts/Jost-Italic-VariableFont_wght.ttf);
 }
 
+/*Scales down emojis*/
+img.emoji, span.emoji {
+  height: 1em;
+  width: 1em;
+  margin: 0 .05em 0 .1em;
+  vertical-align: -0.1em;
+ pointer-events: none; 
+}
+
 header{
   background-color: #00000080;
   position: sticky;
@@ -32,15 +41,6 @@ body{
 
 .gradientBackgroundAnimation{
   background: #710a97;
-}
-
-/*Scales down emojis*/
-img.emoji {
-   height: 1em;
-   width: 1em;
-   margin: 0 .05em 0 .1em;
-   vertical-align: -0.1em;
-  pointer-events: none; 
 }
 
 /*Styling for general text*/
@@ -347,7 +347,7 @@ div.mobileMenu>a{
   transition: background-color 0.2s;
   color: white;
   font-family: Jost, sans-serif;
-  padding: 12px;
+    padding: 12px;
   font-size: initial;
   cursor: pointer;
 }
