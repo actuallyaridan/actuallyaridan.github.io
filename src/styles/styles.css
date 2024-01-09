@@ -345,6 +345,11 @@ div.mobileMenu>a{
   background-color: #c7161080;
   border: #c7161080 2px solid;
   transition: background-color 0.2s;
+  color: white;
+  font-family: Jost, sans-serif;
+  padding: 12px;
+  font-size: initial;
+  cursor: pointer;
 }
 
 .email:hover{
@@ -414,6 +419,7 @@ div.socialMedias{
   padding: 12px;
   margin: 12px;
   border-radius: 12px;
+  padding: 24px
 }
 
 .emailModalText{
@@ -421,8 +427,6 @@ div.socialMedias{
   background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
   border-radius: 12px;
   margin: 12px;
-  margin-left: 24px;
-  margin-right: 24px;
 }
 
 
