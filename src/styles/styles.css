@@ -17,8 +17,8 @@ body {}
 
 /*Scales down emojis*/
 img.emoji, span.emoji {
-  height: 1em;
-  width: 1em;
+  height: 16px;
+  width: 16px;
   margin: 0 .05em 0 .1em;
   vertical-align: -0.1em;
  pointer-events: none; 
