@@ -257,9 +257,8 @@ p.bottomText{
   width: fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  padding-left: 5%;
-  padding-right: 5%;
   border-radius: 12px;
+  width: 100%;
 }
 
 /*The animation itself*/
@@ -368,6 +367,18 @@ div.mobileMenu>a{
 .socialMedia{
 text-align: center;
 text-decoration: none;
+}
+
+div.socialMedias{
+    background-color: #12021880;
+  padding: 12px;
+  margin: 12px;
+  border-radius: 12px;
+}
+
+.leftAlign{
+  text-align: left;
+  margin: 12px;
 }
 
 /*Keyframes for the animation*/
