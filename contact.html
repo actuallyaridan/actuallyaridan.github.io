@@ -11,6 +11,7 @@
     <link href="src/styles/styles.css" rel="stylesheet">
     <script src="src/scripts/dropDownMenu.js"></script>
     <script src="src/scripts/mobileMenu.js"></script>
+    <script src="src/scripts/emailModalBox.js"></script>
     <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="src/favicons/apple-touch-icon.png">
     <link rel="apple-touch-icon" type="image/png" sizes="32x32" href="/src/favicons/favicon-32x32.png">
     <link rel="apple-touch-icon" type="image/png" sizes="16x16" href="/src/favicons/favicon-16x16.png">
@@ -53,12 +54,23 @@
             <div class="constructionBox">
                 <div>
                     <h1>Contact</h1>
+                    <div id="emailModal" class="emailModal">
+                        <div class="emailModalContent">
+                            <p>Email</p>
+                            <p>If you have an email client installed on your device, you can click on the "Send an email" button.<br> If you don't, simply send an email to this address:</p>
+                            <p class="emailModalText">adnan@aridan.net</p>
+                            <div class="buttonsEmail">
+                                <a class="socialMedia email" href="mailto:adnan@aridan.net">Send an email</a>
+                                <button onclick="emailToggle()" class="socialMedia emailOK">Close</button>
+                            </div>
+                        </div>
+                    </div>
                     <div>
                         <p class="subTitle">Would you like to talk to me in a one-on-one? Go ahead and send me an email or an iMessage!<br>I'll be more than happy to reply and I'm looking forward to speaking with you!</p>
                         <div class="contactMe">
                             <div class="socialMedias">
                             <div>
-                                <a class="socialMedia email" href="https://www.instagram.com/actuallyaridan/">Show email address</a>
+                                <button onclick="emailToggle()" class="socialMedia email" >Show email address</button>
                             </div>
                             <div>
                                 <a class="socialMedia imessage" href="sms:adnan@aridan.net">Send an iMessage</a>
@@ -66,8 +78,9 @@
                             </div>
                         </div>
                     </div>
+                    <br>
                     <div>
-                        <p class="subTitle">If you're looking to communicate in a more casual manner, I'm on a bunch of social media platforms too. <br>Any platform that isn't linked here is not me.</p>
+                        <p class="subTitle">Looking to communicate in a more casual manner? I'm on a bunch of social media platforms too! <br>Any account on any platform that isn't linked here is not me.</p>
                         <div class="socialMedias">
                             <div>
                                 <a class="socialMedia twitter" href="https://x.com/@actuallyaridan">X (formerly Twitter)</a>

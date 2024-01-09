@@ -149,7 +149,7 @@ div.langWrapper{
   touch-action: manipulation;
 }
 
-.navButton{
+.navButton, .emailOK{
   border-radius: 12px 12px 12px 12px;
   padding: 12px;
   margin-right:12px;
@@ -166,7 +166,7 @@ div.langWrapper{
 }
 
 /*Styling for the language selector button on hover and focus */
-.lang:hover, .lang:focus, .navButton:hover, .navButton:focus {
+.lang:hover, .lang:focus, .navButton:hover, .navButton:focus{
   background-color: #120218db;
   transition: background-color .2s;
 }
@@ -370,7 +370,7 @@ text-decoration: none;
 }
 
 div.socialMedias{
-    background-color: #12021880;
+  background-color: #12021880;
   padding: 12px;
   margin: 12px;
   border-radius: 12px;
@@ -379,6 +379,71 @@ div.socialMedias{
 .leftAlign{
   text-align: left;
   margin: 12px;
+}
+
+.emailModal{
+  display: none; /* Hidden by default */
+  justify-content: center;
+  align-items: center;
+  position: fixed; /* Stay in place */
+  z-index: 2; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  -webkit-backdrop-filter: saturate(180%) blur(20px); 
+  backdrop-filter: saturate(180%) blur(20px); 
+}
+
+.showEmail{
+  display: flex;
+}
+
+.emailModalContent{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  -webkit-backdrop-filter: saturate(180%) blur(20px); 
+  backdrop-filter: saturate(180%) blur(20px); 
+  padding: 12px;
+  margin: 12px;
+  border-radius: 12px;
+}
+
+.emailModalText{
+  padding: 12px;
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  border-radius: 12px;
+}
+
+
+.emailOK{
+  color: white;
+  font-family: Jost, sans-serif;
+  background-color: #12021880;
+  border: #12021880 2px solid;
+  padding: 12px;
+  font-size: initial;
+  cursor: pointer;
+}
+
+.buttonsEmail{
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  -webkit-backdrop-filter: saturate(180%) blur(20px); 
+  backdrop-filter: saturate(180%) blur(20px); 
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  border-radius: 12px;
 }
 
 /*Keyframes for the animation*/
