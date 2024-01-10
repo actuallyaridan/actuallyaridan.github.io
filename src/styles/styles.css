@@ -27,6 +27,7 @@ img.emoji{
 }
 
 header{
+  background-color: #000000;
   background-color: #00000080;
   position: sticky;
   -webkit-backdrop-filter: saturate(180%) blur(20px); 
@@ -58,6 +59,7 @@ p.subTitle{
 }
 
 div.project{
+  background-color: #120218;
   background-color: #12021880;
   padding: 12px;
   margin: 12px;
@@ -82,6 +84,7 @@ div.project>div{
   align-self: center;
   flex-direction: row;
   flex-wrap: wrap;
+  background-color: #000000;
   background-color: #00000059;
   padding: 8px;
   margin: 8px;
@@ -136,7 +139,9 @@ div.langWrapper{
 .lang, .navButton{
   color: white;
   font-family: Jost, sans-serif;
+  background-color: #120218;
   background-color: #12021880;
+  border: #120218 2px solid;
   border: #12021880 2px solid;
   padding: 12px;
   text-decoration: none;
@@ -169,6 +174,7 @@ div.langWrapper{
 
 /*Styling for the language selector button on hover and focus */
 .lang:hover, .lang:focus, .navButton:hover, .navButton:focus{
+  background-color: #120218;
   background-color: #120218db;
   transition: background-color .2s;
 }
@@ -188,6 +194,7 @@ div.langWrapper{
   position: absolute;
   background-color: rgb(0, 0, 0);
   min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0);
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
   right: 0;
@@ -196,6 +203,7 @@ div.langWrapper{
 
 /* Links inside the dropdown */
 .dropdownContent a {
+  background-color: rgba(0, 0, 0);
   background-color: rgba(0, 0, 0, 0.476);
   transition: background-color .2s;
   padding: 12px 16px;
@@ -215,6 +223,7 @@ div.langWrapper{
 
 /* Change color of dropdown links on hover */
 .dropdownContent a:hover {
+  background-color: rgba(67, 67, 67);
   background-color: rgba(67, 67, 67, 0.476);
   transition: background-color .2s;
 }
@@ -236,6 +245,7 @@ p.checkBack{
 
 /*Make the text that has general information about the site slightly darker and slighly transparent*/
 p.bottomText{
+  color: rgba(146, 146, 146);
   color: rgba(146, 146, 146, 0.61);
 }
 
@@ -311,40 +321,50 @@ div.mobileMenu>a{
 }
 
 .twitter{
+  background-color: #1da0f2;
   background-color: #1da0f280;
   border: #1da0f280 2px solid;
   transition: background-color 0.2s;
 }
 
 .twitter:hover{
+  background-color: #1da0f2;
   background-color: #1da0f2c7;
   transition: background-color 0.2s;
 }
 
 .threads{
+  background-color: #000000;
   background-color: #00000080;
+  border: #000000 2px solid;
   border: #00000080 2px solid;
   transition: background-color 0.2s;
 }
 
 .threads:hover{
+  background-color: #000000;
   background-color: #000000c7;
   transition: background-color 0.2s;
 }
 
 .instagram{
+  background-color: #FB7833;
   background-color: #FB783380;
+  border: #FB7833 2px solid;
   border: #FB783380 2px solid;
   transition: background-color 0.2s;
 }
 
 .instagram:hover{
+  background-color: #FB7833;
   background-color: #FB7833c7;
   transition: background-color 0.2s;
 }
 
 .email{
+  background-color: #c71610;
   background-color: #c7161080;
+  border: #c71610 2px solid;
   border: #c7161080 2px solid;
   transition: background-color 0.2s;
   color: white;
@@ -356,16 +376,20 @@ div.mobileMenu>a{
 
 .email:hover{
   background-color: #c71610c7;
+  background-color: #c71610c7;
   transition: background-color 0.2s;
 }
 
 .imessage{
+  background-color: #53d769;
   background-color: #53d76980;
+  border: #53d769 2px solid;
   border: #53d76980 2px solid;
   transition: background-color 0.2s;
 }
 
 .imessage:hover{
+  background-color: #53d769;
   background-color: #53d769c7;
   transition: background-color 0.2s;
 }
@@ -377,6 +401,7 @@ text-decoration: none;
 }
 
 div.socialMedias{
+  background-color: #120218;
   background-color: #12021880;
   padding: 12px;
   margin: 12px;
@@ -426,6 +451,7 @@ div.socialMedias{
 
 .emailModalText{
   padding: 12px;
+  background-color: rgba(0,0,0); /* Black w/ opacity */
   background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
   border-radius: 12px;
   margin: 12px;
@@ -435,7 +461,9 @@ div.socialMedias{
 .emailOK{
   color: white;
   font-family: Jost, sans-serif;
+  background-color: #120218;
   background-color: #12021880;
+  border: #120218 2px solid;
   border: #12021880 2px solid;
   padding: 12px;
   font-size: initial;
@@ -443,6 +471,7 @@ div.socialMedias{
 }
 
 .buttonsEmail{
+  background-color: #2100;
   background-color: #21002d;
   display: flex;
   flex-direction: row;
