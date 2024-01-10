@@ -2,5 +2,9 @@
 A modern, fast and lightweight website that can be used to show general information about a person.
 Supports multiple languages and follows accessibility guidelines for a more open internet. 
 
+Contributors:
+Adnan Bukvic (a.k.a. aridan) / @actuallyaridan
+Slade Watkins / @sladewatkins
+
 Currently hosted using Cloudlfare. 
-Copyright 2024 Adnan Bukvic using the MIT license. 
+Copyright (c) 2024 Adnan Bukvic using the MIT license.
