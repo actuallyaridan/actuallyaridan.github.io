@@ -1,2 +1,3 @@
 # aridan.net
-Source code for the aridan.net website
+A modern, fast and lightweight website that can be used as a website showing general information about a person.
+Supports multiple languages and follows accesibility guidelines for a more open internet. 
