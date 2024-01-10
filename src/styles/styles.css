@@ -1,4 +1,6 @@
-body {}
+html {
+  scroll-behavior: smooth;
+}
 
 /*Import the local Jost font files instead of using Google Fonts to use them*/
 @font-face {
