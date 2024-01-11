@@ -46,6 +46,10 @@ body{
   background: #710a97;
 }
 
+.boringBackground{
+  background: #14011a;
+}
+
 main{
   margin: 18px;
 }
