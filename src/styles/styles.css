@@ -535,6 +535,16 @@ p.emailText{
   margin: 12px;
 }
 
+div.footer{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.footer>p{
+  color:#959595
+}
+
 /*Keyframes for the animation*/
 @keyframes gradient-animation {
   0% {
