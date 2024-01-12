@@ -387,8 +387,8 @@ div.mobileMenu>a{
 .threads{
   background-color: #000000;
   background-color: #00000080;
-  border: #000000 2px solid;
-  border: #00000080 2px solid;
+  border: #868686 2px solid;
+  border: #86868680 2px solid;
   transition: background-color 0.2s;
 }
 
@@ -409,6 +409,22 @@ div.mobileMenu>a{
 .instagram:hover{
   background-color: #FB7833;
   background-color: #FB7833c7;
+  transition: background-color 0.2s;
+}
+
+.aMusic{
+  background-color: #f94c57;
+  background-color: #f94c5780;
+  border: #f94c57 2px solid;
+  border: #f94c5780 2px solid;
+  transition: background-color 0.2s;
+}
+
+.aMusic:hover{
+  background-color: #f94c57;
+  background-color: #f94c57c7;
+  border: #fc3c44 2px solid;
+  border: #fc3c44c7 2px solid;
   transition: background-color 0.2s;
 }
 
