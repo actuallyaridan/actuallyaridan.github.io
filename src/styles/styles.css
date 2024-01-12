@@ -385,10 +385,10 @@ div.mobileMenu>a{
 }
 
 .threads{
-  background-color: #000000;
-  background-color: #00000080;
-  border: #868686 2px solid;
-  border: #86868680 2px solid;
+  background-color: #202020;
+  background-color: #20202080;
+  border: #3e3e3e 2px solid;
+  border: #3e3e3e80 2px solid;
   transition: background-color 0.2s;
 }
 
