@@ -61,6 +61,13 @@ main, footer{
   align-self: center;
 }
 
+.centererItems{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-self: center;
+}
+
 .cvButton{
   color: white;
   font-family: Jost, sans-serif;
@@ -395,6 +402,20 @@ div.mobileMenu>a{
 .threads:hover{
   background-color: #000000;
   background-color: #000000c7;
+  transition: background-color 0.2s;
+}
+
+.linkedin{
+  background-color: #0a66c2;
+  background-color: #0a66c280;
+  border: #0a66c2 2px solid;
+  border: #0a66c280 2px solid;
+  transition: background-color 0.2s;
+}
+
+.linkedin:hover{
+  background-color: #0a66c2;
+  background-color: #0a66c2c7;
   transition: background-color 0.2s;
 }
 
