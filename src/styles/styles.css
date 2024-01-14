@@ -583,6 +583,75 @@ div.footer{
   color:#959595
 }
 
+.aboutMe{
+  background-color: #120218;
+  background-color: #12021880;
+  padding: 12px;
+  margin: 12px;
+  border-radius: 12px;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: center;
+  align-self: center;
+}
+
+.aboutMeContainer{
+  background-color: #120218;
+  background-color: #12021880;
+  padding: 12px;
+  margin: 12px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: row;
+  align-self: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.aboutMeContainer>div{
+  background-color: #120218;
+  background-color: #12021880;
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px;
+  flex-direction: row;
+  margin-left: auto;
+  margin-right: auto;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.aboutMeContainer>div>p{
+  padding: 12px;
+  margin: 12px;
+  text-align: center;
+}
+
+span.title{
+  display: block;
+}
+
+span.title>p{
+  text-align: center;
+  margin: auto;
+}
+
+.informationContainer{
+  border-radius: 12px;
+  margin: 12px;
+  padding-top: 12px;
+  background-color: rgb(94, 127, 163);
+}
+
+.interestsContainer{
+  border-radius: 12px;
+  margin: 12px;
+  padding-top: 12px;
+  background-color: rgb(119, 163, 94);
+}
+
+
 /*Keyframes for the animation*/
 @keyframes gradient-animation {
   0% {
