@@ -641,14 +641,16 @@ span.title>p{
   border-radius: 12px;
   margin: 12px;
   padding-top: 12px;
-  background-color: rgb(94, 127, 163);
+  background-color: #1da0f2;
+  background-color: #1da0f280;
 }
 
 .interestsContainer{
   border-radius: 12px;
   margin: 12px;
   padding-top: 12px;
-  background-color: rgb(119, 163, 94);
+  background-color: #53d769;
+  background-color: #53d76980;
 }
 
 
