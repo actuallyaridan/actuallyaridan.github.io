@@ -27,15 +27,15 @@ img.emoji{
 }
 
 header{
-  background-color: #000000;
-  background-color: #00000080;
-  position: sticky;
   -webkit-backdrop-filter: saturate(180%) blur(20px); 
   backdrop-filter: saturate(180%) blur(20px); 
-  top: 0px;
+  background-color: #000000;
+  background-color: #00000080;
   margin: 12px;
   padding: 12px;
   border-radius: 12px;
+  position: sticky;
+  top: 0px;
 }
 
 body{
