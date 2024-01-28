@@ -7,14 +7,14 @@ html {
   font-family: Jost;
   font-style: normal;
   font-display: swap; /*When using swap as font-display, the browser will render the text with the fallback font and once it loads Jost, it'll swap over to it. Makes the site feel faster*/
-  src: url(fonts/Jost-VariableFont_wght.ttf);
+  src: url(fonts/Jost.ttf);
 }
 
 @font-face {
   font-family: Jost;
   font-style: italic;
   font-display: swap; /*When using swap as font-display, the browser will render the text with the fallback font and once it loads Jost, it'll swap over to it. Makes the site feel faster*/
-  src: url(fonts/Jost-Italic-VariableFont_wght.ttf);
+  src: url(fonts/Jost-Italic.ttf);
 }
 
 /*Scales down emojis*/
@@ -220,12 +220,12 @@ div.langWrapper{
   margin-right:12px;
 }
 
-/*More styling for the language slector button*/
+/*More styling for the language selector button*/
 .dropButton{
   border-radius: 12px 12px 12px 12px;
 }
 
-/*Styling for the language slector button that gets added when pressed using JS and removed once depressed*/
+/*Styling for the language selector button that gets added when pressed using JS and removed once depressed*/
 .dropButtonPressed{
   border-radius: 12px 12px 0px 0px;
 }
@@ -301,7 +301,7 @@ p.checkBack{
   color: rgb(222, 222, 222);
 }
 
-/*Make the text that has general information about the site slightly darker and slighly transparent*/
+/*Make the text that has general information about the site slightly darker and slightly transparent*/
 p.bottomText{
   color: rgba(146, 146, 146);
   color: rgba(146, 146, 146, 0.61);
