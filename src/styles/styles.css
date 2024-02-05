@@ -392,15 +392,15 @@ div.mobileMenu>a{
 }
 
 .threads{
-  background-color: #000000;
-  background-color: #00000080;
-  border: #000000 2px solid;
-  border: #00000080 2px solid;
+  background-color: #4b4b4b;
+  background-color: #4b4b4b80;
+  border: #4b4b4b 2px solid;
+  border: #4b4b4b80 2px solid;
   transition: background-color 0.2s;
 }
 
 .threads:hover{
-  background-color: #090909;
+  background-color: #4b4b4bc7;
   transition: background-color 0.2s;
 }
 
