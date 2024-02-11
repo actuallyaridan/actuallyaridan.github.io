@@ -119,9 +119,13 @@ button.close{
     transition: background-color 0.2s;
   }
 
-.bottomButton{
+  footer{
     position: sticky;
-    bottom: 0px;
+    bottom: 8px;
+
+  }
+
+.bottomButton{
     background-color:#2e073d;
     border-radius: 12px;
     padding: 8px;
