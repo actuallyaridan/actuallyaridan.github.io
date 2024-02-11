@@ -4,7 +4,7 @@ window.addEventListener('DOMContentLoaded', () => {
   
     form.addEventListener('submit', (event) => {
       event.preventDefault(); // Prevent default form submission
-      document.getElementById("sucessfullSave").classList.toggle("result");
+      document.getElementById("sucessfullSave").classList.add("result");
       const chosenColor = Array.from(radioButtons).find(radio => radio.checked).value;
   
       // Save the chosen color to local storage
