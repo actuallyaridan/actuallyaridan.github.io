@@ -16,8 +16,11 @@
     font-family: Jost, sans-serif;
   }
 
-main{
+body{
     background-color: #710a97;
+}
+
+main{
     padding-left: 12px;
     padding-right: 12px;
     color: white;
