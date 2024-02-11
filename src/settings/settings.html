@@ -7,9 +7,7 @@
     <meta name="theme-color" content="#710a97">
     <title>Settings</title>
     <link href="../styles/settings.css" rel="stylesheet">
-    <script src="../scripts/dropDownMenu.js"></script>
-    <script src="../scripts/mobileMenu.js"></script>
-    <script src="../scripts/emailModalBox.js"></script>
+    <script src="../scripts/settings.js"></script>
     <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../favicons/apple-touch-icon.png">
     <link rel="apple-touch-icon" type="image/png" sizes="32x32" href="../favicons/favicon-32x32.png">
     <link rel="apple-touch-icon" type="image/png" sizes="16x16" href="../favicons/favicon-16x16.png">
@@ -17,6 +15,20 @@
     <link rel="icon" type="image/png" sizes="16x16" href="../favicons/favicon-16x16.png">
     <link rel="manifest" href="../favicons/site.webmanifest">
 </head>
+
+<header>
+    <div>
+        <div id="failSave" class="savedMessage failed">
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&#x2715;</span>
+           Failed to save settings.
+        </div>
+    
+        <div id="sucessfullSave" class="savedMessage sucessfull">
+            <span class="closebtn" onclick="this.parentElement.style.display='none';">&#x2715;</span>
+           Settings saved successfully!
+        </div>
+    </div>
+</header>
 
 <body>
     <main>
@@ -93,6 +105,6 @@
         </div>
     </main>
     <div class="bottomButton">
-        <button class="saveButton">Save settings</button>
+        <button class="saveButton" onclick="saveSettings()">Save settings</button>
     </div>
 </body>

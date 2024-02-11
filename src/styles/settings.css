@@ -67,6 +67,11 @@ button{
     border-radius: 12px;
 }
 
+button.close{
+  background-color: unset;
+  border: unset;
+}
+
 .saveButton{
     width: 100%;
 }
@@ -157,6 +162,48 @@ button{
     background-color: white;
     -webkit-transition: .4s;
     transition: .4s;
+  }
+
+header{
+  position: sticky;
+  top: 0;
+}
+
+div.savedMessage{
+  padding: 20px;
+  color: white;
+  font-family: Jost, sans-serif;
+
+}
+
+.closebtn {
+  margin-left: 15px;
+  color: white;
+  font-weight: bold;
+  float: right;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.closebtn:hover {
+  color: black;
+}
+
+  .failed{
+    background-color: #f44336;
+    display: none;
+  }
+
+  .failedToSave{
+    display: block;
+    float: right;
+  }
+
+  .sucessfull{
+    background-color: #04AA6D;
+    display: none;
   }
   
   input:checked + .slider {
