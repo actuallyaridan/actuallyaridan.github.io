@@ -113,3 +113,12 @@ button{
     background-color: #1da0f2c7;
     transition: background-color 0.2s;
   }
+
+.bottomButton{
+    position: sticky;
+    bottom: 0px;
+    background-color:#2e073d;
+    border-radius: 12px;
+    padding: 8px;
+    
+}
