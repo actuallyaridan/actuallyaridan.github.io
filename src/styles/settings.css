@@ -237,9 +237,10 @@ header{
 }
 
 div.savedMessage{
-  padding: 20px;
+  padding: 8px;
   color: white;
   font-family: Jost, sans-serif;
+  z-index: 999;
 
 }
 
