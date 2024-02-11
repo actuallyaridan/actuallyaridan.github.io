@@ -81,6 +81,7 @@ button.close{
 }
 
 .saveButton{
+  font-weight: normal;
     width: 100%;
 }
 
@@ -262,7 +263,7 @@ div.savedMessage{
     display: none;
   }
 
-  .failedToSave{
+  .result{
     display: block;
     float: right;
   }

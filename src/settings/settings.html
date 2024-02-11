@@ -25,13 +25,13 @@
             </div>
 
             <div id="sucessfullSave" class="savedMessage sucessfull">
-                <span class="closebtn" onclick="this.parentElement.style.display='none';">&#x2715;</span>
+                <span class="closebtn" onclick="saveSettings()">&#x2715;</span>
                 Settings saved successfully!
             </div>
         </div>
     </header>
     <main>
-        <form id="settings">
+        <form id="settings" action="../scripts/settings.js">
             <div class="settingGroup">
                 <p>Content you see</p>
                 <div class="setting">
