@@ -67,19 +67,8 @@ button{
     border-radius: 12px;
 }
 
-header{
-    -webkit-backdrop-filter: saturate(180%) blur(20px); 
-    backdrop-filter: saturate(180%) blur(20px); 
-    background-color: #000000;
-    background-color: #00000080;
-    margin: 12px;
-    padding: 12px;
-    border-radius: 12px;
-    position: sticky;
-    top: 0px;
-    display: flex;
-    justify-content: right;
-    align-items: right;
+.saveButton{
+    width: 100%;
 }
 
 .red{
@@ -109,5 +98,18 @@ header{
   .green:hover{
     background-color: #53d769;
     background-color: #53d769c7;
+    transition: background-color 0.2s;
+  }
+
+  .blue{
+    background-color: #1da0f2;
+    background-color: #1da0f280;
+    border: #1da0f280 2px solid;
+    transition: background-color 0.2s;
+  }
+  
+  .blue:hover{
+    background-color: #1da0f2;
+    background-color: #1da0f2c7;
     transition: background-color 0.2s;
   }
