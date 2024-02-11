@@ -18,6 +18,7 @@
 
 body{
     background-color: #710a97;
+    background-color: var(--accent-color);
 }
 
 main{
@@ -59,8 +60,10 @@ input[type="radio"] {
     font-family: Jost, sans-serif;
     background-color: #120218;
     background-color: #12021880;
+    background-color: var(--accent-color 80%);
     border: #120218 2px solid;
     border: #12021880 2px solid;
+    border: var(--accent-color 80%) 2px solid;
     padding: 8px;
     text-decoration: none;
     width: -moz-fit-content;
@@ -189,7 +192,7 @@ input[type="radio"]:checked + label {
 .bottomButton{
   position: sticky;
   bottom: 8px;
-    background-color:#2e073d;
+  background-color: var(--accent-color 80%);
     border-radius: 12px;
     padding: 8px;
 }
@@ -277,11 +280,11 @@ div.savedMessage{
   }
   
   input:checked + .slider {
-    background-color: #710a97;
+    background-color: var(--accent-color);
   }
   
   input:focus + .slider {
-    box-shadow: 0 0 1px #710a97;
+    box-shadow: 0 0 1px var(--accent-color);
   }
   
   input:checked + .slider:before {
@@ -299,12 +302,13 @@ div.savedMessage{
     border-radius: 12px;
   }
 
+
   .gradientBackgroundAnimation{
-    background: #710a97;
+    background: var(--accent-color);
   }
 
   .gradientBackgroundAnimation {
-    background: linear-gradient(300deg, #000000, #710a97, #000000);
+    background: linear-gradient(300deg, #000000, var(--accent-color), #000000);
     background-size: 180% 180%;
     animation: gradient-animation 18s ease infinite;
   }
