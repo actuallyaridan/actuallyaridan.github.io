@@ -1,5 +1,5 @@
 window.addEventListener('DOMContentLoaded', () => {
-    const form = document.getElementById('accent-form');
+    const form = document.getElementById('settings');
     const radioButtons = form.elements['accent-color'];
   
     form.addEventListener('submit', (event) => {
@@ -24,3 +24,9 @@ window.addEventListener('DOMContentLoaded', () => {
       }
     }
   });
+
+
+  function settingsAlert() {
+    document.getElementById("failSave").classList.remove("result");
+    document.getElementById("sucessfullSave").classList.toggle("result");
+}

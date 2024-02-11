@@ -263,14 +263,14 @@ div.savedMessage{
     display: none;
   }
 
-  .result{
-    display: block;
-    float: right;
-  }
-
   .sucessfull{
     background-color: #04AA6D;
     display: none;
+  }
+
+  .result{
+    display: block;
+    float: right;
   }
   
   input:checked + .slider {
