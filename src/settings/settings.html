@@ -16,97 +16,105 @@
     <link rel="manifest" href="../favicons/site.webmanifest">
 </head>
 
-<header>
-    <div>
-        <div id="failSave" class="savedMessage failed">
-            <span class="closebtn" onclick="saveSettings()">&#x2715;</span>
-           Failed to save settings.
-        </div>
-    
-        <div id="sucessfullSave" class="savedMessage sucessfull">
-            <span class="closebtn" onclick="this.parentElement.style.display='none';">&#x2715;</span>
-           Settings saved successfully!
-        </div>
-    </div>
-</header>
+<body class="gradientBackgroundAnimation">
+    <header>
+        <div>
+            <div id="failSave" class="savedMessage failed">
+                <span class="closebtn" onclick="saveSettings()">&#x2715;</span>
+                Failed to save settings.
+            </div>
 
-<body>
+            <div id="sucessfullSave" class="savedMessage sucessfull">
+                <span class="closebtn" onclick="this.parentElement.style.display='none';">&#x2715;</span>
+                Settings saved successfully!
+            </div>
+        </div>
+    </header>
     <main>
-        <div class="settingGroup">
-            <p>Content you see</p>
-            <div class="setting">
-                <ul>
-                    <li>
-                        <p>Language</p>
-                        <div>
-                            <button>English</button>
-                        </div>
-                    </li>
-                </ul>
+        <form id="settings">
+            <div class="settingGroup">
+                <p>Content you see</p>
+                <div class="setting">
+                    <ul>
+                        <li>
+                            <p>Language</p>
+                            <div>
+                                <button>English</button>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </div>
-        <div class="settingGroup">
-            <p>Appearance</p>
-            <div class="setting">
-                <ul>
-                    <li>
-                        <p>Theme</p>
-                        <div>
-                            <button>Auto</button>
-                            <button>Light</button>
-                            <button>Dark</button>
-                        </div>
-                    </li>
-                    <li>
-                        <p>Accent color</p>
-                        <div>
-                            <button>Purple</button>
-                            <button class="red">Red</button>
-                            <button class="green">Green</button>
-                            <button class="blue">Blue</button>
-                        </div>
-                    </li>
-                </ul>
+            <div class="settingGroup">
+                <p>Appearance</p>
+                <div class="setting">
+                    <ul>
+                        <li>
+                            <p>Theme</p>
+                            <div>
+                                <input type="radio" id="auto" name="theme-color" value="auto">
+                                <label for="auto" class="auto button">Auto</label>
+                                <input type="radio" id="light" name="theme-color" value="light">
+                                <label for="light" class="light button">Light</label>
+                                <input type="radio" id="dark" name="theme-color" value="dark" checked>
+                                <label for="dark" class="dark button">Dark</label>
+                            </div>
+                        </li>
+                        <li>
+                            <p>Accent color</p>
+                            <div>
+                                <input type="radio" id="purple" name="accent-color" value="purple" checked>
+                                <label for="purple" class="purple button">Purple</label>
+                                <input type="radio" id="red" name="accent-color" value="red">
+                                <label for="red" class="red button">Red</label>
+                                <input type="radio" id="green" name="accent-color" value="green">
+                                <label for="green" class="green button">Green</label>
+                                <input type="radio" id="blue" name="accent-color" value="blue">
+                                <label for="blue" class="blue button">Blue</label>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </div>
-        <div class="settingGroup">
-            <p>Accessibility</p>
-            <div class="setting">
-                <ul>
-                    <li>
-                        <p>Increased contrast</p>
-                        <div>
-                            <label class="switch">
-                                <input type="checkbox">
-                                <span class="slider round"></span>
-                              </label>
-                        </div>
-                    </li>
-                    <li>
-                        <p>Show gradients</p>
-                        <div>
-                            <label class="switch">
-                                <input type="checkbox" checked>
-                                <span class="slider round"></span>
-                              </label>
-                        </div>
-                    </li>
-                    <li>
-                        <p>Show animations</p>
-                        <div>
-                            <label class="switch">
-                                <input type="checkbox" checked>
-                                <span class="slider round"></span>
-                              </label>
-                        </div>
-                    </li>
-                </ul>
+            <div class="settingGroup">
+                <p>Accessibility</p>
+                <div class="setting">
+                    <ul>
+                        <li>
+                            <p>Increased contrast</p>
+                            <div>
+                                <label class="switch">
+                                    <input type="checkbox" value="highContrastTrue">
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+                        </li>
+                        <li>
+                            <p>Show gradients</p>
+                            <div>
+                                <label class="switch">
+                                    <input type="checkbox" value="gradientsTrue" checked>
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+                        </li>
+                        <li>
+                            <p>Show animations</p>
+                            <div>
+                                <label class="switch">
+                                    <input type="checkbox" value="animationsTrue" checked>
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </div>
+            <div class="bottomButton">
+                <button class="saveButton" type="submit">Save settings</button>
+            </div>
+        </form>
     </main>
 </body>
 <footer>
-    <div class="bottomButton">
-        <button class="saveButton" onclick="saveSettings()">Save settings</button>
-    </div>
 </footer>

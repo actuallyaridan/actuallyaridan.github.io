@@ -35,7 +35,8 @@ main{
 
 ul{
     list-style: none;
-    background-color: #370549;
+    background-color: #120218;
+    background-color: #12021880;
     padding: 12px;
     border-radius: 12px;
 }
@@ -46,7 +47,14 @@ align-items: center;
 justify-content: space-between;
 }
 
-button{
+input[type="radio"] {
+  opacity: 0;
+  position: fixed;
+  width: 0;
+}
+
+.button, button{
+  list-style-type: none;
     color: white;
     font-family: Jost, sans-serif;
     background-color: #120218;
@@ -74,6 +82,12 @@ button.close{
 
 .saveButton{
     width: 100%;
+}
+
+input[type="radio"]:checked + label {
+  background-color: #14031a;
+  background-color: #14031a80;
+  border-color: #14031a80;
 }
 
 .red{
@@ -119,13 +133,61 @@ button.close{
     transition: background-color 0.2s;
   }
 
-  footer{
-    position: sticky;
-    bottom: 8px;
+  .purple{
+    background-color: #710a97;
+    background-color: #710a9780;
+    border: #710a9780 2px solid;
+    transition: background-color 0.2s;
+  }
 
+  .purple:hover{
+    background-color: #710a97;
+    background-color: #710a97c7;
+    transition: background-color 0.2s;
+  }
+
+  .light{
+    background-color: #909090;
+    background-color: #90909080;
+    border: #90909080 2px solid;
+    transition: background-color 0.2s;
+  }
+
+  .light:hover{
+    background-color: #909090;
+    background-color: #909090c7;
+    transition: background-color 0.2s;
+  }
+
+  .dark{
+    background-color: #3f3f3f;
+    background-color: #3f3f3f80;
+    border: #3f3f3f80 2px solid;
+    transition: background-color 0.2s;
+  }
+
+  .dark:hover{
+    background-color: #3f3f3f;
+    background-color: #3f3f3fc7;
+    transition: background-color 0.2s;
+  }
+
+  .auto{
+    background-color: #145a80;
+    background-color: #145a8080;
+    border: #145a8080 2px solid;
+    transition: background-color 0.2s;
+  }
+
+  .auto:hover{
+    background-color: #145a80;
+    background-color: #145a80c7;
+    transition: background-color 0.2s;
   }
 
 .bottomButton{
+  position: sticky;
+  bottom: 8px;
     background-color:#2e073d;
     border-radius: 12px;
     padding: 8px;
@@ -231,4 +293,28 @@ div.savedMessage{
   
   .slider.round:before {
     border-radius: 12px;
+  }
+
+  .gradientBackgroundAnimation{
+    background: #710a97;
+  }
+
+  .gradientBackgroundAnimation {
+    background: linear-gradient(300deg, #000000, #710a97, #000000);
+    background-size: 180% 180%;
+    animation: gradient-animation 18s ease infinite;
+  }
+  
+  @keyframes gradient-animation {
+    0% {
+      background-position: 0% 50%;
+    }
+  
+    50% {
+      background-position: 100% 50%;
+    }
+  
+    100% {
+      background-position: 0% 50%;
+    }
   }
