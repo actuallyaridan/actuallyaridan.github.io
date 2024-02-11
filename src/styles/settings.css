@@ -1,0 +1,96 @@
+@font-face {
+    font-family: Jost;
+    font-style: normal;
+    font-display: swap; /*When using swap as font-display, the browser will render the text with the fallback font and once it loads Jost, it'll swap over to it. Makes the site feel faster*/
+    src: url(fonts/Jost.ttf);
+  }
+  
+  @font-face {
+    font-family: Jost;
+    font-style: italic;
+    font-display: swap; /*When using swap as font-display, the browser will render the text with the fallback font and once it loads Jost, it'll swap over to it. Makes the site feel faster*/
+    src: url(fonts/Jost-Italic.ttf);
+  }
+
+  a, p, button{
+    font-family: Jost, sans-serif;
+  }
+
+main{
+    background-color: #710a97;
+    padding-left: 12px;
+    padding-right: 12px;
+    color: white;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    border-radius: 12px;
+}
+
+.setting{
+    padding-bottom: 12px;
+}
+
+ul{
+    list-style: none;
+    background-color: #370549;
+    padding: 12px;
+    border-radius: 12px;
+
+}
+
+li{
+display: flex;
+align-items: center;
+justify-content: space-between;
+}
+
+button{
+    color: white;
+    font-family: Jost, sans-serif;
+    background-color: #120218;
+    background-color: #12021880;
+    border: #120218 2px solid;
+    border: #12021880 2px solid;
+    padding: 8px;
+    text-decoration: none;
+    width: -moz-fit-content;
+    width: fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    font-size: initial;
+    cursor: pointer;
+    transition: background-color .2s;
+    font-size: initial;
+    touch-action: manipulation;
+    border-radius: 12px;
+}
+
+.red{
+    background-color: #f94c57;
+    background-color: #f94c5780;
+    border: #f94c57 2px solid;
+    border: #f94c5780 2px solid;
+    transition: background-color 0.2s;
+  }
+  
+  .red:hover{
+    background-color: #f94c57;
+    background-color: #f94c57c7;
+    border: #fc3c44 2px solid;
+    border: #fc3c44c7 2px solid;
+    transition: background-color 0.2s;
+  }
+
+  .green{
+    background-color: #53d769;
+    background-color: #53d76980;
+    border: #53d769 2px solid;
+    border: #53d76980 2px solid;
+    transition: background-color 0.2s;
+  }
+  
+  .green:hover{
+    background-color: #53d769;
+    background-color: #53d769c7;
+    transition: background-color 0.2s;
+  }
