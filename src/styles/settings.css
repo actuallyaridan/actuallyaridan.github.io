@@ -232,15 +232,17 @@ input[type="radio"]:checked + label {
   }
 
 header{
-  position: sticky;
+  position: fixed;
+  right: 0;
   top: 0;
+  float: right;
+  z-index: 999;
 }
 
 div.savedMessage{
   padding: 8px;
   color: white;
   font-family: Jost, sans-serif;
-  z-index: 999;
 
 }
 
