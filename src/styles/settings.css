@@ -38,7 +38,6 @@ ul{
     background-color: #370549;
     padding: 12px;
     border-radius: 12px;
-
 }
 
 li{
@@ -66,6 +65,21 @@ button{
     font-size: initial;
     touch-action: manipulation;
     border-radius: 12px;
+}
+
+header{
+    -webkit-backdrop-filter: saturate(180%) blur(20px); 
+    backdrop-filter: saturate(180%) blur(20px); 
+    background-color: #000000;
+    background-color: #00000080;
+    margin: 12px;
+    padding: 12px;
+    border-radius: 12px;
+    position: sticky;
+    top: 0px;
+    display: flex;
+    justify-content: right;
+    align-items: right;
 }
 
 .red{
