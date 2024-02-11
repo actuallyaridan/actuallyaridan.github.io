@@ -12,6 +12,10 @@
     src: url(fonts/Jost-Italic.ttf);
   }
 
+  :root {
+    --accent-color: #710a97; /* Initial value */
+  }
+
   a, p, button{
     font-family: Jost, sans-serif;
   }
