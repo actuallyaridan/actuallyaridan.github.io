@@ -1,4 +1,9 @@
 window.addEventListener('DOMContentLoaded', () => {
+  const storedColor = localStorage.getItem('accent-color');
+  document.documentElement.style.setProperty('--accent-color', storedColor);
+});
+
+window.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('settings');
     const radioButtons = form.elements['accent-color'];
   
@@ -24,7 +29,6 @@ window.addEventListener('DOMContentLoaded', () => {
       }
     }
   });
-
 
   function settingsAlert() {
     document.getElementById("failSave").classList.remove("result");
