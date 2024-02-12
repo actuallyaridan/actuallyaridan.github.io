@@ -899,7 +899,7 @@ background-color: var(--accent-color 80%);
   transition: .4s;
 }
 
-header.settings{
+div.messages{
 all: initial;
 position: fixed;
 right: 0;

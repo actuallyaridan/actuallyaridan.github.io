@@ -17,20 +17,51 @@
 </head>
 
 <body class="gradientBackgroundAnimation settings">
-    <header class="settings">
-        <div>
-            <div id="failSave" class="savedMessage failed">
-                <span class="closebtn" onclick="settingsAlert()">&#x2715;</span>
-                Failed to save settings.<br>Try again.
+    <header>
+        <nav>
+            <div class="navWrapper">
+                <a class="navButton" href="index.html"><img draggable="false" class="emoji" alt=""
+                        src="src/images/emojis/house.svg"> Home</a>
+                <a class="navButton" href="experiences.html"><img draggable="false" class="emoji" alt=""
+                        src="src/images/emojis/brain.svg"> Experiences</a>
+                <a class="navButton" href="projects.html"><img draggable="false" class="emoji" alt=""
+                        src="src/images/emojis/tools.svg"> Projects</a>
+                <a class="navButton" href="contact.html"><img draggable="false" class="emoji" alt=""
+                        src="src/images/emojis/speak.svg"> Contact</a>
+                <a class="navButton activeChoice" href="settings.html"><img draggable="false" class="emoji" alt=""
+                        src="src/images/emojis/speak.svg"> Settings</a>
             </div>
-
-            <div id="sucessfullSave" class="savedMessage sucessfull">
-                <span class="closebtn" onclick="settingsAlert()">&#x2715;</span>
-                Settings saved successfully!<br>Refresh to apply.
+            <div class="navWrapperMobile">
+                <button onclick="toggleMenu()" class="navButton">＝ Menu</button>
             </div>
-        </div>
+            <div class="mobileMenu" id="mobileMenuID">
+                <a class="navButton" href="index.html"><img draggable="false" class="emoji" alt=""
+                        src="src/images/emojis/house.svg"> Home</a>
+                <a class="navButton" href="experiences.html"><img draggable="false" class="emoji" alt=""
+                        src="src/images/emojis/brain.svg"> Experiences</a>
+                <a class="navButton" href="projects.html"><img draggable="false" class="emoji" alt=""
+                        src="src/images/emojis/tools.svg"> Projects</a>
+                <a class="navButton" href="contact.html"><img draggable="false" class="emoji" alt=""
+                        src="src/images/emojis/speak.svg"> Contact</a>
+                <a class="navButton activeChoice" href="settings.html"><img draggable="false" class="emoji" alt=""
+                        src="src/images/emojis/speak.svg"> Settings</a>
+            </div>
+        </nav>
     </header>
     <main class="settings">
+        <div class="messages">
+            <div>
+                <div id="failSave" class="savedMessage failed">
+                    <span class="closebtn" onclick="settingsAlert()">&#x2715;</span>
+                    Failed to save settings.<br>Try again.
+                </div>
+    
+                <div id="sucessfullSave" class="savedMessage sucessfull">
+                    <span class="closebtn" onclick="settingsAlert()">&#x2715;</span>
+                    Settings saved successfully!<br>Refresh to apply.
+                </div>
+            </div>
+        </div>
         <form id="settings" action="src/scripts/settings.js">
             <div class="settingGroup">
                 <p>Content that you see</p>
@@ -39,7 +70,7 @@
                         <li>
                             <p>Language</p>
                             <div>
-                                <button>English</button>
+                                <button>This feature is currently broken</button>
                             </div>
                         </li>
                     </ul>
