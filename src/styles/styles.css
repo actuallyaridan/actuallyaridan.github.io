@@ -802,16 +802,16 @@ border-color: #14031a80;
   transition: background-color 0.2s;
 }
 
-.yellow{
-  background-color: #dcc836;
-  background-color: #dcc83680;
-  border: #dcc83680 2px solid;
+.orange{
+  background-color: #f2841d;
+  background-color: #f2841d80;
+  border: #f2841d80 2px solid;
   transition: background-color 0.2s;
 }
 
-.yellow:hover{
-  background-color: #dcc836;
-  background-color: #dcc836c7;
+.orange:hover{
+  background-color: #f2841d;
+  background-color: #f2841dc7;
   transition: background-color 0.2s;
 }
 
@@ -870,10 +870,15 @@ border-color: #14031a80;
 .bottomButton{
 position: sticky;
 bottom: 8px;
-background-color: var(--accent-color 80%);
   border-radius: 12px;
   padding: 8px;
+  background-color: var(--accent-color);
+  margin: 12px;
 }
+
+.bottomButton>button{
+  border: none;
+  }
 
 .switch {
   position: relative;
@@ -981,6 +986,10 @@ input:checked + .slider:before {
   border-radius: 12px;
 }
 
+li>p{
+  text-align: left;
+}
+
 
 .gradientBackgroundAnimation{
   background: var(--accent-color);
@@ -990,10 +999,6 @@ input:checked + .slider:before {
   background: linear-gradient(300deg, #000000, var(--accent-color), #000000);
   background-size: 180% 180%;
   animation: gradient-animation 18s ease infinite;
-}
-
-li>p{
-  text-align: left;
 }
 
 /*Keyframes for the animation*/
