@@ -802,6 +802,19 @@ border-color: #14031a80;
   transition: background-color 0.2s;
 }
 
+.yellow{
+  background-color: #dcc836;
+  background-color: #dcc83680;
+  border: #dcc83680 2px solid;
+  transition: background-color 0.2s;
+}
+
+.yellow:hover{
+  background-color: #dcc836;
+  background-color: #dcc836c7;
+  transition: background-color 0.2s;
+}
+
 .purple{
   background-color: #710a97;
   background-color: #710a9780;
