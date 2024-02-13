@@ -1,6 +1,7 @@
 window.addEventListener('DOMContentLoaded', () => {
   const storedColor = localStorage.getItem('accent-color');
   document.documentElement.style.setProperty('--accent-color', storedColor);
+  document.querySelector("meta[name=theme-color]").content=storedColor;
 });
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -26,6 +27,7 @@ window.addEventListener('DOMContentLoaded', () => {
       if (matchingRadio) {
         matchingRadio.checked = true;
         document.documentElement.style.setProperty('--accent-color', storedColor);
+        document.querySelector("meta[name=theme-color]").content=storedColor;
       }
     }
   });
