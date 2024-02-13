@@ -663,7 +663,7 @@ a, p, button{
   font-family: Jost, sans-serif;
 }
 
-body.settings{
+body{
   background-color: #710a97;
   background-color: var(--accent-color);
 }
