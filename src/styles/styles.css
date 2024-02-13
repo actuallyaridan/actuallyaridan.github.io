@@ -689,6 +689,10 @@ main.settings{
   text-align: left;
 }
 
+form{
+  min-width: 60%;
+}
+
 ul{
   list-style: none;
   background-color: #120218;
@@ -702,6 +706,8 @@ display: flex;
 align-items: center;
 justify-content: space-between;
 }
+
+
 
 li>div{
 display: flex;
@@ -992,6 +998,7 @@ input:checked + .slider:before {
 
 li>p{
   text-align: left;
+  padding-right: 24px;
 }
 
 
