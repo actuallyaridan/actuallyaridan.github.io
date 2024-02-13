@@ -675,6 +675,10 @@ main.settings{
   padding-top: 12px;
   padding-bottom: 12px;
   border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .setting{
@@ -1026,6 +1030,8 @@ li>p{
   }
   div.navWrapper {
     display: flex;
+  }
+  main.settings{
   }
 }
 
