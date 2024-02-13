@@ -39,7 +39,7 @@ header{
   padding: 12px;
   border-radius: 12px;
   position: sticky;
-  top: 0px;
+  top: 12px;
 }
 
 body{
@@ -669,12 +669,6 @@ body{
 }
 
 main.settings{
-  padding-left: 12px;
-  padding-right: 12px;
-  color: white;
-  padding-top: 12px;
-  padding-bottom: 12px;
-  border-radius: 12px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -879,7 +873,7 @@ border-color: #14031a80;
 
 .bottomButton{
 position: sticky;
-bottom: 8px;
+bottom: 12px;
   border-radius: 12px;
   padding: 8px;
   background-color: var(--accent-color);
