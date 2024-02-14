@@ -108,8 +108,8 @@ p.subTitle{
   color: rgb(203, 203, 203);
 }
 
-p.subTitleExp{
-  color: rgb(180, 180, 180);
+p.subTitleExp, p.projectName{
+  color: rgb(255, 255, 255);
 }
 
 div.education, div.work{
