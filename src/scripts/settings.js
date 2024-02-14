@@ -4,10 +4,12 @@ window.addEventListener('DOMContentLoaded', () => {
   document.querySelector("meta[name=theme-color]").content=storedColor;
 });
 
-window.addEventListener('DOMContentLoaded', () => {
-    const form = document.getElementById('settings');
-    const radioButtons = form.elements['accent-color'];
-  
+
+window.addEventListener('DOMContentLoaded', () => {  
+    if(document.getElementById('settings')){
+      const form = document.getElementById('settings');
+      const radioButtons = form.elements['accent-color'];
+
     form.addEventListener('submit', (event) => {
       event.preventDefault(); // Prevent default form submission
       document.getElementById("sucessfullSave").classList.add("result");
@@ -18,8 +20,7 @@ window.addEventListener('DOMContentLoaded', () => {
   
       // Update the page style based on the selected color (optional)
       document.documentElement.style.setProperty('--accent-color', chosenColor);
-    });
-  
+    });  
     // Check for existing color preference on page load
     const storedColor = localStorage.getItem('accent-color');
     if (storedColor) {
@@ -30,7 +31,7 @@ window.addEventListener('DOMContentLoaded', () => {
         document.querySelector("meta[name=theme-color]").content=storedColor;
       }
     }
-  });
+  }});
 
   function settingsAlert() {
     document.getElementById("failSave").classList.remove("result");
