@@ -18,7 +18,7 @@ html {
 }
 
 :root {
-  --accent-color: #710a97; /* Initial value */
+  --accent-color: 113, 10, 151; /* Initial value */
 }
 
 /*Scales down emojis*/
@@ -665,7 +665,7 @@ a, p, button{
 
 body{
   background-color: #710a97;
-  background-color: var(--accent-color);
+  background-color: rgba(var(--accent-color));
 }
 
 main.settings{
@@ -729,10 +729,11 @@ list-style-type: none;
   font-family: Jost, sans-serif;
   background-color: #120218;
   background-color: #12021880;
-  background-color: var(--accent-color 80%);
+  background-color: 12021880;
+  background-color: rgba(var(--accent-color), 0.50);
   border: #120218 2px solid;
   border: #12021880 2px solid;
-  border: var(--accent-color 80%) 2px solid;
+  border: rgba(var(--accent-color), 0.50) 2px solid;
   padding: 8px;
   text-decoration: none;
   width: -moz-fit-content;
@@ -745,6 +746,7 @@ list-style-type: none;
   font-size: initial;
   touch-action: manipulation;
   border-radius: 12px;
+  -webkit-appearance: none;
 }
 
 button.close{
@@ -876,8 +878,10 @@ position: sticky;
 bottom: 12px;
   border-radius: 12px;
   padding: 8px;
-  background-color: var(--accent-color);
-  margin: 12px;
+  -webkit-backdrop-filter: saturate(180%) blur(20px); 
+  backdrop-filter: saturate(180%) blur(20px); 
+  background-color: #000000;
+  background-color: #00000080;
 }
 
 .bottomButton>button{
@@ -968,11 +972,11 @@ color: black;
 }
 
 input:checked + .slider {
-  background-color: var(--accent-color);
+  background-color: rgba(var(--accent-color));
 }
 
 input:focus + .slider {
-  box-shadow: 0 0 1px var(--accent-color);
+  box-shadow: 0 0 1px rgba(var(--accent-color));
 }
 
 input:checked + .slider:before {
@@ -997,11 +1001,11 @@ li>p{
 
 
 .gradientBackgroundAnimation{
-  background: var(--accent-color);
+  background: rgba(var(--accent-color));
 }
 
 .gradientBackgroundAnimation {
-  background: linear-gradient(300deg, #000000, var(--accent-color), #000000);
+  background: linear-gradient(300deg, #000000, rgba(var(--accent-color)), #000000);
   background-size: 180% 180%;
   animation: gradient-animation 18s ease infinite;
 }
