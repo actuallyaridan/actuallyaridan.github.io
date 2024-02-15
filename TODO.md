@@ -11,9 +11,9 @@ This file contains all plans for aridan.net.
 - [ ] Settings menu
   - [ ] Appearance   
     - [ ] Dark and light themes 
-    - [ ] Selectable accent colors
+    - [x] Selectable accent colors
   - [ ] Accessibility
-    - [ ] Option to disable the background gradient and its animation
+    - [x] Option to disable the background gradient and its animation
     - [ ] Option to increase contrast
 
 ### In Progress
