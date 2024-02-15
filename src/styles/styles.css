@@ -665,7 +665,7 @@ a, p, button{
 
 body{
   background-color: #710a97;
-  background-color: rgba(var(--accent-color));
+  background-color: rgb(var(--accent-color));
 }
 
 main.settings{
@@ -884,10 +884,6 @@ bottom: 12px;
   background-color: #000000;
   background-color: #00000080;
 }
-
-.bottomButton>button{
-  border: none;
-  }
 
 .switch {
   position: relative;
