@@ -21,6 +21,8 @@ html {
   --accent-color: 113, 10, 151; /* Initial value */
 }
 
+
+
 /*Scales down emojis*/
 img.emoji{
   height: 1em;
@@ -1001,6 +1003,11 @@ li>p{
   background-size: 180% 180%;
   animation: gradient-animation 18s ease infinite;
 }
+
+.noAnimation, .noAnimation:before, .noAnimation:after{
+  transition: none !important;
+}
+
 
 /*Keyframes for the animation*/
 @keyframes gradient-animation {
