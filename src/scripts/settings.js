@@ -37,27 +37,30 @@ window.addEventListener('DOMContentLoaded', () => {
     }
   }});
 
-  window.addEventListener('DOMContentLoaded', () => {
-    if (document.getElementById('settings')) {
-      const form = document.getElementById('settings');
-      const languageSelect = document.getElementById('language-select');
-      const currentUrl = window.location.href; // Get current URL
-  
-      form.addEventListener('submit', (event) => {
-        event.preventDefault(); // Prevent default form submission
-  
-        const selectedLanguage = languageSelect.value;
-        const redirectUrl = selectedLanguage === 'sv' && !currentUrl.includes('/sv/') ? 'sv/settings' :
-                            selectedLanguage === 'en' && currentUrl.includes('/sv/') ? '../settings' : ''; // Redirect only if not already on "aridan.net/settings"
-  
-        if (redirectUrl) { // Only redirect if there's a valid URL
-          window.location.href = redirectUrl;
-        }
-      });
-    }
-  });
-
   function settingsAlert() {
     document.getElementById("failSave").classList.remove("result");
     document.getElementById("sucessfullSave").classList.toggle("result");
 }
+
+
+
+
+window.addEventListener('DOMContentLoaded', () => {
+  if (document.getElementById('settings')) {
+    const form = document.getElementById('settings');
+    const languageSelect = document.getElementById('language-select');
+    const currentUrl = window.location.href; // Get current URL
+
+    form.addEventListener('submit', (event) => {
+      event.preventDefault(); // Prevent default form submission
+
+      const selectedLanguage = languageSelect.value;
+      const redirectUrl = selectedLanguage === 'sv' && !currentUrl.includes('/sv/') ? 'sv/settings' :
+                          selectedLanguage === 'en' && currentUrl.includes('/sv/') ? '../settings' : ''; // Redirect only if not already on "aridan.net/settings"
+
+      if (redirectUrl) { // Only redirect if there's a valid URL
+        window.location.href = redirectUrl;
+      }
+    });
+  }
+});
