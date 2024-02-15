@@ -746,6 +746,7 @@ list-style-type: none;
   font-size: initial;
   touch-action: manipulation;
   border-radius: 12px;
+  appearance: none;
   -webkit-appearance: none;
 }
 
