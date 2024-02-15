@@ -1,3 +1,4 @@
+/*Applies all settings to all pages from local storage, if they exist*/
 window.addEventListener('DOMContentLoaded', () => {
   const storedColor = localStorage.getItem('accent-color');
   const formattedColor = `rgb(${storedColor})`;
@@ -24,9 +25,10 @@ window.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('button, a, span, body, label, input')
     .forEach(element => element.classList.remove('noAnimation'));
   }
-});
+}); 
 
 
+/*Manages the accent color toggle*/
 window.addEventListener('DOMContentLoaded', () => {
   if (document.getElementById('settings')) {
     const form = document.getElementById('settings');
@@ -59,6 +61,8 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 });
 
+
+/*Manages the animations toggle*/
 window.addEventListener('DOMContentLoaded', () => {
   if (document.getElementById('settings')) {
   const animationsCheckbox = document.getElementById('animations');
@@ -96,7 +100,7 @@ window.addEventListener('DOMContentLoaded', () => {
 }
 });
 
-
+/*Manages the gradients toggle*/
 window.addEventListener('DOMContentLoaded', () => {
   if (document.getElementById('settings')) {
     const gradientsCheckbox = document.getElementById('gradients');
@@ -137,14 +141,15 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 });
 
+
+/*Closes the alert message when the user taps the close button*/
 function settingsAlert() {
   document.getElementById("failSave").classList.remove("result");
   document.getElementById("sucessfullSave").classList.remove("result");
-}
+};
 
 
-
-
+/*Changes the language*/
 window.addEventListener('DOMContentLoaded', () => {
   if (document.getElementById('settings')) {
     const form = document.getElementById('settings');
