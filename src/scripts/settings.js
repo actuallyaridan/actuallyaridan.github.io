@@ -89,10 +89,10 @@ window.addEventListener('DOMContentLoaded', () => {
 
   // Load setting from localStorage on page load (initial state)
   const storedSetting = localStorage.getItem('showAnimations');
-  if (storedSetting === 'true') {
-    animationsCheckbox.checked = true;
-  } else {
+  if (storedSetting === 'false') {
     animationsCheckbox.checked = false;
+  } else {
+    animationsCheckbox.checked = ture;
   }
 
   // Apply initial animation state based on localStorage
