@@ -3,24 +3,26 @@ window.addEventListener('DOMContentLoaded', () => {
   const formattedColor = `rgb(${storedColor})`;
   document.documentElement.style.setProperty('--accent-color', storedColor);
   document.querySelector("meta[name=theme-color]").content = formattedColor;
-  // Check for existing color preference on page load
+  
   const storedGradientsEnabled = localStorage.getItem('showGradients');
-
-
   if (storedGradientsEnabled) {
     const body = document.body;
-    const gradientsCheckbox = document.getElementById('gradients');
     const isGradientsEnabled = storedGradientsEnabled === 'true';
 
     if (isGradientsEnabled) {
       body.classList.add('gradientBackgroundAnimation');
-      gradientsCheckbox.checked = true;
     } else {
       body.classList.remove('gradientBackgroundAnimation');
-      gradientsCheckbox.checked = false;
-
     }
-    gradientsCheckbox.checked = isGradientsEnabled;
+  }
+
+  const storedSetting = localStorage.getItem('showAnimations');
+  if (storedSetting === 'false') {
+    document.querySelectorAll('button, a, span, body, label, input')
+    .forEach(element => element.classList.add('noAnimation'));
+  } else {
+    document.querySelectorAll('button, a, span, body, label, input')
+    .forEach(element => element.classList.remove('noAnimation'));
   }
 });
 
@@ -58,6 +60,7 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 window.addEventListener('DOMContentLoaded', () => {
+  if (document.getElementById('settings')) {
   const animationsCheckbox = document.getElementById('animations');
   const form = document.getElementById('settings');
 
@@ -90,6 +93,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
   // Apply initial animation state based on localStorage
   toggleNoAnimationsClass();
+}
 });
 
 
@@ -114,6 +118,22 @@ window.addEventListener('DOMContentLoaded', () => {
       // Update localStorage with the current checkbox state
       localStorage.setItem('showGradients', isGradientsEnabled);
     });
+    const storedGradientsEnabled = localStorage.getItem('showGradients');
+    if (storedGradientsEnabled) {
+      const body = document.body;
+      const gradientsCheckbox = document.getElementById('gradients');
+      const isGradientsEnabled = storedGradientsEnabled === 'true';
+      
+      if (isGradientsEnabled) {
+        body.classList.add('gradientBackgroundAnimation');
+        gradientsCheckbox.checked = true;
+      } else {
+        body.classList.remove('gradientBackgroundAnimation');
+        gradientsCheckbox.checked = false;
+  
+      }
+      gradientsCheckbox.checked = isGradientsEnabled;
+    }
   }
 });
 
