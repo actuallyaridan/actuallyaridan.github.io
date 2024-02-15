@@ -874,15 +874,15 @@ border-color: #14031a80;
   transition: background-color 0.2s;
 }
 
-.bottomButton{
-position: sticky;
+.saveSettings{
+  position: sticky;
 bottom: 12px;
-  border-radius: 12px;
-  padding: 8px;
-  -webkit-backdrop-filter: saturate(180%) blur(20px); 
-  backdrop-filter: saturate(180%) blur(20px); 
-  background-color: #000000;
-  background-color: #00000080;
+-webkit-backdrop-filter: saturate(180%) blur(20px); 
+backdrop-filter: saturate(180%) blur(20px); 
+background-color: #000000;
+background-color: #00000080;
+border-radius: 12px;
+padding: 8px;
 }
 
 .switch {
@@ -923,30 +923,25 @@ bottom: 12px;
 }
 
 div.messages{
-all: initial;
-position: fixed;
-right: 0;
-top: 0;
-float: right;
-z-index: 999;
+  text-align: center;
+
 }
 
 div.savedMessage{
 padding: 8px;
 color: white;
 font-family: Jost, sans-serif;
+border-radius: 12px;
 
 }
 
 .closebtn {
-margin-left: 15px;
 color: white;
-font-weight: bold;
 float: right;
-font-size: 22px;
 line-height: 20px;
 cursor: pointer;
 transition: 0.3s;
+font-family: Jost, sans-serif;
 }
 
 .closebtn:hover {
@@ -965,7 +960,7 @@ color: black;
 
 .result{
   display: block;
-  float: right;
+  margin-bottom: 12px;
 }
 
 input:checked + .slider {

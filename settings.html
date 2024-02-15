@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#710a97">
     <title>Settings — actuallyaridan</title>
-    <link href="src/styles/styles.css" rel="stylesheet">
-    <link href="src/styles/styles.css" rel="stylesheet">
     <script src="src/scripts/settings.js"></script>
+    <link href="src/styles/styles.css" rel="stylesheet">
+    <link href="src/styles/styles.css" rel="stylesheet">
     <script src="src/scripts/dropDownMenu.js"></script>
     <script src="src/scripts/mobileMenu.js"></script>
     <script src="src/scripts/emailModalBox.js"></script>
@@ -54,19 +54,6 @@
     </header>
     <main class="settings">
         <h1>Settings</h1>
-        <div class="messages">
-            <div>
-                <div id="failSave" class="savedMessage failed">
-                    <span class="closebtn" onclick="settingsAlert()">&#x2715;</span>
-                    Failed to save settings.<br>Try again.
-                </div>
-    
-                <div id="sucessfullSave" class="savedMessage sucessfull">
-                    <span class="closebtn" onclick="settingsAlert()">&#x2715;</span>
-                    Settings saved successfully!<br>Refresh to apply.
-                </div>
-            </div>
-        </div>
         <form id="settings" action="src/scripts/settings.js">
             <div class="settingGroup">
                 <p>Content that you see</p>
@@ -151,8 +138,23 @@
                     </ul>
                 </div>
             </div>
-            <div class="bottomButton">
-                <button class="saveButton" type="submit">Save settings</button>
+            <div class="saveSettings">
+                <div class="messages">
+                    <div>
+                        <div id="failSave" class="savedMessage failed">
+                            <span class="closebtn" onclick="settingsAlert()">&#x2715;</span>
+                            Failed to save settings.<br>Try again.
+                        </div>
+            
+                        <div id="sucessfullSave" class="savedMessage sucessfull">
+                            <span class="closebtn" onclick="settingsAlert()">&#x2715;</span>
+                            Settings saved successfully!<br>Refresh to apply.
+                        </div>
+                    </div>
+                </div>
+                <div class="bottomButton">
+                    <button class="saveButton" type="submit">Save settings</button>
+                </div>
             </div>
         </form>
     </main>
