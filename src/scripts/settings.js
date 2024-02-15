@@ -39,7 +39,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
   function settingsAlert() {
     document.getElementById("failSave").classList.remove("result");
-    document.getElementById("sucessfullSave").classList.toggle("result");
+    document.getElementById("sucessfullSave").classList.remove("result");
 }
 
 
