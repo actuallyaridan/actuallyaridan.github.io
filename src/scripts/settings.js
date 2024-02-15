@@ -2,28 +2,47 @@ window.addEventListener('DOMContentLoaded', () => {
   const storedColor = localStorage.getItem('accent-color');
   const formattedColor = `rgb(${storedColor})`;
   document.documentElement.style.setProperty('--accent-color', storedColor);
-  document.querySelector("meta[name=theme-color]").content=formattedColor;
+  document.querySelector("meta[name=theme-color]").content = formattedColor;
+      // Check for existing color preference on page load
+      const storedGradientsEnabled = localStorage.getItem('showGradients');
+      
+
+      if (storedGradientsEnabled) {
+        const body = document.body;
+        const gradientsCheckbox = document.getElementById('gradients');
+        const isGradientsEnabled = storedGradientsEnabled === 'true';
+  
+        if (isGradientsEnabled) {
+          body.classList.add('gradientBackgroundAnimation');
+          gradientsCheckbox.checked = true;
+        } else {
+          body.classList.remove('gradientBackgroundAnimation');
+          gradientsCheckbox.checked = false;
+
+        }
+        gradientsCheckbox.checked = isGradientsEnabled;
+      }
 });
 
 
-window.addEventListener('DOMContentLoaded', () => {  
-    if(document.getElementById('settings')){
-      const form = document.getElementById('settings');
-      const radioButtons = form.elements['accent-color'];
+window.addEventListener('DOMContentLoaded', () => {
+  if (document.getElementById('settings')) {
+    const form = document.getElementById('settings');
+    const radioButtons = form.elements['accent-color'];
 
     form.addEventListener('submit', (event) => {
       event.preventDefault(); // Prevent default form submission
       document.getElementById("sucessfullSave").classList.add("result");
       const chosenColor = Array.from(radioButtons).find(radio => radio.checked).value;
-  
+
       // Save the chosen color to local storage
       localStorage.setItem('accent-color', chosenColor);
-  
+
       // Update the page style based on the selected color (optional)
       document.documentElement.style.setProperty('--accent-color', chosenColor);
       const formattedColor = `rgb(${storedColor})`;
-      document.querySelector("meta[name=theme-color]").content=formattedColor;
-    });  
+      document.querySelector("meta[name=theme-color]").content = formattedColor;
+    });
     // Check for existing color preference on page load
     const storedColor = localStorage.getItem('accent-color');
     if (storedColor) {
@@ -32,14 +51,40 @@ window.addEventListener('DOMContentLoaded', () => {
         matchingRadio.checked = true;
         document.documentElement.style.setProperty('--accent-color', storedColor);
         const formattedColor = `rgb(${storedColor})`;
-        document.querySelector("meta[name=theme-color]").content=formattedColor;
+        document.querySelector("meta[name=theme-color]").content = formattedColor;
       }
     }
-  }});
+  }
+});
 
-  function settingsAlert() {
-    document.getElementById("failSave").classList.remove("result");
-    document.getElementById("sucessfullSave").classList.remove("result");
+
+window.addEventListener('DOMContentLoaded', () => {
+  if (document.getElementById('settings')) {
+    const gradientsCheckbox = document.getElementById('gradients');
+    const form = document.getElementById('settings');
+
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const isGradientsEnabled = gradientsCheckbox.checked;
+      const body = document.body;
+    
+      if (isGradientsEnabled) {
+        body.classList.add('gradientBackgroundAnimation');
+        gradientsCheckbox.checked = true;
+      } else {
+        body.classList.remove('gradientBackgroundAnimation');
+        gradientsCheckbox.checked = false;
+      }
+    
+      // Update localStorage with the current checkbox state
+      localStorage.setItem('showGradients', isGradientsEnabled);
+    });
+  }
+});
+
+function settingsAlert() {
+  document.getElementById("failSave").classList.remove("result");
+  document.getElementById("sucessfullSave").classList.remove("result");
 }
 
 
@@ -56,7 +101,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
       const selectedLanguage = languageSelect.value;
       const redirectUrl = selectedLanguage === 'sv' && !currentUrl.includes('/sv/') ? 'sv/settings' :
-                          selectedLanguage === 'en' && currentUrl.includes('/sv/') ? '../settings' : ''; // Redirect only if not already on "aridan.net/settings"
+        selectedLanguage === 'en' && currentUrl.includes('/sv/') ? '../settings' : ''; // Redirect only if not already on "aridan.net/settings"
 
       if (redirectUrl) { // Only redirect if there's a valid URL
         window.location.href = redirectUrl;
