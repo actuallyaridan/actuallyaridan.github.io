@@ -61,6 +61,39 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 });
 
+window.addEventListener('DOMContentLoaded', () => {
+  if (document.getElementById('settings')) {
+    const form = document.getElementById('settings');
+    const radioButtons = form.elements['accent-color'];
+
+  form.addEventListener('submit', (event) => {
+    event.preventDefault(); // Prevent default form submission
+    document.getElementById("sucessfullSave").classList.add("result");
+    const storedColor = localStorage.getItem('accent-color');
+  if (storedColor == "113, 10, 151") {
+    const darkerAccentColor = "18, 2, 24";
+    localStorage.setItem('darker-accent-color', darkerAccentColor);
+    document.documentElement.style.setProperty('--darker-accent-color', darkerAccentColor);
+  } else if (storedColor == "151, 10, 10") {
+    const darkerAccentColor = "30, 0, 0";
+    localStorage.setItem('darker-accent-color', darkerAccentColor);
+    document.documentElement.style.setProperty('--darker-accent-color', darkerAccentColor);
+  } else if (storedColor ==  "10, 151, 33") {
+    const darkerAccentColor = "0, 30, 3";
+    localStorage.setItem('darker-accent-color', darkerAccentColor);
+    document.documentElement.style.setProperty('--darker-accent-color', darkerAccentColor);
+  } else if (storedColor == "10, 66, 151") {
+    const darkerAccentColor = "0, 10, 40";
+    localStorage.setItem('darker-accent-color', darkerAccentColor);
+    document.documentElement.style.setProperty('--darker-accent-color', darkerAccentColor);
+  } else if (storedColor == "151, 78, 10") {
+    const darkerAccentColor = "60, 18, 0";
+    localStorage.setItem('darker-accent-color', darkerAccentColor);
+    document.documentElement.style.setProperty('--darker-accent-color', darkerAccentColor);
+  }
+  });}
+});
+
 
 /*Manages the animations toggle*/
 window.addEventListener('DOMContentLoaded', () => {
