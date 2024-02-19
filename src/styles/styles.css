@@ -121,6 +121,7 @@ div.education, div.work{
 div.project{
   background-color: #120218;
   background-color: #12021880;
+  background-color: rgba(var(--darker-accent-color), 0.50);
   padding: 12px;
   margin: 12px;
   border-radius: 12px;
@@ -488,6 +489,7 @@ text-decoration: none;
 div.socialMedias{
   background-color: #120218;
   background-color: #12021880;
+  background-color: rgba(var(--darker-accent-color), 0.50);
   padding: 12px;
   margin: 12px;
   border-radius: 12px;
@@ -589,6 +591,7 @@ div.footer{
 .aboutMe{
   background-color: #120218;
   background-color: #12021880;
+  background-color: rgba(var(--darker-accent-color), 0.50);
   padding: 12px;
   margin: 12px;
   border-radius: 12px;
@@ -604,6 +607,7 @@ div.footer{
 .aboutMeContainer{
   background-color: #120218;
   background-color: #12021880;
+  background-color: rgba(var(--darker-accent-color), 0.50);
   padding: 12px;
   margin: 12px;
   border-radius: 12px;
@@ -617,6 +621,7 @@ div.footer{
 .aboutMeContainer>div{
   background-color: #120218;
   background-color: #12021880;
+  background-color: rgba(var(--darker-accent-color), 0.50);
   display: flex;
   flex-direction: column;
   border-radius: 12px;
@@ -631,7 +636,8 @@ div.footer{
   padding: 12px;
   margin: 12px;
   text-align: center;
-  background-color: #12021880;;
+  background-color: #12021880;
+  background-color: rgba(var(--darker-accent-color), 0.50);
   border-radius: 12px;
 }
 
@@ -695,6 +701,7 @@ ul{
   list-style: none;
   background-color: #120218;
   background-color: #12021880;
+  background-color: rgba(var(--darker-accent-color), 0.50);
   padding: 12px;
   border-radius: 12px;
 }
