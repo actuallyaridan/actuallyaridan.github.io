@@ -1010,6 +1010,14 @@ li>p{
 }
 
 
+option {
+  width: 150px; /* or max-width: 150px; */
+}
+
+option {
+  white-space: nowrap;
+}
+
 /*Keyframes for the animation*/
 @keyframes gradient-animation {
   0% {
