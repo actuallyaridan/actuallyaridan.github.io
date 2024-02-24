@@ -238,8 +238,9 @@ div.langWrapper{
 
 /*Styling for the language selector button on hover and focus */
 .lang:hover, .lang:focus, .navButton:hover, .navButton:focus{
-  background-color: #120218;
-  background-color: #120218db;
+  background-color: #000000;
+  background-color: #00000080;
+  background-color: rgba(var(--darker-accent-color));
   transition: background-color .2s;
 }
 
