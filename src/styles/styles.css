@@ -204,6 +204,7 @@ div.langWrapper{
   background-color: #120218;
   background-color: #12021880;
   background-color: rgba(var(--darker-accent-color), 0.50);
+  border:  rgba(var(--darker-accent-color), 0.50) 2px solid;
   padding: 12px;
   text-decoration: none;
   width: -moz-fit-content;
@@ -740,7 +741,7 @@ list-style-type: none;
   background-color: #12021880;
   background-color: 12021880;
   background-color: rgba(var(--darker-accent-color), 0.50);
-  border: none;
+  border:  rgba(var(--darker-accent-color), 0.50) 2px solid;
   padding: 8px;
   text-decoration: none;
   width: -moz-fit-content;
