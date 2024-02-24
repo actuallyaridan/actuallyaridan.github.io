@@ -119,16 +119,6 @@ div.education, div.work{
   padding-top: 12px;
 }
 
-#wrapperWrapperProjects{
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  justify-content: center;
-  align-self: center;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
 #wrapperProjects{
   display: flex;
   flex-wrap: wrap;
@@ -136,7 +126,6 @@ div.education, div.work{
   justify-content: center;
   align-self: center;
   flex-wrap: wrap;
-  max-width: 60%;
 }
 
 div.project{
