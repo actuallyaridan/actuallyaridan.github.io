@@ -36,6 +36,8 @@ header{
   backdrop-filter: saturate(180%) blur(20px); 
   background-color: #000000;
   background-color: #00000080;
+  background-color: rgba(18, 2, 24, 0.7);
+  background-color: rgba(var(--darker-accent-color), 0.7);
   margin: 12px;
   padding: 12px;
   border-radius: 12px;
@@ -147,7 +149,9 @@ div.project>div{
   flex-direction: row;
   flex-wrap: wrap;
   background-color: #000000;
-  background-color: #00000059;
+  background-color: #00000080;
+  background-color: rgba(18, 2, 24, 0.7);
+  background-color: rgba(var(--darker-accent-color), 0.7);
   padding: 8px;
   margin: 8px;
   border-radius: 12px;
