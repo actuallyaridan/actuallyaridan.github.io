@@ -34,8 +34,7 @@ img.emoji{
 header{
   -webkit-backdrop-filter: saturate(180%) blur(20px); 
   backdrop-filter: saturate(180%) blur(20px); 
-  background-color: #000000;
-  background-color: #00000080;
+  background-color: #120218;
   background-color: rgba(18, 2, 24, 0.7);
   background-color: rgba(var(--darker-accent-color), 0.7);
   margin: 12px;
@@ -148,8 +147,7 @@ div.project>div{
   align-items: center;
   flex-direction: row;
   flex-wrap: wrap;
-  background-color: #000000;
-  background-color: #00000080;
+  background-color: #120218;
   background-color: rgba(18, 2, 24, 0.7);
   background-color: rgba(var(--darker-accent-color), 0.7);
   padding: 8px;
@@ -900,8 +898,9 @@ border-color: #14031a80;
 bottom: 12px;
 -webkit-backdrop-filter: saturate(180%) blur(20px); 
 backdrop-filter: saturate(180%) blur(20px); 
-background-color: #000000;
-background-color: #00000080;
+background-color: #120218;
+background-color: rgba(18, 2, 24, 0.7);
+background-color: rgba(var(--darker-accent-color), 0.7);
 border-radius: 12px;
 padding: 8px;
 }
