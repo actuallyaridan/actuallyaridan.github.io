@@ -121,8 +121,8 @@ div.education, div.work{
 
 div.project{
   background-color: #120218;
-  background-color: #12021880;
-  background-color: rgba(var(--darker-accent-color), 0.50);
+  background-color: rgba(18, 2, 24, 0.7);
+  background-color: rgba(var(--darker-accent-color), 0.7);
   padding: 12px;
   margin: 12px;
   border-radius: 12px;
@@ -608,8 +608,8 @@ div.footer{
 
 .aboutMeContainer{
   background-color: #120218;
-  background-color: #12021880;
-  background-color: rgba(var(--darker-accent-color), 0.50);
+  background-color: rgba(18, 2, 24, 0.7);
+  background-color: rgba(var(--darker-accent-color), 0.7);
   padding: 12px;
   margin: 12px;
   border-radius: 12px;
@@ -622,8 +622,8 @@ div.footer{
 
 .aboutMeContainer>div{
   background-color: #120218;
-  background-color: #12021880;
-  background-color: rgba(var(--darker-accent-color), 0.50);
+  background-color: rgba(18, 2, 24, 0.7);
+  background-color: rgba(var(--darker-accent-color), 0.7);
   display: flex;
   flex-direction: column;
   border-radius: 12px;
@@ -702,8 +702,8 @@ form{
 ul{
   list-style: none;
   background-color: #120218;
-  background-color: #12021880;
-  background-color: rgba(var(--darker-accent-color), 0.50);
+  background-color: rgba(18, 2, 24, 0.7);
+  background-color: rgba(var(--darker-accent-color), 0.7);
   padding: 12px;
   border-radius: 12px;
 }
