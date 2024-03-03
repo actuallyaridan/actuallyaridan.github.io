@@ -34,8 +34,7 @@ img.emoji{
 header{
   -webkit-backdrop-filter: saturate(180%) blur(20px); 
   backdrop-filter: saturate(180%) blur(20px); 
-  background-color: #120218;
-  background-color: rgba(18, 2, 24, 0.7);
+  background-color: #0d0d0d;
   background-color: rgba(var(--darker-accent-color), 0.7);
   margin: 12px;
   padding: 12px;
@@ -75,10 +74,10 @@ main, footer{
 .cvButton{
   color: white;
   font-family: Jost, sans-serif;
-  background-color: #120218;
-  background-color: #12021880;
-  border: #120218 2px solid;
-  border: #12021880 2px solid;
+  background-color: #4b4b4b;
+  background-color: #4b4b4b80;
+  border: #4b4b4b 2px solid;
+  border: #4b4b4b80 2px solid;
   padding: 12px;
   text-decoration: none;
   width: -moz-fit-content;
@@ -94,9 +93,8 @@ main, footer{
 }
 
 .cvButton:hover, .cvButton:focus{
-  background-color: #120218;
-  background-color: #120218db;
-  transition: background-color .2s;
+  background-color: #4b4b4bc7;
+  transition: background-color 0.2s;
 }
 
 /*Styling for general text*/
@@ -120,9 +118,8 @@ div.education, div.work{
 }
 
 div.project{
-  background-color: #120218;
-  background-color: rgba(18, 2, 24, 0.7);
-  background-color: rgba(var(--darker-accent-color), 0.7);
+  background-color: #121212;
+  background-color: rgba(var(--accent-color), 0.10);
   padding: 12px;
   margin: 12px;
   border-radius: 12px;
@@ -147,9 +144,8 @@ div.project>div{
   align-items: center;
   flex-direction: row;
   flex-wrap: wrap;
-  background-color: #120218;
-  background-color: rgba(18, 2, 24, 0.7);
-  background-color: rgba(var(--darker-accent-color), 0.7);
+  background-color: #191919;
+  background-color: rgba(var(--accent-color), 0.10);
   padding: 8px;
   margin: 8px;
   border-radius: 12px;
@@ -205,8 +201,7 @@ div.langWrapper{
   font-family: Jost, sans-serif;
   background-color: #120218;
   background-color: #12021880;
-  background-color: rgba(var(--darker-accent-color), 0.50);
-  border:  rgba(var(--darker-accent-color), 0.50) 2px solid;
+  background-color: rgba(var(--accent-color), 0.10);
   padding: 12px;
   text-decoration: none;
   width: -moz-fit-content;
@@ -490,7 +485,7 @@ text-decoration: none;
 div.socialMedias{
   background-color: #120218;
   background-color: #12021880;
-  background-color: rgba(var(--darker-accent-color), 0.50);
+  background-color: rgba(var(--accent-color), 0.10);
   padding: 12px;
   margin: 12px;
   border-radius: 12px;
@@ -676,8 +671,7 @@ a, p, button{
 }
 
 body{
-  background-color: #710a97;
-  background-color: rgb(var(--accent-color));
+  background-color: #161616;
 }
 
 main.settings{
@@ -703,7 +697,7 @@ ul{
   list-style: none;
   background-color: #120218;
   background-color: rgba(18, 2, 24, 0.7);
-  background-color: rgba(var(--darker-accent-color), 0.7);
+  background-color: rgba(var(--accent-color), 0.1);
   padding: 12px;
   border-radius: 12px;
 }
@@ -743,8 +737,8 @@ list-style-type: none;
   background-color: #120218;
   background-color: #12021880;
   background-color: 12021880;
-  background-color: rgba(var(--darker-accent-color), 0.50);
-  border:  rgba(var(--darker-accent-color), 0.50) 2px solid;
+  background-color: rgba(var(--accent-color), 0.10);
+  border:  none;
   padding: 8px;
   text-decoration: none;
   width: -moz-fit-content;
@@ -772,18 +766,18 @@ font-weight: normal;
 }
 
 .button:hover{
-  background-color: rgba(var(--darker-accent-color));
+  background-color: rgba(var(--accent-color), 0.3);
   }
 
   .saveButton:hover{
-    background-color: rgba(var(--darker-accent-color));
+    background-color: rgba(var(--accent-color), 0.3);
     }
   
 
 input[type="radio"]:checked + label {
 background-color: #14031a;
-background-color: #14031a80;
-border-color: #14031a80;
+background-color: #08080880;
+border: #08080880 2px solid;
 }
 
 .red{
@@ -901,7 +895,7 @@ bottom: 12px;
 backdrop-filter: saturate(180%) blur(20px); 
 background-color: #120218;
 background-color: rgba(18, 2, 24, 0.7);
-background-color: rgba(var(--darker-accent-color), 0.7);
+background-color: rgba(var(--accent-color), 0.2);
 border-radius: 12px;
 padding: 8px;
 }

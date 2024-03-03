@@ -5,18 +5,6 @@ window.addEventListener('DOMContentLoaded', () => {
   document.documentElement.style.setProperty('--accent-color', storedColor);
   document.querySelector("meta[name=theme-color]").content = formattedColor;
 
-  const storedGradientsEnabled = localStorage.getItem('showGradients');
-  if (storedGradientsEnabled) {
-    const body = document.body;
-    const isGradientsEnabled = storedGradientsEnabled === 'true';
-
-    if (isGradientsEnabled) {
-      body.classList.add('gradientBackgroundAnimation');
-    } else {
-      body.classList.remove('gradientBackgroundAnimation');
-    }
-  }
-
   const storedSetting = localStorage.getItem('showAnimations');
   if (storedSetting === 'false') {
     document.querySelectorAll('button, a, span, body, label, input')
@@ -157,46 +145,6 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-/*Manages the gradients toggle*/
-window.addEventListener('DOMContentLoaded', () => {
-  if (document.getElementById('settings')) {
-    const gradientsCheckbox = document.getElementById('gradients');
-    const form = document.getElementById('settings');
-
-    form.addEventListener('submit', (event) => {
-      event.preventDefault();
-      const isGradientsEnabled = gradientsCheckbox.checked;
-      const body = document.body;
-
-      if (isGradientsEnabled) {
-        body.classList.add('gradientBackgroundAnimation');
-        gradientsCheckbox.checked = true;
-      } else {
-        body.classList.remove('gradientBackgroundAnimation');
-        gradientsCheckbox.checked = false;
-      }
-
-      // Update localStorage with the current checkbox state
-      localStorage.setItem('showGradients', isGradientsEnabled);
-    });
-    const storedGradientsEnabled = localStorage.getItem('showGradients');
-    if (storedGradientsEnabled) {
-      const body = document.body;
-      const gradientsCheckbox = document.getElementById('gradients');
-      const isGradientsEnabled = storedGradientsEnabled === 'true';
-
-      if (isGradientsEnabled) {
-        body.classList.add('gradientBackgroundAnimation');
-        gradientsCheckbox.checked = true;
-      } else {
-        body.classList.remove('gradientBackgroundAnimation');
-        gradientsCheckbox.checked = false;
-
-      }
-      gradientsCheckbox.checked = isGradientsEnabled;
-    }
-  }
-});
 
 
 /*Closes the alert message when the user taps the close button*/
