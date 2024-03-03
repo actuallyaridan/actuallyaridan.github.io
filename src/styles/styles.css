@@ -199,8 +199,7 @@ div.langWrapper{
 .lang, .navButton{
   color: white;
   font-family: Jost, sans-serif;
-  background-color: #120218;
-  background-color: #12021880;
+  background-color: #0e0e0e;
   background-color: rgba(var(--darker-accent-color), 0.30);
   padding: 12px;
   text-decoration: none;
