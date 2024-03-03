@@ -35,7 +35,7 @@ header{
   -webkit-backdrop-filter: saturate(180%) blur(20px); 
   backdrop-filter: saturate(180%) blur(20px); 
   background-color: #0d0d0d;
-  background-color: rgba(var(--darker-accent-color), 0.7);
+  background-color: rgba(var(--accent-color), 0.3);
   margin: 12px;
   padding: 12px;
   border-radius: 12px;
@@ -201,7 +201,7 @@ div.langWrapper{
   font-family: Jost, sans-serif;
   background-color: #120218;
   background-color: #12021880;
-  background-color: rgba(var(--accent-color), 0.10);
+  background-color: rgba(var(--darker-accent-color), 0.30);
   padding: 12px;
   text-decoration: none;
   width: -moz-fit-content;
@@ -235,7 +235,7 @@ div.langWrapper{
 .lang:hover, .lang:focus, .navButton:hover, .navButton:focus{
   background-color: #000000;
   background-color: #00000080;
-  background-color: rgba(var(--darker-accent-color));
+  background-color: rgba(var(--darker-accent-color), 0.75);
   transition: background-color .2s;
 }
 

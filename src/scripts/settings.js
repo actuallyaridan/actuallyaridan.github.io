@@ -1,9 +1,7 @@
 /*Applies all settings to all pages from local storage, if they exist*/
 window.addEventListener('DOMContentLoaded', () => {
   const storedColor = localStorage.getItem('accent-color');
-  const formattedColor = `rgb(${storedColor})`;
   document.documentElement.style.setProperty('--accent-color', storedColor);
-  document.querySelector("meta[name=theme-color]").content = formattedColor;
 
   const storedSetting = localStorage.getItem('showAnimations');
   if (storedSetting === 'false') {
@@ -56,8 +54,6 @@ window.addEventListener('DOMContentLoaded', () => {
 
       // Update the page style based on the selected color (optional)
       document.documentElement.style.setProperty('--accent-color', chosenColor);
-      const formattedColor = `rgb(${storedColor})`;
-      document.querySelector("meta[name=theme-color]").content = formattedColor;
     });
     // Check for existing color preference on page load
     const storedColor = localStorage.getItem('accent-color');
@@ -66,8 +62,6 @@ window.addEventListener('DOMContentLoaded', () => {
       if (matchingRadio) {
         matchingRadio.checked = true;
         document.documentElement.style.setProperty('--accent-color', storedColor);
-        const formattedColor = `rgb(${storedColor})`;
-        document.querySelector("meta[name=theme-color]").content = formattedColor;
       }
     }
   }
