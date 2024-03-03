@@ -694,8 +694,7 @@ form{
 
 ul{
   list-style: none;
-  background-color: #120218;
-  background-color: rgba(18, 2, 24, 0.7);
+  background-color: #121212;
   background-color: rgba(var(--accent-color), 0.1);
   padding: 12px;
   border-radius: 12px;
