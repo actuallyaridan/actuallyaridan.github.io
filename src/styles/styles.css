@@ -312,7 +312,7 @@ div.langWrapper {
 
 /*Make the title bold*/
 h1 {
-  font-weight: bold;
+  font-weight: 600;
 }
 
 /*Make the text that says "Please check back later" slightly darker*/
@@ -689,6 +689,10 @@ span.title>p {
   padding-top: 12px;
   background-color: #53d769;
   background-color: #53d76980;
+}
+
+.langProf{
+  font-weight: 500;
 }
 
 
