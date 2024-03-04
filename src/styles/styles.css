@@ -543,6 +543,7 @@ div.socialMedias {
 p.titleEmail {
   font-size: 1.4em;
   border-radius: 12px;
+  font-weight: 500;
 }
 
 .showEmail {
