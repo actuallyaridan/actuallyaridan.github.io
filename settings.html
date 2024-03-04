@@ -77,6 +77,17 @@
                         <li>
                             <p>Theme</p>
                             <div>
+                                <input type="radio" id="auto" name="theme-color" value="auto">
+                                <label for="auto" class="auto button">Follow system</label>
+                                <input type="radio" id="light" name="theme-color" value="light">
+                                <label for="light" class="light button">Light</label>
+                                <input type="radio" id="dark" name="theme-color" value="dark" checked>
+                                <label for="dark" class="dark button">Dark</label>
+                            </div>
+                        </li>
+                        <li>
+                            <p>Color</p>
+                            <div>
                                 <input type="radio" id="purple" name="accent-color" value="113, 10, 151" checked>
                                 <label for="purple" class="purple button">Purple</label>
                                 <input type="radio" id="red" name="accent-color" value="151, 10, 10">
@@ -97,7 +108,7 @@
                 <div class="setting">
                     <ul>
                         <li>
-                            <p><label for="animations">Play animations</label></p>
+                            <p><label for="animations">Perform animations</label></p>
                             <div>
                                 <label class="switch">
                                     <input type="checkbox" id="animations" name="show-animations" value="true" checked>

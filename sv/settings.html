@@ -77,6 +77,17 @@
                         <li>
                             <p>Tema</p>
                             <div>
+                                <input type="radio" id="auto" name="theme-color" value="auto" checked>
+                                <label for="auto" class="auto button">Följ systemet</label>
+                                <input type="radio" id="light" name="theme-color" value="light">
+                                <label for="light" class="light button">Ljus</label>
+                                <input type="radio" id="dark" name="theme-color" value="dark">
+                                <label for="dark" class="dark button">Mörk</label>
+                            </div>
+                        </li>
+                        <li>
+                            <p>Färg</p>
+                            <div>
                                 <input type="radio" id="purple" name="accent-color" value="113, 10, 151" checked>
                                 <label for="purple" class="purple button">Lila</label>
                                 <input type="radio" id="red" name="accent-color" value="151, 10, 10">
@@ -97,16 +108,7 @@
                 <div class="setting">
                     <ul>
                         <li>
-                            <p>Visa färggradienter</p>
-                            <div>
-                                <label class="switch">
-                                    <input type="checkbox" id="gradients" name="show-gradients" value="true" checked>
-                                    <span class="slider round"></span>
-                                </label>
-                            </div>
-                        </li>
-                        <li>
-                            <p>Spela animationer</p>
+                            <p>Utför animationer</p>
                             <div>
                                 <label class="switch">
                                     <input type="checkbox" id="animations" name="show-animations" value="true" checked>
