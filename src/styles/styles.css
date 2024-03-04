@@ -786,8 +786,6 @@ border: #080808 2px solid;
 .red:hover{
   background-color: #f94c57;
   background-color: #f94c57c7;
-  border: #fc3c44 2px solid;
-  border: #fc3c44c7 2px solid;
   transition: background-color 0.2s;
 }
 
@@ -808,6 +806,7 @@ border: #080808 2px solid;
 .blue{
   background-color: #1da0f2;
   background-color: #1da0f280;
+  border: #1da0f2 2px solid;
   border: #1da0f280 2px solid;
   transition: background-color 0.2s;
 }
@@ -821,6 +820,7 @@ border: #080808 2px solid;
 .orange{
   background-color: #f2841d;
   background-color: #f2841d80;
+  border: #f2841d 2px solid;
   border: #f2841d80 2px solid;
   transition: background-color 0.2s;
 }
@@ -834,6 +834,7 @@ border: #080808 2px solid;
 .purple{
   background-color: #710a97;
   background-color: #710a9780;
+  border: #710a97 2px solid;
   border: #710a9780 2px solid;
   transition: background-color 0.2s;
 }
