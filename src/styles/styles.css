@@ -554,6 +554,7 @@ p.titleEmail {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  background-color: #121212;
   background-color: rgba(18, 18, 18);
   padding: 12px;
   margin: 12px;
@@ -563,10 +564,8 @@ p.titleEmail {
 
 .emailModalText {
   padding: 12px;
-  background-color: rgba(0, 0, 0);
-  /* Black w/ opacity */
+  background-color: #121212;
   background-color: rgba(0, 0, 0, 0.4);
-  /* Black w/ opacity */
   border-radius: 12px;
   margin: 12px;
 }
