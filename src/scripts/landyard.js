@@ -41,8 +41,8 @@ fetch('https://api.lanyard.rest/v1/users/701403809129168978')
    document.getElementById('name').textContent = activities[0].name + ' ' + timeDiffStr;
 
    
-   document.getElementById('discord_status').textContent = discord_status;
-   document.getElementById('listening_to_spotify').textContent = listening_to_spotify;
+  //  document.getElementById('discord_status').textContent = discord_status;
+  //  document.getElementById('listening_to_spotify').textContent = listening_to_spotify;
 
    // You can add similar lines for other properties retrieved from the API
       }
