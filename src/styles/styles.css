@@ -347,6 +347,7 @@ p.bottomText {
   height: -moz-fit-content;
   height: fit-content;
   border-radius: 12px;
+  flex-direction: column;
   width: 100%;
 }
 
