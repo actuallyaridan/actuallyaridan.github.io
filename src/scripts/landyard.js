@@ -38,7 +38,7 @@ fetch('https://api.lanyard.rest/v1/users/701403809129168978')
    }
 
    // Update the activities div content with the time difference
-   document.getElementById('name').textContent = activities[0].name + ' ' + timeDiffStr;
+   document.getElementById('name').textContent = activities[0].name + ', ' + timeDiffStr;
 
    
   //  document.getElementById('discord_status').textContent = discord_status;
