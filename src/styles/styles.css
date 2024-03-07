@@ -694,6 +694,19 @@ span.title>p {
   font-weight: 500;
 }
 
+#landyardDiscord{
+  font-family: Jost, sans-serif;
+  color: white;
+  display: inline-block;
+}
+
+#loadedLandyard{
+  display: none;
+}
+
+#loadedLandyard>p{
+  display: inline;
+}
 
 
 
