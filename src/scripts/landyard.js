@@ -14,7 +14,7 @@ fetch('https://api.lanyard.rest/v1/users/701403809129168978')
    // Convert timestamps to human-readable format
    // Convert timestamp to human-readable format
    const options = { year: 'numeric', month: 'long', day: 'numeric' };
-   const activityStart = new Date(activities[0].timestamps.start);
+   const activityStart = new Date(activities[0].created_at);
    const activityStartStr = activityStart.toLocaleString('en-US', options);
 
    // Get current date and time
