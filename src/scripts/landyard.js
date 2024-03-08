@@ -6,9 +6,6 @@ fetch('https://api.lanyard.rest/v1/users/701403809129168978')
     const { activities, discord_status, listening_to_spotify } = data.data;
 
     const discordStatusDiv = document.getElementById('discordStatus');
-    if (discordStatusDiv) {
-      discordStatusDiv.textContent = discord_status === 'online' ? 'Online' : 'Offline';
-    }
     const statusWrapper = document.getElementById('statusWrapper');
     if (statusWrapper) {
       if (discord_status === 'online') {
@@ -20,6 +17,9 @@ fetch('https://api.lanyard.rest/v1/users/701403809129168978')
     if (discord_status === 'online') {
       if (!activities.length) {
         // No activity found, display message
+        const activityDiscordWrapper = document.getElementById('discordActivity');
+        activityDiscordWrapper.classList.remove('discordActivityHidden'); // Remove pre-existing "red" class
+        activityDiscordWrapper.classList.add('discordActivityShow'); // Add "green" class if online
         document.getElementById('activities').textContent = 'No activity running';
       } else {
         // Set content of divs

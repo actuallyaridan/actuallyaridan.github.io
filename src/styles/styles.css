@@ -1135,6 +1135,40 @@ header::after {
   transition: background-color 0.2s;
 }
 
+div#discord{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+#discordName, #discordActivity{
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(var(--darker-accent-color), 0.32);
+  background-color: rgba(red, green, blue, alpha);
+  padding: 8px;
+  border-radius: 12px;
+  margin: 12px;
+}
+
+#discordName>p{
+  text-align: left;
+}
+
+.discordName{
+  display: flex;
+}
+
+
+.discordActivityHidden{
+  display: none;
+}
+
+.discordActivityShow{
+  display: flex;
+}
+
 /*Keyframes for the animation*/
 @keyframes gradient-animation {
   0% {
