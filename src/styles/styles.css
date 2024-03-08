@@ -703,10 +703,12 @@ span.title>p {
 
 #loadedLandyard{
   display: none;
+  text-align: center;
 }
 
 #loadedLandyard>p{
   display: inline;
+  text-align: center;
 }
 
 
