@@ -704,13 +704,37 @@ span.title>p {
 #loadedLandyard{
   display: none;
   text-align: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-left: 6px;
+  margin-right: 6px;
 }
 
-#loadedLandyard>p{
+#loadedLandyard>p, #discordStatus, #activities{
   display: inline;
   text-align: center;
+  color: rgb(188, 188, 188);
 }
 
+#statusWrapper{
+  list-style-type: none;
+  color: white;
+  font-family: Jost, sans-serif;
+  padding: 8px;
+  text-decoration: none;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  font-size: initial;
+  transition: background-color .2s;
+  font-size: initial;
+  touch-action: manipulation;
+  border-radius: 12px;
+  appearance: none;
+  -webkit-appearance: none;
+}
 
 
 a,
@@ -1093,6 +1117,22 @@ header::after {
   content: "";
   display: table;
   clear: both;
+}
+
+.offline {
+  background-color: #f94c57;
+  background-color: #f94c5780;
+  border: #f94c57 2px solid;
+  border: #f94c5780 2px solid;
+  transition: background-color 0.2s;
+}
+
+.online {
+  background-color: #53d769;
+  background-color: #53d76980;
+  border: #53d769 2px solid;
+  border: #53d76980 2px solid;
+  transition: background-color 0.2s;
 }
 
 /*Keyframes for the animation*/

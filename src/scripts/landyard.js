@@ -9,6 +9,13 @@ fetch('https://api.lanyard.rest/v1/users/701403809129168978')
     if (discordStatusDiv) {
       discordStatusDiv.textContent = discord_status === 'online' ? 'Online' : 'Offline';
     }
+    const statusWrapper = document.getElementById('statusWrapper');
+    if (statusWrapper) {
+      if (discord_status === 'online') {
+        statusWrapper.classList.remove('offline'); // Remove pre-existing "red" class
+        statusWrapper.classList.add('online'); // Add "green" class if online
+      }
+    }
 
     if (discord_status === 'online') {
       if (!activities.length) {
@@ -44,7 +51,7 @@ fetch('https://api.lanyard.rest/v1/users/701403809129168978')
         }
   
         // Update the activities div content with the time difference
-        document.getElementById('activities').textContent ='Running ' + activities[0].name + ', ' + timeDiffStr;
+        document.getElementById('activities').textContent ='Running: ' + activities[0].name + ', ' + timeDiffStr;
   
 
         //  document.getElementById('listening_to_spotify').textContent = listening_to_spotify;
@@ -55,7 +62,7 @@ fetch('https://api.lanyard.rest/v1/users/701403809129168978')
     const loadingDiv = document.getElementById('loading');
     const conentSite = document.getElementById('loadedLandyard');
     loadingDiv.style.display = 'none';
-    conentSite.style.display = 'block'
+    conentSite.style.display = 'flex'
 
   })
   .catch(error => console.error(error));
