@@ -19,6 +19,13 @@ html {
   src: url(fonts/Jost-Italic.ttf);
 }
 
+@font-face {
+  font-family: Pixel;
+  font-display: swap;
+  /*When using swap as font-display, the browser will render the text with the fallback font and once it loads Jost, it'll swap over to it. Makes the site feel faster*/
+  src: url(fonts/Pixel.ttf);
+}
+
 :root {
   --accent-color: 113, 10, 151;
   /* Initial value */
@@ -1202,6 +1209,15 @@ div#loading>div{
 .lds-ring div:nth-child(3) {
   animation-delay: -0.15s;
 }
+
+.mcBackground{
+  background: #0C0C0C url(../images/background/dark.png) repeat;
+}
+
+.mcFont{
+  font-family: Pixel, Jost, sans-serif;
+}
+
 @keyframes lds-ring {
   0% {
     transform: rotate(0deg);
