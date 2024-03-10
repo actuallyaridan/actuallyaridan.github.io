@@ -1243,7 +1243,7 @@ div#loading>div{
   }
 }
 
-@media only screen and (min-width: 712px) {
+@media only screen and (min-width: 739px) {
 
   div.navWrapperMobile {
     display: none;
@@ -1260,7 +1260,7 @@ div#loading>div{
   main.settings {}
 }
 
-@media only screen and (max-width: 711px) {
+@media only screen and (max-width: 740px) {
   div.navWrapper {
     display: none;
   }
