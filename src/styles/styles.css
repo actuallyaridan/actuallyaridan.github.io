@@ -1253,6 +1253,18 @@ button.mcMenu{
   display: block;
 }
 
+#downloads{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#downloads>a{
+  margin: 6px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
 
 @keyframes lds-ring {
   0% {
