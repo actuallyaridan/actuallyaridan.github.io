@@ -119,6 +119,10 @@ a {
   text-align: center;
 }
 
+p{
+  word-wrap: break-word;
+}
+
 p.subTitle {
   color: rgb(203, 203, 203);
 }
@@ -145,6 +149,7 @@ div.project {
   flex-direction: column;
   justify-content: center;
   align-self: center;
+  width: 80%;
 }
 
 div.project>p {
@@ -165,6 +170,7 @@ div.project>div {
   padding: 8px;
   margin: 8px;
   border-radius: 12px;
+  max-width: 80%;
 }
 
 div.project>div>p {
@@ -173,6 +179,7 @@ div.project>div>p {
   color: rgb(188, 188, 188);
   white-space: nowrap;
   text-decoration: none;
+  word-wrap: break-word;
 }
 
 div.project>div>p>a {
@@ -725,6 +732,15 @@ span.title>p {
 }
 
 #statusWrapper{
+  display: block;
+  align-self: initial;
+  float: right;
+  z-index: 2;
+  position: relative;
+  bottom: 5vh;
+}
+
+#statusWrapper{
   list-style-type: none;
   color: white;
   font-family: Jost, sans-serif;
@@ -741,6 +757,8 @@ span.title>p {
   border-radius: 12px;
   appearance: none;
   -webkit-appearance: none;
+  text-align: right;
+  display: block;
 }
 
 
@@ -1264,6 +1282,17 @@ button.mcMenu{
   margin: 6px;
   padding-top: 2px;
   padding-bottom: 2px;
+}
+
+div.titleUnderText{
+  max-width: 80vw;
+}
+
+div.centererWrapper{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 @keyframes lds-ring {

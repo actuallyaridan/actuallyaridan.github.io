@@ -59,8 +59,8 @@
                         src="src/images/emojis/brain.svg"> Experiences</a>
                 <a class="navButton" href="projects"><img draggable="false" class="emoji" alt=""
                         src="src/images/emojis/tools.svg"> Projects</a>
-                        <a class="navButton" href="mc"><img draggable="false" class="emoji" alt=""
-                            src="src/images/emojis/game.svg"> Minecraft</a>
+                <a class="navButton" href="mc"><img draggable="false" class="emoji" alt=""
+                        src="src/images/emojis/game.svg"> Minecraft</a>
                 <a class="navButton" href="contact"><img draggable="false" class="emoji" alt=""
                         src="src/images/emojis/speak.svg"> Contact</a>
                 <a class="navButton" href="settings"><img draggable="false" class="emoji" alt=""
@@ -73,58 +73,64 @@
             <div class="constructionBox">
                 <div>
                     <h1>Home</h1>
-                    <div class="centerer">
-                        <div class="centererItems">
-                            <p>Hi there! Welcome to my website! I use this website mainly to show recruiters my skills
-                                and contact information.<br>I hope you'll enjoy your stay here. I'd give you some
-                                cookies but I respect your privacy, so maybe another time?</p>
-                        </div>
-                    </div>
                     <div>
-                        <div class="work" id="jobs">
+                        <div class="centererWrapper">
+                            <div class="titleUnderText">
+                                <p class="subTitle">Hi there! Welcome to my website! I use this website mainly to show
+                                    recruiters my skills
+                                    and contact information.I hope you'll enjoy your stay here. I'd give you some
+                                    cookies but I respect your privacy, so maybe another time?</p>
+                            </div>
                             <p class="subTitleExp">About me</p>
                             <div class="project">
                                 <p class="projectName">Adnan Bukvic, also known as @actuallyaridan</p>
                                 <p class="projectDesc">I'm a creative guy that loves making new solutions to old
-                                    things.<br> I love learning new things and I've liked computers, phones and
-                                    networking ever since I was a child.<br> I'm always up-to-date about their software
+                                    things. I love learning new things and I've liked computers, phones and
+                                    networking ever since I was a child. I'm always up-to-date about their software
                                     and hardware. I even like modifying electronics to do new things, like old
-                                    cables<br> and accessories like iPods and I know a bunch of languages too!</p>
+                                    cables and accessories like iPods and I know a bunch of languages too!</p>
                                 <div class="projectStuff">
                                     <p class="projectStatus"><img draggable="false" class="emoji" alt=""
                                             src="src/images/emojis/clock.svg"><br>19 years old</p>
                                     <p class="projectLearned"><img draggable="false" class="emoji" alt=""
-                                            src="src/images/emojis/globe.svg"><br><span class="langProf">fluent:</span><br> Swedish, English
-                                        <br><span class="langProf">speaks:</span><br> Bosnian, Croatian, Serbian</p>
+                                            src="src/images/emojis/globe.svg"><br><span class="langProf">fluent:</span>
+                                        Swedish, English
+                                        <span class="langProf"><br>speaks:</span> Bosnian, Croatian, Serbian
+                                    </p>
                                 </div>
+                            </div>
+                            <div class="project">
+                                <p class="projectName">Discord activity</p>
+                                <span id="statusWrapperWrapper">
+                                    <div id="statusWrapper" class="offline">offline</div>
+                                </span>
+
+                                <div id="landyardDiscord">
+                                    <div id="loading">
+                                        <div>
+                                            <div class="lds-ring">
+                                                <div></div>
+                                                <div></div>
+                                                <div></div>
+                                                <div></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- <div id="loadedLandyard">
+                                        <div id="discord">
+                                            <div id="discordName" class="discordName">
+                                                <p>aridan@actuallyaridan</p>
+                                            </div>
+                                            <div id="discordActivity" class="discordActivityHidden">
+                                                <p id="activities"></p>
+                                            </div>
+                                        </div>
+                                    </div> --> 
+                                </div>
+                            </div>
                         </div>
-                        
                     </div>
                 </div>
-            </div>
-            <div class="project">
-                <div id="landyardDiscord">
-                    <p>Discord activity</p>
-                        <div id="loading">
-                            <div>
-                                <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
-                            </div>
-                            </div>
-                        <div id="loadedLandyard">
-                            <div id="statusWrapper" class="offline">
-                                <p id="discordStatus"></p>
-                            </div>
-                            <div id="discord">
-                                <div id="discordName" class="discordName">
-                                    <p>aridan<br>@actuallyaridan</p>
-                                </div>
-                                <div id="discordActivity" class="discordActivityHidden">
-                                    <p id="activities"></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div> 
-                </div> 
             </div>
         </div>
     </main>

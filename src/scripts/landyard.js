@@ -12,6 +12,7 @@ fetch('https://api.lanyard.rest/v1/users/701403809129168978')
         statusWrapper.classList.remove('offline'); // Remove pre-existing "red" class
         statusWrapper.classList.add('online'); // Add "green" class if online
       }
+      statusWrapper.textContent=discord_status;
     }
 
     if (discord_status === 'online') {
