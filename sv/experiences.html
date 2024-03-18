@@ -6,43 +6,48 @@
     <script src="https://cdn.jsdelivr.net/npm/@twemoji/api@latest/dist/twemoji.min.js" crossorigin="anonymous"></script>
     <script src="../src/scripts/twimojiFix.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#710a97">
+    <meta name="theme-color" content="#161616">
     <title>Erfarenhet — actuallyaridan</title>
     <link href="../src/styles/styles.css" rel="stylesheet">
+    <script src="../src/scripts/settings.js"></script>
     <script src="../src/scripts/dropDownMenu.js"></script>
     <script src="../src/scripts/mobileMenu.js"></script>
+    <script src="../src/scripts/emailModalBox.js"></script>
     <link rel="apple-touch-icon" sizes="180x180" href="../src/favicons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="../src/favicons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../src/favicons/favicon-16x16.png">
     <link rel="manifest" href="../src/favicons/site.webmanifest">
 </head>
 
-<body class="boxAlignment gradientBackgroundAnimation">
+<body class="boxAlignment ">
     <header>
         <nav>
-            <div class="langWrapper">
-                <div class="dropdown">
-                    <button onclick="toggleLangDrop()" class="dropButton lang" id="dropButtonID">🌐 Språk (Language)</button>
-                    <div id="langDrop" class="dropdownContent">
-                        <a href="experiences.html">🇸🇪 Svenska</a>
-                        <a href="../experiences.html">🇺🇸/🇬🇧 English (Engelska)</a>
-                    </div>
-                </div>
-            </div>
             <div class="navWrapper">
-                <a class="navButton" href="index.html">🏠 Hem</a>
-                <a class="navButton" href="socialmedia.html">💬 Sociala medier</a>
-                <a class="navButton activeChoice" href="experiences.html">🧠 Erfarenhet</a>
-                <a class="navButton" href="projects.html">🛠️ Projekt</a>
+                <a class="navButton" href="/sv/"><img draggable="false" class="emoji" alt=""
+                        src="../src/images/emojis/house.svg"> Hem</a>
+                <a class="navButton activeChoice" href="experiences"><img draggable="false" class="emoji" alt=""
+                        src="../src/images/emojis/brain.svg"> Erfarenhet</a>
+                <a class="navButton" href="projects"><img draggable="false" class="emoji" alt=""
+                        src="../src/images/emojis/tools.svg"> Projekt</a>
+                <a class="navButton" href="contact"><img draggable="false" class="emoji" alt=""
+                        src="../src/images/emojis/speak.svg"> Kontakt</a>
+                <a class="navButton right-link" href="settings"><img draggable="false" class="emoji" alt=""
+                        src="../src/images/emojis/setttings.svg"> Inställningar</a>
             </div>
             <div class="navWrapperMobile">
-                <button onclick="toggleMenu()" class="navButton" >＝ Meny</button>
+                <button onclick="toggleMenu()" class="navButton">＝ Meny</button>
             </div>
             <div class="mobileMenu" id="mobileMenuID">
-                <a class="navButton" href="index.html">🏠 Hem</a>
-                <a class="navButton" href="socialmedia.html">💬 Sociala medier</a>
-                <a class="navButton activeChoice" href="experiences.html">🧠 Erfarenhet</a>
-                <a class="navButton" href="projects.html">🛠️ Projekt</a>
+                <a class="navButton" href="/sv/"><img draggable="false" class="emoji" alt=""
+                        src="../src/images/emojis/house.svg"> Hem</a>
+                <a class="navButton activeChoice" href="experiences"><img draggable="false" class="emoji" alt=""
+                        src="../src/images/emojis/brain.svg"> Erfarenhet</a>
+                <a class="navButton" href="projects"><img draggable="false" class="emoji" alt=""
+                        src="../src/images/emojis/tools.svg"> Projekt</a>
+                <a class="navButton" href="contact"><img draggable="false" class="emoji" alt=""
+                        src="../src/images/emojis/speak.svg"> Kontakt</a>
+                <a class="navButton" href="settings"><img draggable="false" class="emoji" alt=""
+                        src="../src/images/emojis/setttings.svg"> Inställningar</a>
             </div>
         </nav>
     </header>
@@ -51,13 +56,68 @@
             <div class="constructionBox">
                 <div>
                     <h1>Erfarenhet</h1>
-                    <p class="checkBack">Kom tillbaka senare</p>
-                    <p class="bottomText">Den här webbsidan utvecklas av @actuallyaridan på X (tidigare Twitter).<br>Du
-                        kan kopiera denna sidas källkod.</p>
+                    <div>
+                        <p class="subTitle">Jag är ganska tidigt in i min karriär, men jag har alltid haft ett glödande eld för datorer, nätverk och hemsidor så långt jag kan minnas.
+                            När jag var ett litet barn var jag alltid nyfiken på hur datorer kunde göra och veta så mycket när de var så små.
+                            Därmed kan jag mycket om IT trots min ålder, och jag vet att jag kan imponera med min kunskap.</p>
+                        <div class="centerer">
+                            <div class="centererItems">
+                                <a href="cv" class="cvButton">Begär CV</a>
+                                <a class="socialMedia linkedin"
+                                    href="https://www.linkedin.com/in/adnan-bukvic-b220b1277/" target="_blank">LinkedIn</a>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="work" id="jobs">
+                                <p class="subTitleExp">Arbetslivserfarenhet</p>
+                                <div class="project">
+                                    <p class="projectName">Säljare, tekniker och webbutvecklare på IT Care Repairstore</p>
+                                    <p class="projectDesc">Det här var mitt första jobb. Jag lärde mig mycket under det och jag kan ärligt säga att det lärde mig många livsläxor som jag behövde lära mig.
+                                        Jag lärde mig hur man kommunicerar och arbetar som ett team, hur man professionellt reparerar teknik och hur man är en bra säljare.
+                                        Det var riktigt spännande att jobba där!</p>
+                                    <div class="projectStuff">
+                                        <p class="projectStatus completed"><img draggable="false" class="emoji" alt=""
+                                                src="../src/images/emojis/clock.svg">nov 2022 - okt 2023</p>
+                                        <p class="projectLink"><img draggable="false" class="emoji" alt=""
+                                                src="../src/images/emojis/link.svg"> <a
+                                                href="https://itcarestore.se" target="_blank">itcarestore.se</a></p>
+                                        <p class="projectLearned"><img draggable="false" class="emoji" alt=""
+                                                src="../src/images/emojis/teacher.svg">Webbutveckling 
+                                            Kundbemötande Tekniska reparationer</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="education" id="education">
+                                <p class="subTitleExp">Utbildning</p>
+                                <div class="project">
+                                    <p class="projectName">Dator- och kommunikationsteknikselev på Teknikum </p>
+                                    <p class="projectDesc">Under min tid på Teknikum fick jag lära mig grunderna inom nätverkande när det gäller routing och switching.
+                                        Jag fick också lära mig att bygga datorer, använda virtuella datorer, hantera servrar som körs på Windows Server tillsammans med en
+                                        grundkurs i nätverkssäkerhet, elektronik och webbutveckling!
+                                    </p>
+                                    <div class="projectStuff">
+                                        <p class="projectStatus completed"><img draggable="false" class="emoji" alt=""
+                                                src="../src/images/emojis/clock.svg">agu 2020 - jun 2023</p>
+                                                <p class="projectLink"><img draggable="false" class="emoji" alt=""
+                                                    src="../src/images/emojis/link.svg"> <a
+                                                    href="https://teknikum.se" target="_blank">teknikum.se</a></p>
+                                        <p class="projectLearned"><img draggable="false" class="emoji" alt=""
+                                                src="../src/images/emojis/teacher.svg">Nätverk Datorer Webbutveckling Elektronik</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </main>
+    <footer>
+        <div class="footer">
+            <p>© Copyright 2024 av Adnan Bukvic ifall inget annat anges. Projektet använder MIT licensen.</p>
+            <p>Twemoji av Twitter Inc/X Corp är licenserat under CC-BY 4.0.</p>
+        </div>
+    </footer>
 </body>
 
 </html>

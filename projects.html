@@ -4,12 +4,13 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#710a97">
+    <meta name="theme-color" content="#161616">
     <title>Projects — actuallyaridan</title>
     <meta name="description" content="All of actuallyaridan (Adnan Bukvic)'s projects on one page">
     <meta name="keywords" content="projects, adnan bukvic, actuallyaridan">
     <meta name="author" content="Adnan Bukvic">
     <link href="src/styles/styles.css" rel="stylesheet">
+    <script src="src/scripts/settings.js"></script>
     <script src="src/scripts/dropDownMenu.js"></script>
     <script src="src/scripts/mobileMenu.js"></script>
     <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="src/favicons/apple-touch-icon.png">
@@ -20,44 +21,39 @@
     <link rel="manifest" href="src/favicons/site.webmanifest">
 </head>
 
-<body class="boxAlignment gradientBackgroundAnimation">
+<body class="boxAlignment ">
     <header>
         <nav>
-            <div class="langWrapper">
-                <div class="dropdown">
-                    <button onclick="toggleLangDrop()" class="dropButton lang" id="dropButtonID"><img draggable="false"
-                            class="emoji" alt="" src="src/images/emojis/globe.svg"> Language</button>
-                    <div id="langDrop" class="dropdownContent">
-                        <a href="projects.html"><img draggable="false" class="emoji" alt=""
-                                src="src/images/emojis/usa.svg">/<img draggable="false" class="emoji" alt=""
-                                src="src/images/emojis/uk.svg"> English</a>
-                        <a href="sv/projects.html"><img draggable="false" class="emoji" alt=""
-                                src="src/images/emojis/sweden.svg"> Svenska (Swedish)</a>
-                    </div>
-                </div>
-            </div>
             <div class="navWrapper">
-                <a class="navButton" href="index.html"><img draggable="false" class="emoji" alt=""
+                <a class="navButton" href="/"><img draggable="false" class="emoji" alt=""
                         src="src/images/emojis/house.svg"> Home</a>
-                <a class="navButton" href="experiences.html"><img draggable="false" class="emoji" alt=""
+                <a class="navButton" href="experiences"><img draggable="false" class="emoji" alt=""
                         src="src/images/emojis/brain.svg"> Experiences</a>
-                <a class="navButton activeChoice" href="projects.html"><img draggable="false" class="emoji" alt=""
+                <a class="navButton activeChoice" href="projects"><img draggable="false" class="emoji" alt=""
                         src="src/images/emojis/tools.svg"> Projects</a>
-                <a class="navButton" href="contact.html"><img draggable="false" class="emoji" alt=""
+                        <a class="navButton" href="mc"><img draggable="false" class="emoji" alt=""
+                            src="src/images/emojis/game.svg"> Minecraft</a>
+                <a class="navButton" href="contact"><img draggable="false" class="emoji" alt=""
                         src="src/images/emojis/speak.svg"> Contact</a>
+                <a class="navButton right-link" href="settings"><img draggable="false" class="emoji" alt=""
+                        src="src/images/emojis/setttings.svg"> Settings</a>
             </div>
             <div class="navWrapperMobile">
                 <button onclick="toggleMenu()" class="navButton">＝ Menu</button>
             </div>
             <div class="mobileMenu" id="mobileMenuID">
-                <a class="navButton" href="index.html"><img draggable="false" class="emoji" alt=""
+                <a class="navButton" href="/"><img draggable="false" class="emoji" alt=""
                         src="src/images/emojis/house.svg"> Home</a>
-                <a class="navButton" href="experiences.html"><img draggable="false" class="emoji" alt=""
+                <a class="navButton" href="experiences"><img draggable="false" class="emoji" alt=""
                         src="src/images/emojis/brain.svg"> Experiences</a>
-                <a class="navButton activeChoice" href="projects.html"><img draggable="false" class="emoji" alt=""
+                <a class="navButton activeChoice" href="projects"><img draggable="false" class="emoji" alt=""
                         src="src/images/emojis/tools.svg"> Projects</a>
-                <a class="navButton" href="contact.html"><img draggable="false" class="emoji" alt=""
+                        <a class="navButton" href="mc"><img draggable="false" class="emoji" alt=""
+                            src="src/images/emojis/game.svg"> Minecraft</a>
+                <a class="navButton" href="contact"><img draggable="false" class="emoji" alt=""
                         src="src/images/emojis/speak.svg"> Contact</a>
+                <a class="navButton" href="settings"><img draggable="false" class="emoji" alt=""
+                        src="src/images/emojis/setttings.svg"> Settings</a>
             </div>
         </nav>
     </header>
@@ -68,70 +64,68 @@
                     <h1>Projects</h1>
                     <div>
                         <div>
-                            <p class="subTitle">I have a bunch of projects that I work on now and then. <br>Some of them
-                                are technical projects and some others have to do with software and/or websites. <br>Why
-                                don't you check them out? I'm sure you'll like them! I had fun making them at least!
-                                <img draggable="false" class="emoji" alt="" src="src/images/emojis/happy.svg"></p>
-                            <div class="project">
-                                <p class="projectName">This website (aridan.net)</p>
-                                <p class="projectDesc">This is a website that has all my social media links, all my
-                                    experiences and similar listed. <br>I learned a lot during this project, mainly how
-                                    to make websites look nice.</p>
-                                <div>
-                                    <p class="projectStatus WIP">Work in progress</p>
-                                    <p class="projectLink"><img draggable="false" class="emoji" alt=""
-                                            src="src/images/emojis/link.svg"> <a
-                                            href="https://aridan.net">aridan.net</a></p>
-                                    <p class="projectLink"><img draggable="false" class="emoji" alt=""
-                                            src="src/images/emojis/link.svg"> <a
-                                            href="https://github.com/actuallyaridan/aridan.net">GitHub</a></p>
-                                    <p class="projectLearned"><img draggable="false" class="emoji" alt=""
-                                            src="src/images/emojis/teacher.svg"> HTML, CSS, JavaScript</p>
-                                    <p class="projectLegal"><img draggable="false" class="emoji" alt=""
-                                            src="src/images/emojis/judge.svg"> MIT license</p>
+                            <div class="centererWrapper">
+                                <div class="titleUnderText">
+                                    <p class="subTitle">I have a bunch of projects that I work on now and then. Some of them
+                                        are technical projects and some others have to do with software and/or websites. Why
+                                        don't you check them out? I'm sure you'll like them! I had fun making them at least!
+                                        <img draggable="false" class="emoji" alt="" src="src/images/emojis/happy.svg"></p>
                                 </div>
-                            </div>
-                            <div class="project">
-                                <p class="projectName">iPod Video 5th Gen</p>
-                                <p class="projectDesc">I have modified this iPod with a transparent click wheel and
-                                    button along with a transparent faceplate. <br>I've also installed a larger battery
-                                    and replaced its hard drive with a microSD card.</p>
-                                <div>
-                                    <p class="projectStatus WIP">Work in progress</p>
-                                    <p class="projectLearned"><img draggable="false" class="emoji" alt=""
-                                            src="src/images/emojis/teacher.svg"> Electronics modification</p>
+                                <div class="project">
+                                    <p class="projectName">This website (aridan.net)</p>
+                                    <p class="projectDesc">This is a website that has all my social media links, all my
+                                        experiences and similar listed. I learned a lot during this project, mainly how
+                                        to make websites look nice.</p>
+                                    <div>
+                                        <p class="projectStatus WIP">Work in progress</p>
+                                        <p class="projectLink"><img draggable="false" class="emoji" alt=""
+                                                src="src/images/emojis/link.svg"><br> <a
+                                                href="https://aridan.net" target="_blank">aridan.net</a></p>
+                                        <p class="projectLink"><img draggable="false" class="emoji" alt=""
+                                                src="src/images/emojis/link.svg"><br> <a
+                                                href="https://github.com/actuallyaridan/aridan.net" target="_blank">GitHub</a></p>
+                                        <p class="projectLearned"><img draggable="false" class="emoji" alt=""
+                                                src="src/images/emojis/teacher.svg"><br> HTML, CSS, JavaScript</p>
+                                        <p class="projectLegal"><img draggable="false" class="emoji" alt=""
+                                                src="src/images/emojis/judge.svg"><br> MIT license</p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="project">
-                                <p class="projectName">iPod Click Wheel 4th Gen</p>
-                                <p class="projectDesc">I have repaired this iPod by replacing its click wheel. <br>I've
-                                    also upgraded it by replacing its hard drive with a Compact Flash card and I
-                                    installed a new battery too.</p>
-                                <div>
-                                    <p class="projectStatus WIP">Work in progress</p>
-                                    <p class="projectLearned"><img draggable="false" class="emoji" alt=""
-                                            src="src/images/emojis/teacher.svg"> Electronics modification</p>
+                                <div class="project">
+                                    <p class="projectName">Swedish translation of OldTwitter</p>
+                                    <p class="projectDesc">OldTwitter is a Firefox and Chrome extension to make X (formerly Twitter) look and feel like Twitter from 2015/2018. I actively translate the extension to Swedish, and I believe I'm doing a pretty decent job! You should check it out!</p>
+                                    <div>
+                                        <p class="projectStatus WIP">Work in progress</p>
+                                        <p class="projectLink"><img draggable="false" class="emoji" alt=""
+                                                src="src/images/emojis/link.svg"><br> <a
+                                                href="https://github.com/dimdenGD/OldTwitter/tree/master/_locales/sv" target="_blank">GitHub</a></p>
+                                        <p class="projectLearned"><img draggable="false" class="emoji" alt=""
+                                                src="src/images/emojis/teacher.svg"><br> i8n technology</p>
+                                        <p class="projectLegal"><img draggable="false" class="emoji" alt=""
+                                                src="src/images/emojis/judge.svg"><br> Owned by <a
+                                                href="https://dimden.dev" target="_blank">dimden</a></p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="project">
-                                <p class="projectName">iPod Mini 2nd Gen </p>
-                                <p class="projectDesc">I've also upgraded this iPod by replacing its hard drive with a
-                                    Compact Flash card and I installed a new battery too.</p>
-                                <div>
-                                    <p class="projectStatus completed">Completed</p>
-                                    <p class="projectLearned"><img draggable="false" class="emoji" alt=""
-                                            src="src/images/emojis/teacher.svg"> Electronics modification</p>
+                                <div class="project">
+                                    <p class="projectName">Various iPods</p>
+                                    <p class="projectDesc">I have modified this numerous iPods with a transparent click wheels and
+                                        buttons along with transparent faceplates. I've also installed a larger batteries
+                                        and replaced their hard drives with microSD cards.</p>
+                                    <div>
+                                        <p class="projectStatus completed">Completed</p>
+                                        <p class="projectLearned"><img draggable="false" class="emoji" alt=""
+                                                src="src/images/emojis/teacher.svg"><br> Electronics modification</p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="project">
-                                <p class="projectName">Hackintoshing a PC</p>
-                                <p class="projectDesc">Hackintoshing is the act of installing macOS on non-Apple
-                                    hardware. <br>I did this as a hobby project and I learned a lot about Apple
-                                    software. It was a fun project and it still works to this day!</p>
-                                <div>
-                                    <p class="projectStatus completed">Completed</p>
-                                    <p class="projectLearned"><img draggable="false" class="emoji" alt=""
-                                            src="src/images/emojis/teacher.svg"> Software</p>
+                                <div class="project">
+                                    <p class="projectName">Hackintoshing a PC</p>
+                                    <p class="projectDesc">Hackintoshing is the act of installing macOS on non-Apple
+                                        hardware. I did this as a hobby project and I learned a lot about Apple
+                                        software. It was a fun project and it still works to this day!</p>
+                                    <div>
+                                        <p class="projectStatus completed">Completed</p>
+                                        <p class="projectLearned"><img draggable="false" class="emoji" alt=""
+                                                src="src/images/emojis/teacher.svg"><br> Software</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>

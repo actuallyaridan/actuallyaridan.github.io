@@ -6,75 +6,90 @@ html {
 @font-face {
   font-family: Jost;
   font-style: normal;
-  font-display: swap; /*When using swap as font-display, the browser will render the text with the fallback font and once it loads Jost, it'll swap over to it. Makes the site feel faster*/
-  src: url(fonts/Jost-VariableFont_wght.ttf);
+  font-display: swap;
+  /*When using swap as font-display, the browser will render the text with the fallback font and once it loads Jost, it'll swap over to it. Makes the site feel faster*/
+  src: url(fonts/Jost.ttf);
 }
 
 @font-face {
   font-family: Jost;
   font-style: italic;
-  font-display: swap; /*When using swap as font-display, the browser will render the text with the fallback font and once it loads Jost, it'll swap over to it. Makes the site feel faster*/
-  src: url(fonts/Jost-Italic-VariableFont_wght.ttf);
+  font-display: swap;
+  /*When using swap as font-display, the browser will render the text with the fallback font and once it loads Jost, it'll swap over to it. Makes the site feel faster*/
+  src: url(fonts/Jost-Italic.ttf);
+}
+
+@font-face {
+  font-family: Pixel;
+  font-display: swap;
+  /*When using swap as font-display, the browser will render the text with the fallback font and once it loads Jost, it'll swap over to it. Makes the site feel faster*/
+  src: url(fonts/Pixel.ttf);
+}
+
+:root {
+  --accent-color: 113, 10, 151;
+  /* Initial value */
+  --darker-accent-color: 18, 2, 24;
+  /* Initial value */
 }
 
 /*Scales down emojis*/
-img.emoji{
+img.emoji {
   height: 1em;
   width: 1em;
   margin: 0 .05em 0 .1em;
   vertical-align: -0.1em;
- pointer-events: none; 
+  pointer-events: none;
 }
 
-header{
-  -webkit-backdrop-filter: saturate(180%) blur(20px); 
-  backdrop-filter: saturate(180%) blur(20px); 
-  background-color: #000000;
-  background-color: #00000080;
+header {
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  backdrop-filter: saturate(180%) blur(20px);
+  background-color: #0d0d0d;
+  background-color: rgba(var(--accent-color), 0.3);
   margin: 12px;
   padding: 12px;
   border-radius: 12px;
   position: sticky;
-  top: 0px;
+  top: 12px;
+  z-index: 9;
 }
 
-body{
+body {
   height: fit-content;
 }
 
-.gradientBackgroundAnimation{
-  background: #710a97;
-}
 
-.boringBackground{
+.boringBackground {
   background: #14011a;
 }
 
-main, footer{
+main,
+footer {
   margin: 18px;
 }
 
-.centerer{
+.centerer {
   display: flex;
   flex-direction: column;
   align-items: center;
   align-self: center;
 }
 
-.centererItems{
+.centererItems {
   display: flex;
   flex-direction: row;
   align-items: center;
   align-self: center;
 }
 
-.cvButton{
+.cvButton {
   color: white;
   font-family: Jost, sans-serif;
-  background-color: #120218;
-  background-color: #12021880;
-  border: #120218 2px solid;
-  border: #12021880 2px solid;
+  background-color: #4b4b4b;
+  background-color: #4b4b4b80;
+  border: #4b4b4b 2px solid;
+  border: #4b4b4b80 2px solid;
   padding: 12px;
   text-decoration: none;
   width: -moz-fit-content;
@@ -89,35 +104,42 @@ main, footer{
   border-radius: 12px;
 }
 
-.cvButton:hover, .cvButton:focus{
-  background-color: #120218;
-  background-color: #120218db;
-  transition: background-color .2s;
+.cvButton:hover,
+.cvButton:focus {
+  background-color: #4b4b4bc7;
+  transition: background-color 0.2s;
 }
 
 /*Styling for general text*/
 h1,
-p, a{
+p,
+a {
   color: white;
   font-family: Jost, sans-serif;
   text-align: center;
 }
 
-p.subTitle{
+p{
+  word-wrap: break-word;
+}
+
+p.subTitle {
   color: rgb(203, 203, 203);
 }
 
-p.subTitleExp{
-  color: rgb(180, 180, 180);
+p.subTitleExp,
+p.projectName {
+  color: rgb(255, 255, 255);
 }
 
-div.education, div.work{
+div.education,
+div.work {
   padding-top: 12px;
 }
 
-div.project{
-  background-color: #120218;
-  background-color: #12021880;
+div.project {
+  background-color: #121212;
+  background-color: rgba(var(--accent-color), 0.10);
   padding: 12px;
   margin: 12px;
   border-radius: 12px;
@@ -127,37 +149,40 @@ div.project{
   flex-direction: column;
   justify-content: center;
   align-self: center;
+  width: 80%;
 }
 
-div.project>p{
+div.project>p {
   text-align: left;
   margin: 12px;
   color: rgb(188, 188, 188);
 }
 
-div.project>div{
+div.project>div {
   display: flex;
   justify-content: center;
   align-self: center;
   align-items: center;
   flex-direction: row;
   flex-wrap: wrap;
-  background-color: #000000;
-  background-color: #00000059;
+  background-color: #191919;
+  background-color: rgba(var(--accent-color), 0.10);
   padding: 8px;
   margin: 8px;
   border-radius: 12px;
+  max-width: 80%;
 }
 
-div.project>div>p{
+div.project>div>p {
   text-align: center;
   margin: 12px;
   color: rgb(188, 188, 188);
   white-space: nowrap;
   text-decoration: none;
+  word-wrap: break-word;
 }
 
-div.project>div>p>a{
+div.project>div>p>a {
   text-align: center;
   color: rgb(188, 188, 188);
   white-space: nowrap;
@@ -165,42 +190,42 @@ div.project>div>p>a{
   transition: color .2s;
 }
 
-div.project>div>p>a:hover{
+div.project>div>p>a:hover {
   color: white;
   transition: color .2s;
 }
 
-div.project>p.projectName{
+div.project>p.projectName {
   color: white;
 }
 
-.WIP{
+.WIP {
   color: orange !important;
 }
 
 
-.completed{
+.completed {
   color: green !important;
 }
 
 /*Adding a wrapper for the language selector*/
-div.langWrapper{
+div.langWrapper {
   display: flex;
   flex-direction: row-reverse;
 }
 
-.p404Wrapper, .navWrapper{
+.p404Wrapper,
+.navWrapper {
   display: flex;
 }
 
 /*Styling the language selector button*/
-.lang, .navButton{
+.lang,
+.navButton {
   color: white;
   font-family: Jost, sans-serif;
-  background-color: #120218;
-  background-color: #12021880;
-  border: #120218 2px solid;
-  border: #12021880 2px solid;
+  background-color: #0e0e0e;
+  background-color: rgba(var(--darker-accent-color), 0.30);
   padding: 12px;
   text-decoration: none;
   width: -moz-fit-content;
@@ -214,32 +239,39 @@ div.langWrapper{
   touch-action: manipulation;
 }
 
-.navButton, .emailOK{
+.navButton,
+.emailOK {
   border-radius: 12px 12px 12px 12px;
   padding: 12px;
-  margin-right:12px;
+  margin-right: 12px;
 }
 
-/*More styling for the language slector button*/
-.dropButton{
+/*More styling for the language selector button*/
+.dropButton {
   border-radius: 12px 12px 12px 12px;
 }
 
-/*Styling for the language slector button that gets added when pressed using JS and removed once depressed*/
-.dropButtonPressed{
+/*Styling for the language selector button that gets added when pressed using JS and removed once depressed*/
+.dropButtonPressed {
   border-radius: 12px 12px 0px 0px;
 }
 
 /*Styling for the language selector button on hover and focus */
-.lang:hover, .lang:focus, .navButton:hover, .navButton:focus{
-  background-color: #120218;
-  background-color: #120218db;
+.lang:hover,
+.lang:focus,
+.navButton:hover,
+.navButton:focus {
+  background-color: #000000;
+  background-color: #00000080;
+  background-color: rgba(var(--darker-accent-color), 0.75);
   transition: background-color .2s;
 }
 
-.activeChoice, .dropButtonPressed{
+.activeChoice,
+.dropButtonPressed {
   background-color: #000000;
 }
+
 /* The container <div> - needed to position the dropdown content */
 .dropdown {
   position: absolute;
@@ -252,8 +284,8 @@ div.langWrapper{
   position: absolute;
   background-color: rgb(0, 0, 0);
   min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0);
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
   right: 0;
   border-radius: 12px 0px 12px 12px;
@@ -288,26 +320,27 @@ div.langWrapper{
 
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 .show {
-  display:block;
+  display: block;
   width: 166px;
 }
+
 /*Make the title bold*/
-h1{
-  font-weight: bold;
+h1 {
+  font-weight: 600;
 }
 
 /*Make the text that says "Please check back later" slightly darker*/
-p.checkBack{
+p.checkBack {
   color: rgb(222, 222, 222);
 }
 
-/*Make the text that has general information about the site slightly darker and slighly transparent*/
-p.bottomText{
+/*Make the text that has general information about the site slightly darker and slightly transparent*/
+p.bottomText {
   color: rgba(146, 146, 146);
   color: rgba(146, 146, 146, 0.61);
 }
 
-.boxAlignment{
+.boxAlignment {
   min-height: 80vh;
 }
 
@@ -328,17 +361,11 @@ p.bottomText{
   height: -moz-fit-content;
   height: fit-content;
   border-radius: 12px;
+  flex-direction: column;
   width: 100%;
 }
 
-/*The animation itself*/
-.gradientBackgroundAnimation {
-  background: linear-gradient(300deg, #000000, #710a97, #000000);
-  background-size: 180% 180%;
-  animation: gradient-animation 18s ease infinite;
-}
-
-.mobileMenu{
+.mobileMenu {
   display: none;
   flex-direction: row;
   margin: 12px;
@@ -348,19 +375,19 @@ p.bottomText{
   flex-wrap: wrap;
 }
 
-.showMenu{
+.showMenu {
   display: flex;
 }
 
 
-div.mobileMenu>a{
+div.mobileMenu>a {
   text-align: center;
   margin-right: 9px;
   margin-left: 8px;
   margin-top: 8px;
 }
 
-.socialMedias{
+.socialMedias {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -368,7 +395,7 @@ div.mobileMenu>a{
   padding: 12px;
 }
 
-.socialMedia{
+.socialMedia {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -378,34 +405,33 @@ div.mobileMenu>a{
   border-radius: 12px;
 }
 
-.twitter{
+.twitter {
   background-color: #1da0f2;
   background-color: #1da0f280;
   border: #1da0f280 2px solid;
   transition: background-color 0.2s;
 }
 
-.twitter:hover{
+.twitter:hover {
   background-color: #1da0f2;
   background-color: #1da0f2c7;
   transition: background-color 0.2s;
 }
 
-.threads{
-  background-color: #202020;
-  background-color: #20202080;
-  border: #3e3e3e 2px solid;
-  border: #3e3e3e80 2px solid;
+.threads {
+  background-color: #4b4b4b;
+  background-color: #4b4b4b80;
+  border: #4b4b4b 2px solid;
+  border: #4b4b4b80 2px solid;
   transition: background-color 0.2s;
 }
 
-.threads:hover{
-  background-color: #000000;
-  background-color: #000000c7;
+.threads:hover {
+  background-color: #4b4b4bc7;
   transition: background-color 0.2s;
 }
 
-.linkedin{
+.linkedin {
   background-color: #0a66c2;
   background-color: #0a66c280;
   border: #0a66c2 2px solid;
@@ -413,13 +439,13 @@ div.mobileMenu>a{
   transition: background-color 0.2s;
 }
 
-.linkedin:hover{
+.linkedin:hover {
   background-color: #0a66c2;
   background-color: #0a66c2c7;
   transition: background-color 0.2s;
 }
 
-.instagram{
+.instagram {
   background-color: #FB7833;
   background-color: #FB783380;
   border: #FB7833 2px solid;
@@ -427,13 +453,13 @@ div.mobileMenu>a{
   transition: background-color 0.2s;
 }
 
-.instagram:hover{
+.instagram:hover {
   background-color: #FB7833;
   background-color: #FB7833c7;
   transition: background-color 0.2s;
 }
 
-.aMusic{
+.aMusic {
   background-color: #f94c57;
   background-color: #f94c5780;
   border: #f94c57 2px solid;
@@ -441,7 +467,7 @@ div.mobileMenu>a{
   transition: background-color 0.2s;
 }
 
-.aMusic:hover{
+.aMusic:hover {
   background-color: #f94c57;
   background-color: #f94c57c7;
   border: #fc3c44 2px solid;
@@ -449,7 +475,7 @@ div.mobileMenu>a{
   transition: background-color 0.2s;
 }
 
-.email{
+.email {
   background-color: #c71610;
   background-color: #c7161080;
   border: #c71610 2px solid;
@@ -457,18 +483,18 @@ div.mobileMenu>a{
   transition: background-color 0.2s;
   color: white;
   font-family: Jost, sans-serif;
-    padding: 12px;
+  padding: 12px;
   font-size: initial;
   cursor: pointer;
 }
 
-.email:hover{
+.email:hover {
   background-color: #c71610c7;
   background-color: #c71610c7;
   transition: background-color 0.2s;
 }
 
-.imessage{
+.imessage {
   background-color: #53d769;
   background-color: #53d76980;
   border: #53d769 2px solid;
@@ -476,64 +502,74 @@ div.mobileMenu>a{
   transition: background-color 0.2s;
 }
 
-.imessage:hover{
+.imessage:hover {
   background-color: #53d769;
   background-color: #53d769c7;
   transition: background-color 0.2s;
 }
 
 
-.socialMedia{
-text-align: center;
-text-decoration: none;
+.socialMedia {
+  text-align: center;
+  text-decoration: none;
 }
 
-div.socialMedias{
-  background-color: #120218;
-  background-color: #12021880;
+div.socialMedias {
+  background-color: #121212;
+  background-color: rgba(var(--accent-color), 0.10);
   padding: 12px;
   margin: 12px;
   border-radius: 12px;
 }
 
-.leftAlign{
+.leftAlign {
   text-align: left;
   margin: 12px;
 }
 
-.emailModal{
-  display: none; /* Hidden by default */
+.emailModal {
+  display: none;
+  /* Hidden by default */
   justify-content: center;
   align-items: center;
-  position: fixed; /* Stay in place */
-  z-index: 2; /* Sit on top */
+  position: fixed;
+  /* Stay in place */
+  z-index: 10;
+  /* Sit on top */
   left: 0;
   top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  -webkit-backdrop-filter: blur(20px); 
-  backdrop-filter: blur(20px); 
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: black;
+  /* Fallback color */
+  background-color: rgb(0, 0, 0);
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.65);
+  /* Black w/ opacity */
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
 }
 
-p.titleEmail{
-  font-size: larger;
-  background-color: #262626;
-  padding: 12px;
+p.titleEmail {
+  font-size: 1.4em;
   border-radius: 12px;
+  font-weight: 500;
 }
 
-.showEmail{
+.showEmail {
   display: flex;
 }
 
-.emailModalContent{
+.emailModalContent {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  background-color: #121212;
   background-color: rgba(18, 18, 18);
   padding: 12px;
   margin: 12px;
@@ -541,25 +577,28 @@ p.titleEmail{
   padding: 24px
 }
 
-.emailModalText{
+.emailModalText {
   padding: 12px;
-  background-color: rgba(0,0,0); /* Black w/ opacity */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  background-color: #121212;
+  background-color: rgba(0, 0, 0, 0.4);
   border-radius: 12px;
   margin: 12px;
 }
 
-.emailOK{
+.emailOK {
   color: white;
   font-family: Jost, sans-serif;
-  background-color: #0e0e0e;
-  border: #242424 2px solid;
+  background-color: #4b4b4b;
+  background-color: #4b4b4b80;
+  border: #4b4b4b 2px solid;
+  border: #4b4b4b80 2px solid;
+  transition: background-color 0.2s;
   padding: 12px;
   font-size: initial;
   cursor: pointer;
 }
 
-.buttonsEmail{
+.buttonsEmail {
   background-color: #191919;
   display: flex;
   flex-direction: row;
@@ -569,23 +608,29 @@ p.titleEmail{
   border-radius: 12px;
 }
 
-p.emailText{
+.emailOK:hover {
+  background-color: #4b4b4bc7;
+  transition: background-color 0.2s;
+}
+
+p.emailText {
   margin: 12px;
 }
 
-div.footer{
+div.footer {
   display: flex;
   justify-content: center;
   flex-direction: column;
 }
 
-.footer>p{
-  color:#959595
+.footer>p {
+  color: #959595
 }
 
-.aboutMe{
+.aboutMe {
   background-color: #120218;
   background-color: #12021880;
+  background-color: rgba(var(--darker-accent-color), 0.50);
   padding: 12px;
   margin: 12px;
   border-radius: 12px;
@@ -598,9 +643,10 @@ div.footer{
   margin-right: 10%;
 }
 
-.aboutMeContainer{
+.aboutMeContainer {
   background-color: #120218;
-  background-color: #12021880;
+  background-color: rgba(18, 2, 24, 0.7);
+  background-color: rgba(var(--darker-accent-color), 0.7);
   padding: 12px;
   margin: 12px;
   border-radius: 12px;
@@ -611,9 +657,10 @@ div.footer{
   flex-wrap: wrap;
 }
 
-.aboutMeContainer>div{
+.aboutMeContainer>div {
   background-color: #120218;
-  background-color: #12021880;
+  background-color: rgba(18, 2, 24, 0.7);
+  background-color: rgba(var(--darker-accent-color), 0.7);
   display: flex;
   flex-direction: column;
   border-radius: 12px;
@@ -624,24 +671,25 @@ div.footer{
   justify-content: center;
 }
 
-.aboutMeContainer>div>p{
+.aboutMeContainer>div>p {
   padding: 12px;
   margin: 12px;
   text-align: center;
-  background-color: #12021880;;
+  background-color: #12021880;
+  background-color: rgba(var(--darker-accent-color), 0.50);
   border-radius: 12px;
 }
 
-span.title{
+span.title {
   display: block;
 }
 
-span.title>p{
+span.title>p {
   text-align: center;
   margin: auto;
 }
 
-.informationContainer{
+.informationContainer {
   border-radius: 12px;
   margin: 12px;
   padding-top: 12px;
@@ -649,12 +697,634 @@ span.title>p{
   background-color: #1da0f280;
 }
 
-.interestsContainer{
+.interestsContainer {
   border-radius: 12px;
   margin: 12px;
   padding-top: 12px;
   background-color: #53d769;
   background-color: #53d76980;
+}
+
+.langProf{
+  font-weight: 500;
+}
+
+#landyardDiscord{
+  font-family: Jost, sans-serif;
+  color: white;
+  display: inline-block;
+}
+
+#loadedLandyard{
+  display: none;
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-left: 6px;
+  margin-right: 6px;
+}
+
+#loadedLandyard>p, #discordStatus, #activities{
+  display: inline;
+  text-align: center;
+  color: rgb(188, 188, 188);
+}
+
+#statusWrapper{
+  display: block;
+  align-self: initial;
+  float: right;
+  z-index: 2;
+  position: relative;
+  bottom: 5vh;
+}
+
+#statusWrapper{
+  list-style-type: none;
+  color: white;
+  font-family: Jost, sans-serif;
+  padding: 8px;
+  text-decoration: none;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  font-size: initial;
+  transition: background-color .2s;
+  font-size: initial;
+  touch-action: manipulation;
+  border-radius: 12px;
+  appearance: none;
+  -webkit-appearance: none;
+  text-align: right;
+  display: block;
+}
+
+
+a,
+p,
+button {
+  font-family: Jost, sans-serif;
+}
+
+body {
+  background-color: #161616;
+}
+
+main.settings {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.setting {
+  padding-bottom: 12px;
+}
+
+.settingGroup>p {
+  text-align: left;
+}
+
+form {
+  min-width: 60%;
+}
+
+ul {
+  list-style: none;
+  background-color: #121212;
+  background-color: rgba(var(--accent-color), 0.1);
+  padding: 12px;
+  border-radius: 12px;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+
+li>div {
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+li>div>button,
+li>div>input,
+li>div>label {
+  margin-left: 6px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+}
+
+input[type="radio"] {
+  opacity: 0;
+  position: fixed;
+  width: 0;
+}
+
+.button,
+button {
+  list-style-type: none;
+  color: white;
+  font-family: Jost, sans-serif;
+  background-color: #121212;
+  background-color: rgba(var(--accent-color), 0.10);
+  border: none;
+  padding: 8px;
+  text-decoration: none;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  font-size: initial;
+  cursor: pointer;
+  transition: background-color .2s;
+  font-size: initial;
+  touch-action: manipulation;
+  border-radius: 12px;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+button.close {
+  background-color: unset;
+  border: unset;
+}
+
+.saveButton {
+  font-weight: normal;
+  width: 100%;
+}
+
+.button:hover {
+  background-color: rgba(var(--accent-color), 0.3);
+}
+
+.saveButton:hover {
+  background-color: rgba(var(--accent-color), 0.3);
+}
+
+
+input[type="radio"]:checked+label {
+  background-color: #080808;
+  border: #080808 2px solid;
+}
+
+.red {
+  background-color: #f94c57;
+  background-color: #f94c5780;
+  border: #f94c57 2px solid;
+  border: #f94c5780 2px solid;
+  transition: background-color 0.2s;
+}
+
+.red:hover {
+  background-color: #f94c57;
+  background-color: #f94c57c7;
+  transition: background-color 0.2s;
+}
+
+.green {
+  background-color: #53d769;
+  background-color: #53d76980;
+  border: #53d769 2px solid;
+  border: #53d76980 2px solid;
+  transition: background-color 0.2s;
+}
+
+.green:hover {
+  background-color: #53d769;
+  background-color: #53d769c7;
+  transition: background-color 0.2s;
+}
+
+.blue {
+  background-color: #1da0f2;
+  background-color: #1da0f280;
+  border: #1da0f2 2px solid;
+  border: #1da0f280 2px solid;
+  transition: background-color 0.2s;
+}
+
+.blue:hover {
+  background-color: #1da0f2;
+  background-color: #1da0f2c7;
+  transition: background-color 0.2s;
+}
+
+.orange {
+  background-color: #f2841d;
+  background-color: #f2841d80;
+  border: #f2841d 2px solid;
+  border: #f2841d80 2px solid;
+  transition: background-color 0.2s;
+}
+
+.orange:hover {
+  background-color: #f2841d;
+  background-color: #f2841dc7;
+  transition: background-color 0.2s;
+}
+
+.purple {
+  background-color: #710a97;
+  background-color: #710a9780;
+  border: #710a97 2px solid;
+  border: #710a9780 2px solid;
+  transition: background-color 0.2s;
+}
+
+.purple:hover {
+  background-color: #710a97;
+  background-color: #710a97c7;
+  transition: background-color 0.2s;
+}
+
+.light {
+  background-color: #909090;
+  background-color: #90909080;
+  border: #90909080 2px solid;
+  transition: background-color 0.2s;
+}
+
+.light:hover {
+  background-color: #909090;
+  background-color: #909090c7;
+  transition: background-color 0.2s;
+}
+
+.dark {
+  background-color: #3f3f3f;
+  background-color: #3f3f3f80;
+  border: #3f3f3f80 2px solid;
+  transition: background-color 0.2s;
+}
+
+.dark:hover {
+  background-color: #3f3f3f;
+  background-color: #3f3f3fc7;
+  transition: background-color 0.2s;
+}
+
+.auto {
+  background-color: #145a80;
+  background-color: #145a8080;
+  border: #145a8080 2px solid;
+  transition: background-color 0.2s;
+}
+
+.auto:hover {
+  background-color: #145a80;
+  background-color: #145a80c7;
+  transition: background-color 0.2s;
+}
+
+.saveSettings {
+  position: sticky;
+  bottom: 12px;
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  backdrop-filter: saturate(180%) blur(20px);
+  background-color: #121212;
+  background-color: rgba(var(--accent-color), 0.2);
+  border-radius: 12px;
+  padding: 8px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgb(52, 52, 52);
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+div.messages {
+  text-align: center;
+
+}
+
+div.savedMessage {
+  padding: 8px;
+  color: white;
+  font-family: Jost, sans-serif;
+  border-radius: 12px;
+
+}
+
+.closebtn {
+  color: white;
+  float: right;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-family: Jost, sans-serif;
+}
+
+.closebtn:hover {
+  color: black;
+}
+
+.failed {
+  background-color: #f44336;
+  display: none;
+}
+
+.sucessfull {
+  background-color: #04AA6D;
+  display: none;
+}
+
+.result {
+  display: block;
+  margin-bottom: 12px;
+}
+
+input:checked+.slider {
+  background-color: rgba(var(--accent-color));
+}
+
+input:focus+.slider {
+  box-shadow: 0 0 1px rgba(var(--accent-color));
+}
+
+input:checked+.slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 12px;
+}
+
+.slider.round:before {
+  border-radius: 12px;
+}
+
+li>p {
+  text-align: left;
+  padding-right: 24px;
+}
+
+
+.gradientBackgroundAnimation {
+  background: rgba(var(--accent-color));
+}
+
+.gradientBackgroundAnimation {
+  background: linear-gradient(300deg, #000000, rgba(var(--accent-color)), #000000);
+  background-size: 180% 180%;
+  animation: gradient-animation 18s ease infinite;
+}
+
+.noAnimation,
+.noAnimation:before,
+.noAnimation:after {
+  transition: none !important;
+}
+
+
+option {
+  width: 150px;
+  /* or max-width: 150px; */
+}
+
+option {
+  white-space: nowrap;
+}
+
+/* If targeting with a class */
+.right-link {
+  position: absolute;
+  right: 0;
+
+}
+
+/* Optional but recommended: Clear floats in the header */
+header::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.offline {
+  background-color: #f94c57;
+  background-color: #f94c5780;
+  border: #f94c57 2px solid;
+  border: #f94c5780 2px solid;
+  transition: background-color 0.2s;
+}
+
+.online {
+  background-color: #53d769;
+  background-color: #53d76980;
+  border: #53d769 2px solid;
+  border: #53d76980 2px solid;
+  transition: background-color 0.2s;
+}
+
+div#discord{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+#discordName, #discordActivity{
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(var(--darker-accent-color), 0.32);
+  background-color: rgba(red, green, blue, alpha);
+  padding: 8px;
+  border-radius: 12px;
+  margin: 12px;
+}
+
+#discordName>p{
+  text-align: left;
+}
+
+.discordName{
+  display: flex;
+}
+
+
+.discordActivityHidden{
+  display: none;
+}
+
+.discordActivityShow{
+  display: flex;
+}
+
+div#loading>div{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lds-ring {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border: 8px solid #fff;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: rgb(var(--accent-color)) transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+
+.mcBackground{
+  background: #0C0C0C url(../images/background/dark.png) repeat;
+}
+
+.mcFont{
+  font-family: Pixel, Jost, sans-serif;
+}
+
+#wrapperMc{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#mcJoinButtons{
+  width: 85vw;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+}
+
+
+.imgWorld{
+  aspect-ratio: 16 / 9; /* typical video aspect ratio */
+  width: 85vw;
+}
+
+button.mcMenu{
+  text-transform: uppercase;
+  flex: 1; /* Buttons will share the available space equally */
+  margin: 0; /* Remove default margin for better spacing */
+  padding: 10px; /* Add some padding for visual separation (optional) */
+  border-radius: 0;
+}
+.hide{
+  display: none;
+}
+.mcShow{
+  display: block;
+}
+
+#downloads{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#downloads>a{
+  margin: 6px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+div.titleUnderText{
+  max-width: 80vw;
+}
+
+div.centererWrapper{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.img-holder{
+  background-image: url(../images/world.png);
+  background-size: contain;
+  aspect-ratio: 16 / 9;
+  width: 85vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.img-holder>p{
+  margin: 12px;
+}
+.img-holder>a{
+  padding: 6px;
+  background-color: rgba(var(--darker-accent-color), 0.30);
+}
+
+
+
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 
@@ -673,23 +1343,28 @@ span.title>p{
   }
 }
 
-@media only screen and (min-width: 712px) {
-  
+@media only screen and (min-width: 739px) {
+
   div.navWrapperMobile {
     display: none;
   }
-  div.mobileMenu{
+
+  div.mobileMenu {
     display: none;
   }
+
   div.navWrapper {
     display: flex;
   }
+
+  main.settings {}
 }
 
-@media only screen and (max-width: 711px) {
+@media only screen and (max-width: 740px) {
   div.navWrapper {
     display: none;
   }
+
   div.navWrapperMobile {
     display: flex;
   }

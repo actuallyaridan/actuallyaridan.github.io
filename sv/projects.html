@@ -3,46 +3,54 @@
 
 <head>
     <meta charset="utf-8">
-    <script src="https://cdn.jsdelivr.net/npm/@twemoji/api@latest/dist/twemoji.min.js" crossorigin="anonymous"></script>
-    <script src="../src/scripts/twimojiFix.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#710a97">
+    <meta name="theme-color" content="#161616">
     <title>Projekt — actuallyaridan</title>
+    <meta name="description" content="All of actuallyaridan (Adnan Bukvic)'s projects on one page">
+    <meta name="keywords" content="projects, adnan bukvic, actuallyaridan">
+    <meta name="author" content="Adnan Bukvic">
     <link href="../src/styles/styles.css" rel="stylesheet">
+    <script src="../src/scripts/settings.js"></script>
     <script src="../src/scripts/dropDownMenu.js"></script>
     <script src="../src/scripts/mobileMenu.js"></script>
-    <link rel="apple-touch-icon" sizes="180x180" href="../src/favicons/apple-touch-icon.png">
+    <script src="../src/scripts/emailModalBox.js"></script>
+    <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../src/favicons/apple-touch-icon.png">
+    <link rel="apple-touch-icon" type="image/png" sizes="32x32" href="../src/favicons/favicon-32x32.png">
+    <link rel="apple-touch-icon" type="image/png" sizes="16x16" href="../src/favicons/favicon-16x16.png">
     <link rel="icon" type="image/png" sizes="32x32" href="../src/favicons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../src/favicons/favicon-16x16.png">
     <link rel="manifest" href="../src/favicons/site.webmanifest">
 </head>
 
-<body class="boxAlignment gradientBackgroundAnimation">
+<body class="boxAlignment ">
     <header>
         <nav>
-            <div class="langWrapper">
-                <div class="dropdown">
-                    <button onclick="toggleLangDrop()" class="dropButton lang" id="dropButtonID">🌐 Språk (Language)</button>
-                    <div id="langDrop" class="dropdownContent">
-                        <a href="projects.html">🇸🇪 Svenska</a>
-                        <a href="../projects.html">🇺🇸/🇬🇧 English (Engelska)</a>
-                    </div>
-                </div>
-            </div>
             <div class="navWrapper">
-                <a class="navButton" href="index.html">🏠 Hem</a>
-                <a class="navButton" href="socialmedia.html">💬 Sociala medier</a>
-                <a class="navButton" href="experiences.html">🧠 Erfarenhet</a>
-                <a class="navButton activeChoice" href="projects.html">🛠️ Projekt</a>
+                <a class="navButton" href="/sv/"><img draggable="false" class="emoji" alt=""
+                        src="../src/images/emojis/house.svg"> Hem</a>
+                <a class="navButton" href="experiences"><img draggable="false" class="emoji" alt=""
+                        src="../src/images/emojis/brain.svg"> Erfarenhet</a>
+                <a class="navButton activeChoice" href="projects"><img draggable="false" class="emoji" alt=""
+                        src="../src/images/emojis/tools.svg"> Projekt</a>
+                <a class="navButton" href="contact"><img draggable="false" class="emoji" alt=""
+                        src="../src/images/emojis/speak.svg"> Kontakt</a>
+                <a class="navButton right-link" href="settings"><img draggable="false" class="emoji" alt=""
+                        src="../src/images/emojis/setttings.svg"> Inställningar</a>
             </div>
             <div class="navWrapperMobile">
-                <button onclick="toggleMenu()" class="navButton" >＝ Meny</button>
+                <button onclick="toggleMenu()" class="navButton">＝ Meny</button>
             </div>
             <div class="mobileMenu" id="mobileMenuID">
-                <a class="navButton" href="index.html">🏠 Hem</a>
-                <a class="navButton" href="socialmedia.html">💬 Sociala medier</a>
-                <a class="navButton" href="experiences.html">🧠 Erfarenhet</a>
-                <a class="navButton activeChoice" href="projects.html">🛠️ Projekt</a>
+                <a class="navButton" href="/sv/"><img draggable="false" class="emoji" alt=""
+                        src="../src/images/emojis/house.svg"> Hem</a>
+                <a class="navButton" href="experiences"><img draggable="false" class="emoji" alt=""
+                        src="../src/images/emojis/brain.svg"> Erfarenhet</a>
+                <a class="navButton activeChoice" href="projects"><img draggable="false" class="emoji" alt=""
+                        src="../src/images/emojis/tools.svg"> Projekt</a>
+                <a class="navButton" href="contact"><img draggable="false" class="emoji" alt=""
+                        src="../src/images/emojis/speak.svg"> Kontakt</a>
+                <a class="navButton" href="settings"><img draggable="false" class="emoji" alt=""
+                        src="../src/images/emojis/setttings.svg"> Inställningar</a>
             </div>
         </nav>
     </header>
@@ -51,13 +59,97 @@
             <div class="constructionBox">
                 <div>
                     <h1>Projekt</h1>
-                    <p class="checkBack">Kom tillbaka senare</p>
-                    <p class="bottomText">Den här webbsidan utvecklas av @actuallyaridan på X (tidigare Twitter).<br>Du
-                        kan kopiera denna sidas källkod.</p>
+                    <div>
+                        <div>
+                            <p class="subTitle">Jag har massor av olika projekt som jag håller på med ibland. Vissa
+                                av dem är tekniska och andra är mjukvarurelaterade eller webbsidor och liknande. Ta och
+                                kika på dem! Jag slår vad att du kommer gilla i alla fall en av dem. I vilket fall så
+                                hade jag kul när jag skapade dem!
+                                <img draggable="false" class="emoji" alt="" src="../src/images/emojis/happy.svg">
+                            </p>
+                            <div class="project">
+                                <p class="projectName">Den där webbsidan (aridan.net)</p>
+                                <p class="projectDesc">Denna webbsidan innehåller alla mina länkar till mina konton på sociala medier och liknande samt min arbetslivserfarenhet. Jag lär mig ständigt nya saker genom denna webbsida, men mestadels hur man kan få webbsidor se bra ut!</p>
+                                <div>
+                                    <p class="projectStatus WIP">Pågår</p>
+                                    <p class="projectLink"><img draggable="false" class="emoji" alt=""
+                                            src="../src/images/emojis/link.svg"> <a href="https://aridan.net"
+                                            target="_blank">aridan.net</a></p>
+                                    <p class="projectLink"><img draggable="false" class="emoji" alt=""
+                                            src="../src/images/emojis/link.svg"> <a
+                                            href="https://github.com/actuallyaridan/aridan.net"
+                                            target="_blank">GitHub</a></p>
+                                    <p class="projectLearned"><img draggable="false" class="emoji" alt=""
+                                            src="../src/images/emojis/teacher.svg"> HTML, CSS, JavaScript</p>
+                                    <p class="projectLegal"><img draggable="false" class="emoji" alt=""
+                                            src="../src/images/emojis/judge.svg"> MIT licensen</p>
+                                </div>
+                            </div>
+                            <div class="project">
+                                <p class="projectName">Den svenska översättningen av OldTwitter</p>
+                                <p class="projectDesc">OldTwitter är ett tillägg för Chrome och Firefox som gör så att X (tidigare Twitter) ser ut som Twitter från 2016/2018. Jag behöver aktivt översätta tillägget till svenska och själv tycker jag att jag gör ett ganska bra jobb!</p>
+                                <div>
+                                    <p class="projectStatus WIP">Pågår</p>
+                                    <p class="projectLink"><img draggable="false" class="emoji" alt=""
+                                            src="../src/images/emojis/link.svg"> <a
+                                            href="https://github.com/dimdenGD/OldTwitter/tree/master/_locales/sv"
+                                            target="_blank">GitHub</a></p>
+                                    <p class="projectLearned"><img draggable="false" class="emoji" alt=""
+                                            src="../src/images/emojis/teacher.svg"> Översättnings-teknologi
+                                    </p>
+                                    <p class="projectLegal"><img draggable="false" class="emoji" alt=""
+                                            src="../src/images/emojis/judge.svg"> Ägs by <a href="https://dimden.dev"
+                                            target="_blank">dimden</a></p>
+                                </div>
+                            </div>
+                            <div class="project">
+                                <p class="projectName">iPod Video 5th Gen</p>
+                                <p class="projectDesc">Jag gillar att modifiera äldre iPods. Denna iPod har jag lagt en genomskinlig framsida samt klickhjul på.Dessutom så bytte jag utt batteriet mot en större variant och bytte ut hårddisken med ett SD kort.</p>
+                                <div>
+                                    <p class="projectStatus completed">Färdigt</p>
+                                    <p class="projectLearned"><img draggable="false" class="emoji" alt=""
+                                            src="../src/images/emojis/teacher.svg"> Modifiering av elektronik</p>
+                                </div>
+                            </div>
+                            <div class="project">
+                                <p class="projectName">iPod Click Wheel 4th Gen</p>
+                                <p class="projectDesc">Denna iPod bytte jag ut klickhjulet på, samt så bytte jag ut batteriet och uppgraderade den till ett SD kort istället för en hårddisk.</p>
+                                    <div>
+                                        <p class="projectStatus completed">Färdigt</p>
+                                        <p class="projectLearned"><img draggable="false" class="emoji" alt=""
+                                                src="../src/images/emojis/teacher.svg"> Modifiering av elektronik</p>
+                                    </div>
+                            </div>
+                            <div class="project">
+                                <p class="projectName">iPod Mini 2nd Gen </p>
+                                <p class="projectDesc">Denna iPod modifierade jag med ett nytt batteri och ett Compact Flash kort. Visste du att iPod mini serien använder Microdrives, en hårddiskstandard som har exakt samma kontakter som Compact Flash?</p>
+                                    <div>
+                                        <p class="projectStatus completed">Färdigt</p>
+                                        <p class="projectLearned"><img draggable="false" class="emoji" alt=""
+                                                src="../src/images/emojis/teacher.svg"> Modifiering av elektronik</p>
+                                    </div>
+                            </div>
+                            <div class="project">
+                                <p class="projectName">"Hackintoshing"</p>
+                                <p class="projectDesc">"Hackintoshing" är att installera macOS på icke-Apple hårdvara. Detta gjorde jag som ett hobbyprojekt, men samtidigt så lärde jag lärde mig massor om hur Apples klientoperativsystem fungerar. Det var superkul, och den startar till macOS än idag!</p>
+                                    <div>
+                                        <p class="projectStatus completed">Färdigt</p>
+                                        <p class="projectLearned"><img draggable="false" class="emoji" alt=""
+                                                src="../src/images/emojis/teacher.svg"> Mjukvara</p>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </main>
+    <footer>
+        <div class="footer">
+            <p>© Copyright 2024 av Adnan Bukvic ifall inget annat anges. Projektet använder MIT licensen.</p>
+            <p>Twemoji av Twitter Inc/X Corp är licenserat under CC-BY 4.0.</p>
+        </div>
+    </footer>
 </body>
 
 </html>

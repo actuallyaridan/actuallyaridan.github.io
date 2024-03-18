@@ -2,20 +2,21 @@
 
 This file contains all plans for aridan.net.
 
+## Ideas
+
 ## Plans
 
-### TODO
-
-- [ ] test
-- [ ] test 
-  - [ ] test
+- [ ] In-house developed form that sends results as en email for the CV/resume page
 
 ### In Progress
 
-- [ ] test
+- [ ] Finish the Swedish version
 
-### Done ✓
+### Done
 
-- [x] test  
-
-## Ideas
+- [x] Make the ESC button close the email modal  
+- [x] Settings menu
+  - [x] Appearance   
+    - [x] Selectable accent colors
+  - [x] Accessibility
+    - [x] Option to disable the background gradient and its animation
