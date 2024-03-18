@@ -76,31 +76,38 @@
                     <h1 class="mcFont">Minecraft</h1>
                     <div class="centererWrapper">
                         <div class="titleUnderText">
-                            <p class="mcFont subTitle">Want to play on a Minecraft server where everyone treats everyone with respect, where everyone helps each other and run a simple survival server without too many mods? Look no further! Come join us! The server is ran on Java, but we have a plugin that lets Bedrock players join too!</p>
-                            <p class="mcFont subTitle">(you need to wait for an admin or the owner to join in order to grant you permissions to 
+                            <p class="mcFont subTitle">Want to play on a Minecraft server where everyone treats everyone
+                                with respect, where everyone helps each other and run a simple survival server without
+                                too many mods? Look no further! Come join us! The server is ran on Java, but we have a
+                                plugin that lets Bedrock players join too!</p>
+                            <p class="mcFont subTitle">(you need to wait for an admin or the owner to join in order to
+                                grant you permissions to
                                 build and similar)</p>
                         </div>
                         <div id="wrapperMc">
-                                <img class="imgWorld" src="src/images/world.png"
-                                    alt="A screenshot of the Minecraft world">
+                           <div class="img-holder">
+<!--                            <img class="imgWorld"  draggable="false" src="src/images/world.png" alt="A screenshot of the Minecraft world">-->
+                            <a class="button green mcFont link" href="http://mc.aridan.net:8172" target="_blank">Explore
+                                the map →</a>
+                           </div>
+                            <div id="mcJoinButtons">
+                                <button id="javaButton" class="mc mcMenu green" onclick="showJava()">Java</button>
+                                <button id="bedrockButton" class="mc mcMenu green"
+                                    onclick="showBedrock()">Bedrock</button>
+                            </div>
 
-                                <div id="mcJoinButtons">
-                                    <button id="javaButton" class="mc mcMenu green" onclick="showJava()">Java</button>
-                                    <button id="bedrockButton" class="mc mcMenu green" onclick="showBedrock()">Bedrock</button>
-                                </div>
-                                
-                                <div id="java" class="hide">
-                                    <p>To join on Java, use this:
-                                        Address: mc.aridan.net
-                                    </p>
-                                </div>
-                                <div id="bedrock" class="hide">
-                                    <p>
-                                        To join on Bedrock, use this:
-                                         Address: mc.aridan.net
-                                         Port: 25609
-                                    </p>
-                                </div>
+                            <div id="java" class="hide">
+                                <p>To join on Java, use this:
+                                    Address: mc.aridan.net
+                                </p>
+                            </div>
+                            <div id="bedrock" class="hide">
+                                <p>
+                                    To join on Bedrock, use this:
+                                    Address: mc.aridan.net
+                                    Port: 25609
+                                </p>
+                            </div>
 
                         </div>
                         <div>
@@ -110,12 +117,12 @@
                             <p class="mcFont">Downloads</p>
                             <div id="downloads">
                                 <a class="button dark mcFont"
-                                href="https://drive.google.com/file/d/101hYoVd5bSLjk3MSjTkL8ziZ4Qn1o066/view?usp=sharing">
-                                Download the aridan.net Modpack
-                                <a class="button dark mcFont" href="src/downloads/SwedenTweaks.zip"
-                                    download="SwedenTweaks.zip">
-                                    Download the aridan.net Resource pack
-                                </a>
+                                    href="https://drive.google.com/file/d/101hYoVd5bSLjk3MSjTkL8ziZ4Qn1o066/view?usp=sharing">
+                                    Download the aridan.net Modpack
+                                    <a class="button dark mcFont" href="src/downloads/SwedenTweaks.zip"
+                                        download="SwedenTweaks.zip">
+                                        Download the aridan.net Resource pack
+                                    </a>
                             </div>
                         </div>
                         <p class="mcFont subTitle">(don't worry, your computer will download this when you enter the
