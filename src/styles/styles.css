@@ -131,6 +131,9 @@ p.subTitleExp,
 p.projectName {
   color: rgb(255, 255, 255);
 }
+p.dcProjectName {
+  color: rgb(255, 255, 255);
+}
 
 div.education,
 div.work {
@@ -196,6 +199,23 @@ div.project>div>p>a:hover {
 }
 
 div.project>p.projectName {
+  color: white;
+}
+
+#dcNameContainer {
+  align-items: center;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  height: 50px;
+}
+
+#dcActivityHeaderName {
+  line-height: 2.5;
+  margin-left: 12px;
+}
+
+div.project>p.dcProjectName {
   color: white;
 }
 
@@ -732,15 +752,6 @@ span.title>p {
 }
 
 #statusWrapper{
-  display: block;
-  align-self: initial;
-  float: right;
-  z-index: 2;
-  position: relative;
-  bottom: 5vh;
-}
-
-#statusWrapper{
   list-style-type: none;
   color: white;
   font-family: Jost, sans-serif;
@@ -758,6 +769,7 @@ span.title>p {
   appearance: none;
   -webkit-appearance: none;
   text-align: right;
+  margin-right: 12px;
   display: block;
 }
 
@@ -1145,10 +1157,19 @@ header::after {
 }
 
 .offline {
-  background-color: #f94c57;
+  background-color: light;
   background-color: #f94c5780;
   border: #f94c57 2px solid;
   border: #f94c5780 2px solid;
+  box-shadow: rgba(249, 76, 87, 0.50) 0px 0px 20px;
+  transition: background-color 0.2s;
+}
+
+.dcloading {
+  background-color: #909090;
+  background-color: #90909080;
+  border: #90909080 2px solid;
+  box-shadow: rgba(140, 140, 140, 0.50) 0px 0px 20px;
   transition: background-color 0.2s;
 }
 
@@ -1157,6 +1178,7 @@ header::after {
   background-color: #53d76980;
   border: #53d769 2px solid;
   border: #53d76980 2px solid;
+  box-shadow: rgba(83, 215, 105, 0.50) 0px 0px 20px;
   transition: background-color 0.2s;
 }
 
@@ -1177,6 +1199,33 @@ div#discord{
   margin: 12px;
 }
 
+.discordPFP {border-radius: 10px;}
+
+#discordInfo {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+#discordActivity { 
+  text-wrap:  wrap(10); 
+}
+
+#activityLogoLarge {
+  border-radius: 5px;
+}
+
+#discordActivityImages {
+  padding-right: 10px;
+}
+
+#activityLogoSmall {
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  transform: translate(-60%, 225%);
+}
+
 #discordName>p{
   text-align: left;
 }
@@ -1185,14 +1234,6 @@ div#discord{
   display: flex;
 }
 
-
-.discordActivityHidden{
-  display: none;
-}
-
-.discordActivityShow{
-  display: flex;
-}
 
 div#loading>div{
   display: flex;
@@ -1254,11 +1295,6 @@ div#loading>div{
 }
 
 
-.imgWorld{
-  aspect-ratio: 16 / 9; /* typical video aspect ratio */
-  width: 85vw;
-}
-
 button.mcMenu{
   text-transform: uppercase;
   flex: 1; /* Buttons will share the available space equally */
@@ -1297,15 +1333,27 @@ div.centererWrapper{
   align-items: center;
 }
 
-.img-holder{
-  background-image: url(../images/world.png);
-  background-size: contain;
-  aspect-ratio: 16 / 9;
+.mcMapButton {
+  position: absolute;
+}
+
+.imgWorld {
+  position: absolute;
+  aspect-ratio: 16 / 9; /* typical video aspect ratio */
   width: 85vw;
+  background-image: url('/images/world.png');
+  background-size: contain;
+}
+
+.img-holder{
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  aspect-ratio: 16 / 9;
+  width: 85vw;
 }
 
 .img-holder>p{
@@ -1356,13 +1404,23 @@ div.centererWrapper{
   div.navWrapper {
     display: flex;
   }
-
-  main.settings {}
 }
 
 @media only screen and (max-width: 740px) {
   div.navWrapper {
     display: none;
+  }
+
+  div#discord {
+    flex-direction: column;
+  }
+
+  div#discordActivity {
+    flex-direction: column;
+  }
+  
+  div#discordActivityImages {
+    padding-right: 0 !important;
   }
 
   div.navWrapperMobile {

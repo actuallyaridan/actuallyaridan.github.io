@@ -18,17 +18,17 @@
     <meta property="og:description" content="aridan / adnan bukvic's amazing website">
     <meta property="og:image" content="">
     <meta property="og:url" content="https://aridan.net">
-    <link href="src/styles/styles.css" rel="stylesheet">
-    <script src="src/scripts/settings.js"></script>
-    <script src="src/scripts/dropDownMenu.js"></script>
-    <script src="src/scripts/mobileMenu.js"></script>
-    <script src="src/scripts/landyard.js"></script>
-    <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="src/favicons/apple-touch-icon.png">
-    <link rel="apple-touch-icon" type="image/png" sizes="32x32" href="/src/favicons/favicon-32x32.png">
-    <link rel="apple-touch-icon" type="image/png" sizes="16x16" href="/src/favicons/favicon-16x16.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="src/favicons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="src/favicons/favicon-16x16.png">
-    <link rel="manifest" href="src/favicons/site.webmanifest">
+    <link href="/src/styles/styles.css" rel="stylesheet">
+    <script src="/src/scripts/settings.js"></script>
+    <script src="/src/scripts/dropDownMenu.js"></script>
+    <script src="/src/scripts/mobileMenu.js"></script>
+    <script defer src="/src/scripts/landyard.js"></script>
+    <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="/src/favicons/apple-touch-icon.png">
+    <link rel="apple-touch-icon" type="image/png" sizes="512x512" href="/src/favicons/icon-512.png">
+    <link rel="apple-touch-icon" type="image/png" sizes="192x192" href="/src/favicons/icon-192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/src/favicons/icon-512.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/src/favicons/icon-192.png">
+    <link rel="manifest" href="/src/favicons/site.webmanifest">
 
 </head>
 
@@ -37,34 +37,37 @@
         <nav>
             <div class="navWrapper">
                 <a class="navButton activeChoice" href="/"><img draggable="false" class="emoji" alt=""
-                        src="src/images/emojis/house.svg"> Home</a>
+                        src="/src/images/emojis/house.svg"> Home</a>
                 <a class="navButton" href="experiences"><img draggable="false" class="emoji" alt=""
-                        src="src/images/emojis/brain.svg"> Experiences</a>
+                        src="/src/images/emojis/brain.svg"> Experiences</a>
                 <a class="navButton" href="projects"><img draggable="false" class="emoji" alt=""
-                        src="src/images/emojis/tools.svg"> Projects</a>
+                        src="/src/images/emojis/tools.svg"> Projects</a>
                 <a class="navButton" href="mc"><img draggable="false" class="emoji" alt=""
-                        src="src/images/emojis/game.svg"> Minecraft</a>
+                        src="/src/images/emojis/game.svg"> Minecraft</a>
                 <a class="navButton" href="contact"><img draggable="false" class="emoji" alt=""
-                        src="src/images/emojis/speak.svg"> Contact</a>
+                        src="/src/images/emojis/speak.svg"> Contact</a>
                 <a class="navButton right-link" href="settings"><img draggable="false" class="emoji" alt=""
-                        src="src/images/emojis/setttings.svg"> Settings</a>
+                        src="/src/images/emojis/setttings.svg"> Settings</a>
             </div>
             <div class="navWrapperMobile">
-                <button onclick="toggleMenu()" class="navButton">＝ Menu</button>
+                <button onclick="toggleMenu()" class="navButton">
+                    <img src="/src/images/icons/menu.svg" class="emoji">
+                    Menu
+                </button>
             </div>
             <div class="mobileMenu" id="mobileMenuID">
                 <a class="navButton activeChoice" href="/"><img draggable="false" class="emoji" alt=""
-                        src="src/images/emojis/house.svg"> Home</a>
+                        src="/src/images/emojis/house.svg"> Home</a>
                 <a class="navButton" href="experiences"><img draggable="false" class="emoji" alt=""
-                        src="src/images/emojis/brain.svg"> Experiences</a>
+                        src="/src/images/emojis/brain.svg"> Experiences</a>
                 <a class="navButton" href="projects"><img draggable="false" class="emoji" alt=""
-                        src="src/images/emojis/tools.svg"> Projects</a>
+                        src="/src/images/emojis/tools.svg"> Projects</a>
                 <a class="navButton" href="mc"><img draggable="false" class="emoji" alt=""
-                        src="src/images/emojis/game.svg"> Minecraft</a>
+                        src="/src/images/emojis/game.svg"> Minecraft</a>
                 <a class="navButton" href="contact"><img draggable="false" class="emoji" alt=""
-                        src="src/images/emojis/speak.svg"> Contact</a>
+                        src="/src/images/emojis/speak.svg"> Contact</a>
                 <a class="navButton" href="settings"><img draggable="false" class="emoji" alt=""
-                        src="src/images/emojis/setttings.svg"> Settings</a>
+                        src="/src/images/emojis/setttings.svg"> Settings</a>
             </div>
         </nav>
     </header>
@@ -91,18 +94,19 @@
                                     cables and accessories like iPods and I know a bunch of languages too!</p>
                                 <div class="projectStuff">
                                     <p class="projectStatus"><img draggable="false" class="emoji" alt=""
-                                            src="src/images/emojis/clock.svg"><br>19 years old</p>
+                                            src="/src/images/emojis/clock.svg"><br>19 years old</p>
                                     <p class="projectLearned"><img draggable="false" class="emoji" alt=""
-                                            src="src/images/emojis/globe.svg"><br><span class="langProf">fluent:</span>
+                                            src="/src/images/emojis/globe.svg"><br><span class="langProf">fluent:</span>
                                         Swedish, English
                                         <span class="langProf"><br>speaks:</span> Bosnian, Croatian, Serbian
                                     </p>
                                 </div>
                             </div>
                             <div class="project">
-                                <p class="projectName">Discord activity</p>
-                                <span id="statusWrapperWrapper">
-                                    <div id="statusWrapper" class="offline">offline</div>
+                                <span id="dcNameContainer">
+                                <p class="projectName" id="dcActivityHeaderName">Discord activity</p>
+                                <p id="statusWrapper" class="dcloading">loading</p>
+
                                 </span>
 
                                 <div id="landyardDiscord">
@@ -116,16 +120,26 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <!-- <div id="loadedLandyard">
+                                     <div id="loadedLandyard">
                                         <div id="discord">
-                                            <div id="discordName" class="discordName">
-                                                <p>aridan@actuallyaridan</p>
+                                            <div id="discordInfo" class="discordInfo">
+                                                <p id="discordName">actuallyaridan</p>
+                                                <img id="discordPFP" class="discordPFP" draggable="false" width="128px" height="128px">
                                             </div>
-                                            <div id="discordActivity" class="discordActivityHidden">
-                                                <p id="activities"></p>
+                                            <div id="discordActivity">
+                                                <div id="discordActivityImages">
+                                                    <img id="activityLogoLarge" draggable="false" width="96px" height="96px"></img>
+                                                    <img id="activityLogoSmall" draggable="false" width="32px" height="32px"></img>
+                                                </div>
+                                                <div id="discordActivityInfo">
+                                                    <h3 id="activityName"></h3>
+                                                    <p id="activityState"></p>
+                                                    <p id="activityDetails"></p>
+                                                    <p id="activityTime"></p>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div> --> 
+                                    </div> 
                                 </div>
                             </div>
                         </div>
