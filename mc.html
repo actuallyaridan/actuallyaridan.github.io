@@ -18,18 +18,18 @@
     <meta property="og:description" content="aridan / adnan bukvic's amazing website">
     <meta property="og:image" content="">
     <meta property="og:url" content="https://aridan.net">
-    <link href="src/styles/styles.css" rel="stylesheet">
-    <script src="src/scripts/settings.js"></script>
-    <script src="src/scripts/mcButtons.js"></script>
-    <script src="src/scripts/dropDownMenu.js"></script>
-    <script src="src/scripts/mobileMenu.js"></script>
-    <script src="src/scripts/landyard.js"></script>
-    <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="src/favicons/apple-touch-icon.png">
-    <link rel="apple-touch-icon" type="image/png" sizes="32x32" href="/src/favicons/favicon-32x32.png">
-    <link rel="apple-touch-icon" type="image/png" sizes="16x16" href="/src/favicons/favicon-16x16.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="src/favicons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="src/favicons/favicon-16x16.png">
-    <link rel="manifest" href="src/favicons/site.webmanifest">
+    <link href="/src/styles/styles.css" rel="stylesheet">
+    <script src="/src/scripts/settings.js"></script>
+    <script src="/src/scripts/mcButtons.js"></script>
+    <script src="/src/scripts/dropDownMenu.js"></script>
+    <script src="/src/scripts/mobileMenu.js"></script>
+    <script src="/src/scripts/lanyard.js"></script>
+    <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="/src/favicons/apple-touch-icon.png">
+    <link rel="apple-touch-icon" type="image/png" sizes="512x512" href="/src/favicons/icon-512.png">
+    <link rel="apple-touch-icon" type="image/png" sizes="192x192" href="/src/favicons/icon-192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/src/favicons/icon-512.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/src/favicons/icon-192.png">
+    <link rel="manifest" href="/src/favicons/site.webmanifest">
 
 </head>
 
@@ -38,34 +38,37 @@
         <nav>
             <div class="navWrapper">
                 <a class="navButton" href="/"><img draggable="false" class="emoji" alt=""
-                        src="src/images/emojis/house.svg"> Home</a>
+                        src="/src/images/emojis/house.svg"> Home</a>
                 <a class="navButton" href="experiences"><img draggable="false" class="emoji" alt=""
-                        src="src/images/emojis/brain.svg"> Experiences</a>
+                        src="/src/images/emojis/brain.svg"> Experiences</a>
                 <a class="navButton" href="projects"><img draggable="false" class="emoji" alt=""
-                        src="src/images/emojis/tools.svg"> Projects</a>
+                        src="/src/images/emojis/tools.svg"> Projects</a>
                 <a class="navButton activeChoice" href="mc"><img draggable="false" class="emoji" alt=""
-                        src="src/images/emojis/game.svg"> Minecraft</a>
+                        src="/src/images/emojis/game.svg"> Minecraft</a>
                 <a class="navButton" href="contact"><img draggable="false" class="emoji" alt=""
-                        src="src/images/emojis/speak.svg"> Contact</a>
+                        src="/src/images/emojis/speak.svg"> Contact</a>
                 <a class="navButton right-link" href="settings"><img draggable="false" class="emoji" alt=""
-                        src="src/images/emojis/setttings.svg"> Settings</a>
+                        src="/src/images/emojis/setttings.svg"> Settings</a>
             </div>
             <div class="navWrapperMobile">
-                <button onclick="toggleMenu()" class="navButton">＝ Menu</button>
+                <button onclick="toggleMenu()" class="navButton">
+                    <img src="/src/images/icons/menu.svg" class="emoji">
+                    Menu
+                </button>
             </div>
             <div class="mobileMenu" id="mobileMenuID">
                 <a class="navButton" href="/"><img draggable="false" class="emoji" alt=""
-                        src="src/images/emojis/house.svg"> Home</a>
+                        src="/src/images/emojis/house.svg"> Home</a>
                 <a class="navButton" href="experiences"><img draggable="false" class="emoji" alt=""
-                        src="src/images/emojis/brain.svg"> Experiences</a>
+                        src="/src/images/emojis/brain.svg"> Experiences</a>
                 <a class="navButton" href="projects"><img draggable="false" class="emoji" alt=""
-                        src="src/images/emojis/tools.svg"> Projects</a>
+                        src="/src/images/emojis/tools.svg"> Projects</a>
                 <a class="navButton activeChoice" href="mc"><img draggable="false" class="emoji" alt=""
-                        src="src/images/emojis/game.svg"> Minecraft</a>
+                        src="/src/images/emojis/game.svg"> Minecraft</a>
                 <a class="navButton" href="contact"><img draggable="false" class="emoji" alt=""
-                        src="src/images/emojis/speak.svg"> Contact</a>
+                        src="/src/images/emojis/speak.svg"> Contact</a>
                 <a class="navButton" href="settings"><img draggable="false" class="emoji" alt=""
-                        src="src/images/emojis/setttings.svg"> Settings</a>
+                        src="/src/images/emojis/setttings.svg"> Settings</a>
             </div>
         </nav>
     </header>
@@ -85,11 +88,14 @@
                                 build and similar)</p>
                         </div>
                         <div id="wrapperMc">
-                           <div class="img-holder">
-<!--                            <img class="imgWorld"  draggable="false" src="src/images/world.png" alt="A screenshot of the Minecraft world">-->
-                            <a class="button green mcFont link" href="http://mc.aridan.net:8172" target="_blank">Explore
-                                the map →</a>
+                            <div id="anotherWrapper">
+                                <!-- Dexrn: prob rename this I was too lazy to come up with a name for it lmao -->
+                            <img class="imgWorld"  draggable="false" src="/src/images/mc/world.png" alt="A screenshot of the Minecraft world">
+                            <div class="img-holder">
+                                <a class="button green mcFont link mcMapButton" href="http://mc.aridan.net:8172" target="_blank">Explore
+                                    the map →</a>
                            </div>
+                        </div>
                             <div id="mcJoinButtons">
                                 <button id="javaButton" class="mc mcMenu green" onclick="showJava()">Java</button>
                                 <button id="bedrockButton" class="mc mcMenu green"
@@ -119,7 +125,7 @@
                                 <a class="button dark mcFont"
                                     href="https://drive.google.com/file/d/101hYoVd5bSLjk3MSjTkL8ziZ4Qn1o066/view?usp=sharing">
                                     Download the aridan.net Modpack
-                                    <a class="button dark mcFont" href="src/downloads/SwedenTweaks.zip"
+                                    <a class="button dark mcFont" href="/src/downloads/SwedenTweaks.zip"
                                         download="SwedenTweaks.zip">
                                         Download the aridan.net Resource pack
                                     </a>
