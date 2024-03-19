@@ -66,6 +66,9 @@ fetch(`https://api.lanyard.rest/v1/users/${userID}`)
         if (activities[0]?.assets?.small_image && activities[0]?.assets?.large_image) {
           document.getElementById('discordActivityImages').style.paddingRight = '20px';
         }
+        else if (activities[0]?.assets?.large_image){
+          document.getElementById('discordActivityImages').style.paddingRight = '10px';
+        }
 
         document.getElementById('activityName').textContent = activities[0].name;
         document.getElementById('activityState').textContent = activities[0].state;
