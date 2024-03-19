@@ -131,7 +131,7 @@ window.addEventListener('DOMContentLoaded', () => {
     if (storedSetting === 'false') {
       animationsCheckbox.checked = false;
     } else {
-      animationsCheckbox.checked = ture;
+      animationsCheckbox.checked = true;
     }
 
     // Apply initial animation state based on localStorage
