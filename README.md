@@ -9,6 +9,8 @@ Adnan Bukvic (a.k.a. aridan) / @actuallyaridan
 
 Slade Watkins / @sladewatkins
 
+ZacAttack / @DexrnZacAttack
+
 
 
 ## The fine print
