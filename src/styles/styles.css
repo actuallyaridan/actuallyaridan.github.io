@@ -743,6 +743,7 @@ span.title>p {
   justify-content: center;
   margin-left: 6px;
   margin-right: 6px;
+  margin-top: 12px;
 }
 
 #loadedLandyard>p, #discordStatus, #activities{
@@ -1184,7 +1185,7 @@ header::after {
 
 div#discord{
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -1192,8 +1193,6 @@ div#discord{
 #discordName, #discordActivity{
   justify-content: center;
   align-items: center;
-  background-color: rgba(var(--darker-accent-color), 0.32);
-  background-color: rgba(red, green, blue, alpha);
   padding: 8px;
   border-radius: 12px;
   margin: 12px;
@@ -1364,6 +1363,9 @@ div.centererWrapper{
   background-color: rgba(var(--darker-accent-color), 0.30);
 }
 
+#activityName, #activityState, #activityDetails, #activityTime{
+  text-align: left;
+}
 
 
 @keyframes lds-ring {
@@ -1421,6 +1423,10 @@ div.centererWrapper{
   
   div#discordActivityImages {
     padding-right: 0 !important;
+  }
+
+  #activityName, #activityState, #activityDetails, #activityTime{
+    text-align: center;
   }
 
   div.navWrapperMobile {
