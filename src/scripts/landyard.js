@@ -90,28 +90,48 @@ fetch(`https://api.lanyard.rest/v1/users/${userID}`)
         const activityStart = new Date(activities[0].created_at);
         const activityStartStr = activityStart.toLocaleString('en-US', options);
 
-        // Get current date and time
-        const now = new Date();
+      // Get current date and time
+const now = new Date();
 
-        // Calculate time difference in milliseconds (more precise than seconds)
-        const timeDiffMs = now - activityStart;
+// ... other code for setting activity details ...
 
-        // Convert time difference to seconds (avoid rounding issues)
-        const timeDiffSeconds = Math.floor(timeDiffMs / 1000);
+// Check for end timestamp
+if (activities[0].timestamps?.end) {
+  const activityEnd = new Date(activities[0].timestamps.end);
+  const timeRemainingMs = activityEnd - now;
+  const timeRemainingSeconds = Math.max(0, Math.floor(timeRemainingMs / 1000)); // Ensure non-negative value
 
-        // Convert time difference to human-readable format (e.g., "01:45 elapsed")
-        let timeDiffStr;
+  // Convert remaining time to minutes and seconds
+  const minutesRemaining = Math.floor(timeRemainingSeconds / 60);
+  const secondsRemaining = timeRemainingSeconds % 60;
 
-        const minutes = Math.floor(timeDiffSeconds / 60);
-        const remainingSeconds = timeDiffSeconds % 60;
+  const minutesRemainingStr = minutesRemaining.toString().padStart(2, "0");
+  const secondsRemainingStr = secondsRemaining.toString().padStart(2, "0");
 
-        const minutesStr = minutes.toString().padStart(2, "0");
-        const secondsStr = remainingSeconds.toString().padStart(2, "0");
+  const timeRemainingStr = `${minutesRemainingStr}:${secondsRemainingStr} remaining`;
 
-        timeDiffStr = `${minutesStr}:${secondsStr} elapsed`;
+  document.getElementById('activityTime').textContent = timeRemainingStr;
+} else {
+  // Calculate time difference in milliseconds (more precise than seconds)
+  const timeDiffMs = now - activityStart;
 
-        document.getElementById('activityTime').textContent = timeDiffStr;
+  // Convert time difference to seconds (avoid rounding issues)
+  const timeDiffSeconds = Math.floor(timeDiffMs / 1000);
 
+  // Convert time difference to human-readable format (e.g., "01:45 elapsed")
+  let timeDiffStr;
+
+  const minutes = Math.floor(timeDiffSeconds / 60);
+  const remainingSeconds = timeDiffSeconds % 60;
+
+  const minutesStr = minutes.toString().padStart(2, "0");
+  const secondsStr = remainingSeconds.toString().padStart(2, "0");
+
+  timeDiffStr = `${minutesStr}:${secondsStr} elapsed`;
+  document.getElementById('activityTime').textContent = timeDiffStr;
+}
+
+      
       }
     } else {
       document.getElementById('landyardDiscord').style.display = 'none';
