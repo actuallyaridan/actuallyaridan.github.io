@@ -91,27 +91,36 @@ fetch(`https://api.lanyard.rest/v1/users/${userID}`)
         const activityStart = new Date(activities[0].created_at);
         const activityStartStr = activityStart.toLocaleString('en-US', options);
   
-        // Get current date and time
-        const now = new Date();
-  
-        // Calculate time difference in seconds
-        const timeDiffSeconds = Math.floor((now - activityStart) / 1000);
-  
-        // Convert time difference to human-readable format (e.g., "an hour ago")
-        let timeDiffStr;
-        if (timeDiffSeconds < 60) {
-          timeDiffStr = "just now";
-        } else if (timeDiffSeconds < 3600) {
-          const minutes = Math.floor(timeDiffSeconds / 60);
-          timeDiffStr = "for " + minutes + (minutes === 1 ? " minute" : " minutes");
-        } else if (timeDiffSeconds < 86400) {
-          const hours = Math.floor(timeDiffSeconds / 3600);
-          timeDiffStr = "for " + hours + (hours === 1 ? " hour" : " hours");
-        } else {
-          timeDiffStr = activityStartStr; // Display full date if it's more than a day ago
-        }
-        document.getElementById('activityTime').textContent = timeDiffStr;
+        const activityEnd = activities[0].timestamps?.end ? new Date(activities[0].timestamps.end) : null;
 
+        // Calculate time difference in seconds (considering activityEnd if available)
+        const now = new Date();
+        const startTime = new Date(activities[0].created_at);
+        const timeDiffSeconds = Math.floor((activityEnd || now) - startTime) / 1000;
+      
+        let timeDiffStr;
+        if (activityEnd) {
+          // Activity has an end time, display remaining time
+          const remainingSeconds = Math.max(0, activityEnd - now); // Ensure remaining time is non-negative
+          const minutes = Math.floor(remainingSeconds / 60);
+          timeDiffStr = `${minutes} minute${minutes === 1 ? "" : "s"} remaining`;
+        } else {
+          // Activity has no end time, display elapsed time
+          if (timeDiffSeconds < 60) {
+            timeDiffStr = "just now";
+          } else if (timeDiffSeconds < 3600) {
+            const minutes = Math.floor(timeDiffSeconds / 60);
+            timeDiffStr = "for " + minutes + (minutes === 1 ? " minute" : " minutes");
+          } else if (timeDiffSeconds < 86400) {
+            const hours = Math.floor(timeDiffSeconds / 3600);
+            timeDiffStr = "for " + hours + (hours === 1 ? " hour" : " hours");
+          } else {
+            const options = { year: 'numeric', month: 'long', day: 'numeric' };
+            timeDiffStr = startTime.toLocaleString('en-US', options);
+          }
+        }
+      
+        document.getElementById('activityTime').textContent = timeDiffStr;
         //  document.getElementById('listening_to_spotify').textContent = listening_to_spotify;
   
         // You can add similar lines for other properties retrieved from the API
