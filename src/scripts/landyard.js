@@ -97,26 +97,13 @@ fetch(`https://api.lanyard.rest/v1/users/${userID}`)
         const now = new Date();
         const startTime = new Date(activities[0].created_at);
         const timeDiffSeconds = Math.floor((activityEnd || now) - startTime) / 1000;
-        
+      
         let timeDiffStr;
         if (activityEnd) {
           // Activity has an end time, display remaining time
           const remainingSeconds = Math.max(0, activityEnd - now); // Ensure remaining time is non-negative
-        
-          // Directly convert to minutes for accurate display (avoid large values)
           const minutes = Math.floor(remainingSeconds / 60);
-        
-          if (minutes > 0) {
-            timeDiffStr = `${minutes} minute${minutes === 1 ? "" : "s"} remaining`;
-          } else {
-            // If minutes are zero, check for seconds (activity might be ending soon)
-            const remainingSecs = remainingSeconds % 60;
-            if (remainingSecs > 0) {
-              timeDiffStr = `${remainingSecs} second${remainingSecs === 1 ? "" : "s"} remaining`;
-            } else {
-              timeDiffStr = "Just ended";
-            }
-          }
+          timeDiffStr = `${minutes} minute${minutes === 1 ? "" : "s"} remaining`;
         } else {
           // Activity has no end time, display elapsed time
           if (timeDiffSeconds < 60) {
