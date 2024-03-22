@@ -1,5 +1,5 @@
 // THIS CODE IS EXPERIMENTAL. DO NOT COPY IT
-let userID = "701403809129168978s"; 
+let userID = "701403809129168978"; 
 
 const loadingDiv = document.getElementById('loading');
 const errorMessage = document.getElementById('errorMessage');
