@@ -1,6 +1,18 @@
 // THIS CODE IS EXPERIMENTAL. DO NOT COPY IT
 let userID = "701403809129168978"; 
 
+const loadingDiv = document.getElementById('loading');
+const errorMessage = document.getElementById('errorMessage');
+const spinner =  document.getElementById('loadingSpinner'); 
+
+// Set a timeout to handle loading time
+const timeout = setTimeout(() => {
+  if(loadingDiv){
+    spinner.style.display = 'none';
+    errorMessage.style.display = 'block';
+  }
+}, 4000); // Change 5000 to adjust the timeout in milliseconds (5 seconds)
+
 
 fetch(`https://api.lanyard.rest/v1/users/${userID}`)
   .then(response => response.json())

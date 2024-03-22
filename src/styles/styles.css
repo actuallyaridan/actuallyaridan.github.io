@@ -123,6 +123,10 @@ p{
   word-wrap: break-word;
 }
 
+#errorMessage{
+  display: none;
+}
+
 p.subTitle {
   color: rgb(203, 203, 203);
 }
