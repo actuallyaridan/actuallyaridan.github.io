@@ -11,7 +11,7 @@ const timeout = setTimeout(() => {
     spinner.style.display = 'none';
     errorMessage.style.display = 'block';
   }
-}, 4000); // Change 5000 to adjust the timeout in milliseconds (5 seconds)
+}, 4000); // Change 5000 to adjust the timeout in milliseconds (4 seconds)
 
 
 fetch(`https://api.lanyard.rest/v1/users/${userID}`)
