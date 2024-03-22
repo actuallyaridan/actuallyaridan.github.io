@@ -1226,7 +1226,7 @@ div#discord{
   width: 32px;
   height: 32px;
   position: absolute;
-  transform: translate(-60%, 225%);
+  transform: translate(-200%, 250%);
 }
 
 #discordName>p{
