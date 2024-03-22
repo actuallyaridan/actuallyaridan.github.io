@@ -1,13 +1,13 @@
 // THIS CODE IS EXPERIMENTAL. DO NOT COPY IT
-let userID = "701403809129168978"; 
+let userID = "701403809129168978";
 
 const loadingDiv = document.getElementById('loading');
 const errorMessage = document.getElementById('errorMessage');
-const spinner =  document.getElementById('loadingSpinner'); 
+const spinner = document.getElementById('loadingSpinner');
 
 // Set a timeout to handle loading time
 const timeout = setTimeout(() => {
-  if(loadingDiv){
+  if (loadingDiv) {
     spinner.style.display = 'none';
     errorMessage.style.display = 'block';
   }
@@ -30,7 +30,7 @@ fetch(`https://api.lanyard.rest/v1/users/${userID}`)
         statusWrapper.classList.remove('dcloading');
         statusWrapper.classList.add('offline');
       }
-      statusWrapper.textContent=discord_status;
+      statusWrapper.textContent = discord_status;
     }
 
     document.getElementById('discordName').textContent = data.data.discord_user.username;
@@ -78,43 +78,40 @@ fetch(`https://api.lanyard.rest/v1/users/${userID}`)
         if (activities[0]?.assets?.small_image && activities[0]?.assets?.large_image) {
           document.getElementById('discordActivityImages').style.paddingRight = '20px';
         }
-        else if (activities[0]?.assets?.large_image){
+        else if (activities[0]?.assets?.large_image) {
           document.getElementById('discordActivityImages').style.paddingRight = '10px';
         }
 
         document.getElementById('activityName').textContent = activities[0].name;
         document.getElementById('activityState').textContent = activities[0].state;
         document.getElementById('activityDetails').textContent = activities[0].details;
-        // Convert timestamps to human-readable format
         // Convert timestamp to human-readable format
         const options = { year: 'numeric', month: 'long', day: 'numeric' };
         const activityStart = new Date(activities[0].created_at);
         const activityStartStr = activityStart.toLocaleString('en-US', options);
-  
+
         // Get current date and time
         const now = new Date();
-  
-        // Calculate time difference in seconds
-        const timeDiffSeconds = Math.floor((now - activityStart) / 1000);
-  
-        // Convert time difference to human-readable format (e.g., "an hour ago")
+
+        // Calculate time difference in milliseconds (more precise than seconds)
+        const timeDiffMs = now - activityStart;
+
+        // Convert time difference to seconds (avoid rounding issues)
+        const timeDiffSeconds = Math.floor(timeDiffMs / 1000);
+
+        // Convert time difference to human-readable format (e.g., "01:45 elapsed")
         let timeDiffStr;
-        if (timeDiffSeconds < 60) {
-          timeDiffStr = "just now";
-        } else if (timeDiffSeconds < 3600) {
-          const minutes = Math.floor(timeDiffSeconds / 60);
-          timeDiffStr = "for " + minutes + (minutes === 1 ? " minute" : " minutes");
-        } else if (timeDiffSeconds < 86400) {
-          const hours = Math.floor(timeDiffSeconds / 3600);
-          timeDiffStr = "for " + hours + (hours === 1 ? " hour" : " hours");
-        } else {
-          timeDiffStr = activityStartStr; // Display full date if it's more than a day ago
-        }
+
+        const minutes = Math.floor(timeDiffSeconds / 60);
+        const remainingSeconds = timeDiffSeconds % 60;
+
+        const minutesStr = minutes.toString().padStart(2, "0");
+        const secondsStr = remainingSeconds.toString().padStart(2, "0");
+
+        timeDiffStr = `${minutesStr}:${secondsStr} elapsed`;
+
         document.getElementById('activityTime').textContent = timeDiffStr;
 
-        //  document.getElementById('listening_to_spotify').textContent = listening_to_spotify;
-  
-        // You can add similar lines for other properties retrieved from the API
       }
     } else {
       document.getElementById('landyardDiscord').style.display = 'none';
