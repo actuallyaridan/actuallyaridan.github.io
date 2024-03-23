@@ -11,9 +11,6 @@ Slade Watkins / [@sladewatkins](https://github.com/sladewatkins)
 
 Dexrn ZacAttack (a.k.a Zach) / [@dexrnzacattack](https://github.com/dexrnzacattack)
 
-ZacAttack / @DexrnZacAttack
-
-
 
 ## The fine print
 
