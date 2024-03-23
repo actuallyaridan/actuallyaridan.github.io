@@ -13,6 +13,7 @@
     <script src="/src/scripts/dropDownMenu.js"></script>
     <script src="/src/scripts/mobileMenu.js"></script>
     <script src="/src/scripts/emailModalBox.js"></script>
+    <script defer src="/src/scripts/landyard-sv-se.js"></script>
     <link rel="apple-touch-icon" sizes="180x180" href="/src/favicons/apple-touch-icon.png">
     <link rel="apple-touch-icon" type="image/png" sizes="512x512" href="/src/favicons/icon-512.png">
     <link rel="apple-touch-icon" type="image/png" sizes="192x192" href="/src/favicons/icon-192.png">
@@ -84,6 +85,48 @@
                                         svenska, engelska
                                         <span class="langProf"><br>pratar:</span> bosniska, kroatiska, serbiska
                                     </p>
+                                </div>
+                            </div>
+                            <div class="project">
+                                <span id="dcNameContainer">
+                                <p class="projectName" id="dcActivityHeaderName">Discord-aktivitet</p>
+                                <p id="statusWrapper" class="dcloading">laddar</p>
+
+                                </span>
+
+                                <div id="landyardDiscord">
+                                    <div id="loading">
+                                        <div>
+                                            <div id="loadingSpinner" class="lds-ring">
+                                                <div></div>
+                                                <div></div>
+                                                <div></div>
+                                                <div></div>
+                                            </div>
+                                        </div>
+                                        <p id="errorMessage">Ett fel uppstod.<br>Försök igen senare.</p>
+                                    </div>
+                                     <div id="loadedLandyard">
+                                        <div id="discord">
+                                            <div id="discordInfo" class="discordInfo">
+                                                <p id="discordName">actuallyaridan</p>
+                                                <img id="discordPFP" class="discordPFP" draggable="false" width="128px" height="128px">
+                                            </div>
+                                            <hr width="100%" class="divider">
+                                            <div id="discordActivity">
+                                                <div id="discordActivityImages">
+                                                    <img id="activityLogoLarge" draggable="false" width="96px" height="96px"></img>
+                                                    <img id="activityLogoSmall" draggable="false" width="32px" height="32px"></img>
+                                                </div>
+                                                <div id="discordActivityInfo">
+                                                    <h3 id="activityName"></h3>
+                                                    <p id="activityDetails"></p>
+                                                    <p id="activityState" class="subTitle"></p>
+                                                    <p id="activityTime" class="subTitle"></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> 
                                 </div>
                             </div>
                         </div>
