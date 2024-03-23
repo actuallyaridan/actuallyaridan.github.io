@@ -27,7 +27,7 @@ html {
 }
 
 .divider {
-  color: rgba(var(--accent-color), 0.4);
+  border: solid 1px rgba(var(--accent-color), 0.4)
 }
 
 :root {
