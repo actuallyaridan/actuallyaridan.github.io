@@ -26,6 +26,10 @@ html {
   src: url(fonts/Pixel.ttf);
 }
 
+.divider {
+  color: rgba(var(--accent-color), 0.4);
+}
+
 :root {
   --accent-color: 113, 10, 151;
   /* Initial value */
@@ -738,9 +742,9 @@ span.title>p {
 }
 
 #landyardDiscord{
+  display: flex;
   font-family: Jost, sans-serif;
   color: white;
-  display: inline-block;
 }
 
 #loadedLandyard{
