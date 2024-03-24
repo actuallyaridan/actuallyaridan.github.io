@@ -1380,6 +1380,10 @@ div.centererWrapper{
   text-align: left;
 }
 
+label, li>p {
+  color: rgb(203, 203, 203);
+}
+
 
 @keyframes lds-ring {
   0% {
