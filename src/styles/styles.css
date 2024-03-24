@@ -1384,6 +1384,10 @@ label, li>p {
   color: rgb(203, 203, 203);
 }
 
+img {
+  pointer-events: none;
+}
+
 
 @keyframes lds-ring {
   0% {
