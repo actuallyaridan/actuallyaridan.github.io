@@ -1443,6 +1443,7 @@ img {
   }
   
   div#discordActivityImages {
+    display: none;
     padding-right: 0 !important;
   }
 

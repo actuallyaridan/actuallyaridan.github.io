@@ -12,6 +12,15 @@ const timeout = setTimeout(() => {
   }
 }, 4000);
 
+function handleError(error) {
+  const timeout = setTimeout(() => {
+    if (loadingDiv) {
+      spinner.style.display = "none";
+      errorMessage.style.display = "block";
+    }
+  }, 4000);
+}
+
 function platform() {
   if (window.innerWidth >= 739) {
     // not mobile
@@ -22,12 +31,20 @@ function platform() {
   }
 }
 
+
 async function getLanyard() {
+  try {
   const ly = await fetch(`https://api.lanyard.rest/v1/users/${userID}`);
   return await ly.json();
+} catch (error) {
+  console.error("Error fetching Lanyard data:", error);
+  // Handle the error here (e.g., display an error message to the user)
+  handleError(error); // Call a custom error handling function
+}
 }
 
 async function setLanyard() {
+  try {
   await getLanyard().then((data) => {
     const { activities, discord_status, listening_to_spotify, discord_user } =
       data.data;
@@ -37,8 +54,8 @@ async function setLanyard() {
     if (statusWrapper) {
       if (discord_status === "online") {
         statusWrapper.classList.remove("dcloading");
-        statusWrapper.classList.remove("offline"); // Remove pre-existing "red" class
-        statusWrapper.classList.add("online"); // Add "green" class if online
+        statusWrapper.classList.remove("offline");
+        statusWrapper.classList.add("online");
       } else {
         statusWrapper.classList.remove("dcloading");
         statusWrapper.classList.add("offline");
@@ -53,9 +70,9 @@ async function setLanyard() {
     ).src = `https://cdn.discordapp.com/avatars/${userID}/${data.data.discord_user.avatar}.webp?size=512`;
 
     if (discord_status === "online") {
+      document.getElementById("discordActivityImages").style.display = "none";
       const activityDiscordWrapper = document.getElementById("discordActivity");
       if (!activities.length) {
-        document.getElementById("discordActivityImages").style.display = "none";
         activityDiscordWrapper.style.display = "none";
         console.log("test");
         document.getElementById("activityName").textContent =
@@ -63,6 +80,7 @@ async function setLanyard() {
       } else {
         activityDiscordWrapper.style.display = "flex";
         if (activities[0]?.assets?.large_image) {
+          document.getElementById("discordActivityImages").style.display = "block";
           let activityImageLarge = activities[0].assets.large_image;
           if (activityImageLarge.includes("external")) {
             activityImageLarge = `https://media.discordapp.net/external/${activities[0].assets.large_image.split("mp:external/")[1]
@@ -84,6 +102,7 @@ async function setLanyard() {
 
 
         if (activities[0]?.assets?.small_image) {
+          document.getElementById("discordActivityImages").style.display = "block";
           let activityImageSmall = activities[0].assets.small_image;
           if (activityImageSmall.includes("external")) {
             activityImageSmall = `https://media.discordapp.net/external/${activities[0].assets.small_image.split("mp:external/")[1]
@@ -115,7 +134,6 @@ async function setLanyard() {
             document.getElementById('activityState').style.textAlign = 'center';
             document.getElementById('activityDetails').style.textAlign = 'center';
             document.getElementById('activityTime').style.textAlign = 'center';
-        } else {
           if (!platform()) {
             document.getElementById('activityName').style.textAlign = 'left';
             document.getElementById('activityState').style.textAlign = 'left';
@@ -213,6 +231,17 @@ async function setLanyard() {
     loadingDiv.style.display = "none";
     conentSite.style.display = "flex";
   });
+} catch (error) {
+  console.error("Error fetching Lanyard data:", error);
+  // Handle the error here (e.g., display an error message to the user)
+  handleError(error); // Call a custom error handling function
+}
+}
+
+function handleError(error) {
+  console.error("JavaScript Error:", error);
+  spinner.style.display = "none";
+  errorMessage.style.display = "block";
 }
 
 setInterval(setLanyard, 1000);
