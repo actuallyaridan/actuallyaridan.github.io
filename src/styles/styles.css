@@ -188,7 +188,6 @@ div.project>div>p {
   text-align: center;
   margin: 12px;
   color: rgb(188, 188, 188);
-  white-space: nowrap;
   text-decoration: none;
   word-wrap: break-word;
 }
@@ -1387,7 +1386,6 @@ label, li>p {
 img {
   pointer-events: none;
 }
-
 
 @keyframes lds-ring {
   0% {
