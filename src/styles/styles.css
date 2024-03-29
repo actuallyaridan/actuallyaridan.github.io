@@ -1,5 +1,6 @@
 html {
   scroll-behavior: smooth;
+  color-scheme: dark;
 }
 
 /*Import the local Jost font files instead of using Google Fonts to use them*/
