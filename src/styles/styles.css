@@ -1168,7 +1168,7 @@ header::after {
   clear: both;
 }
 
-.offline {
+.offline, .dnd {
   background-color: light;
   background-color: #f94c5780;
   border: #f94c57 2px solid;
@@ -1191,6 +1191,14 @@ header::after {
   border: #53d769 2px solid;
   border: #53d76980 2px solid;
   box-shadow: rgba(83, 215, 105, 0.50) 0px 0px 20px;
+  transition: background-color 0.2s;
+}
+
+.idle {
+  background-color: #f2841d;
+  background-color: #f2841d80;
+  border: #f2841d 2px solid;
+  border: #f2841d80 2px solid;
   transition: background-color 0.2s;
 }
 

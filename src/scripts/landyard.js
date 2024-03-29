@@ -5,22 +5,6 @@ const loadingDiv = document.getElementById("loading");
 const errorMessage = document.getElementById("errorMessage");
 const spinner = document.getElementById("loadingSpinner");
 
-const timeout = setTimeout(() => {
-  if (loadingDiv) {
-    spinner.style.display = "none";
-    errorMessage.style.display = "block";
-  }
-}, 4000);
-
-function handleError(error) {
-  const timeout = setTimeout(() => {
-    if (loadingDiv) {
-      spinner.style.display = "none";
-      errorMessage.style.display = "block";
-    }
-  }, 4000);
-}
-
 function platform() {
   if (window.innerWidth >= 739) {
     // not mobile
@@ -30,7 +14,6 @@ function platform() {
     return true;
   }
 }
-
 
 async function getLanyard() {
   try {
@@ -55,13 +38,36 @@ async function setLanyard() {
       if (discord_status === "online") {
         statusWrapper.classList.remove("dcloading");
         statusWrapper.classList.remove("offline");
+        statusWrapper.classList.remove("idle"); // Remove "idle" class if previously added
+        statusWrapper.classList.remove("dnd"); // Remove "dnd" class if previously added
         statusWrapper.classList.add("online");
+        statusWrapper.textContent = 'Online';
+      } else if (discord_status === "dnd") {
+        statusWrapper.classList.remove("dcloading");
+        statusWrapper.classList.remove("offline");
+        statusWrapper.classList.remove("idle"); // Remove "idle" class if previously added
+        statusWrapper.classList.remove("online"); // Remove "online" class if previously added
+        statusWrapper.classList.add("dnd");
+        statusWrapper.textContent = 'Do Not Disturb';
+      } else if (discord_status === "idle") {
+        statusWrapper.classList.remove("dcloading");
+        statusWrapper.classList.remove("offline");
+        statusWrapper.classList.remove("dnd"); // Remove "dnd" class if previously added
+        statusWrapper.classList.remove("online"); // Remove "online" class if previously added
+        statusWrapper.classList.add("idle"); // Add "idle" class
+        statusWrapper.textContent = 'Inactive';
       } else {
         statusWrapper.classList.remove("dcloading");
+        statusWrapper.classList.remove("idle"); // Remove "idle" class if previously added
+        statusWrapper.classList.remove("dnd"); // Remove "dnd" class if previously added
+        statusWrapper.classList.remove("online");
         statusWrapper.classList.add("offline");
+        statusWrapper.textContent = 'Offline';
+        //statusWrapper.textContent = discord_status;
       }
-      statusWrapper.textContent = discord_status;
+      //statusWrapper.textContent = discord_status;
     }
+
 
     document.getElementById("discordName").textContent =
       data.data.discord_user.username;
@@ -70,6 +76,7 @@ async function setLanyard() {
     ).src = `https://cdn.discordapp.com/avatars/${userID}/${data.data.discord_user.avatar}.webp?size=512`;
 
     if (discord_status === "online") {
+      document.getElementById("landyardDiscord").style.display = "flex";
       document.getElementById("discordActivityImages").style.display = "none";
       const activityDiscordWrapper = document.getElementById("discordActivity");
       if (!activities.length) {
@@ -224,7 +231,7 @@ async function setLanyard() {
       }
     } else {
       document.getElementById("landyardDiscord").style.display = "none";
-      document.getElementById("project").style.display = "block";
+      //document.getElementById("project").style.display = "block";
     }
     const loadingDiv = document.getElementById("loading");
     const conentSite = document.getElementById("loadedLandyard");
@@ -243,5 +250,6 @@ function handleError(error) {
   spinner.style.display = "none";
   errorMessage.style.display = "block";
 }
+
 
 setInterval(setLanyard, 1000);
