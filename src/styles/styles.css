@@ -61,6 +61,7 @@ header {
 }
 
 body {
+  height: -moz-fit-content;
   height: fit-content;
 }
 
@@ -779,8 +780,8 @@ span.title>p {
   font-size: initial;
   touch-action: manipulation;
   border-radius: 12px;
-  appearance: none;
   -webkit-appearance: none;
+  appearance: none;
   text-align: right;
   margin-right: 12px;
   display: block;
@@ -874,8 +875,8 @@ button {
   font-size: initial;
   touch-action: manipulation;
   border-radius: 12px;
-  appearance: none;
   -webkit-appearance: none;
+  appearance: none;
 }
 
 button.close {
@@ -1233,10 +1234,6 @@ div#discord{
   border-radius: 5px;
 }
 
-#discordActivityImages {
-  /*padding-right: 10px;*/
-}
-
 #activityLogoSmall {
   border-radius: 25%;
   width: 32px;
@@ -1370,8 +1367,9 @@ div.centererWrapper{
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+
   aspect-ratio: 16 / 9;
   width: 85vw;
 }
@@ -1417,8 +1415,8 @@ textarea{
   font-size: initial;
   touch-action: manipulation;
   border-radius: 12px;
-  appearance: none;
   -webkit-appearance: none;
+  appearance: none;
 }
 
 .text{
@@ -1441,8 +1439,8 @@ textarea{
   font-size: initial;
   touch-action: manipulation;
   border-radius: 12px;
-  appearance: none;
   -webkit-appearance: none;
+  appearance: none;
 }
 
 @keyframes lds-ring {
