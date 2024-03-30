@@ -26,6 +26,17 @@ async function getLanyard() {
 }
 }
 
+// Check for the localStorage setting
+const doUpdateSec = localStorage.getItem("doUpdateSec") !== "false";
+
+// Call setLanyard once initially
+setLanyard();
+
+// If doUpdateSec is true, set up a one-second interval for updates
+if (doUpdateSec) {
+  setInterval(setLanyard, 1000);
+}
+
 async function setLanyard() {
   try {
   await getLanyard().then((data) => {
@@ -250,6 +261,3 @@ function handleError(error) {
   spinner.style.display = "none";
   errorMessage.style.display = "block";
 }
-
-
-setInterval(setLanyard, 1000);

@@ -12,6 +12,7 @@ window.addEventListener('DOMContentLoaded', () => {
       .forEach(element => element.classList.remove('noAnimation'));
   }
 
+
   if (storedColor) {
     if (storedColor == "151, 10, 10") {
       const darkerAccentColor = "30, 0, 0";
@@ -136,6 +137,37 @@ window.addEventListener('DOMContentLoaded', () => {
 
     // Apply initial animation state based on localStorage
     toggleNoAnimationsClass();
+  }
+});
+
+/*Manages the update toggle*/
+window.addEventListener('DOMContentLoaded', () => {
+  if (document.getElementById('settings')) {
+    const updateCheckbox = document.getElementById('update-every-sec');
+    const form = document.getElementById('settings');
+
+    const doUpdatesEverySecSetter = () => {
+      localStorage.setItem('doUpdateSec', updateCheckbox.checked);
+    };
+
+    // Attach the animation toggle to the submit button click
+    form.addEventListener('submit', () => {
+      doUpdatesEverySecSetter();
+
+      // Save the setting to localStorage for persistence
+      localStorage.setItem('doUpdateSec', updateCheckbox.checked);
+    });
+
+    // Load setting from localStorage on page load (initial state)
+    const storedSettingUpdate = localStorage.getItem('doUpdateSec');
+    if (storedSettingUpdate === 'false') {
+      updateCheckbox.checked = false;
+    } else {
+      updateCheckbox.checked = true;
+    }
+
+    // Apply initial animation state based on localStorage
+    doUpdatesEverySecSetter();
   }
 });
 
