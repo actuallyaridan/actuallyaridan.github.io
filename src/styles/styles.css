@@ -1396,6 +1396,55 @@ img {
   pointer-events: none;
 }
 
+textarea{
+  appearance: none;
+  resize: none;
+  overflow: scroll;
+  width: 80%;
+  height: 10vh;
+  max-width: 420px;
+  overflow-x: hidden;
+  list-style-type: none;
+  color: white;
+  font-family: Jost, sans-serif;
+  background-color: #121212;
+  background-color: rgba(var(--accent-color), 0.10);
+  border: none;
+  padding: 8px;
+  text-decoration: none;
+  font-size: initial;
+  transition: background-color .2s;
+  font-size: initial;
+  touch-action: manipulation;
+  border-radius: 12px;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.text{
+  appearance: none;
+  resize: none;
+  overflow: scroll;
+  width: 40%;
+  max-width: 420px;
+  overflow-x: hidden;
+  list-style-type: none;
+  color: white;
+  font-family: Jost, sans-serif;
+  background-color: #121212;
+  background-color: rgba(var(--accent-color), 0.10);
+  border: none;
+  padding: 8px;
+  text-decoration: none;
+  font-size: initial;
+  transition: background-color .2s;
+  font-size: initial;
+  touch-action: manipulation;
+  border-radius: 12px;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
 @keyframes lds-ring {
   0% {
     transform: rotate(0deg);
