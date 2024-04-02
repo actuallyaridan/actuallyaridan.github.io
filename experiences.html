@@ -88,50 +88,6 @@
     </header>
     <main>
         <h1>Experiences</h1>
-        <div id="cvModal" class="emailModal">
-            <div class="emailModalContent">
-                <div class="titleEmailWrapper">
-                    <p class="titleEmail">Request CV/resume</p>
-                </div>
-                <p class="emailText">So exciting that I sound interesting! Go ahead and fill out this form
-                    and I'll send a copy of my CV/resume to you!<br>PLEASE NOTE: This is not functional and it's not
-                    finished. For now, contact me using the email address on the Contact page.</p>
-                <form id="cv" action="/src/scripts/cv.js">
-                    <div class="settingGroup">
-                        <div class="setting">
-                            <ul>
-                                <li>
-                                    <p><label for="language-select">I am a...</label></p>
-                                    <div>
-                                        <select class="button" id="language-select" required style="
-                                                    width: 80%;
-                                                ">
-                                            <option value="person" selected>private person</option>
-                                            <option value="company">recruiter, employer or company</option>
-                                        </select>
-                                    </div>
-                                </li>
-                                <li>
-                                    <p><label for="email">Your email address</label></p>
-                                    <input required class="text" type="email" name="email"
-                                        placeholder="you@example.email">
-                                </li>
-                                <li>
-                                    <p><label for="message">Message</label></p>
-                                    <textarea required name="message" form="cv" wrap="hard" name="message"
-                                        placeholder="Write a message"></textarea>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="buttonsEmail">
-                        <button class="green socialMedia" type="submit">Submit</a>
-                            <button onclick="cvModalToggle()" class="socialMedia emailOK" type="button">Close</button>
-                    </div>
-                </form>
-
-            </div>
-        </div>
         <div>
             <div class="centererWrapper">
                 <section class="titleUnderText">
@@ -144,7 +100,8 @@
                 </section>
                 <section class="centerer">
                     <div class="centererItems">
-                        <button type="button" onclick="cvModalToggle()" class="cvButton">Request CV/resume</button>
+                        <a class="cvButton"
+                            href="contact">Request CV/resume</a>
                         <a rel="noopener" class="socialMedia linkedin"
                             href="https://www.linkedin.com/in/adnan-bukvic-b220b1277/" target="_blank">LinkedIn</a>
                     </div>

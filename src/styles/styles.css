@@ -1470,6 +1470,13 @@ h1{
   animation: fling 0.3s;
 }
 
+.cvstuff{
+  background-color: unset;
+}
+
+.cvshit{
+  width: 80%;
+}
 
 @keyframes fling {
   0% {
@@ -1550,5 +1557,16 @@ h1{
 
   div.navWrapperMobile {
     display: flex;
+  }
+
+  ul.cvstuff>li{
+    flex-direction: column;
+  }
+  ul.cvstuff>li>p{
+    padding-right: 0px;
+  }
+  ul.cvstuff>li>select, ul.cvstuff>li>input, ul.cvstuff>li>textarea{
+    width: 100% !important;
+    text-align: center !important;
   }
 }
