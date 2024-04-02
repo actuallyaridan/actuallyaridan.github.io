@@ -3,6 +3,8 @@ html {
   color-scheme: dark;
 }
 
+
+
 /*Import the local Jost font files instead of using Google Fonts to use them*/
 @font-face {
   font-family: Jost;
@@ -58,6 +60,11 @@ header {
   position: sticky;
   top: 12px;
   z-index: 9;
+}
+
+menu {
+  padding: unset;
+  margin: unset;
 }
 
 body {
@@ -150,7 +157,7 @@ div.work {
   padding-top: 12px;
 }
 
-div.project {
+section.project {
   background-color: #121212;
   background-color: rgba(var(--accent-color), 0.10);
   padding: 12px;
@@ -165,13 +172,13 @@ div.project {
   width: 80%;
 }
 
-div.project>p {
+section.project>p {
   text-align: left;
   margin: 12px;
   color: rgb(188, 188, 188);
 }
 
-div.project>div {
+section.project>div {
   display: flex;
   justify-content: center;
   align-self: center;
@@ -186,7 +193,7 @@ div.project>div {
   max-width: 80%;
 }
 
-div.project>div>p {
+section.project>div>p {
   text-align: center;
   margin: 12px;
   color: rgb(188, 188, 188);
@@ -194,7 +201,7 @@ div.project>div>p {
   word-wrap: break-word;
 }
 
-div.project>div>p>a {
+section.project>div>p>a {
   text-align: center;
   color: rgb(188, 188, 188);
   white-space: nowrap;
@@ -202,12 +209,12 @@ div.project>div>p>a {
   transition: color .2s;
 }
 
-div.project>div>p>a:hover {
+section.project>div>p>a:hover {
   color: white;
   transition: color .2s;
 }
 
-div.project>p.projectName {
+section.project>p.projectName {
   color: white;
 }
 
@@ -224,7 +231,7 @@ div.project>p.projectName {
   margin-left: 12px;
 }
 
-div.project>p.dcProjectName {
+section.project>p.dcProjectName {
   color: white;
 }
 
@@ -413,7 +420,7 @@ p.bottomText {
 }
 
 
-div.mobileMenu>a {
+menu.mobileMenu>li>a {
   text-align: center;
   margin-right: 9px;
   margin-left: 8px;
@@ -547,12 +554,13 @@ div.mobileMenu>a {
   text-decoration: none;
 }
 
-div.socialMedias {
+section.socialMedias {
   background-color: #121212;
   background-color: rgba(var(--accent-color), 0.10);
   padding: 12px;
   margin: 12px;
   border-radius: 12px;
+  flex-direction: row;
 }
 
 .leftAlign {
@@ -1339,7 +1347,7 @@ button.mcMenu{
   padding-bottom: 2px;
 }
 
-div.titleUnderText{
+section.titleUnderText{
   max-width: 80vw;
 }
 
@@ -1443,6 +1451,14 @@ textarea{
   appearance: none;
 }
 
+h1{
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
 @keyframes lds-ring {
   0% {
     transform: rotate(0deg);
@@ -1474,7 +1490,7 @@ textarea{
     display: none;
   }
 
-  div.mobileMenu {
+  menu.mobileMenu {
     display: none;
   }
 
@@ -1484,7 +1500,7 @@ textarea{
 }
 
 @media only screen and (max-width: 740px) {
-  div.navWrapper {
+  menu.navWrapper {
     display: none;
   }
 
