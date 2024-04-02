@@ -1158,6 +1158,7 @@ li>p {
 .noAnimation:before,
 .noAnimation:after {
   transition: none !important;
+  animation: none !important;
 }
 
 
@@ -1464,6 +1465,26 @@ h1{
   align-items: center;
 }
 
+.emailModalContent {
+  /* Existing styles */
+  animation: fling 0.3s;
+}
+
+
+@keyframes fling {
+  0% {
+    transform: scale(.7);
+}
+45% {
+  transform: scale(1.05);
+}
+80% {
+  transform: scale(.95);
+}
+100% {
+  transform: scale(1);
+}
+}
 
 @keyframes lds-ring {
   0% {
