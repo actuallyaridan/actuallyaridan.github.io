@@ -1323,7 +1323,6 @@ div#loading>div{
   align-items: center;
   justify-content: center;
   position: relative;
-
 }
 
 
@@ -1333,6 +1332,7 @@ button.mcMenu{
   margin: 0; /* Remove default margin for better spacing */
   padding: 10px; /* Add some padding for visual separation (optional) */
   border-radius: 0;
+  font-size: larger;
 }
 .hide{
   display: none;
@@ -1372,9 +1372,49 @@ div.centererWrapper{
 .imgWorld {
   position: absolute;
   aspect-ratio: 16 / 9; /* typical video aspect ratio */
-  width: 85vw;
+  width: 65vw;
   background-image: url('/images/world.png');
   background-size: contain;
+}
+
+#serverJoin{
+  background-color: #0909095c;
+  padding: 24px;
+  border-radius: 12px;
+
+}
+
+#bedrockJoinWrapper>p{
+text-align: left;
+font-size: large;
+color: black;
+}
+
+#serverJoinBedrock{
+  background-color: rgb(228, 228, 228);
+  border: rgb(228, 228, 228) 2px solid;
+  padding-left: 6px;
+  padding-right: 6px;
+  width: 450px;
+}
+
+.mcbuttonjoin{
+  width: 400px;
+  height: 40px;
+  margin: auto;
+  background: url(/src/images/background/mc-button.png) no-repeat;
+  color: #fff;
+  text-align: center;
+  line-height: 42px;
+  font-size: larger;
+  font-weight: normal;
+  text-shadow: 2px 2px 0px #1a1a1a;
+  margin-bottom: 8px;
+}
+
+#innerContentBedrock{
+  background-color: rgb(22, 22, 22);
+  padding: 8px;
 }
 
 .img-holder{
@@ -1386,7 +1426,7 @@ div.centererWrapper{
   backdrop-filter: blur(5px);
 
   aspect-ratio: 16 / 9;
-  width: 85vw;
+  width: 65vw;
 }
 
 .img-holder>p{
@@ -1474,8 +1514,90 @@ h1{
   background-color: unset;
 }
 
+#serverJoin>p{
+  text-align: left;
+  font-size: larger;
+  margin: 0px;
+  margin-left: 32px;
+}
+
+#serverJoinBedrock{
+
+}
+
+#serverJoinBedrock>div.title{
+  background-color: rgb(228, 228, 228);
+  padding-left: 6px;
+}
+  
+
+#serverJoinBedrock>div.title>p{
+color: #000;
+text-align: left;
+font-size: larger;
+margin: 0px;
+}
+
+
+#serverJoinBedrock>div>p{
+  text-align: left;
+  font-size: large;
+  margin: 0px;
+}
+
 .cvshit{
   width: 80%;
+}
+.serverInput{
+  position: relative;
+  width: 368px;
+  height: 40px;
+  padding: 0 14px;
+  margin: auto;
+  margin-bottom: 10px;
+  border: 2px solid #a0a0a0;
+  background: #000;
+  font-size: larger;
+  color: #fff;
+  line-height: 42px;
+  cursor: pointer;
+}
+
+.serverInputBedrock{
+  background-color: #333333;
+  padding: 6px;
+  font-size: large;
+}
+
+#bedrockButtons{
+  display: flex;
+  flex-direction: row;
+justify-content: space-between;
+align-items: center;
+}
+
+.mcbuttonjoinBedrock{
+color: black;
+border-top: 2px black solid;
+border-left: 2px black solid;
+border-bottom: 3px black solid;
+border-right: 3px black solid;
+margin: 12px;
+width: 50%;
+text-align: center;
+font-size: large;
+}
+
+#howToJoin{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.backgroundJoin{
+  background-color: #0909095c;
+  padding: 24px;
+  border-radius: 12px;
 }
 
 @keyframes fling {
