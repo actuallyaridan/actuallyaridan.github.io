@@ -37,7 +37,7 @@
                         src="/src/images/emojis/setttings.svg"> Inställningar</a>
             </div>
             <div class="navWrapperMobile">
-                <button onclick="toggleMenu()" class="navButton">＝ Meny</button>
+                <button onclick="toggleMenu()" type="button" class="navButton">＝ Meny</button>
             </div>
             <div class="mobileMenu" id="mobileMenuID">
                 <a class="navButton" href="/sv/"><img draggable="false" class="emoji" alt=""
@@ -119,7 +119,7 @@
                             </div>
                         </li>
                         <li>
-                            <p><label for="update-every-sec">Uppdatera aktivitet varje sekund (fungerar inte)</label></p>
+                            <p><label for="update-every-sec">Uppdatera aktivitet automatiskt</label></p>
                             <div>
                                 <label class="switch">
                                     <input type="checkbox" id="update-every-sec" name="update-every-sec" value="true" checked>
@@ -135,12 +135,12 @@
                     <div>
                         <div id="failSave" class="savedMessage failed">
                             <span class="closebtn" onclick="settingsAlert()">&#x2715;</span>
-                            Dina inställningar kunde inte sparas.Försök igen.
+                            Dina inställningar kunde inte sparas. Försök igen.
                         </div>
             
                         <div id="sucessfullSave" class="savedMessage sucessfull">
                             <span class="closebtn" onclick="settingsAlert()">&#x2715;</span>
-                            Dina inställningar sparades!Ladda om för att verkställa.
+                            Dina inställningar sparades! Ladda om för att verkställa.
                         </div>
                     </div>
                 </div>

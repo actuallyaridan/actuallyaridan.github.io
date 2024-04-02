@@ -37,7 +37,7 @@
                         src="/src/images/emojis/setttings.svg"> Settings</a>
             </div>
             <div class="navWrapperMobile">
-                <button onclick="toggleMenu()" class="navButton">
+                <button onclick="toggleMenu()" type="button" class="navButton">
                     <img draggable="false" class="emoji" alt="" src="/src/images/icons/menu.svg">
                     Menu
                 </button>
@@ -124,7 +124,7 @@
                             </div>
                         </li>
                         <li>
-                            <p><label for="update-every-sec">Update activity every second</label></p>
+                            <p><label for="update-every-sec">Update activity automatically</label></p>
                             <div>
                                 <label class="switch">
                                     <input type="checkbox" id="update-every-sec" name="update-every-sec" value="true" checked>
@@ -140,7 +140,7 @@
                     <div>
                         <div id="failSave" class="savedMessage failed">
                             <span class="closebtn" onclick="settingsAlert()">&#x2715;</span>
-                            Failed to save settings.Try again.
+                            Failed to save settings. Try again.
                         </div>
             
                         <div id="sucessfullSave" class="savedMessage sucessfull">
