@@ -5,10 +5,10 @@ window.addEventListener('DOMContentLoaded', () => {
 
   const storedSetting = localStorage.getItem('showAnimations');
   if (storedSetting === 'false') {
-    document.querySelectorAll('button, a, span, body, label, input')
+    document.querySelectorAll('button, a, span, body, label, input, menu')
       .forEach(element => element.classList.add('noAnimation'));
   } else {
-    document.querySelectorAll('button, a, span, body, label, input')
+    document.querySelectorAll('button, a, span, body, label, input, menu')
       .forEach(element => element.classList.remove('noAnimation'));
   }
 
@@ -111,10 +111,10 @@ window.addEventListener('DOMContentLoaded', () => {
     // Function to apply/remove the noAnimations class based on checkbox state
     const toggleNoAnimationsClass = () => {
       if (animationsCheckbox.checked) {
-        document.querySelectorAll('button, a, span, body, label, input')
+        document.querySelectorAll('button, a, span, body, label, input, menu')
           .forEach(element => element.classList.remove('noAnimation'));
       } else {
-        document.querySelectorAll('button, a, span, body, label, input')
+        document.querySelectorAll('button, a, span, body, label, input, menu')
           .forEach(element => element.classList.add('noAnimation'));
       }
     };

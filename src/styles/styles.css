@@ -406,17 +406,23 @@ p.bottomText {
 }
 
 .mobileMenu {
-  display: none;
+  display: flex;
   flex-direction: row;
-  margin: 12px;
-  margin-top: 18px;
   justify-content: center;
   justify-items: center;
   flex-wrap: wrap;
+  max-height: 0;
+  overflow-y: hidden;
+	transition-property: all;
+	transition-duration: .3s;
+	transition-timing-function: cubic-bezier(1, 1, 1, 1);
+
 }
 
 .showMenu {
-  display: flex;
+  margin: 12px;
+  margin-top: 18px;
+  max-height: 200px; /* approximate max height */
 }
 
 
