@@ -5,6 +5,7 @@ html {
 
 
 
+
 /*Import the local Jost font files instead of using Google Fonts to use them*/
 @font-face {
   font-family: Jost;
@@ -27,6 +28,12 @@ html {
   font-display: swap;
   /*When using swap as font-display, the browser will render the text with the fallback font and once it loads Jost, it'll swap over to it. Makes the site feel faster*/
   src: url(fonts/Pixel.ttf);
+}
+
+h2{
+  font-size: unset;
+  font-family: Jost, sans-serif;
+  font-weight: normal;
 }
 
 .divider {
@@ -145,7 +152,7 @@ p.subTitle {
 }
 
 p.subTitleExp,
-p.projectName {
+h2.projectName {
   color: rgb(255, 255, 255);
 }
 p.dcProjectName {
@@ -174,7 +181,7 @@ section.project {
   backdrop-filter: blur(20px);
 }
 
-section.project>p {
+section.project>p, section.project>h2 {
   text-align: left;
   margin: 12px;
   color: rgb(188, 188, 188);
@@ -216,7 +223,7 @@ section.project>div>p>a:hover {
   transition: color .2s;
 }
 
-section.project>p.projectName {
+section.project>h2.projectName {
   color: white;
 }
 
