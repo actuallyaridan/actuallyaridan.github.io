@@ -1196,7 +1196,6 @@ header::after {
 }
 
 .offline, .dnd {
-  background-color: light;
   background-color: #f94c5780;
   border: #f94c57 2px solid;
   border: #f94c5780 2px solid;
@@ -1252,7 +1251,7 @@ div#discord{
 }
 
 #discordActivity { 
-  text-wrap:  wrap(10); 
+  word-wrap: break-word;
 }
 
 #activityLogoLarge {
@@ -1398,14 +1397,6 @@ div.centererWrapper{
 text-align: left;
 font-size: large;
 color: black;
-}
-
-#serverJoinBedrock{
-  background-color: rgb(228, 228, 228);
-  border: rgb(228, 228, 228) 2px solid;
-  padding-left: 6px;
-  padding-right: 6px;
-  width: 450px;
 }
 
 .mcbuttonjoin{
