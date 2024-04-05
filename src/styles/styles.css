@@ -1644,7 +1644,7 @@ font-size: large;
 
 @media only screen and (min-width: 739px) {
 
-  div.navWrapperMobile {
+  menu.navWrapperMobile {
     display: none;
   }
 
@@ -1679,7 +1679,7 @@ font-size: large;
     text-align: center;
   }
 
-  div.navWrapperMobile {
+  menu.navWrapperMobile {
     display: flex;
   }
 
