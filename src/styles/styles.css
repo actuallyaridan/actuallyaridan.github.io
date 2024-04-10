@@ -1641,7 +1641,7 @@ font-size: large;
   }
 }
 
-@media only screen and (min-width: 739px) {
+@media only screen and (min-width: 759px) {
 
   menu.navWrapperMobile {
     display: none;
@@ -1651,12 +1651,12 @@ font-size: large;
     display: none;
   }
 
-  div.navWrapper {
+  menu.navWrapper {
     display: flex;
   }
 }
 
-@media only screen and (max-width: 740px) {
+@media only screen and (max-width: 760px) {
   menu.navWrapper {
     display: none;
   }
