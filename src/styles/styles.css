@@ -30,6 +30,14 @@ html {
   src: url(fonts/Pixel.ttf);
 }
 
+@font-face {
+  font-family: SevenSegment;
+  font-style: normal;
+  font-display: swap;
+  /*When using swap as font-display, the browser will render the text with the fallback font and once it loads Jost, it'll swap over to it. Makes the site feel faster*/
+  src: url(fonts/SevenSegment.ttf);
+}
+
 h2{
   font-size: 1em;
   font-family: Jost, sans-serif;
@@ -88,6 +96,14 @@ body {
 main,
 footer {
   margin: 18px;
+}
+
+.hide{
+  display: none;
+}
+
+.inline{
+  display: inline !important;
 }
 
 .centerer {
@@ -1251,7 +1267,9 @@ div#discord{
 }
 
 #discordActivity { 
+  min-width: 15vw;
   word-wrap: break-word;
+  max-width: 300px;
 }
 
 #activityLogoLarge {
@@ -1264,7 +1282,6 @@ div#discord{
   height: 32px;
   position: absolute;
   transform: translate(-200%, 250%);
-  box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 90px;
 }
 
 #discordName>p{
@@ -1438,9 +1455,14 @@ color: black;
   background-color: rgba(var(--darker-accent-color), 0.30);
 }
 
-#activityName, #activityState, #activityDetails, #activityTime{
+#activityName, #activityState, #activityDetails, #activityTime, #timeremaning{
   text-align: left;
 }
+
+#activityTime{
+  display: inline;
+  font-family: SevenSegment, mono, Jost, sans-serif;
+} 
 
 label, li>p {
   color: rgb(203, 203, 203);
@@ -1674,7 +1696,7 @@ font-size: large;
     padding-right: 0 !important;
   }
 
-  #activityName, #activityState, #activityDetails, #activityTime{
+  #activityName, #activityState, #activityDetails, #activityTime, #timeremaning{
     text-align: center;
   }
 

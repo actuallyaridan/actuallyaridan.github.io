@@ -35,9 +35,9 @@ const doUpdateSec = localStorage.getItem("doUpdateSec") !== "false";
 // Call setLanyard once initially
 setLanyard();
 
-// If doUpdateSec is true, set up a 650ms interval for updates
+// If doUpdateSec is true, set up a 1 second interval for updates
 if (doUpdateSec) {
-  setInterval(setLanyard, 900);
+  setInterval(setLanyard, 1000);
 }
 
 //Waits until data has been fetched, then updates items
@@ -206,7 +206,7 @@ async function setLanyard() {
             const timeRemainingMs = activityEnd - now;
 
             // Converts it to seconds and makes sure no negative number is allowed by making the minimum number 0
-            const timeRemainingSeconds = Math.max(0, Math.floor(timeRemainingMs / 1000));
+            const timeRemainingSeconds = Math.max(0, Math.floor(timeRemainingMs / 1000)); // Ensures minimum is 0
 
             // Separates the seconds into minutes and seconds 
             const minutesRemaining = Math.floor(timeRemainingSeconds / 60);
@@ -217,15 +217,19 @@ async function setLanyard() {
             const secondsRemainingStr = secondsRemaining.toString().padStart(2, "0");
 
             // Displays the remaining time 
-            const timeRemainingStr = `${minutesRemainingStr}:${secondsRemainingStr} remaining`;
+            const timeRemainingStr = `${minutesRemainingStr}:${secondsRemainingStr}`;
             document.getElementById("activityTime").textContent = timeRemainingStr;
+            document.getElementById("remaining").classList.remove("hide")
+            document.getElementById("remaining").classList.add("inline")
+            document.getElementById("elapsed").classList.remove("inline")
+            document.getElementById("elapsed").classList.add("hide")
           } else {
 
             // Creates a date based on the start tme, and subtracts the current time by it in order to get the elapsed milliseconds
             const timeDiffMs = now - activityStart;
 
             // Converts it to seconds and makes sure no negative number is allowed by making the minimum number 0
-            const timeDiffSeconds = Math.floor(timeDiffMs / 1000);
+            const timeDiffSeconds = Math.max(0, Math.floor(timeDiffMs / 1000)); // Ensures minimum is 0
 
             // Separates the seconds into minutes and seconds 
             let timeDiffStr;
@@ -237,8 +241,12 @@ async function setLanyard() {
             const secondsStr = remainingSeconds.toString().padStart(2, "0");
 
             // Displays the elapsed time 
-            timeDiffStr = `${minutesStr}:${secondsStr} elapsed`;
+            timeDiffStr = `${minutesStr}:${secondsStr}`;
             document.getElementById("activityTime").textContent = timeDiffStr;
+            document.getElementById("remaining").classList.remove("inline")
+            document.getElementById("remaining").classList.add("hide")
+            document.getElementById("elapsed").classList.remove("hide")
+            document.getElementById("elapsed").classList.add("inline")
           }
         }
       } else {

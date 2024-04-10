@@ -35,9 +35,9 @@ const doUpdateSec = localStorage.getItem("doUpdateSec") !== "false";
 // Call setLanyard once initially
 setLanyard();
 
-// If doUpdateSec is true, set up a 650ms interval for updates
+// If doUpdateSec is true, set up a 1 second interval for updates
 if (doUpdateSec) {
-  setInterval(setLanyard, 900);
+  setInterval(setLanyard, 1000);
 }
 
 //Waits until data has been fetched, then updates items
@@ -198,50 +198,58 @@ async function setLanyard() {
           const activityStart = new Date(activities[0].created_at);
           const now = new Date();
 
-          // Checks if the activity has an end time
-          if (activities[0].timestamps?.end) {
+        // Checks if the activity has an end time
+        if (activities[0].timestamps?.end) {
 
-            // Creates a date based on the end tme, and subtracts it by the current time in order to get the remaining milliseconds
-            const activityEnd = new Date(activities[0].timestamps.end);
-            const timeRemainingMs = activityEnd - now;
+          // Creates a date based on the end tme, and subtracts it by the current time in order to get the remaining milliseconds
+          const activityEnd = new Date(activities[0].timestamps.end);
+          const timeRemainingMs = activityEnd - now;
 
-            // Converts it to seconds and makes sure no negative number is allowed by making the minimum number 0
-            const timeRemainingSeconds = Math.max(0, Math.floor(timeRemainingMs / 1000));
+          // Converts it to seconds and makes sure no negative number is allowed by making the minimum number 0
+          const timeRemainingSeconds = Math.max(0, Math.floor(timeRemainingMs / 1000)); // Ensures minimum is 0
 
-            // Separates the seconds into minutes and seconds 
-            const minutesRemaining = Math.floor(timeRemainingSeconds / 60);
-            const secondsRemaining = timeRemainingSeconds % 60;
+          // Separates the seconds into minutes and seconds 
+          const minutesRemaining = Math.floor(timeRemainingSeconds / 60);
+          const secondsRemaining = timeRemainingSeconds % 60;
 
-            // Formats minutes and seconds with leading zeros
-            const minutesRemainingStr = minutesRemaining.toString().padStart(2, "0");
-            const secondsRemainingStr = secondsRemaining.toString().padStart(2, "0");
+          // Formats minutes and seconds with leading zeros
+          const minutesRemainingStr = minutesRemaining.toString().padStart(2, "0");
+          const secondsRemainingStr = secondsRemaining.toString().padStart(2, "0");
 
-            // Displays the remaining time 
-            const timeRemainingStr = `${minutesRemainingStr}:${secondsRemainingStr} återstår`;
-            document.getElementById("activityTime").textContent = timeRemainingStr;
-          } else {
+          // Displays the remaining time 
+          const timeRemainingStr = `${minutesRemainingStr}:${secondsRemainingStr}`;
+          document.getElementById("activityTime").textContent = timeRemainingStr;
+          document.getElementById("remaining").classList.remove("hide")
+          document.getElementById("remaining").classList.add("inline")
+          document.getElementById("elapsed").classList.remove("inline")
+          document.getElementById("elapsed").classList.add("hide")
+        } else {
 
-            // Creates a date based on the start tme, and subtracts the current time by it in order to get the elapsed milliseconds
-            const timeDiffMs = now - activityStart;
+          // Creates a date based on the start tme, and subtracts the current time by it in order to get the elapsed milliseconds
+          const timeDiffMs = now - activityStart;
 
-            // Converts it to seconds and makes sure no negative number is allowed by making the minimum number 0
-            const timeDiffSeconds = Math.floor(timeDiffMs / 1000);
+          // Converts it to seconds and makes sure no negative number is allowed by making the minimum number 0
+          const timeDiffSeconds = Math.max(0, Math.floor(timeDiffMs / 1000)); // Ensures minimum is 0
 
-            // Separates the seconds into minutes and seconds 
-            let timeDiffStr;
-            const minutes = Math.floor(timeDiffSeconds / 60);
-            const remainingSeconds = timeDiffSeconds % 60;
+          // Separates the seconds into minutes and seconds 
+          let timeDiffStr;
+          const minutes = Math.floor(timeDiffSeconds / 60);
+          const remainingSeconds = timeDiffSeconds % 60;
 
-            // Formats minutes and seconds with leading zeros
-            const minutesStr = minutes.toString().padStart(2, "0");
-            const secondsStr = remainingSeconds.toString().padStart(2, "0");
+          // Formats minutes and seconds with leading zeros
+          const minutesStr = minutes.toString().padStart(2, "0");
+          const secondsStr = remainingSeconds.toString().padStart(2, "0");
 
-            // Displays the elapsed time 
-            timeDiffStr = `${minutesStr}:${secondsStr} förflutet`;
-            document.getElementById("activityTime").textContent = timeDiffStr;
-          }
+          // Displays the elapsed time 
+          timeDiffStr = `${minutesStr}:${secondsStr}`;
+          document.getElementById("activityTime").textContent = timeDiffStr;
+          document.getElementById("remaining").classList.remove("inline")
+          document.getElementById("remaining").classList.add("hide")
+          document.getElementById("elapsed").classList.remove("hide")
+          document.getElementById("elapsed").classList.add("inline")
         }
-      } else {
+      }
+    } else {
         document.getElementById("landyardDiscord").style.display = "none";
       }
       const loadingDiv = document.getElementById("loading");
