@@ -71,8 +71,8 @@ header {
 }
 
 menu {
-  padding: unset;
-  margin: unset;
+  padding: 0px;
+  margin: 0px;
 }
 
 body {
