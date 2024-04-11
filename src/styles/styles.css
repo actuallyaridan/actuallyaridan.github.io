@@ -1261,10 +1261,6 @@ div#discord{
 
 .discordPFP {border-radius: 10px;}
 
-#discordInfo {
-  display: flex;
-  flex-direction: column-reverse;
-}
 
 #discordActivity { 
   min-width: 15vw;
