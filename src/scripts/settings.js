@@ -1,5 +1,5 @@
 /*Applies all settings to all pages from local storage, if they exist*/
-window.addEventListener('DOMContentLoaded', () => {
+window.addEventListener('DOMContentLoaded',) () => {
   const storedColor = localStorage.getItem('accent-color');
   document.documentElement.style.setProperty('--accent-color', storedColor);
 
@@ -13,30 +13,40 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 
 
-  if (storedColor) {
-    if (storedColor == "151, 10, 10") {
-      const darkerAccentColor = "30, 0, 0";
-      localStorage.setItem('darker-accent-color', darkerAccentColor);
-      document.documentElement.style.setProperty('--darker-accent-color', darkerAccentColor);
-    } else if (storedColor == "10, 151, 33") {
-      const darkerAccentColor = "0, 30, 3";
-      localStorage.setItem('darker-accent-color', darkerAccentColor);
-      document.documentElement.style.setProperty('--darker-accent-color', darkerAccentColor);
-    } else if (storedColor == "10, 66, 151") {
-      const darkerAccentColor = "0, 10, 40";
-      localStorage.setItem('darker-accent-color', darkerAccentColor);
-      document.documentElement.style.setProperty('--darker-accent-color', darkerAccentColor);
-    } else if (storedColor == "151, 78, 10") {
-      const darkerAccentColor = "60, 18, 0";
-      localStorage.setItem('darker-accent-color', darkerAccentColor);
-      document.documentElement.style.setProperty('--darker-accent-color', darkerAccentColor);
-    } else{
-      const darkerAccentColor = "18, 2, 24";
-      localStorage.setItem('darker-accent-color', darkerAccentColor);
-      document.documentElement.style.setProperty('--darker-accent-color', darkerAccentColor);
+  document.addEventListener('DOMContentLoaded', function() {
+    const themeSelectors = document.querySelectorAll('input[name="theme-color"]');
+    const colorSelectors = document.querySelectorAll('input[name="accent-color"]');
+
+    themeSelectors.forEach(theme => {
+        theme.addEventListener('change', function() {
+            document.body.className = 'theme-' + this.value;
+            localStorage.setItem('theme-color', this.value);
+        });
+    });
+
+    colorSelectors.forEach(color => {
+        color.addEventListener('change', function() {
+            const colorValue = `rgb(${this.value})`;
+            document.documentElement.style.setProperty('--primary-color', colorValue);
+            localStorage.setItem('accent-color', this.value);
+        });
+    });
+
+    // Apply saved theme and color from localStorage
+    const savedTheme = localStorage.getItem('theme-color');
+    const savedColor = localStorage.getItem('accent-color');
+
+    if (savedTheme) {
+        document.body.className = 'theme-' + savedTheme;
+        document.getElementById(savedTheme).checked = true;
     }
-  }
+
+    if (savedColor) {
+        document.documentElement.style.setProperty('--primary-color', `rgb(${savedColor})`);
+        document.getElementById(savedColor).checked = true;
+    }
 });
+
 
 
 /*Manages the accent color toggle*/
