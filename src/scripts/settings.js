@@ -1,8 +1,4 @@
-/*Applies all settings to all pages from local storage, if they exist*/
-window.addEventListener('DOMContentLoaded',) () => {
-  const storedColor = localStorage.getItem('accent-color');
-  document.documentElement.style.setProperty('--accent-color', storedColor);
-
+window.addEventListener('DOMContentLoaded', () => {
   const storedSetting = localStorage.getItem('showAnimations');
   if (storedSetting === 'false') {
     document.querySelectorAll('button, a, span, body, label, input, menu, div')
@@ -11,106 +7,7 @@ window.addEventListener('DOMContentLoaded',) () => {
     document.querySelectorAll('button, a, span, body, label, input, menu, div')
       .forEach(element => element.classList.remove('noAnimation'));
   }
-
-
-  document.addEventListener('DOMContentLoaded', function() {
-    const themeSelectors = document.querySelectorAll('input[name="theme-color"]');
-    const colorSelectors = document.querySelectorAll('input[name="accent-color"]');
-
-    themeSelectors.forEach(theme => {
-        theme.addEventListener('change', function() {
-            document.body.className = 'theme-' + this.value;
-            localStorage.setItem('theme-color', this.value);
-        });
-    });
-
-    colorSelectors.forEach(color => {
-        color.addEventListener('change', function() {
-            const colorValue = `rgb(${this.value})`;
-            document.documentElement.style.setProperty('--primary-color', colorValue);
-            localStorage.setItem('accent-color', this.value);
-        });
-    });
-
-    // Apply saved theme and color from localStorage
-    const savedTheme = localStorage.getItem('theme-color');
-    const savedColor = localStorage.getItem('accent-color');
-
-    if (savedTheme) {
-        document.body.className = 'theme-' + savedTheme;
-        document.getElementById(savedTheme).checked = true;
-    }
-
-    if (savedColor) {
-        document.documentElement.style.setProperty('--primary-color', `rgb(${savedColor})`);
-        document.getElementById(savedColor).checked = true;
-    }
 });
-
-
-
-/*Manages the accent color toggle*/
-window.addEventListener('DOMContentLoaded', () => {
-  if (document.getElementById('settings')) {
-    const form = document.getElementById('settings');
-    const radioButtons = form.elements['accent-color'];
-
-    form.addEventListener('submit', (event) => {
-      event.preventDefault(); // Prevent default form submission
-      document.getElementById("sucessfullSave").classList.add("result");
-      const chosenColor = Array.from(radioButtons).find(radio => radio.checked).value;
-
-      // Save the chosen color to local storage
-      localStorage.setItem('accent-color', chosenColor);
-
-      // Update the page style based on the selected color (optional)
-      document.documentElement.style.setProperty('--accent-color', chosenColor);
-    });
-    // Check for existing color preference on page load
-    const storedColor = localStorage.getItem('accent-color');
-    if (storedColor) {
-      const matchingRadio = Array.from(radioButtons).find(radio => radio.value === storedColor);
-      if (matchingRadio) {
-        matchingRadio.checked = true;
-        document.documentElement.style.setProperty('--accent-color', storedColor);
-      }
-    }
-  }
-});
-
-window.addEventListener('DOMContentLoaded', () => {
-  if (document.getElementById('settings')) {
-    const form = document.getElementById('settings');
-
-    form.addEventListener('submit', (event) => {
-      event.preventDefault(); // Prevent default form submission
-      document.getElementById("sucessfullSave").classList.add("result");
-      const storedColor = localStorage.getItem('accent-color');
-      if (storedColor == "113, 10, 151") {
-        const darkerAccentColor = "18, 2, 24";
-        localStorage.setItem('darker-accent-color', darkerAccentColor);
-        document.documentElement.style.setProperty('--darker-accent-color', darkerAccentColor);
-      } else if (storedColor == "151, 10, 10") {
-        const darkerAccentColor = "30, 0, 0";
-        localStorage.setItem('darker-accent-color', darkerAccentColor);
-        document.documentElement.style.setProperty('--darker-accent-color', darkerAccentColor);
-      } else if (storedColor == "10, 151, 33") {
-        const darkerAccentColor = "0, 30, 3";
-        localStorage.setItem('darker-accent-color', darkerAccentColor);
-        document.documentElement.style.setProperty('--darker-accent-color', darkerAccentColor);
-      } else if (storedColor == "10, 66, 151") {
-        const darkerAccentColor = "0, 10, 40";
-        localStorage.setItem('darker-accent-color', darkerAccentColor);
-        document.documentElement.style.setProperty('--darker-accent-color', darkerAccentColor);
-      } else if (storedColor == "151, 78, 10") {
-        const darkerAccentColor = "60, 18, 0";
-        localStorage.setItem('darker-accent-color', darkerAccentColor);
-        document.documentElement.style.setProperty('--darker-accent-color', darkerAccentColor);
-      }
-    });
-  }
-});
-
 
 /*Manages the animations toggle*/
 window.addEventListener('DOMContentLoaded', () => {
@@ -150,63 +47,9 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-/*Manages the update toggle*/
-window.addEventListener('DOMContentLoaded', () => {
-  if (document.getElementById('settings')) {
-    const updateCheckbox = document.getElementById('update-every-sec');
-    const form = document.getElementById('settings');
-
-    const doUpdatesEverySecSetter = () => {
-      localStorage.setItem('doUpdateSec', updateCheckbox.checked);
-    };
-
-    // Attach the animation toggle to the submit button click
-    form.addEventListener('submit', () => {
-      doUpdatesEverySecSetter();
-
-      // Save the setting to localStorage for persistence
-      localStorage.setItem('doUpdateSec', updateCheckbox.checked);
-    });
-
-    // Load setting from localStorage on page load (initial state)
-    const storedSettingUpdate = localStorage.getItem('doUpdateSec');
-    if (storedSettingUpdate === 'false') {
-      updateCheckbox.checked = false;
-    } else {
-      updateCheckbox.checked = true;
-    }
-
-    // Apply initial animation state based on localStorage
-    doUpdatesEverySecSetter();
-  }
-});
-
-
 
 /*Closes the alert message when the user taps the close button*/
 function settingsAlert() {
   document.getElementById("failSave").classList.remove("result");
   document.getElementById("sucessfullSave").classList.remove("result");
 };
-
-
-/*Changes the language*/
-window.addEventListener('DOMContentLoaded', () => {
-  if (document.getElementById('settings')) {
-    const form = document.getElementById('settings');
-    const languageSelect = document.getElementById('language-select');
-    const currentUrl = window.location.href; // Get current URL
-
-    form.addEventListener('submit', (event) => {
-      event.preventDefault(); // Prevent default form submission
-
-      const selectedLanguage = languageSelect.value;
-      const redirectUrl = selectedLanguage === 'sv' && !currentUrl.includes('/sv/') ? 'sv/settings' :
-        selectedLanguage === 'en' && currentUrl.includes('/sv/') ? '../settings' : ''; // Redirect only if not already on "aridan.net/settings"
-
-      if (redirectUrl) { // Only redirect if there's a valid URL
-        window.location.href = redirectUrl;
-      }
-    });
-  }
-});

@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-    <script src="https://cdn.jsdelivr.net/npm/@twemoji/api@latest/dist/twemoji.min.js" crossorigin="anonymous"></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#161616">
@@ -21,6 +20,8 @@
     <link rel="icon" type="image/png" sizes="512x512" href="/src/favicons/icon-512.png">
     <link rel="icon" type="image/png" sizes="192x192" href="/src/favicons/icon-192.png">
     <link rel="manifest" href="/src/favicons/site.webmanifest">
+    <script src="https://cdn.jsdelivr.net/npm/@twemoji/api@latest/dist/twemoji.min.js" crossorigin="anonymous"></script>
+    <script src="/src/scripts/twimojiFix.js"></script>
 </head>
 
 <body class="boxAlignment ">
@@ -46,7 +47,8 @@
             </menu>
             <menu class="navWrapperMobile">
                 <li>
-                    <a class="navButton" href="/">aridan.net</a>
+                    <a class="navButton" href="/">jglypt.co.uk
+                    </a>
                 </li>
                 <li>
                     <button onclick="toggleMenu()" type="button" class="navButton right-link">
@@ -56,10 +58,6 @@
                 </li>
             </menu>
             <menu class="mobileMenu" id="mobileMenuID">
-                <li>
-                    <a class="navButton" href="experiences"><img draggable="false" class="emoji" alt=""
-                            src="/src/images/emojis/brain.svg"> Experiences</a>
-                </li>
                 <li>
                     <a class="navButton" href="projects"><img draggable="false" class="emoji" alt=""
                             src="/src/images/emojis/tools.svg"> Projects</a>
