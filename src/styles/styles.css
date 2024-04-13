@@ -1484,7 +1484,7 @@ color: black;
 
 #activityTime{
   display: inline;
-  font-family: SevenSegment, monospace, Jost, sans-serif;
+  font-family: SevenSegment, mono, Jost, sans-serif;
 } 
 
 label, li>p {
