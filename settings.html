@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    <script src="https://cdn.jsdelivr.net/npm/@twemoji/api@latest/dist/twemoji.min.js" crossorigin="anonymous"></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#161616">
@@ -17,8 +18,6 @@
     <link rel="icon" type="image/png" sizes="512x512" href="/src/favicons/icon-512.png">
     <link rel="icon" type="image/png" sizes="192x192" href="/src/favicons/icon-192.png">
     <link rel="manifest" href="/src/favicons/site.webmanifest">
-    <script src="https://cdn.jsdelivr.net/npm/@twemoji/api@latest/dist/twemoji.min.js" crossorigin="anonymous"></script>
-    <script src="/src/scripts/twimojiFix.js"></script>
 </head>
 
 <body class="settings">
@@ -44,8 +43,7 @@
             </menu>
             <menu class="navWrapperMobile">
                 <li>
-                    <a class="navButton" href="/">jglypt.co.uk
-                    </a>
+                    <a class="navButton" href="/">aridan.net</a>
                 </li>
                 <li>
                     <button onclick="toggleMenu()" type="button" class="navButton right-link">
@@ -74,23 +72,29 @@
         <h1>Settings</h1>
         <form id="settings" action="/src/scripts/settings.js">
             <section class="settingGroup" id="appearance">
-                <p>Appearance</p>
+                <h2>Appearance Settings</h2>
                 <div class="setting">
-                    <ul>
-                        <li>
-                            <p>Theme (does not work)</p>
-                            <div>
-                                <input type="radio" id="auto" name="theme-color" value="auto">
-                                <label for="auto" class="auto button">Follow system</label>
-                                <input type="radio" id="light" name="theme-color" value="light">
-                                <label for="light" class="light button">Light</label>
-                                <input type="radio" id="dark" name="theme-color" value="dark" checked>
-                                <label for="dark" class="dark button">Dark</label>
-                            </div>
-                        </li>
-                    </ul>
+                    <h3>Theme</h3>
+                    <div class="theme-selector">
+                        <input type="radio" id="auto" name="theme-color" value="auto">
+                        <label for="auto" class="button">Follow System</label>
+                        <input type="radio" id="light" name="theme-color" value="light">
+                        <label for="light" class="button">Light</label>
+                        <input type="radio" id="dark" name="theme-color" value="dark" checked>
+                        <label for="dark" class="button">Dark</label>
+                    </div>
+                </div>
+                <div class="setting">
+                    <h3>Accent Color</h3>
+                    <div class="color-selector">
+                        <!-- You can add or remove colors as desired -->
+                        <input type="radio" id="primary-red" name="accent-color" value="204, 0, 0" checked>
+                        <label for="primary-red" class="button red">Primary Red</label>
+                        <!-- Add more options similarly -->
+                    </div>
                 </div>
             </section>
+        </form>        
             <section class="settingGroup" id="accessibility">
                 <p>Accessibility</p>
                 <div class="setting">
@@ -100,6 +104,15 @@
                             <div>
                                 <label class="switch">
                                     <input type="checkbox" id="animations" name="show-animations" value="true" checked>
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+                        </li>
+                        <li>
+                            <p><label for="update-every-sec">Update activity automatically</label></p>
+                            <div>
+                                <label class="switch">
+                                    <input type="checkbox" id="update-every-sec" name="update-every-sec" value="true" checked>
                                     <span class="slider round"></span>
                                 </label>
                             </div>
