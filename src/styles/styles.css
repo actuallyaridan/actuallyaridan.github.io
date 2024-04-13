@@ -4,35 +4,6 @@ html {
 }
 
 
-body {
-  font-family: 'Arial', sans-serif;
-  background-color: var(--background-color, #fff);
-  color: var(--text-color, #333);
-}
-
-.settingGroup h2, .setting h3 {
-  color: var(--primary-color, #333);
-}
-
-.button {
-  padding: 8px 16px;
-  border: none;
-  background-color: var(--button-bg, #007BFF);
-  color: white;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.button:hover {
-  background-color: var(--button-hover-bg, #0056b3);
-}
-
-.theme-selector, .color-selector {
-  margin-top: 10px;
-  display: flex;
-  gap: 10px;
-}
 
 
 /*Import the local Jost font files instead of using Google Fonts to use them*/
@@ -79,8 +50,10 @@ h2{
 }
 
 :root {
-  --accent-color: 70, 130, 180; /* A soothing steel blue */
-  --darker-accent-color: 49, 90, 126; /* A darker shade of the steel blue for contrast */
+  --accent-color: 113, 10, 151;
+  /* Initial value */
+  --darker-accent-color: 18, 2, 24;
+  /* Initial value */
 }
 
 /*Scales down emojis*/
@@ -545,16 +518,16 @@ menu.mobileMenu>li>a {
 }
 
 .instagram {
-  background-color: #8eecff;
-  background-color: #00c3ce80;
+  background-color: #FB7833;
+  background-color: #FB783380;
   border: #FB7833 2px solid;
   border: #FB783380 2px solid;
   transition: background-color 0.2s;
 }
 
 .instagram:hover {
-  background-color: #4a8e9b;
-  background-color: #00828880;
+  background-color: #FB7833;
+  background-color: #FB7833c7;
   transition: background-color 0.2s;
 }
 
@@ -1484,7 +1457,7 @@ color: black;
 
 #activityTime{
   display: inline;
-  font-family: SevenSegment, mono, Jost, sans-serif;
+  font-family: SevenSegment, monospace, Jost, sans-serif;
 } 
 
 label, li>p {

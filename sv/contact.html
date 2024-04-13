@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="utf-8">
+    <script src="https://cdn.jsdelivr.net/npm/@twemoji/api@latest/dist/twemoji.min.js" crossorigin="anonymous"></script>
+    <script src="/src/scripts/twimojiFix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#161616">
+    <title>Kontakt — actuallyaridan</title>
+    <link href="/src/styles/styles.css" rel="stylesheet">
+    <script src="/src/scripts/settings.js"></script>
+    <script src="/src/scripts/dropDownMenu.js"></script>
+    <script src="/src/scripts/mobileMenu.js"></script>
+    <script src="/src/scripts/emailModalBox.js"></script>
+    <link rel="apple-touch-icon" sizes="180x180" href="/src/favicons/apple-touch-icon.png">
+    <link rel="apple-touch-icon" type="image/png" sizes="512x512" href="/src/favicons/icon-512.png">
+    <link rel="apple-touch-icon" type="image/png" sizes="192x192" href="/src/favicons/icon-192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/src/favicons/icon-512.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/src/favicons/icon-192.png">
+    <link rel="manifest" href="/src/favicons/site.webmanifest">
+</head>
+
+<body class="boxAlignment ">
+    <header>
+        <nav>
+            <menu class="navWrapper">
+                <li>
+                    <a class="navButton" href="/sv/"><img draggable="false" class="emoji" alt=""
+                            src="/src/images/emojis/house.svg"> Hem</a>
+                </li>
+                <li>
+                    <a class="navButton" href="experiences"><img draggable="false" class="emoji" alt=""
+                            src="/src/images/emojis/brain.svg"> Erfarenhet</a>
+                </li>
+                <li>
+                    <a class="navButton" href="projects"><img draggable="false" class="emoji" alt=""
+                            src="/src/images/emojis/tools.svg"> Projekt</a>
+                </li>
+                <li>
+                    <a class="navButton activeChoice" href="contact"><img draggable="false" class="emoji" alt=""
+                            src="/src/images/emojis/speak.svg"> Kontakt</a>
+                </li>
+                <li>
+                    <a class="navButton right-link" href="settings"><img draggable="false" class="emoji" alt=""
+                            src="/src/images/emojis/setttings.svg"> Inställningar</a>
+                </li>
+            </menu>
+            <menu class="navWrapperMobile">
+                <li>
+                    <a class="navButton" href="/sv/">aridan.net</a>
+                </li>
+                <li>
+                    <button onclick="toggleMenu()" type="button" class="navButton right-link">
+                        <img draggable="false" class="emoji" alt="" src="/src/images/icons/menu.svg">
+                        Meny
+                    </button>
+                </li>
+            </menu>
+            <menu class="mobileMenu" id="mobileMenuID">
+                <li>
+                    <a class="navButton" href="experiences"><img draggable="false" class="emoji" alt=""
+                            src="/src/images/emojis/brain.svg"> Erfarenhet</a>
+                </li>
+                <li>
+                    <a class="navButton" href="projects"><img draggable="false" class="emoji" alt=""
+                            src="/src/images/emojis/tools.svg"> Projekt</a>
+                </li>
+                <li>
+                    <a class="navButton activeChoice" href="contact"><img draggable="false" class="emoji" alt=""
+                            src="/src/images/emojis/speak.svg"> Kontakt</a>
+                </li>
+                <li>
+                    <a class="navButton" href="settings"><img draggable="false" class="emoji" alt=""
+                            src="/src/images/emojis/setttings.svg"> Inställningar</a>
+                </li>
+            </menu>
+        </nav>
+    </header>
+    <main>
+        <h1>Kontakt</h1>
+        <div id="emailModal" class="emailModal">
+            <div class="emailModalContent">
+                <div class="titleEmailWrapper">
+                    <p class="titleEmail">E-post</p>
+                </div>
+                <p class="emailText">Om du har en e-post klient installerad på din enhet kan du klicka på
+                    "Skicka ett mejl" knappen. Annars kan du skicka ditt mejl hit:</p>
+                <p class="emailModalText">adnan@aridan.net</p>
+                <div class="buttonsEmail">
+                    <a class="socialMedia email" href="mailto:adnan@aridan.net">Skicka ett mejl</a>
+                    <button onclick="emailToggle()" class="socialMedia emailOK">Stäng</button>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="centererWrapper">
+                <section class="titleUnderText">
+                    <p class="subTitle">Vill du prata med mig en-mot-en? Skicka ett e-postmeddelande eller ett iMessage
+                        till
+                        mig, jag bits inte! Jag svarar mer än gärna och jag ser fram emot att prata med dig!</p>
+                </section>
+                <section class="socialMedias project">
+                    <button type="button" onclick="emailToggle()" class="socialMedia email">Visa e-post adress</button>
+                    <a class="socialMedia imessage" href="sms:adnan@aridan.net">Skicka ett iMessage</a>
+                </section>
+                <section>
+                    <p class="subTitle">Vill du snacka på ett mindre formellt sätt? Jag är också på en massa sociala
+                        medier! Ser
+                        du en profil som inte är länkad här så är det inte jag.</p>
+                </section>
+                <section class="socialMedias project">
+                    <a rel="noopener" class="socialMedia instagram" target="_blank"
+                        href="https://www.instagram.com/actuallyaridan/">Instagram</a>
+
+                    <a rel="noopener" class="socialMedia aMusic" href="https://music.apple.com/profile/actuallyaridan"
+                        target="_blank">Apple Music</a>
+                    <a rel="noopener" class="socialMedia twitter" href="https://x.com/actuallyaridan" target="_blank">X
+                        (tidigare
+                        Twitter)</a>
+                    <a rel="noopener" class="socialMedia threads" href="https://www.threads.net/@actuallyaridan"
+                        target="_blank">Threads
+                        (en
+                        app från Instagram)</a>
+                </section>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <p>© Copyright 2024 av Adnan Bukvic ifall inget annat anges. Projektet använder MIT licensen.</p>
+        <p>Twemoji av Twitter Inc/X Corp är licenserat under CC-BY 4.0.</p>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#161616">
+    <title>Inställningar — actuallyaridan</title>
+    <link href="/src/styles/styles.css" rel="stylesheet">
+    <script src="/src/scripts/settings.js"></script>
+    <script src="/src/scripts/dropDownMenu.js"></script>
+    <script src="/src/scripts/mobileMenu.js"></script>
+    <script src="/src/scripts/emailModalBox.js"></script>
+    <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="/src/favicons/apple-touch-icon.png">
+    <link rel="apple-touch-icon" type="image/png" sizes="32x32" href="/src/favicons/favicon-32x32.png">
+    <link rel="apple-touch-icon" type="image/png" sizes="16x16" href="/src/favicons/favicon-16x16.png">
+    <link rel="apple-touch-icon" type="image/png" sizes="512x512" href="/src/favicons/icon-512.png">
+    <link rel="apple-touch-icon" type="image/png" sizes="192x192" href="/src/favicons/icon-192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="/src/favicons/icon-512.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/src/favicons/icon-192.png">
+    <link rel="manifest" href="/src/favicons/site.webmanifest">
+</head>
+
+<body class=" settings">
+    <header>
+        <nav>
+            <menu class="navWrapper">
+                <li>
+                    <a class="navButton" href="/sv/"><img draggable="false" class="emoji" alt=""
+                            src="/src/images/emojis/house.svg"> Hem</a>
+                </li>
+                <li>
+                    <a class="navButton" href="experiences"><img draggable="false" class="emoji" alt=""
+                            src="/src/images/emojis/brain.svg"> Erfarenhet</a>
+                </li>
+                <li>
+                    <a class="navButton" href="projects"><img draggable="false" class="emoji" alt=""
+                            src="/src/images/emojis/tools.svg"> Projekt</a>
+                </li>
+                <li>
+                    <a class="navButton" href="contact"><img draggable="false" class="emoji" alt=""
+                            src="/src/images/emojis/speak.svg"> Kontakt</a>
+                </li>
+                <li>
+                    <a class="navButton right-link activeChoice" href="settings"><img draggable="false" class="emoji" alt=""
+                            src="/src/images/emojis/setttings.svg"> Inställningar</a>
+                </li>
+            </menu>
+            <menu class="navWrapperMobile">
+                <li>
+                    <a class="navButton" href="/sv/">aridan.net</a>
+                </li>
+                <li>
+                    <button onclick="toggleMenu()" type="button" class="navButton right-link">
+                        <img draggable="false" class="emoji" alt="" src="/src/images/icons/menu.svg">
+                        Meny
+                    </button>
+                </li>
+            </menu>
+            <menu class="mobileMenu" id="mobileMenuID">
+                <li>
+                    <a class="navButton" href="experiences"><img draggable="false" class="emoji" alt=""
+                            src="/src/images/emojis/brain.svg"> Erfarenhet</a>
+                </li>
+                <li>
+                    <a class="navButton" href="projects"><img draggable="false" class="emoji" alt=""
+                            src="/src/images/emojis/tools.svg"> Projekt</a>
+                </li>
+                <li>
+                    <a class="navButton" href="contact"><img draggable="false" class="emoji" alt=""
+                            src="/src/images/emojis/speak.svg"> Kontakt</a>
+                </li>
+                <li>
+                    <a class="navButton activeChoice" href="settings"><img draggable="false" class="emoji" alt=""
+                            src="/src/images/emojis/setttings.svg"> Inställningar</a>
+                </li>
+            </menu>
+        </nav>
+    </header>
+    <main class="settings">
+        <h1>Inställningar</h1>
+        <form id="settings" action="/src/scripts/settings.js">
+            <section class="settingGroup">
+                <p>Innehåll du ser</p>
+                <div class="setting">
+                    <ul>
+                        <li>
+                            <p><label for="language-select">Språk</label></p>
+                            <div>
+                                <select class="button" id="language-select">
+                                    <option value="sv" selected>Svenska</option>
+                                    <option value="en">English</option>
+                                  </select>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <section class="settingGroup">
+                <p>Utseende</p>
+                <div class="setting">
+                    <ul>
+                        <li>
+                            <p>Tema (fungerar inte)</p>
+                            <div>
+                                <input type="radio" id="auto" name="theme-color" value="auto">
+                                <label for="auto" class="auto button">Följ systemet</label>
+                                <input type="radio" id="light" name="theme-color" value="light">
+                                <label for="light" class="light button">Ljust</label>
+                                <input type="radio" id="dark" name="theme-color" value="dark" checked>
+                                <label for="dark" class="dark button">Mörkt</label>
+                            </div>
+                        </li>
+                        <li>
+                            <p>Färg</p>
+                            <div>
+                                <input type="radio" id="purple" name="accent-color" value="113, 10, 151" checked>
+                                <label for="purple" class="purple button">Lila</label>
+                                <input type="radio" id="red" name="accent-color" value="151, 10, 10">
+                                <label for="red" class="red button">Röd</label>
+                                <input type="radio" id="green" name="accent-color" value="10, 151, 33">
+                                <label for="green" class="green button">Grön</label>
+                                <input type="radio" id="blue" name="accent-color" value="10, 66, 151">
+                                <label for="blue" class="blue button">Blå</label>
+                                <input type="radio" id="orange" name="accent-color" value="151, 78, 10">
+                                <label for="orange" class="orange button">Orange</label>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <section class="settingGroup">
+                <p>Tillgänglighet</p>
+                <div class="setting">
+                    <ul>
+                        <li>
+                            <p><label for="animations">Utför animationer</label></p>
+                            <div>
+                                <label class="switch">
+                                    <input type="checkbox" id="animations" name="show-animations" value="true" checked>
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+                        </li>
+                        <li>
+                            <p><label for="update-every-sec">Uppdatera aktivitet automatiskt</label></p>
+                            <div>
+                                <label class="switch">
+                                    <input type="checkbox" id="update-every-sec" name="update-every-sec" value="true" checked>
+                                    <span class="slider round"></span>
+                                </label>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <section class="saveSettings">
+                <div class="messages">
+                    <div>
+                        <div id="failSave" class="savedMessage failed">
+                            <span class="closebtn" onclick="settingsAlert()">&#x2715;</span>
+                            Dina inställningar kunde inte sparas. Försök igen.
+                        </div>
+            
+                        <div id="sucessfullSave" class="savedMessage sucessfull">
+                            <span class="closebtn" onclick="settingsAlert()">&#x2715;</span>
+                            Dina inställningar sparades! Ladda om för att verkställa.
+                        </div>
+                    </div>
+                </div>
+                <div class="bottomButton">
+                    <button class="saveButton" type="submit">Verkställ</button>
+                </div>
+            </section>
+        </form>
+    </main>
+    <footer class="footer">
+            <p>Version 1.3a (släppt 2024-04-02)</p>
+            <p>© Copyright 2024 av Adnan Bukvic ifall inget annat anges. Projektet använder MIT licensen.</p>
+            <p>Twemoji av Twitter Inc/X Corp är licenserat under CC-BY 4.0.</p>
+    </footer>
+</body>
