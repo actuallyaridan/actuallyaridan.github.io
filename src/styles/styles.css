@@ -1451,8 +1451,12 @@ color: black;
   background-color: rgba(var(--darker-accent-color), 0.30);
 }
 
-#activityName, #activityState, #activityDetails, #activityTime, #timeremaning{
+#activityName, #activityState, #activityDetails{
   text-align: left;
+}
+
+#timeremaning>p{
+  text-align: inherit;
 }
 
 #activityTime{

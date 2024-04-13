@@ -150,12 +150,12 @@ async function setLanyard() {
           }
 
           // Checks if there are two images and if there are, does some funny alignment stuff
-          if (!activities[0]?.assets?.small_image && !activities[0]?.assets?.large_image) {
+          if (activities[0]?.assets?.small_image && activities[0]?.assets?.large_image) {
             // Dexrn: THIS IS REALLY JANK REMIND ME TO FIX!!!
-            document.getElementById('activityName').style.textAlign = 'center';
-            document.getElementById('activityState').style.textAlign = 'center';
-            document.getElementById('activityDetails').style.textAlign = 'center';
-            document.getElementById('timeremaning').style.textAlign = 'center';
+            document.getElementById('activityName').style.textAlign = 'left';
+            document.getElementById('activityState').style.textAlign = 'left';
+            document.getElementById('activityDetails').style.textAlign = 'left';
+            document.getElementById('timeremaning').style.textAlign = 'left';
             if (!platform()) {
               document.getElementById('activityName').style.textAlign = 'left';
               document.getElementById('activityState').style.textAlign = 'left';
@@ -167,6 +167,11 @@ async function setLanyard() {
               document.getElementById('activityDetails').style.textAlign = 'center';
               document.getElementById('timeremaning').style.textAlign = 'center';
             }
+          }else if(!activities[0]?.assets?.small_image && !activities[0]?.assets?.large_image){
+            document.getElementById('activityName').style.textAlign = 'center';
+            document.getElementById('activityState').style.textAlign = 'center';
+            document.getElementById('activityDetails').style.textAlign = 'center';
+            document.getElementById('timeremaning').style.textAlign = 'center';
           }
           if (
             activities[0]?.assets?.small_image &&
