@@ -116,12 +116,8 @@ async function setLanyard() {
                 "initial";
             }
             document.getElementById("activityLogoLarge").src = activityImageLarge;
-          } else {
-            document.getElementById("activityLogoLarge").style.display = "none";
-          }
 
-
-          // Checks if there's a small image and if there is one, it sets it as an image 
+                      // Checks if there's a small image and if there is one, it sets it as an image 
           if (activities[0]?.assets?.small_image) {
             document.getElementById("discordActivityImages").style.display = "block";
             let activityImageSmall = activities[0].assets.small_image;
@@ -148,9 +144,16 @@ async function setLanyard() {
           } else {
             document.getElementById("activityLogoSmall").style.display = "none";
           }
+          } else {
+            document.getElementById("activityLogoSmall").style.display = "none";
+            document.getElementById("activityLogoLarge").style.display = "none";
+          }
+
+
+
 
           // Checks if there are two images and if there are, does some funny alignment stuff
-          if (activities[0]?.assets?.small_image && activities[0]?.assets?.large_image) {
+          if (activities[0]?.assets?.large_image) {
             // Dexrn: THIS IS REALLY JANK REMIND ME TO FIX!!!
             document.getElementById('activityName').style.textAlign = 'left';
             document.getElementById('activityState').style.textAlign = 'left';
@@ -167,14 +170,13 @@ async function setLanyard() {
               document.getElementById('activityDetails').style.textAlign = 'center';
               document.getElementById('timeremaning').style.textAlign = 'center';
             }
-          }else if(!activities[0]?.assets?.small_image && !activities[0]?.assets?.large_image){
+          }else if(!activities[0]?.assets?.large_image){
             document.getElementById('activityName').style.textAlign = 'center';
             document.getElementById('activityState').style.textAlign = 'center';
             document.getElementById('activityDetails').style.textAlign = 'center';
             document.getElementById('timeremaning').style.textAlign = 'center';
           }
           if (
-            activities[0]?.assets?.small_image &&
             activities[0]?.assets?.large_image
           ) {
             document.getElementById("discordActivityImages").style.paddingRight =
@@ -183,7 +185,6 @@ async function setLanyard() {
             document.getElementById("discordActivityImages").style.paddingRight =
               "10px";
           } else if (
-            !activities[0]?.assets?.small_image &&
             !activities[0]?.assets?.large_image
           ) {
             document.getElementById("discordActivityImages").style.paddingRight =

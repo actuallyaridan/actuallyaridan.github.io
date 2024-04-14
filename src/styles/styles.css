@@ -1697,7 +1697,7 @@ font-size: large;
   }
 
   #activityName, #activityState, #activityDetails, #activityTime, #timeremaning{
-    text-align: center;
+    text-align: left;
   }
 
   menu.navWrapperMobile {
