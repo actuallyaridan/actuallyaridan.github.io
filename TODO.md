@@ -1,8 +1,5 @@
-# Introduction 
 
-This file contains all plans for aridan.net.
-
-## TODO
+# TODO
 
 ### Ideas
 
