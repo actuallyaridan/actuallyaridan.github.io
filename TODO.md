@@ -2,21 +2,25 @@
 
 This file contains all plans for aridan.net.
 
-## Ideas
+## TODO
 
-## Plans
+### Ideas
 
-- [ ] In-house developed form that sends results as en email for the CV/resume page
+- [ ] Maybe de-yank the settings JS?
+- [ ] Maybe declutter the CSS?
+- [ ] Maybe use language files insted of seperate pages?
+- [ ] Maybe add more accent color options?
+
+### Plans
+
+- [ ] Clickable link images on the project page
+- [ ] Dark and light mode toggles with a follow system option
 
 ### In Progress
 
-- [ ] Finish the Swedish version
 
 ### Done
 
-- [x] Make the ESC button close the email modal  
+- [x] Finish the Swedish version
+- [x] Make the ESC button close the modals
 - [x] Settings menu
-  - [x] Appearance   
-    - [x] Selectable accent colors
-  - [x] Accessibility
-    - [x] Option to disable the background gradient and its animation
