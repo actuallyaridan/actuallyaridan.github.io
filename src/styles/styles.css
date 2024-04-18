@@ -325,7 +325,7 @@ div.langWrapper {
 .navButton:focus {
   background-color: #000000;
   background-color: #00000080;
-  background-color: rgba(var(--darker-accent-color), 0.75);
+  background-color: rgba(var(--darker-accent-color), 0.55);
   transition: background-color .2s;
 }
 
@@ -448,7 +448,7 @@ p.bottomText {
 .showMenu {
   margin: 12px;
   margin-top: 18px;
-  max-height: 200px; /* approximate max height */
+  max-height: 300px; /* approximate max height */
 }
 
 
