@@ -101,49 +101,51 @@ async function setLanyard() {
           // Checks if there's a large image and if there is one, it sets it as an image 
           activityDiscordWrapper.style.display = "flex";
           if (activities[0]?.assets?.large_image) {
-            document.getElementById("discordActivityImages").style.display = "block";
-            let activityImageLarge = activities[0].assets.large_image;
-            if (activityImageLarge.includes("external")) {
-              activityImageLarge = `https://media.discordapp.net/external/${activities[0].assets.large_image.split("mp:external/")[1]
-                }`;
-            } else {
-              activityImageLarge = `https://cdn.discordapp.com/app-assets/${activities[0].application_id}/${activities[0].assets.large_image}.png?size=256`;
-            }
-            if (
-              document.getElementById("activityLogoLarge").style.display == "none"
-            ) {
-              document.getElementById("activityLogoLarge").style.display =
-                "initial";
-            }
-            document.getElementById("activityLogoLarge").src = activityImageLarge;
+            if (activities[0]?.name !== 'Apple Music') {
+              document.getElementById("discordActivityImages").style.display = "block";
+              let activityImageLarge = activities[0].assets.large_image;
+              if (activityImageLarge.includes("external")) {
+                activityImageLarge = `https://media.discordapp.net/external/${activities[0].assets.large_image.split("mp:external/")[1]
+                  }`;
+              } else {
+                activityImageLarge = `https://cdn.discordapp.com/app-assets/${activities[0].application_id}/${activities[0].assets.large_image}.png?size=256`;
+              }
+              if (
+                document.getElementById("activityLogoLarge").style.display == "none"
+              ) {
+                document.getElementById("activityLogoLarge").style.display =
+                  "initial";
+              }
+              document.getElementById("activityLogoLarge").src = activityImageLarge;
 
-                      // Checks if there's a small image and if there is one, it sets it as an image 
-          if (activities[0]?.assets?.small_image) {
-            document.getElementById("discordActivityImages").style.display = "block";
-            let activityImageSmall = activities[0].assets.small_image;
-            if (activityImageSmall.includes("external")) {
-              activityImageSmall = `https://media.discordapp.net/external/${activities[0].assets.small_image.split("mp:external/")[1]
-                }`;
-            } else {
-              activityImageSmall = `https://cdn.discordapp.com/app-assets/${activities[0].application_id}/${activities[0].assets.small_image}.png?size=256`;
+              // Checks if there's a small image and if there is one, it sets it as an image 
+              if (activities[0]?.assets?.small_image) {
+                document.getElementById("discordActivityImages").style.display = "block";
+                let activityImageSmall = activities[0].assets.small_image;
+                if (activityImageSmall.includes("external")) {
+                  activityImageSmall = `https://media.discordapp.net/external/${activities[0].assets.small_image.split("mp:external/")[1]
+                    }`;
+                } else {
+                  activityImageSmall = `https://cdn.discordapp.com/app-assets/${activities[0].application_id}/${activities[0].assets.small_image}.png?size=256`;
+                }
+                if (
+                  document.getElementById("activityLogoSmall").style.display == "none"
+                ) {
+                  document.getElementById("activityLogoSmall").style.display =
+                    "initial";
+                }
+                document.getElementById("activityLogoSmall").src = activityImageSmall;
+                if (!activities[0].assets.large_image) {
+                  document.getElementById("activityLogoSmall").width = "96px";
+                  document.getElementById("activityLogoSmall").height = "96px";
+                } else {
+                  document.getElementById("activityLogoSmall").width = "32px";
+                  document.getElementById("activityLogoSmall").height = "32px";
+                }
+              } else {
+                document.getElementById("activityLogoSmall").style.display = "none";
+              }
             }
-            if (
-              document.getElementById("activityLogoSmall").style.display == "none"
-            ) {
-              document.getElementById("activityLogoSmall").style.display =
-                "initial";
-            }
-            document.getElementById("activityLogoSmall").src = activityImageSmall;
-            if (!activities[0].assets.large_image) {
-              document.getElementById("activityLogoSmall").width = "96px";
-              document.getElementById("activityLogoSmall").height = "96px";
-            } else {
-              document.getElementById("activityLogoSmall").width = "32px";
-              document.getElementById("activityLogoSmall").height = "32px";
-            }
-          } else {
-            document.getElementById("activityLogoSmall").style.display = "none";
-          }
           } else {
             document.getElementById("activityLogoSmall").style.display = "none";
             document.getElementById("activityLogoLarge").style.display = "none";
@@ -151,9 +153,13 @@ async function setLanyard() {
 
 
 
-
-          // Checks if there are two images and if there are, does some funny alignment stuff
-          if (activities[0]?.assets?.large_image) {
+          if (activities[0]?.name == 'Apple Music') {
+            document.getElementById('activityName').style.textAlign = 'center';
+            document.getElementById('activityState').style.textAlign = 'center';
+            document.getElementById('activityDetails').style.textAlign = 'center';
+            document.getElementById('timeremaning').style.textAlign = 'center';
+          }// Checks if there are two images and if there are, does some funny alignment stuff
+          else if (activities[0]?.assets?.large_image) {
             // Dexrn: THIS IS REALLY JANK REMIND ME TO FIX!!!
             document.getElementById('activityName').style.textAlign = 'left';
             document.getElementById('activityState').style.textAlign = 'left';
@@ -170,7 +176,7 @@ async function setLanyard() {
               document.getElementById('activityDetails').style.textAlign = 'center';
               document.getElementById('timeremaning').style.textAlign = 'center';
             }
-          }else if(!activities[0]?.assets?.large_image){
+          } else if (!activities[0]?.assets?.large_image) {
             document.getElementById('activityName').style.textAlign = 'center';
             document.getElementById('activityState').style.textAlign = 'center';
             document.getElementById('activityDetails').style.textAlign = 'center';
