@@ -388,11 +388,11 @@ div.langWrapper {
 
 /*Make the title bold*/
 h1{
-  font-weight: 600;
+  font-weight: 500;
 }
 
 h3{
-  font-weight: 500;
+  font-weight: 450;
 }
 
 /*Make the text that says "Please check back later" slightly darker*/
