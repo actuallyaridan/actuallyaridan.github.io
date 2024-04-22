@@ -12,7 +12,6 @@ window.addEventListener('DOMContentLoaded', () => {
       .forEach(element => element.classList.remove('noAnimation'));
   }
 
-
   if (storedColor) {
     if (storedColor == "151, 10, 10") {
       const darkerAccentColor = "30, 0, 0";
@@ -30,12 +29,26 @@ window.addEventListener('DOMContentLoaded', () => {
       const darkerAccentColor = "60, 18, 0";
       localStorage.setItem('darker-accent-color', darkerAccentColor);
       document.documentElement.style.setProperty('--darker-accent-color', darkerAccentColor);
-    } else{
+    } else {
       const darkerAccentColor = "18, 2, 24";
       localStorage.setItem('darker-accent-color', darkerAccentColor);
       document.documentElement.style.setProperty('--darker-accent-color', darkerAccentColor);
     }
   }
+  
+  const storedTheme = localStorage.getItem('theme');
+  console.log('Stored theme:', storedTheme);
+  if (storedTheme) {
+    const body = document.body;
+    if (storedTheme === 'light') {
+      body.style.backgroundColor = '#f1f1f1';
+      body.style.color = '#000';
+    } else if (storedTheme === 'dark') {
+      body.style.backgroundColor = '#161616';
+      body.style.color = '#fff';
+    }
+  }
+
 });
 
 
@@ -171,14 +184,11 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-
-
 /*Closes the alert message when the user taps the close button*/
 function settingsAlert() {
   document.getElementById("failSave").classList.remove("result");
   document.getElementById("sucessfullSave").classList.remove("result");
 };
-
 
 /*Changes the language*/
 window.addEventListener('DOMContentLoaded', () => {
@@ -197,6 +207,77 @@ window.addEventListener('DOMContentLoaded', () => {
       if (redirectUrl) { // Only redirect if there's a valid URL
         window.location.href = redirectUrl;
       }
+    });
+  }
+});
+
+window.addEventListener('DOMContentLoaded', () => {
+  const form = document.getElementById('settings');
+  if (form) {
+    const themeRadios = form.elements['theme-color'];
+    const applyButton = document.querySelector('.saveButton'); // Select the button with the saveButton class
+
+    // Function to apply theme based on user preference
+    const applyTheme = (chosenTheme) => {
+      console.log('Applying theme:', chosenTheme);
+      const body = document.body;
+      if (chosenTheme === 'light') {
+        body.style.backgroundColor = '#f1f1f1';
+        body.style.color = '#000';
+      } else if (chosenTheme === 'dark') {
+        body.style.backgroundColor = '#161616';
+        body.style.color = '#fff';
+      }
+    };
+
+    // Function to handle radio button change event
+    const handleRadioButtonChange = (event) => {
+      const chosenTheme = event.target.value;
+      localStorage.setItem('theme', chosenTheme); // Save the chosen theme to local storage
+      console.log('Theme saved to local storage:', chosenTheme);
+      // Don't apply the theme immediately, wait for user to click "Apply"
+    };
+
+    // Function to handle "Apply" button click event
+    const handleApplyButtonClick = () => {
+      const storedTheme = localStorage.getItem('theme');
+      if (storedTheme) {
+        applyTheme(storedTheme); // Apply the stored theme preference
+      }
+    };
+
+    // Add event listeners to theme radio buttons
+    themeRadios.forEach(radio => {
+      radio.addEventListener('change', handleRadioButtonChange);
+    });
+
+    // Add event listener to "Apply" button
+    applyButton.addEventListener('click', handleApplyButtonClick);
+
+    // Check for existing theme preference in local storage
+    const storedTheme = localStorage.getItem('theme');
+    console.log('Stored theme:', storedTheme);
+    if (storedTheme) {
+      const matchingRadio = Array.from(themeRadios).find(radio => radio.value === storedTheme);
+      if (matchingRadio) {
+        matchingRadio.checked = true;
+        console.log('Applying stored theme:', storedTheme);
+      }
+    } else {
+      // No saved preference, use system color scheme preference
+      const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const chosenTheme = prefersDarkMode ? 'dark' : 'light';
+      console.log('Applying system color scheme preference:', chosenTheme);
+      localStorage.setItem('theme', chosenTheme); // Save system color scheme preference to local storage
+      applyTheme(chosenTheme); // Apply system color scheme preference
+    }
+
+    // Add event listener for system color scheme change
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+      const chosenTheme = event.matches ? 'dark' : 'light';
+      console.log('System color scheme changed. Applying theme:', chosenTheme);
+      localStorage.setItem('theme', chosenTheme); // Save system color scheme preference to local storage
+      applyTheme(chosenTheme); // Apply system color scheme preference
     });
   }
 });
