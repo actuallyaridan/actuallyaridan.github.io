@@ -4,6 +4,19 @@ html {
 }
 
 
+ /* @media (prefers-color-scheme: light) {
+   :root {
+     --bg-color: #f1f1f1;
+     --text-color: #000;
+   }
+ }
+
+ @media (prefers-color-scheme: dark) {
+   :root {
+     --bg-color: #161616;
+     --text-color: #fff;
+   }
+ } */
 
 
 /*Import the local Jost font files instead of using Google Fonts to use them*/
@@ -84,6 +97,8 @@ menu {
 }
 
 body {
+  /* background-color: var(--bg-color);
+  color: var(--text-color) !important; */
   height: -moz-fit-content;
   height: fit-content;
 }
@@ -151,7 +166,7 @@ footer {
 h1,
 p,
 a {
-  color: white;
+  color: var(--text-color);
   font-family: Jost, sans-serif;
   text-align: center;
 }
@@ -165,12 +180,12 @@ p{
 }
 
 p.subTitle {
-  color: rgb(203, 203, 203);
+  color: var(--text-color);
 }
 
 p.subTitleExp,
 h2.projectName {
-  color: rgb(255, 255, 255);
+  color: var(--text-color);
 }
 p.dcProjectName {
   color: rgb(255, 255, 255);
@@ -832,10 +847,6 @@ a,
 p,
 button {
   font-family: Jost, sans-serif;
-}
-
-body {
-  background-color: #161616;
 }
 
 main.settings {
