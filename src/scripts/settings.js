@@ -225,7 +225,7 @@ window.addEventListener('DOMContentLoaded', () => {
         body.style.backgroundColor = '#f1f1f1';
         body.style.color = '#000';
       } else if (chosenTheme === 'dark') {
-        body.style.backgroundColor = '#161616';
+        body.style.backgroundColor = '#121212';
         body.style.color = '#fff';
       }
     };
