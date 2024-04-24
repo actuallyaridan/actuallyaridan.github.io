@@ -35,22 +35,36 @@ window.addEventListener('DOMContentLoaded', () => {
       document.documentElement.style.setProperty('--darker-accent-color', darkerAccentColor);
     }
   }
-  
-  const storedTheme = localStorage.getItem('theme');
-  console.log('Stored theme:', storedTheme);
-  if (storedTheme) {
-    const body = document.body;
-    if (storedTheme === 'light') {
-      body.style.backgroundColor = '#f1f1f1';
-      body.style.color = '#000';
-    } else if (storedTheme === 'dark') {
-      body.style.backgroundColor = '#161616';
-      body.style.color = '#fff';
-    }
-  }
-
 });
 
+/*Manages the theme toggle*/
+window.addEventListener('DOMContentLoaded', () => {
+  if (document.getElementById('settings')) {
+    const form = document.getElementById('settings');
+    const radioButtons = form.elements['theme-color'];
+
+    form.addEventListener('submit', (event) => {
+      event.preventDefault(); // Prevent default form submission
+      document.getElementById("sucessfullSave").classList.add("result");
+      const chosenTheme = Array.from(radioButtons).find(radio => radio.checked).id;
+
+      // Save the chosen theme to local storage
+      localStorage.setItem('theme-color', chosenTheme);
+
+      // Apply the chosen theme
+      applyTheme(chosenTheme);
+    });
+    // Check for existing theme preference on page load
+    const storedTheme = localStorage.getItem('theme-color');
+    if (storedTheme) {
+      const matchingRadio = Array.from(radioButtons).find(radio => radio.id === storedTheme);
+      if (matchingRadio) {
+        matchingRadio.checked = true;
+        applyTheme(storedTheme);
+      }
+    }
+  }
+});
 
 /*Manages the accent color toggle*/
 window.addEventListener('DOMContentLoaded', () => {
@@ -190,6 +204,34 @@ function settingsAlert() {
   document.getElementById("sucessfullSave").classList.remove("result");
 };
 
+/*Handles theme*/
+document.addEventListener('DOMContentLoaded', function () {
+  // Function to apply theme based on stored preference
+  const applyTheme = () => {
+    const selectedTheme = localStorage.getItem('theme-color');
+    if (selectedTheme === 'auto') {
+      document.documentElement.style.setProperty('--background-color', 'var(--background)');
+      document.documentElement.style.setProperty('--text-color', 'var(--text)');
+    } else if (selectedTheme === 'light') {
+      document.documentElement.style.setProperty('--background-color', 'var(--bg-light)');
+      document.documentElement.style.setProperty('--text-color', 'var(--text-light)');
+    } else if (selectedTheme === 'dark') {
+      document.documentElement.style.setProperty('--background-color', 'var(--bg-dark)');
+      document.documentElement.style.setProperty('--text-color', 'var(--text-dark)');
+    }
+  };
+
+  // Apply theme on page load
+  applyTheme();
+
+  // Event listener for theme selection change
+  document.querySelector('.saveButton').addEventListener('click', function () {
+    var selectedTheme = document.querySelector('input[name="theme-color"]:checked').id;
+    localStorage.setItem('theme-color', selectedTheme);
+    applyTheme(); // Apply the selected theme immediately
+  });
+});
+
 /*Changes the language*/
 window.addEventListener('DOMContentLoaded', () => {
   if (document.getElementById('settings')) {
@@ -211,73 +253,4 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-window.addEventListener('DOMContentLoaded', () => {
-  const form = document.getElementById('settings');
-  if (form) {
-    const themeRadios = form.elements['theme-color'];
-    const applyButton = document.querySelector('.saveButton'); // Select the button with the saveButton class
 
-    // Function to apply theme based on user preference
-    const applyTheme = (chosenTheme) => {
-      console.log('Applying theme:', chosenTheme);
-      const body = document.body;
-      if (chosenTheme === 'light') {
-        body.style.backgroundColor = '#f1f1f1';
-        body.style.color = '#000';
-      } else if (chosenTheme === 'dark') {
-        body.style.backgroundColor = '#121212';
-        body.style.color = '#fff';
-      }
-    };
-
-    // Function to handle radio button change event
-    const handleRadioButtonChange = (event) => {
-      const chosenTheme = event.target.value;
-      localStorage.setItem('theme', chosenTheme); // Save the chosen theme to local storage
-      console.log('Theme saved to local storage:', chosenTheme);
-      // Don't apply the theme immediately, wait for user to click "Apply"
-    };
-
-    // Function to handle "Apply" button click event
-    const handleApplyButtonClick = () => {
-      const storedTheme = localStorage.getItem('theme');
-      if (storedTheme) {
-        applyTheme(storedTheme); // Apply the stored theme preference
-      }
-    };
-
-    // Add event listeners to theme radio buttons
-    themeRadios.forEach(radio => {
-      radio.addEventListener('change', handleRadioButtonChange);
-    });
-
-    // Add event listener to "Apply" button
-    applyButton.addEventListener('click', handleApplyButtonClick);
-
-    // Check for existing theme preference in local storage
-    const storedTheme = localStorage.getItem('theme');
-    console.log('Stored theme:', storedTheme);
-    if (storedTheme) {
-      const matchingRadio = Array.from(themeRadios).find(radio => radio.value === storedTheme);
-      if (matchingRadio) {
-        matchingRadio.checked = true;
-        console.log('Applying stored theme:', storedTheme);
-      }
-    } else {
-      // No saved preference, use system color scheme preference
-      const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      const chosenTheme = prefersDarkMode ? 'dark' : 'light';
-      console.log('Applying system color scheme preference:', chosenTheme);
-      localStorage.setItem('theme', chosenTheme); // Save system color scheme preference to local storage
-      applyTheme(chosenTheme); // Apply system color scheme preference
-    }
-
-    // Add event listener for system color scheme change
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
-      const chosenTheme = event.matches ? 'dark' : 'light';
-      console.log('System color scheme changed. Applying theme:', chosenTheme);
-      localStorage.setItem('theme', chosenTheme); // Save system color scheme preference to local storage
-      applyTheme(chosenTheme); // Apply system color scheme preference
-    });
-  }
-});
