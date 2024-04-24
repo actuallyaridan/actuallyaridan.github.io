@@ -1,23 +1,32 @@
 html {
   scroll-behavior: smooth;
-  color-scheme: dark;
 }
 
+@media (prefers-color-scheme: light) {
+  :root {
+    --background: #f1f1f1;
+    --text: #000;
+  }
+}
 
- /* @media (prefers-color-scheme: light) {
-   :root {
-     --bg-color: #f1f1f1;
-     --text-color: #000;
-   }
- }
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #121212;
+    --text: #fff;
+  }
+}
 
- @media (prefers-color-scheme: dark) {
-   :root {
-     --bg-color: #161616;
-     --text-color: #fff;
-   }
- } */
+:root {
+  --bg-light: #f1f1f1;
+  --text-light: #000;
+  --bg-dark: #121212;
+  --text-dark: #fff;
+}
 
+:root {
+  --background-color: var(--background);
+  --text-color: var(--text);
+}
 
 /*Import the local Jost font files instead of using Google Fonts to use them*/
 @font-face {
@@ -97,8 +106,8 @@ menu {
 }
 
 body {
-  /* background-color: var(--bg-color);
-  color: var(--text-color) !important; */
+  background-color: var(--background-color);
+  color: var(--text-color);
   height: -moz-fit-content;
   height: fit-content;
 }
@@ -166,7 +175,7 @@ footer {
 h1,
 p,
 a {
-  color: var(--text-color);
+  color: rgb(255, 255, 255);
   font-family: Jost, sans-serif;
   text-align: center;
 }
@@ -185,7 +194,7 @@ p.subTitle {
 
 p.subTitleExp,
 h2.projectName {
-  color: var(--text-color);
+  color: rgb(255, 255, 255);
 }
 p.dcProjectName {
   color: rgb(255, 255, 255);
