@@ -12,7 +12,6 @@ window.addEventListener('DOMContentLoaded', () => {
       .forEach(element => element.classList.remove('noAnimation'));
   }
 
-
   if (storedColor) {
     if (storedColor == "151, 10, 10") {
       const darkerAccentColor = "30, 0, 0";
@@ -30,7 +29,7 @@ window.addEventListener('DOMContentLoaded', () => {
       const darkerAccentColor = "60, 18, 0";
       localStorage.setItem('darker-accent-color', darkerAccentColor);
       document.documentElement.style.setProperty('--darker-accent-color', darkerAccentColor);
-    } else{
+    } else {
       const darkerAccentColor = "18, 2, 24";
       localStorage.setItem('darker-accent-color', darkerAccentColor);
       document.documentElement.style.setProperty('--darker-accent-color', darkerAccentColor);
@@ -38,6 +37,34 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 });
 
+/*Manages the theme toggle*/
+window.addEventListener('DOMContentLoaded', () => {
+  if (document.getElementById('settings')) {
+    const form = document.getElementById('settings');
+    const radioButtons = form.elements['theme-color'];
+
+    form.addEventListener('submit', (event) => {
+      event.preventDefault(); // Prevent default form submission
+      document.getElementById("sucessfullSave").classList.add("result");
+      const chosenTheme = Array.from(radioButtons).find(radio => radio.checked).id;
+
+      // Save the chosen theme to local storage
+      localStorage.setItem('theme-color', chosenTheme);
+
+      // Apply the chosen theme
+      applyTheme(chosenTheme);
+    });
+    // Check for existing theme preference on page load
+    const storedTheme = localStorage.getItem('theme-color');
+    if (storedTheme) {
+      const matchingRadio = Array.from(radioButtons).find(radio => radio.id === storedTheme);
+      if (matchingRadio) {
+        matchingRadio.checked = true;
+        applyTheme(storedTheme);
+      }
+    }
+  }
+});
 
 /*Manages the accent color toggle*/
 window.addEventListener('DOMContentLoaded', () => {
@@ -171,14 +198,39 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-
-
 /*Closes the alert message when the user taps the close button*/
 function settingsAlert() {
   document.getElementById("failSave").classList.remove("result");
   document.getElementById("sucessfullSave").classList.remove("result");
 };
 
+/*Handles theme*/
+document.addEventListener('DOMContentLoaded', function () {
+  // Function to apply theme based on stored preference
+  const applyTheme = () => {
+    const selectedTheme = localStorage.getItem('theme-color');
+    if (selectedTheme === 'auto') {
+      document.documentElement.style.setProperty('--background-color', 'var(--background)');
+      document.documentElement.style.setProperty('--text-color', 'var(--text)');
+    } else if (selectedTheme === 'light') {
+      document.documentElement.style.setProperty('--background-color', 'var(--bg-light)');
+      document.documentElement.style.setProperty('--text-color', 'var(--text-light)');
+    } else if (selectedTheme === 'dark') {
+      document.documentElement.style.setProperty('--background-color', 'var(--bg-dark)');
+      document.documentElement.style.setProperty('--text-color', 'var(--text-dark)');
+    }
+  };
+
+  // Apply theme on page load
+  applyTheme();
+
+  // Event listener for theme selection change
+  document.querySelector('.saveButton').addEventListener('click', function () {
+    var selectedTheme = document.querySelector('input[name="theme-color"]:checked').id;
+    localStorage.setItem('theme-color', selectedTheme);
+    applyTheme(); // Apply the selected theme immediately
+  });
+});
 
 /*Changes the language*/
 window.addEventListener('DOMContentLoaded', () => {
@@ -200,3 +252,5 @@ window.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
+
