@@ -5,14 +5,18 @@ html {
 @media (prefers-color-scheme: light) {
   :root {
     --background: #f1f1f1;
-    --text: #000;
+    --text: rgb(255, 255, 255);
+    --subtitle: rgb(3, 3, 3);
+    --project: rgb(88, 88, 88);
   }
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #121212;
-    --text: #fff;
+    --text: rgb(255, 255, 255);
+    --subtitle: rgb(203, 203, 203);
+    --project: rgb(188, 188, 188);
   }
 }
 
@@ -20,12 +24,19 @@ html {
   --bg-light: #f1f1f1;
   --text-light: #000;
   --bg-dark: #121212;
-  --text-dark: #fff;
+  --text-dark: rgb(255, 255, 255);
+  --subtitle-light: rgb(3, 3, 3);
+  --subtitle-dark: rgb(203, 203, 203);
+  --project-light: rgb(88, 88, 88);
+  --project-dark: rgb(188, 188, 188);
 }
 
 :root {
   --background-color: var(--background);
+  --header-color: var(--header);
   --text-color: var(--text);
+  --subtitle-color: var(--subtitle);
+  --project-color: var(--project);
 }
 
 /*Import the local Jost font files instead of using Google Fonts to use them*/
@@ -175,7 +186,7 @@ footer {
 h1,
 p,
 a {
-  color: rgb(255, 255, 255);
+  color: (var(--text-color));
   font-family: Jost, sans-serif;
   text-align: center;
 }
@@ -189,15 +200,15 @@ p{
 }
 
 p.subTitle {
-  color: var(--text-color);
+  color: var(--subtitle-color);
 }
 
 p.subTitleExp,
 h2.projectName {
-  color: rgb(255, 255, 255);
+  color:var(--text-color)
 }
 p.dcProjectName {
-  color: rgb(255, 255, 255);
+  color:var(--text-color)
 }
 
 div.education,
@@ -225,7 +236,7 @@ section.project {
 section.project>p, section.project>h2 {
   text-align: left;
   margin: 12px;
-  color: rgb(188, 188, 188);
+  color: var(--project-color);
 }
 
 section.project>div {
@@ -246,7 +257,7 @@ section.project>div {
 section.project>div>p {
   text-align: center;
   margin: 12px;
-  color: rgb(188, 188, 188);
+  color: var(--project-color);
   text-decoration: none;
   word-wrap: break-word;
 }
@@ -265,7 +276,7 @@ section.project>div>p>a:hover {
 }
 
 section.project>h2.projectName {
-  color: white;
+  color:var(--text-color)
 }
 
 #dcNameContainer {
@@ -1485,7 +1496,7 @@ color: black;
 } 
 
 label, li>p {
-  color: rgb(203, 203, 203);
+  color: var(--project-color);
 }
 
 img {

@@ -212,12 +212,18 @@ document.addEventListener('DOMContentLoaded', function () {
     if (selectedTheme === 'auto') {
       document.documentElement.style.setProperty('--background-color', 'var(--background)');
       document.documentElement.style.setProperty('--text-color', 'var(--text)');
+      document.documentElement.style.setProperty('--subtitle-color', 'var(--subtitle)');
+      document.documentElement.style.setProperty('--project-color', 'var(--project)');
     } else if (selectedTheme === 'light') {
       document.documentElement.style.setProperty('--background-color', 'var(--bg-light)');
       document.documentElement.style.setProperty('--text-color', 'var(--text-light)');
+      document.documentElement.style.setProperty('--subtitle-color', 'var(--subtitle-light)');
+      document.documentElement.style.setProperty('--project-color', 'var(--project-light)');
     } else if (selectedTheme === 'dark') {
       document.documentElement.style.setProperty('--background-color', 'var(--bg-dark)');
       document.documentElement.style.setProperty('--text-color', 'var(--text-dark)');
+      document.documentElement.style.setProperty('--subtitle-color', 'var(--subtitle-dark)');
+      document.documentElement.style.setProperty('--project-color', 'var(--project-dark)');
     }
   };
 
