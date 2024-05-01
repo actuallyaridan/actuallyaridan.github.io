@@ -8,6 +8,7 @@ html {
     --text: rgb(0, 0, 0);
     --subtitle: rgb(3, 3, 3);
     --project: rgb(88, 88, 88);
+    --bgMc: #e1e1e1 url(../images/background/light.png) repeat;
   }
 }
 
@@ -17,6 +18,7 @@ html {
     --text: rgb(255, 255, 255);
     --subtitle: rgb(203, 203, 203);
     --project: rgb(188, 188, 188);
+    --bgMc: #0C0C0C url(../images/background/dark.png) repeat;
   }
 }
 
@@ -29,6 +31,8 @@ html {
   --subtitle-dark: rgb(203, 203, 203);
   --project-light: rgb(88, 88, 88);
   --project-dark: rgb(188, 188, 188);
+  --bgMc-dark: #0C0C0C url(../images/background/dark.png) repeat;
+  --bgMc-light: #e1e1e1 url(../images/background/light.png) repeat;
 }
 
 :root {
@@ -37,6 +41,7 @@ html {
   --text-color: var(--text);
   --subtitle-color: var(--subtitle);
   --project-color: var(--project);
+  --mcBackground: var(--bgMc)
 }
 
 /*Import the local Jost font files instead of using Google Fonts to use them*/
@@ -929,7 +934,7 @@ input[type="radio"] {
 .button,
 button {
   list-style-type: none;
-  color: white;
+  color: var(--text-color);
   font-family: Jost, sans-serif;
   background-color: #121212;
   background-color: rgba(var(--accent-color), 0.10);
@@ -972,6 +977,7 @@ button.close {
 input[type="radio"]:checked+label {
   background-color: #080808;
   border: #080808 2px solid;
+  color: white;
 }
 
 .red {
@@ -1115,6 +1121,7 @@ input[type="radio"]:checked+label {
   right: 0;
   bottom: 0;
   background-color: rgb(52, 52, 52);
+  background-color: var(--background-color);
   -webkit-transition: .4s;
   transition: .4s;
 }
@@ -1356,7 +1363,7 @@ div#loading>div{
 }
 
 .mcBackground{
-  background: #0C0C0C url(../images/background/dark.png) repeat;
+  background: var(--mcBackground);
 }
 
 .mcFont{
