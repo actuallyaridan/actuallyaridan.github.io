@@ -934,11 +934,11 @@ input[type="radio"] {
 .button,
 button {
   list-style-type: none;
-  color: var(--text-color);
+  color: var(--subtitle-color);
   font-family: Jost, sans-serif;
   background-color: #121212;
   background-color: rgba(var(--accent-color), 0.10);
-  border: none;
+  border: 2px solid rgba(var(--accent-color), 0.10);
   padding: 8px;
   text-decoration: none;
   width: -moz-fit-content;
@@ -963,6 +963,7 @@ button.close {
 .saveButton {
   font-weight: normal;
   width: 100%;
+  border: none;
 }
 
 .button:hover {
