@@ -234,8 +234,6 @@ section.project {
   justify-content: center;
   align-self: center;
   width: 80%;
-  -webkit-backdrop-filter: blur(20px);
-  backdrop-filter: blur(20px);
 }
 
 section.project>p, section.project>h2 {
