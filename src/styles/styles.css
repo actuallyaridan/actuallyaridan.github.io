@@ -1662,10 +1662,9 @@ font-size: large;
 }
 
 div.projectStuff>iframe{
-  min-width: 560px;
-  min-height: 315px;
-  aspect-ratio: 16 / 9;
+ min-width: 120px;
 }
+
 
 @keyframes fling {
   0% {
@@ -1757,11 +1756,5 @@ div.projectStuff>iframe{
   ul.cvstuff>li>select, ul.cvstuff>li>input, ul.cvstuff>li>textarea{
     width: 100% !important;
     text-align: center !important;
-  }
-  div.projectStuff>iframe{
-    min-width: unset;
-    min-height: unset;
-    width: 100%;
-    height: 100%;
   }
 }
