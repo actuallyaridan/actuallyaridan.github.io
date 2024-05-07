@@ -77,8 +77,8 @@ html {
 }
 
 *{
-  transition: color .2s;
-  transition: background-color .2s;
+  transition: color, background-color .2s;
+
 }
 
 h2{
