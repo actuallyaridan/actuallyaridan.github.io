@@ -1644,6 +1644,14 @@ div.projectStuff>iframe{
  min-width: 120px;
 }
 
+.uppercaseText, .uppercaseTextLabel{
+  text-transform: uppercase;
+}
+
+label{
+  cursor: pointer;
+}
+
 
 @keyframes fling {
   0% {

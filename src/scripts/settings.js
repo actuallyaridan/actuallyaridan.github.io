@@ -2,6 +2,13 @@
 window.addEventListener('DOMContentLoaded', () => {
   const storedColor = localStorage.getItem('accent-color');
   document.documentElement.style.setProperty('--accent-color', storedColor);
+  const storedSettingText = localStorage.getItem('uppercase');
+  const elements = document.querySelectorAll('p, a, h1, h2, h3, button, span, div, select, option');
+  if (storedSettingText === 'true') {
+    elements.forEach(element => element.classList.add('uppercaseText'));
+  } else {
+    elements.forEach(element => element.classList.remove('uppercaseText'));
+  }
 
   const storedSetting = localStorage.getItem('showAnimations');
   if (storedSetting === 'false') {
@@ -249,6 +256,42 @@ document.addEventListener('DOMContentLoaded', function () {
     localStorage.setItem('theme-color', selectedTheme);
     applyTheme(); // Apply the selected theme immediately
   });
+});
+
+window.addEventListener('DOMContentLoaded', () => {
+  if (document.getElementById('settings')) {
+    const uppercaseCheckbox = document.getElementById('uppercase');
+    const form = document.getElementById('settings');
+
+    // Function to toggle the uppercaseText class based on checkbox state
+    const toggleUppercaseClass = () => {
+      const elements = document.querySelectorAll('p, a, h1, h2, h3, button, span, div, select, option');
+      if (uppercaseCheckbox.checked) {
+        elements.forEach(element => element.classList.add('uppercaseText'));
+      } else {
+        elements.forEach(element => element.classList.remove('uppercaseText'));
+      }
+    };
+
+    // Attach the uppercase toggle to the submit button click
+    form.addEventListener('submit', () => {
+      toggleUppercaseClass();
+
+      // Save the setting to localStorage for persistence
+      localStorage.setItem('uppercase', uppercaseCheckbox.checked);
+    });
+
+    // Load setting from localStorage on page load (initial state)
+    const storedSetting = localStorage.getItem('uppercase');
+    if (storedSetting === 'true') {
+      uppercaseCheckbox.checked = true;
+    } else {
+      uppercaseCheckbox.checked = false;
+    }
+
+    // Apply initial uppercase state based on localStorage
+    toggleUppercaseClass();
+  }
 });
 
 /*Changes the language*/
