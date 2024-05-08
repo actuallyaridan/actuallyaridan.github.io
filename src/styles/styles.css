@@ -165,33 +165,6 @@ footer {
   align-self: center;
 }
 
-.cvButton {
-  color: white;
-  font-family: Jost, sans-serif;
-  background-color: #4b4b4b;
-  background-color: #4b4b4b80;
-  border: #4b4b4b 2px solid;
-  border: #4b4b4b80 2px solid;
-  padding: 12px;
-  text-decoration: none;
-  width: -moz-fit-content;
-  width: fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  font-size: initial;
-  cursor: pointer;
-  transition: background-color .2s;
-  font-size: initial;
-  touch-action: manipulation;
-  border-radius: 12px;
-}
-
-.cvButton:hover,
-.cvButton:focus {
-  background-color: #4b4b4bc7;
-  transition: background-color 0.2s;
-}
-
 /*Styling for general text*/
 h1,
 p,
@@ -272,14 +245,14 @@ section.project>div>p {
 
 section.project>div>p>a {
   text-align: center;
-  color: rgb(188, 188, 188);
+  color: var(--project-color);
   white-space: nowrap;
   text-decoration: none;
   transition: color .2s;
 }
 
 section.project>div>p>a:hover {
-  color: white;
+  color: var(--text-color);
   transition: color .2s;
 }
 
