@@ -215,18 +215,28 @@ document.addEventListener('DOMContentLoaded', function () {
       document.documentElement.style.setProperty('--subtitle-color', 'var(--subtitle)');
       document.documentElement.style.setProperty('--project-color', 'var(--project)');
       document.documentElement.style.setProperty('--mcBackground', 'var(--bgMc)');
+      const backgroundColor = getComputedStyle(document.documentElement).getPropertyValue('--background');
+      if(backgroundColor === '#121212'){
+        document.querySelector('meta[name="theme-color"]').setAttribute('content', '#121212');
+      }
+      else{
+        document.querySelector('meta[name="theme-color"]').setAttribute('content', '#f1f1f1');
+      }
     } else if (selectedTheme === 'light') {
       document.documentElement.style.setProperty('--background-color', 'var(--bg-light)');
       document.documentElement.style.setProperty('--text-color', 'var(--text-light)');
       document.documentElement.style.setProperty('--subtitle-color', 'var(--subtitle-light)');
       document.documentElement.style.setProperty('--project-color', 'var(--project-light)');
       document.documentElement.style.setProperty('--mcBackground', 'var(--bgMc-light)');
+      document.querySelector('meta[name="theme-color"]').setAttribute('content',  '#f1f1f1');
+
     } else if (selectedTheme === 'dark') {
       document.documentElement.style.setProperty('--background-color', 'var(--bg-dark)');
       document.documentElement.style.setProperty('--text-color', 'var(--text-dark)');
       document.documentElement.style.setProperty('--subtitle-color', 'var(--subtitle-dark)');
       document.documentElement.style.setProperty('--project-color', 'var(--project-dark)');
       document.documentElement.style.setProperty('--mcBackground', 'var(--bgMc-dark)');
+      document.querySelector('meta[name="theme-color"]').setAttribute('content',  '#121212');
     }
   };
 
