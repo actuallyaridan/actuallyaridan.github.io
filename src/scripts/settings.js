@@ -38,10 +38,21 @@ window.addEventListener('DOMContentLoaded', () => {
       document.documentElement.style.setProperty('--darker-accent-color', darkerAccentColor);
     } else {
       const darkerAccentColor = "18, 2, 24";
+      const defaultAccentColor = "113, 10, 151";
       localStorage.setItem('darker-accent-color', darkerAccentColor);
+      localStorage.setItem('accent-color', defaultAccentColor);
       document.documentElement.style.setProperty('--darker-accent-color', darkerAccentColor);
+      document.documentElement.style.setProperty('--accent-color', defaultAccentColor);
     }
   }
+  else {
+    const darkerAccentColor = "18, 2, 24";
+    const defaultAccentColor = "113, 10, 151";
+    localStorage.setItem('darker-accent-color', darkerAccentColor);
+    localStorage.setItem('accent-color', defaultAccentColor);
+    document.documentElement.style.setProperty('--darker-accent-color', darkerAccentColor);
+    document.documentElement.style.setProperty('--accent-color', defaultAccentColor);
+}
 });
 
 /*Manages the theme toggle*/
