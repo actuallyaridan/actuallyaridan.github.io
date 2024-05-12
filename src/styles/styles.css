@@ -1,5 +1,6 @@
 html {
   scroll-behavior: smooth;
+  color-scheme: var(--html-color-scheme);
 }
 
 @media (prefers-color-scheme: light) {
@@ -9,6 +10,7 @@ html {
     --subtitle: rgb(3, 3, 3);
     --project: rgb(88, 88, 88);
     --bgMc: #e1e1e1 url(../images/background/light.png) repeat;
+    --color-scheme: light;
   }
 }
 
@@ -19,6 +21,7 @@ html {
     --subtitle: rgb(203, 203, 203);
     --project: rgb(188, 188, 188);
     --bgMc: #0C0C0C url(../images/background/dark.png) repeat;
+    --color-scheme: dark;
   }
 }
 
@@ -33,6 +36,8 @@ html {
   --project-dark: rgb(188, 188, 188);
   --bgMc-dark: #0C0C0C url(../images/background/dark.png) repeat;
   --bgMc-light: #e1e1e1 url(../images/background/light.png) repeat;
+  --color-scheme-light: light;
+  --color-scheme-dark: dark;
 }
 
 :root {
@@ -41,7 +46,8 @@ html {
   --text-color: var(--text);
   --subtitle-color: var(--subtitle);
   --project-color: var(--project);
-  --mcBackground: var(--bgMc)
+  --mcBackground: var(--bgMc);
+  --html-color-scheme: var(--color-scheme);
 }
 
 /*Import the local Jost font files instead of using Google Fonts to use them*/
@@ -1205,11 +1211,12 @@ li>p {
 
 
 option {
-  width: 150px;
-  /* or max-width: 150px; */
+  background-color: var(--background-color);
+  text-align: center;
 }
 
-option {
+option, select {
+  text-align: center;
   white-space: nowrap;
 }
 
