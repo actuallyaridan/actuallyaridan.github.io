@@ -82,9 +82,8 @@ html, * {
   src: url(fonts/SevenSegment.otf);
 }
 
-*{
+html#settingsPage>*{
   transition: color, background-color .2s;
-
 }
 
 h2{
