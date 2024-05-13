@@ -11,6 +11,8 @@
     <script src="/src/scripts/dropDownMenu.js"></script>
     <script src="/src/scripts/mobileMenu.js"></script>
     <script src="/src/scripts/emailModalBox.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@twemoji/api@latest/dist/twemoji.min.js" crossorigin="anonymous"></script>
+    <script src="/src/scripts/twimojiFix.js"></script>
     <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="/src/favicons/apple-touch-icon.png">
     <link rel="apple-touch-icon" type="image/png" sizes="32x32" href="/src/favicons/favicon-32x32.png">
     <link rel="apple-touch-icon" type="image/png" sizes="16x16" href="/src/favicons/favicon-16x16.png">
@@ -85,7 +87,7 @@
                 <div class="setting">
                     <ul>
                         <li>
-                            <p><label for="language-select">Språk</label></p>
+                            <p>🌐 <label for="language-select">Språk</label></p>
                             <div>
                                 <select class="button" id="language-select">
                                     <option value="sv" selected>Svenska</option>
@@ -101,7 +103,7 @@
                 <div class="setting">
                     <ul>
                         <li>
-                            <p>Tema</p>
+                            <p>💡 Tema</p>
                             <div>
                                 <input type="radio" id="auto" name="theme-color" value="auto">
                                 <label for="auto" class="auto button">Följ systemet</label>
@@ -112,7 +114,7 @@
                             </div>
                         </li>
                         <li>
-                            <p>Färg</p>
+                            <p>🎨 Färg</p>
                             <div>
                                 <input type="radio" id="purple" name="accent-color" value="113, 10, 151" checked>
                                 <label for="purple" class="purple button">Lila</label>
@@ -134,7 +136,7 @@
                 <div class="setting">
                     <ul>
                         <li>
-                            <p><label for="animations">Utför animationer</label></p>
+                            <p>🏃‍➡️ <label for="animations">Utför animationer</label></p>
                             <div>
                                 <label class="switch">
                                     <input type="checkbox" id="animations" name="show-animations" value="true" checked>
@@ -143,7 +145,7 @@
                             </div>
                         </li>
                         <li>
-                            <p><label for="update-every-sec">Uppdatera aktivitet automatiskt</label></p>
+                            <p>📥 <label for="update-every-sec">Uppdatera aktivitet automatiskt</label></p>
                             <div>
                                 <label class="switch">
                                     <input type="checkbox" id="update-every-sec" name="update-every-sec" value="true"
@@ -153,7 +155,7 @@
                             </div>
                         </li>
                         <li>
-                            <p class="uppercaseTextLabel"><label for="uppercase">Använd endast kapitäl text</label></p>
+                            <p class="uppercaseTextLabel">🔠 <label for="uppercase">Använd endast versal text</label></p>
                             <div>
                                 <label class="switch">
                                     <input type="checkbox" id="uppercase" name="uppercase" value="true">
