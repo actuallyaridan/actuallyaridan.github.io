@@ -837,7 +837,7 @@ span.title>p {
 
 #statusWrapper{
   list-style-type: none;
-  color: white;
+  color: var(--text-color);
   font-family: Jost, sans-serif;
   padding: 8px;
   text-decoration: none;
