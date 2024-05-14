@@ -1222,6 +1222,7 @@ option, select {
   text-align: center;
   white-space: nowrap;
   align-items: center;
+  text-align-last: center;
 }
 
 /* If targeting with a class */
