@@ -84,7 +84,7 @@ async function setLanyard() {
 
       // Sets username and profile picture
       document.getElementById("discordName").textContent =
-        data.data.discord_user.username;
+       '@' + data.data.discord_user.username;
       document.getElementById(
         "discordPFP"
       ).src = `https://cdn.discordapp.com/avatars/${userID}/${data.data.discord_user.avatar}.webp?size=512`;

@@ -1281,12 +1281,17 @@ div#discord{
   align-items: center;
 }
 
-#discordName, #discordActivity{
+#discordName, #discordActivity, #discordNameUser{
   justify-content: center;
   align-items: center;
   padding: 8px;
   border-radius: 12px;
   margin: 12px;
+  color: var(--project-color);
+  text-align: center;
+}
+
+#discordNameUser{
   color: var(--text-color);
 }
 
@@ -1311,9 +1316,6 @@ div#discord{
   transform: translate(-200%, 250%);
 }
 
-#discordName>p{
-  text-align: left;
-}
 
 .discordName{
   display: flex;
