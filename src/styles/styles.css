@@ -1482,16 +1482,29 @@ color: black;
   background-color: rgba(var(--darker-accent-color), 0.30);
 }
 
+
+
 #activityName, #activityState, #activityDetails{
   text-align: left;
+  color: var(--project-color);
+}
+
+#activityName{
+  color: var(--text-color);
+}
+
+#activityDetails{
+  color: var(--subtitle-color);
 }
 
 #timeremaning>p{
   text-align: inherit;
+  color: var(--project-color);
 }
 
 #activityTime{
   display: inline;
+  color: var(--project-color);
   font-family: SevenSegment, monospace, Jost, sans-serif;
 } 
 
