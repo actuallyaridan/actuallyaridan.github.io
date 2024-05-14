@@ -1195,7 +1195,7 @@ input:checked+.slider:before {
 
 li>p {
   text-align: left;
-  padding-right: 24px;
+  margin-right: 3vw;
 }
 
 
