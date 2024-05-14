@@ -23,6 +23,8 @@
     <script src="/src/scripts/dropDownMenu.js"></script>
     <script src="/src/scripts/mobileMenu.js"></script>
     <script defer src="/src/scripts/lanyard.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/@twemoji/api@latest/dist/twemoji.min.js" crossorigin="anonymous"></script>
+    <script src="/src/scripts/twimojiFix.js"></script>
     <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="/src/favicons/apple-touch-icon.png">
     <link rel="apple-touch-icon" type="image/png" sizes="512x512" href="/src/favicons/icon-512.png">
     <link rel="apple-touch-icon" type="image/png" sizes="192x192" href="/src/favicons/icon-192.png">
@@ -94,7 +96,7 @@
         <h1>Home</h1>
         <div>
             <div class="centererWrapper">
-                <section class="titleUnderText">
+              <section class="titleUnderText">
                     <p class="subTitle">Hi there! Welcome to my website! I use this website mainly to show
                         recruiters my skills
                         and contact information. I hope you'll enjoy your stay here. I'd give you some
@@ -157,7 +159,10 @@
                                     <div></div>
                                 </div>
                             </div>
-                            <p id="errorMessage">An error occurred.<br>Please try again later.</p>
+                        </div>
+                        <div id="errorMessage">
+                            <p class="errorMessage">❌</p>
+                            <p class="errorMessage">Something went wrong.<br>Please try again later.</p>
                         </div>
                         <div id="loadedLandyard">
                             <div id="discord">

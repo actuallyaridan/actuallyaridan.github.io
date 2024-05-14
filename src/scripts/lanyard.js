@@ -274,5 +274,5 @@ function handleError(error) {
   // Displays an error message if it's called for
   console.error("JavaScript Error:", error);
   spinner.style.display = "none";
-  errorMessage.style.display = "block";
+  errorMessage.style.display = "flex";
 }

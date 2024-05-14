@@ -3,8 +3,6 @@
 
 <head>
     <meta charset="utf-8">
-    <script src="https://cdn.jsdelivr.net/npm/@twemoji/api@latest/dist/twemoji.min.js" crossorigin="anonymous"></script>
-    <script src="/src/scripts/twimojiFix.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#161616">
     <title>Hem — actuallyaridan</title>
@@ -14,6 +12,8 @@
     <script src="/src/scripts/mobileMenu.js"></script>
     <script src="/src/scripts/emailModalBox.js"></script>
     <script defer src="/src/scripts/lanyard.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/@twemoji/api@latest/dist/twemoji.min.js" crossorigin="anonymous"></script>
+    <script src="/src/scripts/twimojiFix.js"></script>
     <link rel="apple-touch-icon" sizes="180x180" href="/src/favicons/apple-touch-icon.png">
     <link rel="apple-touch-icon" type="image/png" sizes="512x512" href="/src/favicons/icon-512.png">
     <link rel="apple-touch-icon" type="image/png" sizes="192x192" href="/src/favicons/icon-192.png">
@@ -124,7 +124,10 @@
                                     <div></div>
                                 </div>
                             </div>
-                            <p id="errorMessage">Ett fel uppstod.<br>Försök igen senare.</p>
+                        </div>
+                        <div id="errorMessage">
+                            <p class="errorMessage">❌</p>
+                            <p class="errorMessage">Något gick snett.<br>Försök igen senare.</p>
                         </div>
                         <div id="loadedLandyard">
                             <div id="discord">

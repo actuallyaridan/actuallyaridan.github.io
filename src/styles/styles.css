@@ -185,6 +185,14 @@ p{
 
 #errorMessage{
   display: none;
+  flex-direction: column;
+  margin: 12px;
+  padding: 12px;
+}
+
+.errorMessage{  
+  color: var(--subtitle-color);
+
 }
 
 p.subTitle {
