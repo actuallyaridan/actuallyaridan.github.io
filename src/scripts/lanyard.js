@@ -5,6 +5,7 @@ let userID = "701403809129168978";
 const loadingDiv = document.getElementById("loading");
 const errorMessage = document.getElementById("errorMessage");
 const spinner = document.getElementById("loadingSpinner");
+const contentDiv = document.getElementById("loadedLandyard");
 
 // Checks if the windows inner width is above 739px. If it's not, it sets (mobile) platform as true 
 function platform() {
@@ -272,7 +273,8 @@ async function setLanyard() {
 
 function handleError(error) {
   // Displays an error message if it's called for
-  console.error("JavaScript Error:", error);
+  console.error("Error:", error);
   spinner.style.display = "none";
+  contentDiv.style.display ="none"
   errorMessage.style.display = "flex";
 }

@@ -179,18 +179,6 @@ p{
   word-wrap: break-word;
 }
 
-#errorMessage{
-  display: none;
-  flex-direction: column;
-  margin: 12px;
-  padding: 12px;
-}
-
-.errorMessage{  
-  color: var(--subtitle-color);
-
-}
-
 p.subTitle {
   color: var(--subtitle-color);
 }
@@ -1677,6 +1665,18 @@ div.projectStuff>iframe{
 
 label{
   cursor: pointer;
+}
+
+#errorMessage{
+  display: none;
+  flex-direction: column;
+  margin: 12px;
+  padding: 12px;
+}
+
+.errorMessage{  
+  color: var(--subtitle-color);
+
 }
 
 
