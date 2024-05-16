@@ -102,7 +102,6 @@ async function setLanyard() {
           // Checks if there's a large image and if there is one, it sets it as an image 
           activityDiscordWrapper.style.display = "flex";
           if (activities[0]?.assets?.large_image) {
-            if (activities[0]?.name !== 'Apple Music') {
               document.getElementById("discordActivityImages").style.display = "block";
               let activityImageLarge = activities[0].assets.large_image;
               if (activityImageLarge.includes("external")) {
@@ -147,20 +146,8 @@ async function setLanyard() {
                 document.getElementById("activityLogoSmall").style.display = "none";
               }
             }
-          } else {
-            document.getElementById("activityLogoSmall").style.display = "none";
-            document.getElementById("activityLogoLarge").style.display = "none";
-          }
-
-
-
-          if (activities[0]?.name == 'Apple Music') {
-            document.getElementById('activityName').style.textAlign = 'center';
-            document.getElementById('activityState').style.textAlign = 'center';
-            document.getElementById('activityDetails').style.textAlign = 'center';
-            document.getElementById('timeremaning').style.textAlign = 'center';
-          }// Checks if there are two images and if there are, does some funny alignment stuff
-          else if (activities[0]?.assets?.large_image) {
+             // Checks if there are two images and if there are, does some funny alignment stuff
+           if (activities[0]?.assets?.large_image) {
             // Dexrn: THIS IS REALLY JANK REMIND ME TO FIX!!!
             document.getElementById('activityName').style.textAlign = 'left';
             document.getElementById('activityState').style.textAlign = 'left';
