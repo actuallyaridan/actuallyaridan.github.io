@@ -85,7 +85,7 @@ async function setLanyard() {
 
       // Sets username and profile picture
       document.getElementById("discordName").textContent =
-       '@' + data.data.discord_user.username;
+        '@' + data.data.discord_user.username;
       document.getElementById(
         "discordPFP"
       ).src = `https://cdn.discordapp.com/avatars/${userID}/${data.data.discord_user.avatar}.webp?size=512`;
@@ -102,52 +102,52 @@ async function setLanyard() {
           // Checks if there's a large image and if there is one, it sets it as an image 
           activityDiscordWrapper.style.display = "flex";
           if (activities[0]?.assets?.large_image) {
+            document.getElementById("discordActivityImages").style.display = "block";
+            let activityImageLarge = activities[0].assets.large_image;
+            if (activityImageLarge.includes("external")) {
+              activityImageLarge = `https://media.discordapp.net/external/${activities[0].assets.large_image.split("mp:external/")[1]
+                }`;
+            } else {
+              activityImageLarge = `https://cdn.discordapp.com/app-assets/${activities[0].application_id}/${activities[0].assets.large_image}.png?size=256`;
+            }
+            if (
+              document.getElementById("activityLogoLarge").style.display == "none"
+            ) {
+              document.getElementById("activityLogoLarge").style.display =
+                "initial";
+            }
+            document.getElementById("activityLogoLarge").src = activityImageLarge;
+
+            // Checks if there's a small image and if there is one, it sets it as an image 
+            if (activities[0]?.assets?.small_image) {
               document.getElementById("discordActivityImages").style.display = "block";
-              let activityImageLarge = activities[0].assets.large_image;
-              if (activityImageLarge.includes("external")) {
-                activityImageLarge = `https://media.discordapp.net/external/${activities[0].assets.large_image.split("mp:external/")[1]
+              let activityImageSmall = activities[0].assets.small_image;
+              if (activityImageSmall.includes("external")) {
+                activityImageSmall = `https://media.discordapp.net/external/${activities[0].assets.small_image.split("mp:external/")[1]
                   }`;
               } else {
-                activityImageLarge = `https://cdn.discordapp.com/app-assets/${activities[0].application_id}/${activities[0].assets.large_image}.png?size=256`;
+                activityImageSmall = `https://cdn.discordapp.com/app-assets/${activities[0].application_id}/${activities[0].assets.small_image}.png?size=256`;
               }
               if (
-                document.getElementById("activityLogoLarge").style.display == "none"
+                document.getElementById("activityLogoSmall").style.display == "none"
               ) {
-                document.getElementById("activityLogoLarge").style.display =
+                document.getElementById("activityLogoSmall").style.display =
                   "initial";
               }
-              document.getElementById("activityLogoLarge").src = activityImageLarge;
-
-              // Checks if there's a small image and if there is one, it sets it as an image 
-              if (activities[0]?.assets?.small_image) {
-                document.getElementById("discordActivityImages").style.display = "block";
-                let activityImageSmall = activities[0].assets.small_image;
-                if (activityImageSmall.includes("external")) {
-                  activityImageSmall = `https://media.discordapp.net/external/${activities[0].assets.small_image.split("mp:external/")[1]
-                    }`;
-                } else {
-                  activityImageSmall = `https://cdn.discordapp.com/app-assets/${activities[0].application_id}/${activities[0].assets.small_image}.png?size=256`;
-                }
-                if (
-                  document.getElementById("activityLogoSmall").style.display == "none"
-                ) {
-                  document.getElementById("activityLogoSmall").style.display =
-                    "initial";
-                }
-                document.getElementById("activityLogoSmall").src = activityImageSmall;
-                if (!activities[0].assets.large_image) {
-                  document.getElementById("activityLogoSmall").width = "96px";
-                  document.getElementById("activityLogoSmall").height = "96px";
-                } else {
-                  document.getElementById("activityLogoSmall").width = "32px";
-                  document.getElementById("activityLogoSmall").height = "32px";
-                }
+              document.getElementById("activityLogoSmall").src = activityImageSmall;
+              if (!activities[0].assets.large_image) {
+                document.getElementById("activityLogoSmall").width = "96px";
+                document.getElementById("activityLogoSmall").height = "96px";
               } else {
-                document.getElementById("activityLogoSmall").style.display = "none";
+                document.getElementById("activityLogoSmall").width = "32px";
+                document.getElementById("activityLogoSmall").height = "32px";
               }
+            } else {
+              document.getElementById("activityLogoSmall").style.display = "none";
             }
-             // Checks if there are two images and if there are, does some funny alignment stuff
-           if (activities[0]?.assets?.large_image) {
+          }
+          // Checks if there are two images and if there are, does some funny alignment stuff
+          if (activities[0]?.assets?.large_image) {
             // Dexrn: THIS IS REALLY JANK REMIND ME TO FIX!!!
             document.getElementById('activityName').style.textAlign = 'left';
             document.getElementById('activityState').style.textAlign = 'left';
@@ -188,8 +188,22 @@ async function setLanyard() {
           // Sets activity text
           document.getElementById("activityName").textContent =
             activities[0].name;
-          document.getElementById("activityState").textContent =
-            activities[0].state;
+
+            document.getElementById("activityState").textContent = activities[0].state;
+
+            // Regular expression to match "by" followed by anything in parentheses or whitespace (non-greedy)
+            const byRegex = /by\s*(?:\(.*\)|[^)]+)/;
+            
+            if (byRegex.test(activities[0].state)) {
+              // Extract everything after the first space following "by"
+              const newState = activities[0].state.replace(/by\s+/, "");
+              // Update the text content with the modified state
+              document.getElementById("activityState").textContent = newState;
+            } else {
+              // No "by" found, leave the text content as is
+              console.log("No 'by' attribution found in the state");
+            }
+
           document.getElementById("activityDetails").textContent =
             activities[0].details;
 
@@ -262,6 +276,6 @@ function handleError(error) {
   // Displays an error message if it's called for
   console.error("Error:", error);
   spinner.style.display = "none";
-  contentDiv.style.display ="none"
+  contentDiv.style.display = "none"
   errorMessage.style.display = "flex";
 }
