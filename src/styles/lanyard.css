@@ -1,0 +1,266 @@
+#statusWrapper{
+    list-style-type: none;
+    color: var(--text-color);
+    font-family: Jost, sans-serif;
+    padding: 8px;
+    text-decoration: none;
+    width: -moz-fit-content;
+    width: fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    font-size: initial;
+    transition: background-color .2s;
+    font-size: initial;
+    touch-action: manipulation;
+    border-radius: 12px;
+    -webkit-appearance: none;
+    appearance: none;
+    text-align: right;
+    margin-right: 12px;
+    display: block;
+  }
+
+
+  .divider {
+    border: solid 1px rgba(var(--accent-color), 0.4);
+    width: 100%;
+  }
+
+
+#landyardDiscord{
+    display: flex;
+    font-family: Jost, sans-serif;
+    color: white;
+  }
+  
+  #loadedLandyard{
+    display: none;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: 6px;
+    margin-right: 6px;
+    margin-top: 12px;
+  }
+  
+  #loadedLandyard>p, #discordStatus, #activities{
+    display: inline;
+    text-align: center;
+    color: rgb(188, 188, 188);
+  }
+
+
+#dcNameContainer {
+    align-items: center;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+  }
+  
+  #dcActivityHeaderName {
+    line-height: 2.5;
+    margin-left: 12px;
+  }
+  
+  section.project>p.dcProjectName {
+    color: white;
+  }
+
+.img-holder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    aspect-ratio: 16 / 9;
+    width: 65vw;
+}
+
+.img-holder>p {
+    margin: 12px;
+}
+
+.img-holder>a {
+    padding: 6px;
+    background-color: rgba(var(--darker-accent-color), 0.30);
+}
+
+img {
+    pointer-events: none;
+}
+
+.offline,
+.dnd {
+    background-color: #f94c5780;
+    border: #f94c57 2px solid;
+    border: #f94c5780 2px solid;
+    box-shadow: rgba(249, 76, 87, 0.50) 0px 0px 20px;
+    transition: background-color 0.2s;
+}
+
+.dcloading {
+    background-color: #909090;
+    background-color: #90909080;
+    border: #90909080 2px solid;
+    box-shadow: rgba(140, 140, 140, 0.50) 0px 0px 20px;
+    transition: background-color 0.2s;
+}
+
+.online {
+    background-color: #53d769;
+    background-color: #53d76980;
+    border: #53d769 2px solid;
+    border: #53d76980 2px solid;
+    box-shadow: rgba(83, 215, 105, 0.50) 0px 0px 20px;
+    transition: background-color 0.2s;
+}
+
+.idle {
+    background-color: #f2841d;
+    background-color: #f2841d80;
+    border: #f2841d 2px solid;
+    border: #f2841d80 2px solid;
+    transition: background-color 0.2s;
+}
+
+div#discord {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#discordName,
+#discordActivity,
+#discordNameUser {
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+    border-radius: 12px;
+    margin: 12px;
+    color: var(--project-color);
+    text-align: center;
+}
+
+#discordNameUser {
+    color: var(--text-color);
+}
+
+.discordPFP {
+    border-radius: 10px;
+}
+
+
+#discordActivity {
+    min-width: 15vw;
+    word-wrap: break-word;
+    max-width: 350px;
+}
+
+#activityLogoLarge {
+    border-radius: 5px;
+}
+
+#activityLogoSmall {
+    border-radius: 25%;
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    transform: translate(-200%, 250%);
+}
+
+
+.discordName {
+    display: flex;
+}
+
+
+div#loading>div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lds-ring {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+
+.lds-ring div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border: 8px solid #fff;
+    border-radius: 50%;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: rgb(var(--accent-color)) transparent transparent transparent;
+}
+
+.lds-ring div:nth-child(1) {
+    animation-delay: -0.45s;
+}
+
+.lds-ring div:nth-child(2) {
+    animation-delay: -0.3s;
+}
+
+.lds-ring div:nth-child(3) {
+    animation-delay: -0.15s;
+}
+
+
+#activityName,
+#activityState,
+#activityDetails {
+    text-align: left;
+    color: var(--project-color);
+}
+
+#activityName {
+    color: var(--text-color);
+}
+
+#activityDetails {
+    color: var(--subtitle-color);
+}
+
+#timeremaning>p {
+    text-align: inherit;
+    color: var(--project-color);
+}
+
+#activityTime {
+    display: inline;
+    color: var(--project-color);
+    font-family: SevenSegment, monospace, Jost, sans-serif;
+}
+
+
+#errorMessage {
+    display: none;
+    flex-direction: column;
+    margin: 12px;
+    padding: 12px;
+}
+
+.errorMessage {
+    color: var(--subtitle-color);
+}
+
+@keyframes lds-ring {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
