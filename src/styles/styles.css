@@ -129,6 +129,7 @@ body {
   color: var(--text-color);
   height: -moz-fit-content;
   height: fit-content;
+  overflow-y: scroll;
 }
 
 
