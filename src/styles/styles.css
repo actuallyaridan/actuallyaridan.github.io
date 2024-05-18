@@ -331,10 +331,6 @@ section.project>h2.projectName {
   transition: background-color .2s;
 }
 
-.activeChoice{
-  background-color: #000000;
-}
-
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 .show {
   display: block;
@@ -697,6 +693,16 @@ section.titleUnderText{
 
 div.projectStuff>iframe{
  min-width: 120px;
+}
+
+.activeChoice{
+  background-color: #000000;
+  box-shadow: rgba(0, 0, 0, 0.50) 0px 0px 20px;
+}
+
+.activeChoice:hover{
+  background-color: #0e0e0e;
+  box-shadow: rgba(0, 0, 0, 0.50) 0px 0px 20px;
 }
 
 .hide{
