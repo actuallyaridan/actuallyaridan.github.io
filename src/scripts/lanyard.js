@@ -38,7 +38,7 @@ setLanyard();
 
 // If doUpdateSec is true, set up a 1 second interval for updates
 if (doUpdateSec) {
-  setInterval(setLanyard, 1000);
+  setInterval(setLanyard, 500);
 }
 
 //Waits until data has been fetched, then updates items
