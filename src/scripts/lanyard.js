@@ -29,7 +29,7 @@ const doUpdateSec = localStorage.getItem("doUpdateSec") !== "false";
 
 // Set up the data fetching interval management
 let fetchDataInterval;
-const fetchInterval = 700; // Fetch interval in milliseconds
+const fetchInterval = 900; // Fetch interval in milliseconds
 
 // Function to start fetching data
 const startFetchingData = () => {
