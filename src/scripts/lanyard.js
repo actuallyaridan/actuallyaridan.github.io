@@ -199,11 +199,8 @@ async function setLanyard() {
               const newState = activities[0].state.replace(/by\s+/, "");
               // Update the text content with the modified state
               document.getElementById("activityState").textContent = newState;
-            } else {
-              // No "by" found, leave the text content as is
-              console.log("No 'by' attribution found in the state");
             }
-
+            
           document.getElementById("activityDetails").textContent =
             activities[0].details;
 
