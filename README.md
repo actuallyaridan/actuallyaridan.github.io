@@ -2,15 +2,13 @@
 A modern, fast and lightweight website that can be used to show general information about a person.
 Supports multiple languages and follows accessibility guidelines for a more open internet. 
 
-## Contributors:
+## Contributors
 
+- Adnan Bukvic (a.k.a. aridan) / [@actuallyaridan](https://github.com/actuallyaridan)
 
-Adnan Bukvic (a.k.a. aridan) / [@actuallyaridan](https://github.com/actuallyaridan)
+- Slade Watkins / [@sladewatkins](https://github.com/sladewatkins)
 
-Slade Watkins / [@sladewatkins](https://github.com/sladewatkins)
-
-Dexrn ZacAttack (a.k.a Zach) / [@dexrnzacattack](https://github.com/dexrnzacattack)
-
+- Dexrn ZacAttack (a.k.a Zach) / [@dexrnzacattack](https://github.com/dexrnzacattack)
 
 ## The fine print
 
