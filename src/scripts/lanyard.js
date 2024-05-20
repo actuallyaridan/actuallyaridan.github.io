@@ -233,8 +233,6 @@ async function setLanyard() {
     contentDiv.style.display = "flex";
     errorMessage.style.display = "none";
   } catch (error) {
-    console.error("Error fetching Lanyard data:", error);
-    // Handle the error here (e.g., display an error message to the user)
     handleError(error);
   }
 }
