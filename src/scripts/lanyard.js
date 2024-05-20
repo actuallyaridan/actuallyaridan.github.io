@@ -117,6 +117,8 @@ async function setLanyard() {
                 "initial";
             }
             document.getElementById("activityLogoLarge").src = activityImageLarge;
+            document.getElementById("activityLogoLarge").setAttribute('alt',  activities[0].assets.large_text);
+            document.getElementById("activityLogoLarge").setAttribute('title',  activities[0].assets.large_text);
 
             // Checks if there's a small image and if there is one, it sets it as an image 
             if (activities[0]?.assets?.small_image) {
@@ -135,6 +137,9 @@ async function setLanyard() {
                   "initial";
               }
               document.getElementById("activityLogoSmall").src = activityImageSmall;
+              document.getElementById("activityLogoSmall").setAttribute('alt', activities[0].name);
+              document.getElementById("activityLogoSmall").setAttribute('title', activities[0].name);
+
               if (!activities[0].assets.large_image) {
                 document.getElementById("activityLogoSmall").width = "96px";
                 document.getElementById("activityLogoSmall").height = "96px";
