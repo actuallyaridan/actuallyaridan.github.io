@@ -266,6 +266,7 @@ async function setLanyard() {
       const conentSite = document.getElementById("loadedLandyard");
       loadingDiv.style.display = "none";
       conentSite.style.display = "flex";
+      errorMessage.style.display = "none";
     });
   } catch (error) {
     console.error("Error fetching Lanyard data:", error);
