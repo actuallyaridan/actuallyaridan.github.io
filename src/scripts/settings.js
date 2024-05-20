@@ -266,12 +266,13 @@ document.addEventListener('DOMContentLoaded', function () {
   applyTheme();
 
   // Event listener for theme selection change
+  if (document.getElementById('settings')) {
   document.querySelector('.saveButton').addEventListener('click', function () {
     var selectedTheme = document.querySelector('input[name="theme-color"]:checked').id;
     localStorage.setItem('theme-color', selectedTheme);
     applyTheme(); // Apply the selected theme immediately
   });
-});
+}});
 
 window.addEventListener('DOMContentLoaded', () => {
   if (document.getElementById('settings')) {
