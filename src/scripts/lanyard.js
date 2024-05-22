@@ -1,27 +1,48 @@
 // Creates a value containing my user ID for Lanyard
 let userID = "701403809129168978";
-
 // Creates values for the loading divs and the error message
 const loadingDiv = document.getElementById("loading");
 const errorMessage = document.getElementById("errorMessage");
 const spinner = document.getElementById("loadingSpinner");
 const contentDiv = document.getElementById("loadedLandyard");
+let discordDataLatest;
+
+console.log('Attempting to connect to Lanyard Websocket at wss://api.lanyard.rest/socket...')
+const websocket = new WebSocket("wss://api.lanyard.rest/socket");
+websocket.onmessage = async function (event) {
+  const data = JSON.parse(event.data)
+  console.log(data)
+  if (data.op === 1) {
+    console.log("%cConnection to Lanyard WebSocket returned 200 (OK)", "color:green;");
+    console.log('Attempting to access data for userID ' + [userID] + '...')
+    websocket.send(JSON.stringify({
+      op: 2,
+      d: {
+        // subscribe_to_ids should be an array of user IDs you want to subscribe to presences from
+        // if Lanyard doesn't monitor an ID specified, it won't be included in INIT_STATE
+        subscribe_to_id: userID
+      }
+    }))
+    const { heartbeat_interval } = data.d
+    setInterval(function () {
+      websocket.send(JSON.stringify(
+        {
+          op: 3
+        }
+      ))
+    }, heartbeat_interval)
+    console.log('Applied new heartbeat interval (timeout)')
+  }
+  else if (data.op === 0) {
+    console.log(data)
+    discordDataLatest = data.d
+    console.log('%cData at userID ' + [userID] + ' returned 200 (OK)', "color:green;")
+  }
+}
 
 // Checks if the windows inner width is above 739px. If it's not, it sets (mobile) platform as true 
 function platform() {
   return window.innerWidth < 739;
-}
-
-// Fetches data from Lanyard
-async function getLanyard() {
-  try {
-    const ly = await fetch(`https://api.lanyard.rest/v1/users/${userID}`);
-    return await ly.json();
-  } catch (error) {
-    // Calls an error handler if something doesn't go as planned
-    console.error("Error fetching Lanyard data:", error);
-    handleError(error);
-  }
 }
 
 // Check for the localStorage setting that disables automatic updates
@@ -31,42 +52,16 @@ const doUpdateSec = localStorage.getItem("doUpdateSec") !== "false";
 let fetchDataInterval;
 const fetchInterval = 900; // Fetch interval in milliseconds
 
-// Function to start fetching data
-const startFetchingData = () => {
-  fetchDataInterval = setInterval(setLanyard, fetchInterval);
-  setLanyard(); // Optionally fetch data immediately on focus
-};
-
-// Function to stop fetching data
-const stopFetchingData = () => {
-  clearInterval(fetchDataInterval);
-};
-
-// Event listener for visibility change
-document.addEventListener('visibilitychange', () => {
-  if (document.hidden) {
-    stopFetchingData();
-  } else {
-    startFetchingData();
-  }
-});
-
 // Initial setup: start fetching data if the tab is in focus and updates are enabled
-if (!document.hidden && doUpdateSec) {
-  startFetchingData();
+if (doUpdateSec) {
+  fetchDataInterval = setInterval(setLanyard, fetchInterval);
 }
-
-// Call setLanyard once initially to fetch data when the script first runs
-setLanyard();
 
 // Waits until data has been fetched, then updates items
 async function setLanyard() {
   try {
-    const data = await getLanyard();
-    if (!data) return;
-
     // Makes the data into constant values to make it easier to work with
-    const { activities, discord_status, listening_to_spotify, discord_user } = data.data;
+    const { activities, discord_status, listening_to_spotify, discord_user } = discordDataLatest;
 
     // Updates the text if I'm online, offline, inactive or in DND
     const statusWrapper = document.getElementById("statusWrapper");
@@ -82,7 +77,7 @@ async function setLanyard() {
 
     // Checks if I'm online
     if (discord_status === "online") {
-      document.getElementById("landyardDiscord").style.display = "flex";
+      document.getElementById("lanyardDiscord").style.display = "flex";
       document.getElementById("discordActivityImages").style.display = "none";
       const activityDiscordWrapper = document.getElementById("discordActivity");
 
@@ -168,14 +163,14 @@ async function setLanyard() {
 
         // Regular expression to match "by" followed by anything in parentheses or whitespace (non-greedy)
         const byRegex = /by\s*(?:\(.*\)|[^)]+)/;
-        
+
         if (byRegex.test(activities[0].state)) {
           // Extract everything after the first space following "by"
           const newState = activities[0].state.replace(/by\s+/, "");
           // Update the text content with the modified state
           document.getElementById("activityState").textContent = newState;
         }
-        
+
         document.getElementById("activityDetails").textContent = activities[0].details;
 
         // Creates a new date as the current one
@@ -226,9 +221,9 @@ async function setLanyard() {
         }
       }
     } else {
-      document.getElementById("landyardDiscord").style.display = "none";
+      document.getElementById("lanyardDiscord").style.display = "none";
     }
-    
+
     loadingDiv.style.display = "none";
     contentDiv.style.display = "flex";
     errorMessage.style.display = "none";
