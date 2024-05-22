@@ -4,7 +4,7 @@ let userID = "701403809129168978";
 const loadingDiv = document.getElementById("loading");
 const errorMessage = document.getElementById("errorMessage");
 const spinner = document.getElementById("loadingSpinner");
-const contentDiv = document.getElementById("loadedLandyard");
+const contentDiv = document.getElementById("loadedLanyard");
 let discordDataLatest;
 
 console.log('Attempting to connect to Lanyard Websocket at wss://api.lanyard.rest/socket...')
