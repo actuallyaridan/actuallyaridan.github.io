@@ -31,7 +31,7 @@ websocket.onmessage = async function (event) {
         }
       ))
     }, heartbeat_interval)
-    console.log('Applied new heartbeat interval (timeout)')
+    console.log('Applying new heartbeat interval (timeout)')
   }
   else if (data.op === 0) {
     console.log(data)
@@ -45,17 +45,11 @@ function platform() {
   return window.innerWidth < 739;
 }
 
-// Check for the localStorage setting that disables automatic updates
-const doUpdateSec = localStorage.getItem("doUpdateSec") !== "false";
 
 // Set up the data fetching interval management
 let fetchDataInterval;
-const fetchInterval = 900; // Fetch interval in milliseconds
 
-// Initial setup: start fetching data if the tab is in focus and updates are enabled
-if (doUpdateSec) {
-  fetchDataInterval = setInterval(setLanyard, fetchInterval);
-}
+fetchDataInterval = setInterval(setLanyard, 900);
 
 // Waits until data has been fetched, then updates items
 async function setLanyard() {
