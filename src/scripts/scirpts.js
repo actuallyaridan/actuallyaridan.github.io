@@ -1,3 +1,11 @@
+function emailToggle() {
+    document.getElementById("emailModal").classList.toggle("showEmail");
+}
+
+function toggleMenu() {
+    document.getElementById("mobileMenuID").classList.toggle("showMenu");
+}
+
 window.onload = function () {
     // Parses the document body and    
     // inserts <img> tags in place of Unicode Emojis    
@@ -13,11 +21,3 @@ window.addEventListener('keydown', function (event) {
     }
 }
 )
-
-function emailToggle() {
-    document.getElementById("emailModal").classList.toggle("showEmail");
-}
-
-function toggleMenu() {
-    document.getElementById("mobileMenuID").classList.toggle("showMenu");
-}
