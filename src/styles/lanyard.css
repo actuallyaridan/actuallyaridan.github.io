@@ -1,4 +1,11 @@
-#statusWrapper{
+@font-face {
+    font-family: SevenSegment;
+    font-style: normal;
+    font-display: swap;
+    src: url(fonts/SevenSegment.otf);
+}
+
+#statusWrapper {
     list-style-type: none;
     color: var(--text-color);
     font-family: Jost, sans-serif;
@@ -18,22 +25,22 @@
     text-align: right;
     margin-right: 12px;
     display: block;
-  }
+}
 
 
-  .divider {
+.divider {
     border: solid 1px rgba(var(--accent-color), 0.4);
     width: 100%;
-  }
+}
 
 
-#lanyardDiscord{
+#lanyardDiscord {
     display: flex;
     font-family: Jost, sans-serif;
     color: white;
-  }
-  
-  #loadedLanyard{
+}
+
+#loadedLanyard {
     display: none;
     text-align: center;
     flex-direction: column;
@@ -42,13 +49,15 @@
     margin-left: 6px;
     margin-right: 6px;
     margin-top: 12px;
-  }
-  
-  #loadedLanyard>p, #discordStatus, #activities{
+}
+
+#loadedLanyard>p,
+#discordStatus,
+#activities {
     display: inline;
     text-align: center;
     color: rgb(188, 188, 188);
-  }
+}
 
 
 #dcNameContainer {
@@ -57,16 +66,16 @@
     display: flex;
     justify-content: space-between;
     height: 50px;
-  }
-  
-  #dcActivityHeaderName {
+}
+
+#dcActivityHeaderName {
     line-height: 2.5;
     margin-left: 12px;
-  }
-  
-  section.project>p.dcProjectName {
+}
+
+section.project>p.dcProjectName {
     color: white;
-  }
+}
 
 .img-holder {
     display: flex;

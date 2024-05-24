@@ -71,13 +71,6 @@ html, * {
   src: url(fonts/Pixel.ttf);
 }
 
-@font-face {
-  font-family: SevenSegment;
-  font-style: normal;
-  font-display: swap;
-  src: url(fonts/SevenSegment.otf);
-}
-
 :root {
   --accent-color: 13, 13, 13;
   --darker-accent-color: 14, 14, 14;
