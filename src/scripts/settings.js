@@ -3,7 +3,6 @@ function settingsAlert() {
   document.getElementById("sucessfullSave").classList.remove("result");
 }
 
-
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('settings');
   
@@ -132,26 +131,26 @@ document.addEventListener('DOMContentLoaded', () => {
     form.elements['animations'].checked = showAnimations;
   };
 
+  const handleLanguageChange = () => {
+    const languageSelect = document.getElementById('language-select');
+    const currentUrl = window.location.href;
+    
+    if (!form || !languageSelect) return;
+
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const selectedLanguage = languageSelect.value;
+      const redirectUrl = selectedLanguage === 'sv' && !currentUrl.includes('/sv/') ? 'sv/settings' :
+        selectedLanguage === 'en' && currentUrl.includes('/sv/') ? '../settings' : '';
+
+      if (redirectUrl) {
+        window.location.href = redirectUrl;
+      }
+    });
+  };
+
   applySettings();
   applyTheme();
   initializeForm();
-});
-
-document.addEventListener('DOMContentLoaded', () => {
-  const form = document.getElementById('settings');
-  if (!form) return;
-
-  const languageSelect = document.getElementById('language-select');
-  const currentUrl = window.location.href;
-
-  form.addEventListener('submit', (event) => {
-    event.preventDefault();
-    const selectedLanguage = languageSelect.value;
-    const redirectUrl = selectedLanguage === 'sv' && !currentUrl.includes('/sv/') ? 'sv/settings' :
-      selectedLanguage === 'en' && currentUrl.includes('/sv/') ? '../settings' : '';
-
-    if (redirectUrl) {
-      window.location.href = redirectUrl;
-    }
-  });
+  handleLanguageChange();
 });
