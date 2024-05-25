@@ -156,6 +156,13 @@ div#discord {
 
 #discordNameUser {
     color: var(--text-color);
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+}
+
+#discordName{
+    margin-top: 6px;
+    padding-top: 6px;
 }
 
 .discordPFP {
