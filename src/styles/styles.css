@@ -706,6 +706,12 @@ div.projectStuff>iframe{
   display: inline !important;
 }
 
+#emoji404>img{
+  height: 96px;
+  width: 96px;
+}
+
+
 .uppercaseText{
   text-transform: uppercase;
 }
