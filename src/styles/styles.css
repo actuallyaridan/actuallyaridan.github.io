@@ -1,5 +1,6 @@
 /*General styles*/
-html, * {
+html,
+* {
   scroll-behavior: smooth;
   color-scheme: var(--html-color-scheme);
 }
@@ -83,6 +84,7 @@ img.emoji {
   vertical-align: -0.1em;
   pointer-events: none;
 }
+
 /*End of general styles*/
 
 /*Header and menu styles*/
@@ -114,6 +116,7 @@ menu {
   padding: 0px;
   margin: 0px;
 }
+
 /*End of header and menu styles*/
 
 
@@ -151,7 +154,7 @@ footer {
   justify-content: center;
 }
 
-div.centererWrapper{
+div.centererWrapper {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -166,7 +169,7 @@ a {
   text-align: center;
 }
 
-h1{
+h1 {
   font-weight: 500;
   text-align: center;
   display: flex;
@@ -174,13 +177,13 @@ h1{
   align-items: center;
 }
 
-h2{
+h2 {
   font-size: 1em;
   font-family: Jost, sans-serif;
   font-weight: normal;
 }
 
-h3{
+h3 {
   font-weight: 450;
 }
 
@@ -190,10 +193,10 @@ p.subTitle {
 
 p.subTitleExp,
 h2.projectName {
-  color:var(--text-color)
+  color: var(--text-color)
 }
 
-p{
+p {
   word-wrap: break-word;
 }
 
@@ -231,7 +234,8 @@ section.project {
   width: 80%;
 }
 
-section.project>p, section.project>h2 {
+section.project>p,
+section.project>h2 {
   text-align: left;
   margin: 12px;
   color: var(--project-color);
@@ -274,7 +278,7 @@ section.project>div>p>a:hover {
 }
 
 section.project>h2.projectName {
-  color:var(--text-color)
+  color: var(--text-color)
 }
 
 .WIP {
@@ -363,16 +367,17 @@ p.bottomText {
   flex-wrap: wrap;
   max-height: 0;
   overflow-y: hidden;
-	transition-property: all;
-	transition-duration: .3s;
-	transition-timing-function: cubic-bezier(1, 1, 1, 1);
+  transition-property: all;
+  transition-duration: .3s;
+  transition-timing-function: cubic-bezier(1, 1, 1, 1);
 
 }
 
 .showMenu {
   margin: 12px;
   margin-top: 18px;
-  max-height: 300px; /* approximate max height */
+  max-height: 300px;
+  /* approximate max height */
 }
 
 
@@ -588,7 +593,7 @@ p.titleEmail {
 
 .buttonsEmail {
   background-color: #191919;
-  background-color: rgba(var(--accent-color),0.2);
+  background-color: rgba(var(--accent-color), 0.2);
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -625,7 +630,7 @@ span.title>p {
   margin: auto;
 }
 
-.langProf{
+.langProf {
   font-weight: 500;
 }
 
@@ -670,11 +675,11 @@ button.close {
 }
 
 
-.hide{
+.hide {
   display: none;
 }
 
-section.titleUnderText{
+section.titleUnderText {
   max-width: 80vw;
 }
 
@@ -684,35 +689,35 @@ section.titleUnderText{
 }
 
 
-div.projectStuff>iframe{
- min-width: 120px;
+div.projectStuff>iframe {
+  min-width: 120px;
 }
 
-.activeChoice{
+.activeChoice {
   background-color: #000000;
   box-shadow: rgba(0, 0, 0, 0.50) 0px 0px 20px;
 }
 
-.activeChoice:hover{
+.activeChoice:hover {
   background-color: #0e0e0e;
   box-shadow: rgba(0, 0, 0, 0.50) 0px 0px 20px;
 }
 
-.hide{
+.hide {
   display: none;
 }
 
-.inline{
+.inline {
   display: inline !important;
 }
 
-#emoji404>img{
+#emoji404>img {
   height: 96px;
   width: 96px;
 }
 
 
-.uppercaseText{
+.uppercaseText {
   text-transform: uppercase;
 }
 
@@ -720,16 +725,19 @@ div.projectStuff>iframe{
 @keyframes fling {
   0% {
     transform: scale(.7);
-}
-45% {
-  transform: scale(1.05);
-}
-80% {
-  transform: scale(.95);
-}
-100% {
-  transform: scale(1);
-}
+  }
+
+  45% {
+    transform: scale(1.05);
+  }
+
+  80% {
+    transform: scale(.95);
+  }
+
+  100% {
+    transform: scale(1);
+  }
 }
 
 
@@ -760,13 +768,17 @@ div.projectStuff>iframe{
   div#discordActivity {
     flex-direction: column;
   }
-  
+
   div#discordActivityImages {
     display: none;
     padding-right: 0 !important;
   }
 
-  #activityName, #activityState, #activityDetails, #activityTime, #timeremaning{
+  #activityName,
+  #activityState,
+  #activityDetails,
+  #activityTime,
+  #timeremaning {
     text-align: left;
   }
 
@@ -774,13 +786,17 @@ div.projectStuff>iframe{
     display: flex;
   }
 
-  ul.cvstuff>li{
+  ul.cvstuff>li {
     flex-direction: column;
   }
-  ul.cvstuff>li>p{
+
+  ul.cvstuff>li>p {
     padding-right: 0px;
   }
-  ul.cvstuff>li>select, ul.cvstuff>li>input, ul.cvstuff>li>textarea{
+
+  ul.cvstuff>li>select,
+  ul.cvstuff>li>input,
+  ul.cvstuff>li>textarea {
     width: 100% !important;
     text-align: center !important;
   }

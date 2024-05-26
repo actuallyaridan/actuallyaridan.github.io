@@ -5,7 +5,7 @@ function settingsAlert() {
 
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('settings');
-  
+
   const applyTheme = () => {
     const selectedTheme = localStorage.getItem('theme-color');
     const themes = {
@@ -134,7 +134,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const handleLanguageChange = () => {
     const languageSelect = document.getElementById('language-select');
     const currentUrl = window.location.href;
-    
+
     if (!form || !languageSelect) return;
 
     form.addEventListener('submit', (event) => {

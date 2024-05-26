@@ -9,11 +9,11 @@ main.settings {
     font-weight: normal;
     width: 100%;
     border: none;
-  }
-  
-  .saveButton:hover {
+}
+
+.saveButton:hover {
     background-color: rgba(var(--accent-color), 0.3);
-  }
+}
 
 .setting {
     padding-bottom: 12px;
