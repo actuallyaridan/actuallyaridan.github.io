@@ -711,7 +711,14 @@ div.projectStuff>iframe {
   display: inline !important;
 }
 
-#emoji404>img {
+#emojiNotFound {
+  height: 96px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#emojiNotFound>img{
   height: 96px;
   width: 96px;
 }
