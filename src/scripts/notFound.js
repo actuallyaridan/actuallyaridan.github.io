@@ -14,6 +14,7 @@ window.addEventListener('DOMContentLoaded', function() {
         "🙃",
         "🥴",
         "🧐",
+        "🫨",
         "😞"
     ];
     document.getElementById('emojiNotFound').textContent = emojis[Math.floor(Math.random()*emojis.length)];
