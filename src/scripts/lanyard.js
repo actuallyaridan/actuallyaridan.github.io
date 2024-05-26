@@ -82,6 +82,7 @@ function updateActivityImages(activities) {
     const activityImages = document.getElementById("discordActivityImages");
     const largeImageElem = document.getElementById("activityLogoLarge");
     const smallImageElem = document.getElementById("activityLogoSmall");
+    const isMobile = isMobilePlatform(); // Check if the user is on a mobile platform
 
     if (activities.length && activities[0]?.assets) {
         let largeImage = activities[0].assets.large_image;
@@ -113,11 +114,14 @@ function updateActivityImages(activities) {
         }
 
         activityImages.style.display = largeImage || smallImage ? "block" : "none";
-        adjustTextAlignment(largeImage || smallImage); // Call adjustTextAlignment with the appropriate argument
+        adjustTextAlignment(largeImage || smallImage, isMobile); // Pass isMobile as an argument
     } else {
         activityImages.style.display = "none";
+        adjustTextAlignment(false, isMobile); // Center text if no images are available
     }
 }
+
+
 
 
 function updateActivityDetails(activities) {
@@ -188,8 +192,8 @@ function getImageUrl(image, appId) {
         : `https://cdn.discordapp.com/app-assets/${appId}/${image}.png?size=256`;
 }
 
-function adjustTextAlignment(hasImage) {
-    const align = hasImage ? 'left' : 'center';
+function adjustTextAlignment(hasImage, isMobile) {
+    const align = isMobile || !hasImage ? 'center' : 'left';
     ['activityName', 'activityState', 'activityDetails', 'timeremaning'].forEach(id => {
         document.getElementById(id).style.textAlign = align;
     });
