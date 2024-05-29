@@ -121,7 +121,7 @@ body {
     height: -moz-fit-content;
     height: fit-content;
     overflow-y: scroll;
-    transition: all 0.7s ease-in-out;
+    transition: background-color 0.2s ease-in-out;
 }
 
 
@@ -717,6 +717,10 @@ div.projectStuff>iframe {
 #emojiNotFound>img {
     height: 96px;
     width: 96px;
+}
+
+#textNotFound{
+    color: #00000080;
 }
 
 
