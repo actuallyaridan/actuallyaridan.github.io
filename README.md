@@ -10,6 +10,8 @@ Supports multiple languages and follows accessibility guidelines for a more open
 
 - Dexrn ZacAttack (a.k.a Zach) / [@dexrnzacattack](https://github.com/dexrnzacattack)
 
+- Dhiren Vasnani / [@dhirenvasnani](https://github.com/dhirenvasnani)
+
 ## The fine print
 
 Currently hosted using Cloudlfare. 
