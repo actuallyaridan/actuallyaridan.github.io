@@ -1,11 +1,21 @@
-/*General styles*/
+/* General styles */
 html,
 * {
-    scroll-behavior: smooth;
-    color-scheme: var(--html-color-scheme);
+    scroll-behavior: smooth; /* Older browsers do not support this, so it's okay to keep, but it will be ignored */
+    color-scheme: light dark; /* Simplified version of color-scheme, for better compatibility */
 }
 
+/* Fallback for browsers without prefers-color-scheme */
+html[data-theme='auto'] {
+    --background-color: #f1f1f1; /* Light mode default */
+    --text-color: rgb(0, 0, 0);
+    --subtitle-color: rgb(3, 3, 3);
+    --project-color: rgb(88, 88, 88);
+    --bgMc: #e1e1e1 url(../images/background/light.png) repeat;
+    --color-scheme: light;
+}
 
+/* Fallback for prefers-color-scheme: light */
 @media (prefers-color-scheme: light) {
     html[data-theme='auto'] {
         --background-color: #f1f1f1;
@@ -17,6 +27,7 @@ html,
     }
 }
 
+/* Fallback for prefers-color-scheme: dark */
 @media (prefers-color-scheme: dark) {
     html[data-theme='auto'] {
         --background-color: #121212;
@@ -28,7 +39,7 @@ html,
     }
 }
 
-
+/* Explicit themes to handle both light and dark cases */
 html[data-theme='light'] {
     --background-color: #f1f1f1;
     --text-color: rgb(0, 0, 0);
@@ -47,6 +58,7 @@ html[data-theme='dark'] {
     --color-scheme: dark;
 }
 
+/* Font-face definitions with proper fallbacks */
 @font-face {
     font-family: Jost;
     font-style: normal;
@@ -67,10 +79,12 @@ html[data-theme='dark'] {
     src: url(fonts/Pixel.ttf);
 }
 
+/* Define variables for accent colors */
 :root {
-    --accent-color: 13, 13, 13;
-    --darker-accent-color: 14, 14, 14;
+    --accent-color: rgb(13, 13, 13); /* Ensure fallback RGB format */
+    --darker-accent-color: rgb(14, 14, 14);
 }
+
 
 img.emoji {
     height: 1em;
@@ -83,17 +97,31 @@ img.emoji {
 /*End of general styles*/
 
 /*Header and menu styles*/
+/* Use position sticky for browsers that support it */
 header {
     -webkit-backdrop-filter: saturate(180%) blur(20px);
     backdrop-filter: saturate(180%) blur(20px);
-    background-color: #0d0d0d;
     background-color: rgba(var(--accent-color), 0.3);
     margin: 12px;
     padding: 12px;
     border-radius: 12px;
+    z-index: 9;
     position: sticky;
     top: 12px;
-    z-index: 9;
+}
+
+/* Fallback for older browsers using position fixed */
+@supports not (position: sticky) {
+    header {
+        position: fixed;
+        top: 12px;
+        left: 0;
+        right: 0;
+    }
+
+    body {
+        margin-top: 120px; /* Adjust for the fixed header */
+    }
 }
 
 header::after {
@@ -102,10 +130,6 @@ header::after {
     clear: both;
 }
 
-.right-link {
-    position: absolute;
-    right: 0;
-}
 
 menu {
     padding: 0px;
@@ -116,7 +140,9 @@ menu {
 
 
 body {
+    background-color: #f1f1f1;
     background-color: var(--background-color);
+    color: rgb(0, 0, 0);
     color: var(--text-color);
     height: -moz-fit-content;
     height: fit-content;
@@ -160,7 +186,8 @@ div.centererWrapper {
 h1,
 p,
 a {
-    color: (var(--text-color));
+    color: rgb(0, 0, 0);
+    color: var(--text-color);
     font-family: Jost, sans-serif;
     text-align: center;
 }
@@ -184,12 +211,14 @@ h3 {
 }
 
 p.subTitle {
+    color: rgb(3, 3, 3);
     color: var(--subtitle-color);
 }
 
 p.subTitleExp,
 h2.projectName {
-    color: var(--text-color)
+    color: rgb(0, 0, 0);
+    color: var(--text-color);
 }
 
 p {
@@ -234,6 +263,7 @@ section.project>p,
 section.project>h2 {
     text-align: left;
     margin: 12px;
+    color: rgb(88, 88, 88);
     color: var(--project-color);
 }
 
@@ -255,6 +285,7 @@ section.project>div {
 section.project>div>p {
     text-align: center;
     margin: 12px;
+    color: rgb(88, 88, 88);
     color: var(--project-color);
     text-decoration: none;
     word-wrap: break-word;
@@ -262,6 +293,7 @@ section.project>div>p {
 
 section.project>div>p>a {
     text-align: center;
+    color: rgb(88, 88, 88);
     color: var(--project-color);
     white-space: nowrap;
     text-decoration: none;
@@ -269,12 +301,14 @@ section.project>div>p>a {
 }
 
 section.project>div>p>a:hover {
+    color: rgb(0, 0, 0);
     color: var(--text-color);
     transition: color .2s;
 }
 
 section.project>h2.projectName {
-    color: var(--text-color)
+    color: rgb(0, 0, 0);
+    color: var(--text-color);
 }
 
 .WIP {
@@ -292,6 +326,7 @@ section.project>h2.projectName {
 
 .navButton {
     color: white;
+    border: none;
     font-family: Jost, sans-serif;
     background-color: #0e0e0e;
     background-color: rgba(var(--darker-accent-color), 0.30);
@@ -306,6 +341,7 @@ section.project>h2.projectName {
     transition: background-color .2s;
     font-size: initial;
     touch-action: manipulation;
+    margin: 0px;
 }
 
 .navButton,
@@ -324,10 +360,24 @@ section.project>h2.projectName {
     transition: background-color .2s;
 }
 
+.navButton>.emoji {
+    margin: 0px;
+    
+}
+
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 .show {
     display: block;
     width: 166px;
+}
+
+.right-link {
+    margin-right: 0px;
+    margin-left: auto;
+}
+
+.right-link> a{
+    margin-right: 0px;
 }
 
 
@@ -559,6 +609,7 @@ p.titleEmail {
     align-items: center;
     flex-direction: column;
     background-color: #121212;
+    background-color: #f1f1f1;
     background-color: var(--background-color);
     padding: 12px;
     margin: 12px;
@@ -667,6 +718,7 @@ button.close {
 
 
 .button:hover {
+    background-color: rgb(13, 13, 13);
     background-color: rgba(var(--accent-color), 0.3);
 }
 
