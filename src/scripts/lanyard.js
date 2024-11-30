@@ -1,32 +1,32 @@
-const userID = "701403809129168978";
-const loadingDiv = document.getElementById("loading");
-const errorMessage = document.getElementById("errorMessage");
-const spinner = document.getElementById("loadingSpinner");
-const contentDiv = document.getElementById("loadedLanyard");
-let discordDataLatest;
+var userID = "701403809129168978";
+var loadingDiv = document.getElementById("loading");
+var errorMessage = document.getElementById("errorMessage");
+var spinner = document.getElementById("loadingSpinner");
+var contentDiv = document.getElementById("loadedLanyard");
+var discordDataLatest;
 
 console.log('Connecting to Lanyard WebSocket at wss://api.lanyard.rest/socket...');
-const websocket = new WebSocket("wss://api.lanyard.rest/socket");
+var websocket = new WebSocket("wss://api.lanyard.rest/socket");
 
-websocket.onmessage = async function (event) {
-    const data = JSON.parse(event.data);
+websocket.onmessage = function (event) {
+    var data = JSON.parse(event.data);
     console.log(data);
 
     if (data.op === 1) {
         console.log("%cConnection to Lanyard WebSocket returned 200 (OK)", "color:green;");
-        console.log(`Attempting to access data for userID ${userID}...`);
+        console.log("Attempting to access data for userID " + userID + "...");
         websocket.send(JSON.stringify({
             op: 2,
             d: { subscribe_to_id: userID }
         }));
-        const { heartbeat_interval } = data.d;
-        setInterval(() => {
+        var heartbeatInterval = data.d.heartbeat_interval;
+        setInterval(function () {
             websocket.send(JSON.stringify({ op: 3 }));
-        }, heartbeat_interval);
+        }, heartbeatInterval);
         console.log('Heartbeat interval set');
     } else if (data.op === 0) {
         discordDataLatest = data.d;
-        console.log(`%cData for userID ${userID} received successfully`, "color:green;");
+        console.log("%cData for userID " + userID + " received successfully", "color:green;");
     }
 };
 
@@ -34,11 +34,14 @@ function isMobilePlatform() {
     return window.innerWidth < 739;
 }
 
-let fetchDataInterval = setInterval(updateLanyardData, 900);
+var fetchDataInterval = setInterval(updateLanyardData, 900);
 
-async function updateLanyardData() {
+function updateLanyardData() {
     try {
-        const { activities, discord_status, discord_user } = discordDataLatest;
+        var discordData = discordDataLatest || {};
+        var activities = discordData.activities || [];
+        var discord_status = discordData.discord_status || "";
+        var discord_user = discordData.discord_user || {};
 
         updateStatusWrapper(discord_status);
         updateUserInfo(discord_user);
@@ -53,7 +56,7 @@ async function updateLanyardData() {
 }
 
 function updateStatusWrapper(status) {
-    const statusWrapper = document.getElementById("statusWrapper");
+    var statusWrapper = document.getElementById("statusWrapper");
     if (statusWrapper) {
         statusWrapper.className = status;
         statusWrapper.textContent = capitalizeFirstLetter(status);
@@ -61,13 +64,13 @@ function updateStatusWrapper(status) {
 }
 
 function updateUserInfo(user) {
-    document.getElementById("discordName").textContent = `@${user.username}`;
-    document.getElementById("discordPFP").src = `https://cdn.discordapp.com/avatars/${userID}/${user.avatar}.webp?size=512`;
+    document.getElementById("discordName").textContent = "@" + user.username;
+    document.getElementById("discordPFP").src = "https://cdn.discordapp.com/avatars/" + userID + "/" + user.avatar + ".webp?size=512";
 }
 
 function updateActivityInfo(activities, status) {
-    const lanyardDiscord = document.getElementById("lanyardDiscord");
-    const activityWrapper = document.getElementById("discordActivity");
+    var lanyardDiscord = document.getElementById("lanyardDiscord");
+    var activityWrapper = document.getElementById("discordActivity");
 
     if (status === "online") {
         lanyardDiscord.style.display = "flex";
@@ -79,20 +82,21 @@ function updateActivityInfo(activities, status) {
 }
 
 function updateActivityImages(activities) {
-    const activityImages = document.getElementById("discordActivityImages");
-    const largeImageElem = document.getElementById("activityLogoLarge");
-    const smallImageElem = document.getElementById("activityLogoSmall");
-    const isMobile = isMobilePlatform(); // Check if the user is on a mobile platform
+    var activityImages = document.getElementById("discordActivityImages");
+    var largeImageElem = document.getElementById("activityLogoLarge");
+    var smallImageElem = document.getElementById("activityLogoSmall");
+    var isMobile = isMobilePlatform();
 
-    if (activities.length && activities[0]?.assets) {
-        let largeImage = activities[0].assets.large_image;
-        let smallImage = activities[0].assets.small_image;
+    if (activities.length && activities[0] && activities[0].assets) {
+        var assets = activities[0].assets;
+        var largeImage = assets.large_image;
+        var smallImage = assets.small_image;
 
         if (largeImage) {
             largeImageElem.style.display = "initial";
             largeImageElem.src = getImageUrl(largeImage, activities[0].application_id);
-            largeImageElem.alt = `Album art for ${activities[0].assets.large_text}`;
-            largeImageElem.title = activities[0].assets.large_text;
+            largeImageElem.alt = "Album art for " + assets.large_text;
+            largeImageElem.title = assets.large_text;
         } else {
             largeImageElem.style.display = "none";
         }
@@ -100,7 +104,7 @@ function updateActivityImages(activities) {
         if (smallImage) {
             smallImageElem.style.display = "initial";
             smallImageElem.src = getImageUrl(smallImage, activities[0].application_id);
-            smallImageElem.alt = `Application icon for ${activities[0].name}`;
+            smallImageElem.alt = "Application icon for " + activities[0].name;
             smallImageElem.title = activities[0].name;
             if (!largeImage) {
                 smallImageElem.width = 96;
@@ -113,22 +117,19 @@ function updateActivityImages(activities) {
             smallImageElem.style.display = "none";
         }
 
-        activityImages.style.display = largeImage || smallImage ? "block" : "none";
-        adjustTextAlignment(largeImage || smallImage, isMobile); // Pass isMobile as an argument
+        activityImages.style.display = (largeImage || smallImage) ? "block" : "none";
+        adjustTextAlignment((largeImage || smallImage), isMobile);
     } else {
         activityImages.style.display = "none";
-        adjustTextAlignment(false, isMobile); // Center text if no images are available
+        adjustTextAlignment(false, isMobile);
     }
 }
 
-
-
-
 function updateActivityDetails(activities) {
-    const wrapper = document.getElementById("discordActivity");
+    var wrapper = document.getElementById("discordActivity");
     if (activities.length) {
         wrapper.style.display = "flex";
-        const activity = activities[0];
+        var activity = activities[0];
         document.getElementById("activityName").textContent = activity.name;
         document.getElementById("activityState").textContent = formatActivityState(activity.state);
         document.getElementById("activityDetails").textContent = activity.details;
@@ -139,35 +140,36 @@ function updateActivityDetails(activities) {
 }
 
 function formatActivityState(state) {
-    const byRegex = /by\s*(?:\(.*\)|[^)]+)/;
+    var byRegex = /by\s*(?:\(.*\)|[^)]+)/;
     return byRegex.test(state) ? state.replace(/by\s+/, "") : state;
 }
 
 function updateActivityTime(timestamps) {
-  const now = new Date();
-  const timeElem = document.getElementById("activityTime");
-  const remainingElem = document.getElementById("remaining");
-  const elapsedElem = document.getElementById("elapsed");
+    var now = new Date();
+    var timeElem = document.getElementById("activityTime");
+    var remainingElem = document.getElementById("remaining");
+    var elapsedElem = document.getElementById("elapsed");
 
-  if (timestamps?.end) {
-      const timeRemaining = calculateTimeDifference(new Date(timestamps.end), now);
-      timeElem.textContent = formatTime(timeRemaining);
-      toggleTimeDisplay(remainingElem, elapsedElem, true);
-  } else if (timestamps?.start) {
-      const timeElapsed = calculateTimeDifference(now, new Date(timestamps.start));
-      timeElem.textContent = formatTime(timeElapsed);
-      toggleTimeDisplay(remainingElem, elapsedElem, false);
-  } else {
-      timeElem.textContent = "-:-"; // Default time when timestamps are unavailable
-      elapsedElem.classList.add("hide");
-      remainingElem.classList.add("hide");
-      remainingElem.classList.remove("inline");
-      elapsedElem.classList.remove("inline");
-  }
+    if (timestamps && timestamps.end) {
+        var timeRemaining = calculateTimeDifference(new Date(timestamps.end), now);
+        timeElem.textContent = formatTime(timeRemaining);
+        toggleTimeDisplay(remainingElem, elapsedElem, true);
+    } else if (timestamps && timestamps.start) {
+        var timeElapsed = calculateTimeDifference(now, new Date(timestamps.start));
+        timeElem.textContent = formatTime(timeElapsed);
+        toggleTimeDisplay(remainingElem, elapsedElem, false);
+    } else {
+        timeElem.textContent = "-:-";
+        elapsedElem.classList.add("hide");
+        remainingElem.classList.add("hide");
+        remainingElem.classList.remove("inline");
+        elapsedElem.classList.remove("inline");
+    }
 }
+
 function calculateTimeDifference(endTime, startTime) {
-    const msDifference = endTime - startTime;
-    const seconds = Math.max(0, Math.floor(msDifference / 1000));
+    var msDifference = endTime - startTime;
+    var seconds = Math.max(0, Math.floor(msDifference / 1000));
     return {
         hours: Math.floor(seconds / 3600),
         minutes: Math.floor((seconds % 3600) / 60),
@@ -175,8 +177,8 @@ function calculateTimeDifference(endTime, startTime) {
     };
 }
 
-function formatTime({ hours, minutes, seconds }) {
-    return hours > 0 ? `${pad(hours)}:${pad(minutes)}:${pad(seconds)}` : `${pad(minutes)}:${pad(seconds)}`;
+function formatTime(time) {
+    return time.hours > 0 ? pad(time.hours) + ":" + pad(time.minutes) + ":" + pad(time.seconds) : pad(time.minutes) + ":" + pad(time.seconds);
 }
 
 function toggleTimeDisplay(remainingElem, elapsedElem, isRemaining) {
@@ -187,16 +189,17 @@ function toggleTimeDisplay(remainingElem, elapsedElem, isRemaining) {
 }
 
 function getImageUrl(image, appId) {
-    return image.includes("external")
-        ? `https://media.discordapp.net/external/${image.split("mp:external/")[1]}`
-        : `https://cdn.discordapp.com/app-assets/${appId}/${image}.png?size=256`;
+    return image.indexOf("external") !== -1
+        ? "https://media.discordapp.net/external/" + image.split("mp:external/")[1]
+        : "https://cdn.discordapp.com/app-assets/" + appId + "/" + image + ".png?size=256";
 }
 
 function adjustTextAlignment(hasImage, isMobile) {
-    const align = isMobile || !hasImage ? 'center' : 'left';
-    ['activityName', 'activityState', 'activityDetails', 'timeremaning'].forEach(id => {
-        document.getElementById(id).style.textAlign = align;
-    });
+    var align = isMobile || !hasImage ? 'center' : 'left';
+    var ids = ['activityName', 'activityState', 'activityDetails', 'timeremaning'];
+    for (var i = 0; i < ids.length; i++) {
+        document.getElementById(ids[i]).style.textAlign = align;
+    }
 
     document.getElementById("discordActivityImages").style.paddingRight = hasImage ? "20px" : "0";
 }
@@ -206,7 +209,7 @@ function capitalizeFirstLetter(string) {
 }
 
 function pad(num) {
-    return String(num).padStart(2, "0");
+    return ("0" + num).slice(-2);
 }
 
 function handleError(error) {
