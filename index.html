@@ -1,198 +1,337 @@
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description"
+        content="NeoFreeBird - A modified Twitter app with branding reverts, BHTwitter, and other QoL modifications.">
+    <meta name="keywords"
+        content="NeoFreeBird, Twitter, BHTwitter, modified app, Twitter rebrand, Twitter Blue features">
+    <meta name="author" content="Twitter, actualluaridan, timi2506">
+    <meta name="robots" content="index, follow">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Home — actuallyaridan</title>
-    <meta name="description" content="an amazing website made by actuallyaridan (adnan bukvic)">
-    <meta name="keywords" content="website, adnan bukvic, actuallyaridan">
-    <meta name="author" content="Adnan Bukvic">
-    <meta name="twitter:card" content="aridan / adnan bukvic's amazing website">
-    <meta name="twitter:site" content="actuallyaridan">
-    <meta name="twitter:title" content="Home">
-    <meta name="twitter:image" content="">
-    <meta name="twitter:description" content="aridan / adnan bukvic's amazing website">
-    <meta property="og:title" content="Home">
-    <meta property="og:description" content="aridan / adnan bukvic's amazing website">
-    <meta property="og:image" content="">
-    <meta property="og:url" content="https://aridan.net">
-    <link href="/src/styles/styles.css" rel="stylesheet">
-    <link href="/src/styles/lanyard.css" rel="stylesheet">
-    <script src="/src/scripts/settings.js"></script>
-    <script defer src="/src/scripts/lanyard.js"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/@twemoji/api@latest/dist/twemoji.min.js" crossorigin="anonymous"></script>
-    <script src="/src/scripts/general.js"></script>
-    <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="/src/favicons/apple-touch-icon.png">
-    <link rel="apple-touch-icon" type="image/png" sizes="512x512" href="/src/favicons/icon-512.png">
-    <link rel="apple-touch-icon" type="image/png" sizes="192x192" href="/src/favicons/icon-192.png">
-    <link rel="icon" type="image/png" sizes="512x512" href="/src/favicons/icon-512.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="/src/favicons/icon-192.png">
+    <title>aridan.net</title>
+    <link href="favicon.png" rel="icon" id="site-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="/src/styles.css">
+    <link rel="stylesheet" href="/src/lanyard.css">
+    <script src="/src/general.js" async></script>
+    <script src="/src/lanyard.js" async></script>
+    <script defer="" src="https://cdn.jsdelivr.net/npm/@twemoji/api@latest/dist/twemoji.min.js"
+        crossorigin="anonymous"></script>
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <meta property="og:title" content="NeoFreeBird">
+    <meta property="og:description"
+        content="A modified Twitter app with branding reverts, BHTwitter, and other QoL modifications.">
+    <meta property="og:image" content="/images/image.png">
+    <meta property="og:url" content="https://neofreebird.aridan.net">
+    <meta name="twitter:card" content="summary_large_image">
 </head>
 
-<body class="boxAlignment ">
-    <header>
-        <nav>
-            <menu class="navWrapper">
-                <li>
-                    <a class="navButton activeChoice" href="/"><img draggable="false" class="emoji" alt=""
-                            src="/src/images/emojis/house.svg"> Home</a>
-                </li>
-                <li>
-                    <a class="navButton" href="experiences"><img draggable="false" class="emoji" alt=""
-                            src="/src/images/emojis/brain.svg"> Experience</a>
-                </li>
-                <li>
-                    <a class="navButton" href="projects"><img draggable="false" class="emoji" alt=""
-                            src="/src/images/emojis/tools.svg"> Projects</a>
-                </li>
-
-                <li>
-                    <a class="navButton" href="contact"><img draggable="false" class="emoji" alt=""
-                            src="/src/images/emojis/speak.svg"> Contact</a>
-                </li>
-                <li class="right-link">
-                    <a class="navButton" href="settings"><img draggable="false" class="emoji"
-                            alt="" src="/src/images/emojis/setttings.svg"> Settings</a>
-                </li>
-            </menu>
-            <menu class="navWrapperMobile">
-                <li>
-                    <a class="navButton activeChoice" href="/">aridan.net</a>
-                </li>
-               <li class="right-link">
-                    <button onclick="toggleMenu()" type="button" class="navButton right-link">
-                        <img draggable="false" class="emoji" alt="" src="/src/images/icons/menu.svg">
-                        Menu
-                    </button>
-                </li>
-            </menu>
-            <menu class="mobileMenu" id="mobileMenuID">
-                <li>
-                    <a class="navButton" href="experiences"><img draggable="false" class="emoji" alt=""
-                            src="/src/images/emojis/brain.svg"> Experience</a>
-                </li>
-                <li>
-                    <a class="navButton" href="projects"><img draggable="false" class="emoji" alt=""
-                            src="/src/images/emojis/tools.svg"> Projects</a>
-                </li>
-
-                <li>
-                    <a class="navButton" href="contact"><img draggable="false" class="emoji" alt=""
-                            src="/src/images/emojis/speak.svg"> Contact</a>
-                </li>
-                <li>
-                    <a class="navButton" href="settings"><img draggable="false" class="emoji" alt=""
-                            src="/src/images/emojis/setttings.svg"> Settings</a>
-                </li>
-            </menu>
-        </nav>
-    </header>
-    <main>
-        <h1>Home</h1>
+<body>
+    <header id="desktop-header">
         <div>
-            <div class="centererWrapper">
-              <section class="titleUnderText">
-                    <p class="subTitle">Hi there! Welcome to my website! I use this website mainly to show
-                        recruiters my skills
-                        and contact information. I hope you'll enjoy your stay here. I'd give you some
-                        cookies but I respect your privacy, so maybe another time?</p>
-                </section>
-                <p class="subTitleExp">About me</p>
-                <section class="project" id="bio">
-                   <h2 class="projectName">Adnan Bukvic, also known as @actuallyaridan</h2>
-                    <p class="projectDesc">I'm a creative guy that loves making new solutions to old
-                        things. I love learning new things and I've liked computers, phones and
-                        networking ever since I was a child. I'm always up-to-date about their software
-                        and hardware. I even like modifying electronics to do new things, like old
-                        cables and accessories like iPods and I know a bunch of languages too!</p>
-                    <div class="projectStuff">
-                        <p class="projectStatus"><img draggable="false" class="emoji" alt=""
-                                src="/src/images/emojis/clock.svg"><br>20 years old</p>
-                        <p class="projectLearned"><img draggable="false" class="emoji" alt=""
-                                src="/src/images/emojis/globe.svg"><br><span class="langProf">fluent:</span>
-                            Swedish, English
-                            <span class="langProf"><br>speaks:</span> Bosnian, Croatian, Serbian
-                        </p>
-                    </div>
-                </section>
-                <section class="project" id="tech">
-                   <h2 class="projectName">Technology</h2>
-                    <p class="projectDesc">I own a bunch of different tech. Here are my most important ones:</p>
-                    <div class="projectStuff">
-                        <p class="projectStatus"><img draggable="false" class="emoji" alt=""
-                                src="/src/images/emojis/phone.svg"><br><span class="langProf">Phone:<br></span>iPhone 15
-                            Pro</p>
-                        <p class="projectStatus"><img draggable="false" class="emoji" alt=""
-                                src="/src/images/emojis/laptop.svg"><br><span class="langProf">Laptop:<br></span>MacBook
-                            Air<br>(13", 2020, <br>M1, 8GB/256GB)</p>
-                        <p class="projectLearned"><img draggable="false" class="emoji" alt=""
-                                src="/src/images/emojis/computer.svg"><br><span class="langProf">Computer:<br></span>
-                            AMD Ryzen 5 3600<br>ASUS Radeon RX6700 XT OC Edition <br>16GB RAM<br>Windows 11, macOS
-                            Sonoma
-                        </p>
-                    </div>
-                </section>
-                <section class="project" id="currentdiscord">
-                    <aside id="dcNameContainer">
-                       <h2 class="projectName" id="dcActivityHeaderName">Discord activity</h2>
-                        <p id="statusWrapper" class="dcloading">Loading...</p>
-                    </aside>
-                    <div id="lanyardDiscord">
-                        <div id="loading">
-                            <div>
-                                <div id="loadingSpinner" class="lds-ring">
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div id="errorMessage">
-                            <p class="errorMessage">❌</p>
-                            <p class="errorMessage">Something went wrong.<br>Please try again later.</p>
-                        </div>
-                        <div id="loadedLanyard">
-                            <div id="discord">
-                                <div id="discordInfo" class="discordInfo">
-                                    <img id="discordPFP" class="discordPFP" draggable="false" width="128"
-                                    height="128" alt="" src="src/images/icons/spinner.gif">
-                                    <h3 id="discordNameUser">aridan</h3>
-                                    <p id="discordName">Loading...</p>
-                                </div>
-                                <hr class="divider">
-                                <div id="discordActivity">
-                                    <div id="discordActivityImages">
-                                        <img id="activityLogoLarge" draggable="false" width="96" height="96" alt=""
-                                            src="src/images/icons/spinner.gif">
-                                        <img id="activityLogoSmall" draggable="false" width="32" height="32" alt=""
-                                            src="src/images/icons/spinner.gif">
-                                    </div>
-                                    <div id="discordActivityInfo">
-                                        <h3 id="activityName">Loading...</h3>
-                                        <p id="activityDetails">Loading...</p>
-                                        <p id="activityState" class="subTitle">Loading...</p>
-                                        <div id="timeremaning">
-                                            <p id="activityTime" class="subTitle">-:-</p>
-                                            <p id="remaining" class="hide subTitle"> remaining</p>
-                                            <p id="elapsed" class="hide subTitle"> elapsed</p>
-                                        </div>
-                                    </div>
-                                </div>
+            <ul>
+                <li class="active"><a href="/">aridan.net</a></li>
+                <li><a href="/details">Experience</a></li>
+                <li><a href="/docs">Projects</a></li>
+                <li><a href="/docs">Contact</a></li>
+            </ul>
+            <ul>
+                <li><a href="/settings"><i class="fa-solid fa-gear" title="Settings"></i></a></li>
+                <li><a href="https://github.com/actuallyaridan/NeoFreeBird"><i class="fa-brands fa-github"
+                            title="GitHub"></i></a></li>
+                <li><a href="https://twitter.com/actuallyaridan"><i class="fa-brands fa-twitter"
+                            title="Twitter"></i></a></li>
+            </ul>
+        </div>
+    </header>
+
+    <header id="mobile-header">
+        <div>
+            <ul>
+                <li class="active"><a href="/">aridan.net</a></li>
+            </ul>
+            <ul>
+                <li><button class="noUI" onclick="toggleMenu()"><i class="fa-solid fa-bars"></i></button></li>
+            </ul>
+        </div>
+        <menu class="mobileMenu" id="mobileMenuID">
+            <ul>
+                <li><a href="/details">Details</a></li>
+                <li><a href="/docs">Docs</a></li>
+            </ul>
+            <ul>
+                <li><a href="https://github.com/actuallyaridan/NeoFreeBird"><i class="fa-brands fa-github"
+                            title="GitHub"></i></a></li>
+                <li><a href="https://twitter.com/actuallyaridan"><i class="fa-brands fa-twitter"
+                            title="Twitter"></i></a></li>
+        </menu>
+
+    </header>
+
+    <main class="container">
+        <div id="app-info">
+            <img src="/images/image.png" alt="Chirp Icon" class="app-icon">
+            <div>
+                <h1 class="app-name">actuallyaridan</h1>
+                <p class="app-description titleColor">the username for Adnan Bukvic, a swedish <span id="techEnthu">tech
+                        enthusiast</span><span id="frontEndWebDev">front end web developer</span><span
+                        id="backEndWebDev">back-end web developer</span><span id="itTech">IT-technician</span></p>
+                <p id="statusWrapper" class="dcloading">Loading</p>
+            </div>
+        </div>
+
+        <div class="feature">
+            <section class="discordWrapper" id="currentdiscord">
+
+                <div id="lanyardDiscord">
+                    <div id="loading">
+                        <div>
+                            <div id="loadingSpinner" class="lds-ring">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
                             </div>
                         </div>
                     </div>
-                </section>
+                    <div id="errorMessage">
+                        <p class="errorMessage">❌</p>
+                        <p class="errorMessage">Something went wrong.<br>Please try again later.</p>
+                    </div>
+                    <div id="loadedLanyard">
+                        <div id="discord">
+                            <div id="discordInfo" class="discordInfo">
+                                <span class="titleActivity"> <i class="fa-brands fa-discord">
+                                        <h3>Discord</h3>
+                                    </i></i>
+                                </span>
+                                <img id="discordPFP" class="discordPFP" draggable="false" width="128" height="128"
+                                    alt="" src="src/images/icons/spinner.gif">
+                                <p id="discordNameUser" class="titleColor">aridan</p>
+                                <p id="discordName" class="subtitleColor">Loading</p>
+                            </div>
+                            <!-- Apple Music Activity -->
+                            <div id="amLanyardDiscord">
+                                <span class="titleActivity">
+                                    <i class="fa-solid fa-music">
+                                        <h3 id="amActivityName">Apple Music</h3>
+                                    </i>
+                                </span>
+                                <div id="amDiscordActivityImages">
+                                    <img id="amActivityLogoLarge" draggable="false" width="96" height="96" alt=""
+                                        src="src/images/icons/spinner.gif" class="albumArt">
+                                </div>
+                                <div id="amDiscordActivityInfo">
+                                    <p id="amActivityDetails" class="titleColor">Loading</p>
+                                    <p id="amActivityState" class="subtitleColor">Loading</p>
+
+                                    <div class="progress-bar-container">
+                                        <div class="progress-bar" id="amProgressBar"></div>
+                                    </div>
+
+                                    <div id="amTimeremaning">
+                                        <p id="amActivityTime" class="subTitle">-:-</p>
+                                        <p id="amRemaining" class="hide subTitle"> remaining</p>
+                                        <p id="amElapsed" class="hide subTitle"> elapsed</p>
+                                    </div>
+                                    <div class="iconContainer">
+                                        <img id="amActivityLogoSmall" draggable="false" width="32" height="32" alt=""
+                                            src="src/images/icons/spinner.gif">
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="discordActivity">
+                                <span class="titleActivity"> <i class="fa-regular fa-window-maximize">
+                                        <h3 id="activityName">Loading</h3>
+                                    </i>
+                                </span>
+                                <div id="discordActivityImages">
+                                    <img id="activityLogoLarge" draggable="false" width="96" height="96" alt=""
+                                        src="src/images/icons/spinner.gif">
+                                </div>
+                                <div id="discordActivityInfo">
+                                    <p id="activityDetails" class="titleColor">Loading</p>
+                                    <p id="activityState" class="subtitleColor">Loading</p>
+                                    <div class="progress-bar-container">
+                                        <div class="progress-bar" id="progressBar"></div>
+                                    </div>
+                                    <div id="Timeremaning">
+                                        <p id="ActivityTime" class="subTitle">-:-</p>
+                                        <p id="Remaining" class="hide subTitle"> remaining</p>
+                                        <p id="Elapsed" class="hide subTitle"> elapsed</p>
+                                    </div>
+                                </div>
+                                <div class="iconContainer">
+                                    <img id="activityLogoSmall" draggable="false" width="32" height="32" alt=""
+                                        src="src/images/icons/spinner.gif">
+                                </div>
+                            </div>
+                        </div>
+                        <button type="button" class="button"><i class="fa-solid fa-rotate-right"></i>Update</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <hr>
+        <div class="feature">
+            <div>
+                <h2 class="feature-title">Actuallyari...who?</h2>
+                <p class="feature-content">I'm Adnan, also known as actuallyaridan or simply aridan. I'm a creative guy
+                    that loves making new solutions to old things. I love learning new things and I've liked computers,
+                    phones and networking ever since I was a child. I'm always up-to-date about their software and
+                    hardware. I even like modifying electronics to do new things like replacing the hard drive in iPods
+                    with an SD card! I also know a bunch of languages too!</p>
+            </div>
+            <div class="screenshot-container">
+                <img class="Screenshot" src="/images/on-bus.jpg">
+            </div>
+        </div>
+        <div id="app-info">
+            <h1 class="app-name">Technology</h1>
+        </div>
+        </div>
+
+        <div class="feature">
+            <div>
+                <h2 class="feature-title">I have a PC</h2>
+                <p class="feature-content">I've fully built it myself. It runs games quite well and it dual-boots
+                    Windows 11 and macOS. Yes, it's indeed a hackintosh! It was a bit tideisous to get it running the
+                    first time, but it runs well!</p>
+                <ul class="specs">
+                    <li><i class="fa-solid fa-microchip"></i> AMD Ryzen 5 3600</li>
+                    <li><i class="fa-solid fa-gamepad"></i> Radeon RX 6700 XT</li>
+                    <li><i class="fa-solid fa-memory"></i> 16GB 3200MHz DDR4 RAM in dual channel</li>
+                    <li><i class="fa-solid fa-hard-drive"></i> about 2TB of SSD storage</li>
+                    <li><i class="fa-solid fa-wifi"></i> Fenvi T919 WiFi/Bluetooth</li>
+                    <li><i class="fa-brands fa-windows"></i> <i class="fa-brands fa-apple"></i> Windows 11 and macOS Sequoia</li>
+                </ul>
+            </div>
+
+            <div class="screenshot-container">
+                <img class="Screenshot" src="/images/with-pc.jpg">
+            </div>
+        </div>
+
+        <div class="feature">
+            <div>
+                <h2 class="feature-title">I collect vintage Apple products</h2>
+                <p class="feature-content">I enjoy collecting, repairing, and modifying vintage Apple products, like iPods. I open them, repair them if needed and then modify them with larger batteries, replace the internal spinning hard drive with an SD card and also flash custom firmware on them! It's a really fun hobby and being able to tinker with them is really calming.</p>
+                <p class="feature-content">I currently have a...</p>
+                <ul class="specs">
+                    <li>a 5.5th Generation iPod Video with a 5000mAh battery and 128GB SD card storage, along with a transparent click wheel and top case</li>
+                    <li>a 2nd Generation iPod Mini with a new battery and 64GB of Compact Flash storage</li>
+                    <li><i class="fa-solid fa-mobile-screen-button"></i> a 1st Generation iPod Touch</li>
+                    <li><i class="fa-solid fa-mobile-screen-button"></i> a 3rd Generation iPod Touch</li>
+                </ul>
+            </div>
+
+            <div class="screenshot-container">
+                <img class="Screenshot" src="/images/ipod.png">
             </div>
         </div>
     </main>
-    <footer class="footer">
-        <p>Any copyrighted material (like application icons, album arts or similar) displayed on this website is
-            owned by their respective copyright holder. <br>Some images on this website are embedded from other websites.<br>Contact adnan@aridan.net for takedowns of potential copyrighted material.
-        </p>
-        <p>© Copyright 2024 by Adnan Bukvic unless stated otherwise. This project uses the MIT license.</p>
-        <p>Twemoji by Twitter Inc/X Corp is licensed under CC-BY 4.0.</p>
+    <section>
+        <div class="section-header">
+            <h1 class="app-name">Fun fact!</h1>
+        </div>
+        <div class="cta">
+            <div>
+                <h2>I have quite bad vision</h2>
+                <p class="feature-content">Nystagmus, two-eyed-monocular vision, hypertropia, hypotropia and myopia.</p>
+                <p class="feature-content">Yep, that's all the things wrong with my eyes! My eyes like to dance, hate
+                    each other, aren't level and can't see clearly far away without glasses.</p>
+                <p class="feature-content">My brain has learned to deal with it better, and with glasses I can see quite clearly. Crazy how much the brain can adjust itself, eh?</p>
+            </div>
+            <div class="screenshot-container">
+                <img class="Screenshot" alt="A black and white animated photo of an eye with nystagmus, jittering horizontally." title="Nystagmus is a condition where the eyes move involuntarily, usually in a horizontal direction."
+                    src="https://upload.wikimedia.org/wikipedia/commons/b/b6/Optokinetic_nystagmus.gif">
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="poweredBySection">
+            <div class="poweredBy">
+                <p class="subtitleColor">discord API provided by</p>
+                <img src="src/images/icons/lanyardLong.png" alt="Lanyard" title="Lanyard" class="lanyard-logo">
+            </div>
+            <div class="poweredBy">
+                <p class="subtitleColor">hosted using</p>
+                <img src="src/images/icons/cloudflare.png" alt="Cloudflare" title="Cloudflare" class="lanyard-logo">
+            </div>
+        </div>
+        <div class="sosumi">
+            <p class="subtitleColor">Any copyrighted material (like application icons, album arts or similar) displayed
+                on this website is owned by their respective copyright holder.
+                Some images on this website are embedded from other websites.</p>
+            <p class="subtitleColor">
+                Twemoji by Twitter Inc/X Corp is licensed under CC-BY 4.0.
+            </p>
+
+
+        </div>
     </footer>
-</body></html>
+    <dialog>
+        <div class="modal">
+            <div class="modal-content">
+                <h2>Settings</h2>
+                <div class="modalSettings">
+                    <div>
+                        <h3><i class="fa-solid fa-language"></i>Language</h3>
+                        <div>
+                            <select name="language" id="language" class="button">
+                                <option value="en" selected>English</option>
+                                <option value="sv">Swedish</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div>
+                        <h3><i class="fa-solid fa-paint-roller"></i>Theme</h3>
+                        <div class="themeOptions options">
+                            <input type="radio" id="auto" name="theme-color" value="auto" class="theme-option" checked>
+                            <label for="auto" class="auto button theme-label">Follow system</label>
+
+                            <input type="radio" id="light" name="theme-color" value="light" class="theme-option">
+                            <label for="light" class="light button theme-label">Light</label>
+
+                            <input type="radio" id="dark" name="theme-color" value="dark" class="theme-option">
+                            <label for="dark" class="dark button theme-label">Dark</label>
+                        </div>
+                    </div>
+                    <div>
+                        <h3><i class="fa-solid fa-palette"></i>Color</h3>
+                        <div class="colorOptions options">
+                            <input type="radio" id="red" name="accent-color" value="red">
+                            <label for="red" class="red button">Red</label>
+
+                            <input type="radio" id="green" name="accent-color" value="green">
+                            <label for="green" class="green button">Green</label>
+
+                            <input type="radio" id="blue" name="accent-color" value="blue" checked>
+                            <label for="blue" class="blue button">Blue</label>
+
+                            <input type="radio" id="monochrome" name="accent-color" value="monochrome">
+                            <label for="monochrome" class=",monochrome button">Monochrome</label>
+                        </div>
+                    </div>
+                    <div>
+                        <h3><i class="fa-solid fa-wrench"></i>Quirks</h3>
+                        <div>
+                            <input type="checkbox" name="quirk" id="quirk1" value="quirk1">
+                            <label for="quirk1">Auto-update activities from Discord every second</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="modalButtons">
+                    <button type="button" class="button">Done</button>
+                    <button type="button" class="button dangerZone">Reset</button>
+                </div>
+            </div>
+    </dialog>
+</body>
+
+</html>
