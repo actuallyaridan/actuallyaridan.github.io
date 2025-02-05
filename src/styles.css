@@ -20,6 +20,14 @@
     --accent-color: #007aff;
 }
 
+:root {
+    --backgroundColor: #121212;
+    --textColor: rgb(255, 255, 255);
+    --headerBgColor: #0c0c0c88;
+    --headerTextColor: rgb(203, 203, 203);
+    --buttonBgColor: #007aff;
+}
+/*
 html[data-theme='auto'] {
     --backgroundColor: #f1f1f1;
     --textColor: rgb(0, 0, 0);
@@ -27,14 +35,14 @@ html[data-theme='auto'] {
     --headerTextColor: rgb(3, 3, 3);
     --buttonBgColor: #007aff;
 }
-
+*/
 /* General Reset */
 @font-face {
     font-family: Jost;
     src: url(/src/fonts/Jost.ttf);
 }
 
-/* Fallback for prefers-color-scheme: light */
+/* Fallback for prefers-color-scheme: light
 @media (prefers-color-scheme: light) {
     :root {
         --backgroundColor: #f1f1f1;
@@ -44,6 +52,7 @@ html[data-theme='auto'] {
         --buttonBgColor: #007aff;
     }
 }
+*/
 
 /* Fallback for prefers-color-scheme: dark */
 @media (prefers-color-scheme: dark) {
