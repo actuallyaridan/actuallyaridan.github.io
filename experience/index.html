@@ -10,7 +10,7 @@
     <meta name="author" content="actualluaridan">
     <meta name="robots" content="index, follow">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>aridan.net</title>
+    <title>Experience - aridan.net</title>
     <link href="favicon.png" rel="icon" id="site-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
@@ -34,8 +34,8 @@
     <header id="desktop-header">
         <div>
             <ul>
-                <li class="active"><a href="/">aridan.net</a></li>
-                <li><a href="/experience/">Experience</a></li>
+                <li><a href="/">aridan.net</a></li>
+                <li class="active"><a href="/experience/">Experience</a></li>
                 <li><a href="/projects/">Projects</a></li>
                 <li><a href="/contact/">Contact</a></li>
             </ul>
@@ -52,7 +52,7 @@
     <header id="mobile-header">
         <div>
             <ul>
-                <li class="active"><a href="/">aridan.net</a></li>
+                <li><a href="/">aridan.net</a></li>
             </ul>
             <ul>
                 <li><button class="noUI" onclick="toggleMenu()"><i class="fa-solid fa-bars"></i></button></li>
@@ -60,7 +60,7 @@
         </div>
         <menu class="mobileMenu" id="mobileMenuID">
             <ul>
-                <li><a href="/experience/">Experience</a></li>
+                <li class="active"><a href="/experience/">Experience</a></li>
                 <li><a href="/projects/">Projects</a></li>
                 <li><a href="/contact/">Contact</a></li>
             </ul>
@@ -76,127 +76,78 @@
 
     <main class="container">
         <div id="app-info">
-            <img src="/images/image.png" alt="Chirp Icon" class="app-icon">
+            <p class="app-icon"><i class="fa-solid fa-briefcase icon-background"></i></p>
             <div>
-                <h1 class="app-name">actuallyaridan</h1>
-                <p class="app-description titleColor">the username for Adnan Bukvic, a swedish <span id="techEnthu">tech
-                        enthusiast</span><span id="frontEndWebDev">front end web developer</span><span
-                        id="backEndWebDev">back-end web developer</span><span id="itTech">IT-technician</span></p>
-                <p id="statusWrapper" class="dcloading">Loading</p>
+                <h1 class="app-name">Career</h1>
+                <p class="app-description titleColor">I've had various jobs at a few companies. I've worked in tech repair, IT support for a municipality, and general support for an IoT company, and I'm only getting started!</p>
+                <a class="button" href="mailto:adnan@aridan.net"><i class="fa-solid fa-envelope"></i> Get in touch</a>
             </div>
         </div>
-
-        <div class="feature">
-            <section class="discordWrapper" id="currentdiscord">
-
-                <div id="lanyardDiscord">
-                    <div id="loading">
-                        <div>
-                            <div id="loadingSpinner" class="lds-ring">
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="errorMessage">
-                        <p class="errorMessage">❌</p>
-                        <p class="errorMessage">Something went wrong.<br>Please try again later.</p>
-                    </div>
-                    <div id="loadedLanyard">
-                        <div id="discord">
-                            <div id="discordInfo" class="discordInfo">
-                                <span class="titleActivity"> <i class="fa-brands fa-discord">
-                                        <h3>Discord</h3>
-                                    </i></i>
-                                </span>
-                                <img id="discordPFP" class="discordPFP" draggable="false" width="128" height="128"
-                                    alt="" src="src/images/icons/spinner.gif">
-                                <p id="discordNameUser" class="titleColor">aridan</p>
-                                <p id="discordName" class="subtitleColor">Loading</p>
-                            </div>
-                            <!-- Apple Music Activity -->
-                            <div id="amLanyardDiscord">
-                                <span class="titleActivity">
-                                    <i class="fa-solid fa-music">
-                                        <h3 id="amActivityName">Apple Music</h3>
-                                    </i>
-                                </span>
-                                <div id="amDiscordActivityImages">
-                                    <img id="amActivityLogoLarge" draggable="false" width="96" height="96" alt=""
-                                        src="src/images/icons/spinner.gif" class="albumArt">
-                                </div>
-                                <div id="amDiscordActivityInfo">
-                                    <p id="amActivityDetails" class="titleColor">Loading</p>
-                                    <p id="amActivityState" class="subtitleColor">Loading</p>
-
-                                    <div class="progress-bar-container">
-                                        <div class="progress-bar" id="amProgressBar"></div>
-                                    </div>
-
-                                    <div id="amTimeremaning">
-                                        <p id="amActivityTime" class="subTitle">-:-</p>
-                                        <p id="amRemaining" class="hide subTitle"> remaining</p>
-                                        <p id="amElapsed" class="hide subTitle"> elapsed</p>
-                                    </div>
-                                    <div class="iconContainer">
-                                        <img id="amActivityLogoSmall" draggable="false" width="32" height="32" alt=""
-                                            src="src/images/icons/spinner.gif">
-                                    </div>
-                                </div>
-                            </div>
-                            <div id="discordActivity">
-                                <span class="titleActivity"> <i class="fa-regular fa-window-maximize">
-                                        <h3 id="activityName">Loading</h3>
-                                    </i>
-                                </span>
-                                <div id="discordActivityImages">
-                                    <img id="activityLogoLarge" draggable="false" width="96" height="96" alt=""
-                                        src="src/images/icons/spinner.gif">
-                                </div>
-                                <div id="discordActivityInfo">
-                                    <p id="activityDetails" class="titleColor">Loading</p>
-                                    <p id="activityState" class="subtitleColor">Loading</p>
-                                    <div class="progress-bar-container">
-                                        <div class="progress-bar" id="progressBar"></div>
-                                    </div>
-                                    <div id="Timeremaning">
-                                        <p id="ActivityTime" class="subTitle">-:-</p>
-                                        <p id="Remaining" class="hide subTitle"> remaining</p>
-                                        <p id="Elapsed" class="hide subTitle"> elapsed</p>
-                                    </div>
-                                </div>
-                                <div class="iconContainer">
-                                    <img id="activityLogoSmall" draggable="false" width="32" height="32" alt=""
-                                        src="src/images/icons/spinner.gif">
-                                </div>
-                            </div>
-                        </div>
-                        <button type="button" class="button"><i class="fa-solid fa-rotate-right"></i>Update</button>
-                    </div>
-                </div>
-            </section>
-        </div>
-
         <hr>
         <div class="feature">
             <div>
-                <h2 class="feature-title">Actuallyari...who?</h2>
-                <p class="feature-content">I'm Adnan, also known as actuallyaridan or simply aridan. I'm a creative guy
-                    that loves making new solutions to old things. I love learning new things and I've liked computers,
-                    phones and networking ever since I was a child. I'm always up-to-date about their software and
-                    hardware. I even like modifying electronics to do new things like replacing the hard drive in iPods
-                    with an SD card! I also know a bunch of languages too!</p>
+                <h2 class="feature-title">Support technician</h2>
+                <ul class="specs">
+                    <li><i class="fa-solid fa-building"></i> MiniFinder Sweden AB</li>
+                    <li><i class="fa-solid fa-location-dot"></i> Växjö, Sweden</li>
+                    <li><i class="fa-solid fa-house-laptop"></i> On-site</li>
+                    <li><i class="fa-solid fa-clock"></i> February 2025 - Present</li>
+                </ul>
+                <p class="feature-content">At MiniFinder, I provide support to customers over email, phone or chat. I assist customers when their GPS tracker experiences issues and provide world-class support for a growing IoT company.</p>
             </div>
             <div class="screenshot-container">
-                <img class="Screenshot" src="/images/on-bus.jpg">
+                <img class="Screenshot" src="/images/minifinder.jpg">
+                <div class="linkCompany">
+                    <a title="minifinder.com" href="https://minifinder.com"><i class="fa-solid fa-link"></i></a><a title="MiniFinder - LinkedIn" href="https://www.linkedin.com/company/minifinder/"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
             </div>
         </div>
+        <div class="feature">
+            <div>
+                <h2 class="feature-title">IT technician</h2>
+                <ul class="specs">
+                    <li><i class="fa-solid fa-building"></i> Tingsryds municipality</li>
+                    <li><i class="fa-solid fa-location-dot"></i> Tingsryd, Sweden</li>
+                    <li><i class="fa-solid fa-house-laptop"></i> On-site</li>
+                    <li><i class="fa-solid fa-clock"></i> September 2024 - February 2025</li>
+                </ul>
+                <p class="feature-content">As an IT technician at Tingsryds municipality, I provided IT-based support for various end-users across the municipality. I also deployed computers, and rolled in mobile phones and tablets to Microsoft Intune.</p>
+            </div>
+            <div class="screenshot-container">
+                <img class="Screenshot" src="/images/tingsryd.png">
+                <div class="linkCompany">
+                    <a title="tingsryd.se" href="https://tingsryd.se"><i class="fa-solid fa-link"></i></a><a title="Tingsryds municipality - LinkedIn" href="https://www.linkedin.com/company/tingsryds-kommun/"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="feature">
+            <div>
+                <h2 class="feature-title">Technician and Web developer</h2>
+                <ul class="specs">
+                    <li><i class="fa-solid fa-building"></i> IT Care Repairstore</li>
+                    <li><i class="fa-solid fa-location-dot"></i> Växjö, Sweden</li>
+                    <li><i class="fa-solid fa-house-laptop"></i> On-site</li>
+                    <li><i class="fa-solid fa-clock"></i> November 2022 - October 2023</li>
+                </ul>
+                <p class="feature-content">In my role at IT Care Repairstore, I received, diagnosed, repaired, and returned customers computers, mobile phones and tablets. I was also responsible for keeping the website working and up-to-date.</p>
+            </div>
+            <div class="screenshot-container">
+                <img class="Screenshot" src="/images/itcare.jpg">
+                <div class="linkCompany">
+                    <a title="itcarestore.se" href="https://itcarestore.se"><i class="fa-solid fa-link"></i></a><a title="IT Care Repairstore - LinkedIn" href="https://www.linkedin.com/company/it-care-repairstore/"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <hr>
         <div id="app-info">
-            <h1 class="app-name">Technology</h1>
+            <p class="app-icon"><i class="fa-solid fa-graduation-cap icon-background"></i></i></p>
+            <div>
+                <h1 class="app-name">Education</h1>
+                <p class="app-description titleColor">I've had various jobs at a few companies. I've worked in tech repair, IT support for a municipality, and general support for an IoT company, and I'm only getting started!</p>
+            </div>
         </div>
-        </div>
+        <hr>
 
         <div class="feature">
             <div>
