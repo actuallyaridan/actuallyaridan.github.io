@@ -1,32 +1,31 @@
-var userID = "701403809129168978";
-var loadingDiv = document.getElementById("loading");
-var errorMessage = document.getElementById("errorMessage");
-var spinner = document.getElementById("loadingSpinner");
-var contentDiv = document.getElementById("loadedLanyard");
-var discordDataLatest;
+const userID = "701403809129168978";
+const loadingDiv = document.getElementById("loading");
+const errorMessage = document.getElementById("errorMessage");
+const spinner = document.getElementById("loadingSpinner");
+const contentDiv = document.getElementById("loadedLanyard");
+let discordDataLatest;
 
-console.log('Connecting to Lanyard WebSocket at wss://api.lanyard.rest/socket...');
-var websocket = new WebSocket("wss://api.lanyard.rest/socket");
+console.log('[Lanyard] Connecting to Lanyard WebSocket at wss://api.lanyard.rest/socket...');
+const websocket = new WebSocket("wss://api.lanyard.rest/socket");
 
 websocket.onmessage = function (event) {
-    var data = JSON.parse(event.data);
+    const data = JSON.parse(event.data);
     console.log(data);
 
     if (data.op === 1) {
-        console.log("%cConnection to Lanyard WebSocket returned 200 (OK)", "color:green;");
-        console.log("Attempting to access data for userID " + userID + "...");
+        console.log("%c[Lanyard] Connection to Lanyard WebSocket returned 200 (OK)", "color:green;");
+        console.log("[Lanyard] Subscribing to user ID " + userID + "...");
         websocket.send(JSON.stringify({
             op: 2,
             d: { subscribe_to_id: userID }
         }));
-        var heartbeatInterval = data.d.heartbeat_interval;
+        const heartbeatInterval = data.d.heartbeat_interval;
         setInterval(function () {
             websocket.send(JSON.stringify({ op: 3 }));
         }, heartbeatInterval);
-        console.log('Heartbeat interval set');
     } else if (data.op === 0) {
         discordDataLatest = data.d;
-        console.log("%cData for userID " + userID + " received successfully", "color:green;");
+        console.log("%c[Lanyard] Received data from API for user ID " + userID, "color:green;");
     }
 };
 
@@ -34,14 +33,14 @@ function isMobilePlatform() {
     return window.innerWidth < 739;
 }
 
-var fetchDataInterval = setInterval(updateLanyardData, 900);
+const fetchDataInterval = setInterval(updateLanyardData, 900);
 
 function updateLanyardData() {
     try {
-        var discordData = discordDataLatest || {};
-        var activities = discordData.activities || [];
-        var discord_status = discordData.discord_status || "";
-        var discord_user = discordData.discord_user || {};
+        const discordData = discordDataLatest || {};
+        const activities = discordData.activities || [];
+        const discord_status = discordData.discord_status || "";
+        const discord_user = discordData.discord_user || {};
 
         updateStatusWrapper(discord_status);
         updateUserInfo(discord_user);
@@ -56,7 +55,7 @@ function updateLanyardData() {
 }
 
 function updateStatusWrapper(status) {
-    var statusWrapper = document.getElementById("statusWrapper");
+    const statusWrapper = document.getElementById("statusWrapper");
     if (statusWrapper) {
         statusWrapper.className = status;
         statusWrapper.textContent = capitalizeFirstLetter(status);
@@ -64,15 +63,23 @@ function updateStatusWrapper(status) {
 }
 
 function updateUserInfo(user) {
-    document.getElementById("discordName").textContent = "@" + user.username;
-    document.getElementById("discordPFP").src = "https://cdn.discordapp.com/avatars/" + userID + "/" + user.avatar + ".webp?size=512";
+    const nameElement = document.getElementById("discordName");
+    const avatarElement = document.getElementById("discordPFP");
+    
+    if (nameElement) nameElement.textContent = "@" + (user.username || "Unknown User");
+    if (avatarElement && user.avatar) {
+        avatarElement.src = `https://cdn.discordapp.com/avatars/${userID}/${user.avatar}.webp?size=512`;
+    }
+    
 }
 
 function updateActivityInfo(activities, status) {
-    var lanyardDiscord = document.getElementById("lanyardDiscord");
+    const lanyardDiscord = document.getElementById("lanyardDiscord");
 
     if (status === "online") {
-        lanyardDiscord.style.display = "flex";
+        const lanyardDiscord = document.getElementById("lanyardDiscord");
+        if (lanyardDiscord) lanyardDiscord.style.display = "flex";
+        
 
         // Separate Apple Music activity from the rest
         let appleMusicActivity = null;
@@ -95,8 +102,7 @@ function updateActivityInfo(activities, status) {
 
         if (otherActivities.length !== 0) {
             document.getElementById("discordActivity").style.display = "flex";
-        }
-        else {  
+        } else {  
             document.getElementById("discordActivity").style.display = "none";
         }
 
@@ -108,7 +114,6 @@ function updateActivityInfo(activities, status) {
     }
 }
 
-
 function updateActivityImages(activities) {
     // Check if there are any activities to process
     if (!activities || activities.length === 0) {
@@ -119,8 +124,8 @@ function updateActivityImages(activities) {
     activities.forEach(function (activity) {
         // Check if activity has assets with large_image
         if (activity.assets && activity.assets.large_image) {
-            var activityLogoLarge = document.getElementById("activityLogoLarge");
-            var activityLogoSmall = document.getElementById("activityLogoSmall");
+            const activityLogoLarge = document.getElementById("activityLogoLarge");
+            const activityLogoSmall = document.getElementById("activityLogoSmall");
 
             // Ensure that the large image element exists before setting the source
             if (activityLogoLarge && activity.assets.large_image) {
@@ -129,7 +134,6 @@ function updateActivityImages(activities) {
                     activityLogoLarge.src = largeImageUrl;
                     activityLogoLarge.alt = "Large image for " + activity.name;
                     activityLogoLarge.title = activity.name;
-                } else {
                 }
             }
 
@@ -140,20 +144,16 @@ function updateActivityImages(activities) {
                     activityLogoSmall.src = smallImageUrl;
                     activityLogoSmall.alt = "Small image for " + activity.name;
                     activityLogoSmall.title = activity.name;
-                } else {
                 }
             }
-        } else {
         }
     });
 }
 
-
-
 function updateActivityDetails(activities) {
-    var activityName = document.getElementById("activityName");
-    var activityDetails = document.getElementById("activityDetails");
-    var activityState = document.getElementById("activityState"); // Ensure this element exists in HTML
+    const activityName = document.getElementById("activityName");
+    const activityDetails = document.getElementById("activityDetails");
+    const activityState = document.getElementById("activityState"); // Ensure this element exists in HTML
 
     if (!activities || activities.length === 0) {
         activityName.textContent = "No activity";
@@ -163,7 +163,7 @@ function updateActivityDetails(activities) {
     }
 
     // Assuming only displaying the first activity for now
-    let activity = activities[0];
+    const activity = activities[0];
 
     if (activityName && activityDetails) {
         activityName.textContent = activity.name;
@@ -173,19 +173,18 @@ function updateActivityDetails(activities) {
     }
 }
 
-
 function updateAppleMusicInfo(activity) {
-    var amLanyardDiscord = document.getElementById("amLanyardDiscord");
-    var amActivityLogoLarge = document.getElementById("amActivityLogoLarge");
-    var amActivityLogoSmall = document.getElementById("amActivityLogoSmall");
+    const amLanyardDiscord = document.getElementById("amLanyardDiscord");
+    const amActivityLogoLarge = document.getElementById("amActivityLogoLarge");
+    const amActivityLogoSmall = document.getElementById("amActivityLogoSmall");
 
     amLanyardDiscord.style.display = "flex";
 
     // Set Apple Music images
     if (activity.assets) {
-        var assets = activity.assets;
-        var largeImage = assets.large_image;
-        var smallImage = assets.small_image;
+        const assets = activity.assets;
+        const largeImage = assets.large_image;
+        const smallImage = assets.small_image;
 
         if (largeImage) {
             amActivityLogoLarge.style.display = "initial";
@@ -216,17 +215,17 @@ function updateAppleMusicInfo(activity) {
 }
 
 function updateActivityTime(timestamps, prefix = "") {
-    var now = new Date();
-    var timeElem = document.getElementById(prefix + "ActivityTime");
-    var remainingElem = document.getElementById(prefix + "Remaining");
-    var elapsedElem = document.getElementById(prefix + "Elapsed");
+    const now = new Date();
+    const timeElem = document.getElementById(prefix + "ActivityTime");
+    const remainingElem = document.getElementById(prefix + "Remaining");
+    const elapsedElem = document.getElementById(prefix + "Elapsed");
 
     if (timestamps && timestamps.end) {
-        var timeRemaining = calculateTimeDifference(new Date(timestamps.end), now);
+        const timeRemaining = calculateTimeDifference(new Date(timestamps.end), now);
         timeElem.textContent = formatTime(timeRemaining);
         toggleTimeDisplay(remainingElem, elapsedElem, true);
     } else if (timestamps && timestamps.start) {
-        var timeElapsed = calculateTimeDifference(now, new Date(timestamps.start));
+        const timeElapsed = calculateTimeDifference(now, new Date(timestamps.start));
         timeElem.textContent = formatTime(timeElapsed);
         toggleTimeDisplay(remainingElem, elapsedElem, false);
     } else {
@@ -237,13 +236,13 @@ function updateActivityTime(timestamps, prefix = "") {
 }
 
 function formatActivityState(state) {
-    var byRegex = /by\s*(?:\(.*\)|[^)]+)/;
+    const byRegex = /by\s*(?:\(.*\)|[^)]+)/;
     return byRegex.test(state) ? state.replace(/by\s+/, "") : state;
 }
 
 function calculateTimeDifference(endTime, startTime) {
-    var msDifference = endTime - startTime;
-    var seconds = Math.max(0, Math.floor(msDifference / 1000));
+    const msDifference = endTime - startTime;
+    const seconds = Math.max(0, Math.floor(msDifference / 1000));
     return {
         hours: Math.floor(seconds / 3600),
         minutes: Math.floor((seconds % 3600) / 60),
