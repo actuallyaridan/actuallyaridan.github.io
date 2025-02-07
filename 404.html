@@ -1,0 +1,156 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description"
+        content="aridan.net">
+    <meta name="keywords"
+        content="aridan, actuallyaridan, adnan, bukvic, twitter, discord, lanyard, api, web, developer, front-end, back-end, it, technician, tech, enthusiast">
+    <meta name="author" content="actualluaridan">
+    <meta name="robots" content="index, follow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - aridan.net</title>
+    <link href="favicon.png" rel="icon" id="site-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="/src/styles.css">
+    <link rel="stylesheet" href="/src/lanyard.css">
+    <script src="/src/general.js" async></script>
+    <script src="/src/lanyard.js" async></script>
+    <script defer="" src="https://cdn.jsdelivr.net/npm/@twemoji/api@latest/dist/twemoji.min.js"
+        crossorigin="anonymous"></script>
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <meta property="og:title" content="aridan.net">
+    <meta property="og:description"
+        content="aridan.net">
+    <meta property="og:image" content="/images/image.png">
+    <meta property="og:url" content="https://aridan.net">
+    <meta name="twitter:card" content="summary_large_image">
+</head>
+
+<body>
+    <header id="desktop-header">
+        <div>
+            <ul>
+                <li><a href="/">aridan.net</a></li>
+                <li><a href="/details">Experience</a></li>
+                <li><a href="/docs">Projects</a></li>
+                <li><a href="/docs">Contact</a></li>
+            </ul>
+            <ul>
+                <li><a href="/settings"><i class="fa-solid fa-gear" title="Settings"></i></a></li>
+                <li><a href="https://github.com/actuallyaridan/NeoFreeBird"><i class="fa-brands fa-github"
+                            title="GitHub"></i></a></li>
+                <li><a href="https://twitter.com/actuallyaridan"><i class="fa-brands fa-twitter"
+                            title="Twitter"></i></a></li>
+            </ul>
+        </div>
+    </header>
+
+    <header id="mobile-header">
+        <div>
+            <ul>
+                <li><a href="/">aridan.net</a></li>
+            </ul>
+            <ul>
+                <li><button class="noUI" onclick="toggleMenu()"><i class="fa-solid fa-bars"></i></button></li>
+            </ul>
+        </div>
+        <menu class="mobileMenu" id="mobileMenuID">
+            <ul>
+                <li><a href="/details">Experience</a></li>
+                <li><a href="/docs">Projects</a></li>
+                <li><a href="/docs">Contact</a></li>
+            </ul>
+            <ul>
+                <li><a href="/settings"><i class="fa-solid fa-gear" title="Settings"></i></a></li>
+                <li><a href="https://github.com/actuallyaridan/NeoFreeBird"><i class="fa-brands fa-github"
+                            title="GitHub"></i></a></li>
+                <li><a href="https://twitter.com/actuallyaridan"><i class="fa-brands fa-twitter"
+                            title="Twitter"></i></a></li>
+        </menu>
+
+    </header>
+
+    <main class="container">
+        <div id="app-info">
+            <p class="app-icon">😵‍💫</p>
+            <div>
+                <h1 class="app-name">404 - Not Found</h1>
+                <p class="app-description titleColor">Whatever you were looking for, it's not here.</p>
+                <p class="app-description titleColor">That's all we know.</p>
+                <a href="/" class="button">Go back home</a>
+            </div>
+        </div>
+    <footer>
+        <div class="sosumi">
+            <p class="subtitleColor">Any copyrighted material (like application icons, album arts or similar) displayed
+                on this website is owned by their respective copyright holder.
+                Some images on this website are embedded from other websites.</p>
+            <p class="subtitleColor">
+                Twemoji by Twitter Inc/X Corp is licensed under CC-BY 4.0.
+            </p>
+        </div>
+    </footer>
+    <dialog>
+        <div class="modal">
+            <div class="modal-content">
+                <h2>Settings</h2>
+                <div class="modalSettings">
+                    <div>
+                        <h3><i class="fa-solid fa-language"></i>Language</h3>
+                        <div>
+                            <select name="language" id="language" class="button">
+                                <option value="en" selected>English</option>
+                                <option value="sv">Swedish</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div>
+                        <h3><i class="fa-solid fa-paint-roller"></i>Theme</h3>
+                        <div class="themeOptions options">
+                            <input type="radio" id="auto" name="theme-color" value="auto" class="theme-option" checked>
+                            <label for="auto" class="auto button theme-label">Follow system</label>
+
+                            <input type="radio" id="light" name="theme-color" value="light" class="theme-option">
+                            <label for="light" class="light button theme-label">Light</label>
+
+                            <input type="radio" id="dark" name="theme-color" value="dark" class="theme-option">
+                            <label for="dark" class="dark button theme-label">Dark</label>
+                        </div>
+                    </div>
+                    <div>
+                        <h3><i class="fa-solid fa-palette"></i>Color</h3>
+                        <div class="colorOptions options">
+                            <input type="radio" id="red" name="accent-color" value="red">
+                            <label for="red" class="red button">Red</label>
+
+                            <input type="radio" id="green" name="accent-color" value="green">
+                            <label for="green" class="green button">Green</label>
+
+                            <input type="radio" id="blue" name="accent-color" value="blue" checked>
+                            <label for="blue" class="blue button">Blue</label>
+
+                            <input type="radio" id="monochrome" name="accent-color" value="monochrome">
+                            <label for="monochrome" class=",monochrome button">Monochrome</label>
+                        </div>
+                    </div>
+                    <div>
+                        <h3><i class="fa-solid fa-wrench"></i>Quirks</h3>
+                        <div>
+                            <input type="checkbox" name="quirk" id="quirk1" value="quirk1">
+                            <label for="quirk1">Auto-update activities from Discord every second</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="modalButtons">
+                    <button type="button" class="button">Done</button>
+                    <button type="button" class="button dangerZone">Reset</button>
+                </div>
+            </div>
+    </dialog>
+</body>
+
+</html>

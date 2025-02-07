@@ -162,6 +162,8 @@ li.active>a {
 .app-icon {
     width: 128px;
     border-radius: 25%;
+    text-align: center;
+    margin: auto;
 }
 
 .app-name {
