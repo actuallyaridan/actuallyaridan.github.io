@@ -40,10 +40,8 @@ function updateLanyardData() {
         const discordData = discordDataLatest || {};
         const activities = discordData.activities || [];
         const discord_status = discordData.discord_status || "";
-        const discord_user = discordData.discord_user || {};
 
         updateStatusWrapper(discord_status);
-        updateUserInfo(discord_user);
         updateActivityInfo(activities, discord_status);
 
         loadingDiv.style.display = "none";
@@ -62,16 +60,6 @@ function updateStatusWrapper(status) {
     }
 }
 
-function updateUserInfo(user) {
-    const nameElement = document.getElementById("discordName");
-    const avatarElement = document.getElementById("discordPFP");
-    
-    if (nameElement) nameElement.textContent = "@" + (user.username || "Unknown User");
-    if (avatarElement && user.avatar) {
-        avatarElement.src = `https://cdn.discordapp.com/avatars/${userID}/${user.avatar}.webp?size=512`;
-    }
-    
-}
 
 function updateActivityInfo(activities, status) {
     const lanyardDiscord = document.getElementById("lanyardDiscord");
