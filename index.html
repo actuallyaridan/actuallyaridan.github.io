@@ -15,10 +15,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
         crossorigin="anonymous" referrerpolicy="no-referrer">
-    <link rel="stylesheet" href="/src/styles.css">
-    <link rel="stylesheet" href="/src/lanyard.css">
-    <script src="/src/general.js" async></script>
-    <script src="/src/lanyard.js" defer></script>
+    <link rel="stylesheet" href="/src/css/styles.css">
+    <link rel="stylesheet" href="/src/css/lanyard.css">
+    <script src="/src/js/general.js" async></script>
+    <script src="/src/js/lanyard.js" defer></script>
     <script defer="" src="https://cdn.jsdelivr.net/npm/@twemoji/api@latest/dist/twemoji.min.js"
         crossorigin="anonymous"></script>
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -76,7 +76,7 @@
 
     <main class="container">
         <div id="app-info">
-            <img src="/images/image.png" alt="Chirp Icon" class="app-icon">
+            <img src="/assets/uploads/images/image.png" alt="A selfie where I'm standing in a white t-shirt in front of a tree" class="app-icon">
             <div>
                 <h1 class="app-name">actuallyaridan</h1>
                 <p class="app-description titleColor">the username for Adnan Bukvic, a swedish <span id="techEnthu">tech
@@ -125,7 +125,7 @@
                                 </span>
                                 <div id="amDiscordActivityImages">
                                     <img id="amActivityLogoLarge" draggable="false" width="96" height="96" alt=""
-                                        src="src/images/icons/spinner.gif" class="albumArt">
+                                        src="/assets/media/icons/spinner.gif" class="albumArt">
                                 </div>
                                 <div id="amDiscordActivityInfo">
                                     <p id="amActivityDetails" class="titleColor">Loading</p>
@@ -142,7 +142,7 @@
                                     </div>
                                     <div class="iconContainer">
                                         <img id="amActivityLogoSmall" draggable="false" width="32" height="32" alt=""
-                                            src="src/images/icons/spinner.gif">
+                                            src="/assets/media/icons/spinner.gif">
                                     </div>
                                 </div>
                             </div>
@@ -153,7 +153,7 @@
                                 </span>
                                 <div id="discordActivityImages">
                                     <img id="activityLogoLarge" draggable="false" width="96" height="96" alt=""
-                                        src="src/images/icons/spinner.gif">
+                                        src="/assets/media/icons/spinner.gif">
                                 </div>
                                 <div id="discordActivityInfo">
                                     <p id="activityDetails" class="titleColor">Loading</p>
@@ -169,7 +169,7 @@
                                 </div>
                                 <div class="iconContainer">
                                     <img id="activityLogoSmall" draggable="false" width="32" height="32" alt=""
-                                        src="src/images/icons/spinner.gif">
+                                        src="/assets/media/icons/spinner.gif">
                                 </div>
                             </div>
                         </div>
@@ -190,7 +190,7 @@
                     with an SD card! I also know a bunch of languages too!</p>
             </div>
             <div class="screenshot-container">
-                <img class="Screenshot" src="/images/on-bus.jpg">
+                <img class="Screenshot" src="/assets/uploads/images/on-bus.jpg">
             </div>
         </div>
         <div id="app-info">
@@ -215,7 +215,7 @@
             </div>
 
             <div class="screenshot-container">
-                <img class="Screenshot" src="/images/with-pc.jpg">
+                <img class="Screenshot" src="/assets/uploads/images/with-pc.jpg">
             </div>
         </div>
 
@@ -233,7 +233,7 @@
             </div>
 
             <div class="screenshot-container">
-                <img class="Screenshot" src="/images/ipod.png">
+                <img class="Screenshot" src="/assets/uploads/images/ipod.png">
             </div>
         </div>
     </main>
@@ -256,16 +256,6 @@
         </div>
     </section>
     <footer>
-        <div class="poweredBySection">
-            <div class="poweredBy">
-                <p class="subtitleColor">discord API provided by</p>
-                <img src="src/images/icons/lanyardLong.png" alt="Lanyard" title="Lanyard" class="lanyard-logo">
-            </div>
-            <div class="poweredBy">
-                <p class="subtitleColor">hosted using</p>
-                <img src="src/images/icons/cloudflare.png" alt="Cloudflare" title="Cloudflare" class="lanyard-logo">
-            </div>
-        </div>
         <div class="sosumi">
             <p class="subtitleColor">Any copyrighted material (like application icons, album arts or similar) displayed
                 on this website is owned by their respective copyright holder.
@@ -273,8 +263,6 @@
             <p class="subtitleColor">
                 Twemoji by Twitter Inc/X Corp is licensed under CC-BY 4.0.
             </p>
-
-
         </div>
     </footer>
     <dialog style="display: none;" id="settingsDialog">

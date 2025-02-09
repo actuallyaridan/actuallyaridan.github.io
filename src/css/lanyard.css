@@ -1,0 +1,462 @@
+@font-face {
+    font-family: SevenSegment;
+    font-style: normal;
+    font-display: swap; /* Some older browsers might ignore this */
+    src: url(/src/fonts/SevenSegment.otf) format("opentype");
+}
+
+#statusWrapper {
+    list-style-type: none;
+    color: #000; /* Fallback for var(--text-color) */
+    color: rgb(0, 0, 0);
+    color: rgb(0, 0, 0);
+    color: var(--text-color);
+    font-family: Jost, sans-serif;
+    padding: 8px;
+    text-decoration: none;
+    width: -moz-fit-content;
+    width: -webkit-fit-content;
+    width: fit-content;
+    height: -moz-fit-content;
+    height: -webkit-fit-content;
+    height: fit-content;
+    font-size: initial;
+    transition: background-color .2s;
+    touch-action: manipulation;
+    border-radius: 12px;
+    -webkit-appearance: none;
+    appearance: none;
+    text-align: right;
+margin: 0px;
+    display: block;
+}
+
+.divider {
+    border: solid 1px rgba(128, 128, 128, 0.4); /* Fallback for var(--accent-color) */
+    border: solid 1px rgba(var(--accent-color), 0.4);
+    width: 100%;
+}
+
+#lanyardDiscord {
+    display: flex;
+    font-family: Jost, sans-serif;
+    color: white;
+}
+
+#loadedLanyard {
+    display: none;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: 6px;
+    margin-right: 6px;
+    margin-top: 12px;
+    transition: width 0.2s;
+}
+
+#loadedLanyard > p,
+#discordStatus,
+#activities {
+    display: inline;
+    text-align: center;
+    color: rgb(188, 188, 188);
+}
+
+#dcNameContainer {
+    align-items: center;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+}
+
+#dcActivityHeaderName {
+    line-height: 2.5;
+    margin-left: 12px;
+}
+
+section.project > p.dcProjectName {
+    color: white;
+}
+
+.img-holder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    -webkit-backdrop-filter: blur(5px); /* Fallback for older browsers */
+    backdrop-filter: blur(5px);
+    width: 65vw;
+    height: auto; /* Fallback for aspect-ratio */
+    aspect-ratio: 16 / 9;
+}
+
+.img-holder > p {
+    margin: 12px;
+}
+
+.img-holder > a {
+    padding: 6px;
+    background-color: rgba(60, 60, 60, 0.30); /* Fallback for var(--darker-accent-color) */
+    background-color: rgba(var(--darker-accent-color), 0.30);
+}
+
+img.albumArt {
+    pointer-events: none;
+}
+
+.offline,
+.dnd {
+    background-color: #f94c5780;
+    border: #f94c57 2px solid;
+    box-shadow: rgba(249, 76, 87, 0.50) 0px 0px 20px;
+    transition: background-color 0.2s;
+}
+
+.dcloading {
+    background-color: #90909080;
+    border: #90909080 2px solid;
+    box-shadow: rgba(140, 140, 140, 0.50) 0px 0px 20px;
+    transition: background-color 0.2s;
+    text-align: center;
+}
+
+.online {
+    background-color: #53d76980;
+    border: #53d76980 2px solid;
+    box-shadow: rgba(83, 215, 105, 0.50) 0px 0px 20px;
+    transition: background-color 0.2s;
+}
+
+.idle {
+    background-color: #f2841d80;
+    border: #f2841d80 2px solid;
+    transition: background-color 0.2s;
+}
+
+div#discord {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    will-change: width;
+    transition: width 0.2s;
+    flex-wrap: wrap;
+}
+
+#discordName,
+#discordActivity,
+#amLanyardDiscord,
+#discordNameUser {
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+    border-radius: 12px;
+    margin: 12px;
+    color: #000; /* Fallback for var(--project-color) */
+    color: rgb(88, 88, 88);
+    color: var(--project-color);
+    text-align: center;
+    transition: width 0.2s;
+}
+
+#discordNameUser {
+    color: #333; /* Fallback for var(--text-color) */
+    color: rgb(0, 0, 0);
+    color: rgb(0, 0, 0);
+    color: var(--text-color);
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+}
+
+#discordName {
+    margin-top: 6px;
+    padding-top: 6px;
+}
+
+.discordPFP {
+    border-radius: 10px;
+}
+
+#discordActivity,
+#amLanyardDiscord {
+    min-width: 15vw;
+    word-wrap: break-word;
+    max-width: 350px;
+}
+
+#activityLogoLarge,
+#activityLogoLarge {
+    border-radius: 5px;
+}
+
+#amActivityLogoLarge {
+    border-radius: 100%;
+    animation-name: spin;
+    animation-duration: 5000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear; 
+    /* transform: rotate(3deg); */
+     /* transform: rotate(0.3rad);/ */
+     /* transform: rotate(3grad); */ 
+     /* transform: rotate(.03turn);  */    
+}
+
+@keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}
+
+#activityLogoSmall,
+#amActivityLogoSmall {
+    border-radius: 25%;
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    /*transform: translate(490%, -20%);*/
+}
+
+
+
+.discordName {
+    display: flex;
+}
+
+div#loading > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lds-ring {
+    display: inline-block;
+    position: relative;
+    width: 40px;
+    height: 40px;
+}
+
+.lds-ring div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    margin: 4px;
+    border: 4px solid #fff;
+    border-radius: 50%;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: rgba(128, 128, 128, 0.8); /* Fallback for var(--accent-color) */
+    border-color: var(--accent-color) transparent transparent transparent;
+}
+
+.lds-ring div:nth-child(1) {
+    animation-delay: -0.45s;
+}
+
+.lds-ring div:nth-child(2) {
+    animation-delay: -0.3s;
+}
+
+.lds-ring div:nth-child(3) {
+    animation-delay: -0.15s;
+}
+
+#activityName,
+#activityState,
+#activityDetails,
+#amActivityName,
+#amActivityDetails,
+#amActivityState {
+    color: #000; /* Fallback for var(--project-color) */
+    color: rgb(88, 88, 88);
+    color: var(--project-color);
+    margin-top: 12px;
+}
+
+#activityName,
+#amActivityName {
+    color: #333; /* Fallback for var(--text-color) */
+    color: rgb(0, 0, 0);
+    color: rgb(0, 0, 0);
+    color: var(--text-color);
+}
+
+#activityDetails,
+#amActivityDetails {
+    color: #777; /* Fallback for var(--subtitle-color) */
+    color: var(--subtitle-color);
+}
+
+#timeremaning > p,
+#amTimeremaning > p {
+    text-align: inherit;
+    color: #000; /* Fallback for var(--project-color) */
+    color: rgb(88, 88, 88);
+    color: var(--project-color);
+}
+
+#activityTime,
+#amActivityTime {
+    display: inline;
+    color: #000; /* Fallback for var(--project-color) */
+    color: rgb(88, 88, 88);
+    color: var(--project-color);
+    font-family: SevenSegment, monospace, Jost, sans-serif;
+}
+
+#errorMessage {
+    display: none;
+    flex-direction: column;
+    margin: 12px;
+    padding: 12px;
+}
+
+.errorMessage {
+    color: #777; /* Fallback for var(--subtitle-color) */
+    color: var(--subtitle-color);
+}
+
+@keyframes lds-ring {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+#discordInfo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 12px;
+    padding: 12px;
+    border-radius: 12px;
+    background-color: rgba(60, 60, 60, 0.30); /* Fallback for var(--darker-accent-color) */
+}
+
+
+ span.titleActivity{
+    text-align: left;
+    width: 100%;
+    margin-bottom: 12px;
+    color: #535353;
+}
+
+i>h3{
+    display: inline !important;
+    margin-left: 0.2em;
+    font-weight: 550 !important;
+}
+
+
+#discordActivity,
+#amLanyardDiscord {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    text-align: left;
+    margin: 12px;
+    padding: 12px;
+    border-radius: 12px;
+    background-color: rgba(60, 60, 60, 0.30); /* Fallback for var(--darker-accent-color) */
+}
+
+#discordActivityImages,
+#amDiscordActivityImages {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+}
+
+.progress-bar-container {
+    position: relative;
+    width: 100%;
+    height: 3px;
+    background-color: #333;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    background-color: #76c7c0;
+    width: 0%;
+    transition: width 0.5s;
+}
+
+.time-counter {
+    position: absolute;
+    right: 10px;
+    top: -25px;
+    font-size: 14px;
+    color: wheat;
+    white-space: nowrap;
+}
+
+#discordActivityInfo,
+#amDiscordActivityInfo {
+    width: 100%;
+    transition: width 0.2s;
+}
+
+.titleColor{
+    color:#cacaca !important
+}
+.subtitleColor{
+    color:#979797 !important
+}
+
+div#timeremaning,
+div#amTimeremaning{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+div#timeremaning>p,
+div#amTimeremaning>p{
+    padding: 0.2rem;
+    color: #979797;
+}
+
+div.iconContainer{
+    width: 100%;
+    display: flex;
+    align-items: end;
+    justify-content: right;
+}
+
+.poweredBy{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 12px;
+    padding: 12px;
+    border-radius: 12px;
+    background-color: rgba(60, 60, 60, 0.30); /* Fallback for var(--darker-accent-color) */
+}
+
+.lanyard-logo{
+    width: 92px;
+    margin: 12px;
+    border-radius: 12px;
+}

@@ -1,0 +1,779 @@
+:root {
+    /* Color Palette */
+    --backgroundColor: #151E29;
+    --textColor: #8d8d8d;
+    --headerBgColor: #2d40589a;
+    --headerTextColor: rgba(255, 255, 255, 0.575);
+    --headerTextHoverColor: rgba(255, 255, 255, 0.758);
+    --headerBorderColor: #007bff9c;
+    --headerActiveBorderColor: #007aff;
+    --buttonBgColor: #007aff;
+    --buttonHoverBgColor: #005bb5;
+    --appNameColor: #ffffff;
+    --appDescriptionColor: #eeeeee;
+    --featureTitleColor: #cacaca;
+    --featureContentColor: #b4b4b4;
+    --footerTextColor: rgba(255, 255, 255, 0.575);
+    --sectionBgColor: #3C3C3C4D;
+    --purpleButtonColor: #6e5494;
+    --borderColor: #333333;
+    --accent-color: #007aff;
+}
+
+:root {
+    --backgroundColor: #121212;
+    --textColor: rgb(255, 255, 255);
+    --headerBgColor: #0c0c0c88;
+    --headerTextColor: rgb(203, 203, 203);
+    --buttonBgColor: #007aff;
+}
+/*
+html[data-theme='auto'] {
+    --backgroundColor: #f1f1f1;
+    --textColor: rgb(0, 0, 0);
+    --headerBgColor: #e1e1e188;
+    --headerTextColor: rgb(3, 3, 3);
+    --buttonBgColor: #007aff;
+}
+*/
+/* General Reset */
+@font-face {
+    font-family: Jost;
+    src: url(/src/fonts/Jost.ttf);
+}
+
+/* Fallback for prefers-color-scheme: light
+@media (prefers-color-scheme: light) {
+    :root {
+        --backgroundColor: #f1f1f1;
+        --textColor: rgb(0, 0, 0);
+        --headerBgColor: #e1e1e188;
+        --headerTextColor: rgb(3, 3, 3);
+        --buttonBgColor: #007aff;
+    }
+}
+*/
+
+/* Fallback for prefers-color-scheme: dark */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --backgroundColor: #121212;
+        --textColor: rgb(255, 255, 255);
+        --headerBgColor: #0c0c0c88;
+        --headerTextColor: rgb(203, 203, 203);
+        --buttonBgColor: #007aff;
+    }
+}
+
+body,
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 1em;
+    box-sizing: border-box;
+    font-family: "Jost", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Body */
+body {
+    background-color: var(--backgroundColor);
+    color: var(--textColor);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    overflow-y: scroll;
+}
+
+/* Header */
+header {
+    position: sticky;
+    flex-direction: column;
+    top: 0;
+    z-index: 2;
+}
+
+
+
+header>div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 80vw;
+    height: 4em;
+    background-color: var(--headerBgColor);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    margin: auto;
+    margin-top: 12px;
+    padding: 12px;
+    border-radius: 10px;
+}
+
+/* Navigation */
+ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+    gap: 20px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+li>a {
+    text-decoration: none;
+    color: var(--headerTextColor);
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s;
+}
+
+li>a:hover {
+    color: var(--headerTextHoverColor);
+    border-bottom: 2px solid var(--headerBorderColor);
+}
+
+li.active>a {
+    border-bottom: 2px solid var(--headerActiveBorderColor);
+    color: white;
+}
+
+/* Container */
+.container {
+    max-width: 600px;
+    width: 100%;
+}
+
+/* App Info */
+#app-info {
+    text-align: center;
+    margin-top: 42px;
+}
+
+#app-info>div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.app-icon {
+    width: 128px;
+    border-radius: 25%;
+    text-align: center;
+    margin: auto;
+}
+
+.app-name {
+    font-size: 2em;
+    font-weight: 550;
+    color: var(--appNameColor);
+    margin: 10px 0;
+}
+
+.app-description {
+    font-size: 1em;
+    color: var(--appDescriptionColor);
+    margin-bottom: 20px;
+}
+
+/* Buttons */
+.get-button {
+    background-color: var(--buttonBgColor);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 1em;
+    font-weight: 550;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-decoration: none;
+}
+
+.get-button:hover {
+    background-color: var(--buttonHoverBgColor);
+}
+
+/* Screenshots */
+.screenshot-container {
+    width: 100%;
+    overflow-x: auto;
+    display: flex;
+    gap: 10px;
+    scroll-behavior: smooth;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.screenshot {
+    width: 100%;
+    background-color: var(--borderColor);
+    border-radius: 15px;
+    background-size: cover;
+    background-position: center;
+    flex: 0 0 auto;
+    text-align: center;
+    margin: auto;
+    border: 2px solid var(--borderColor);
+    position: relative;
+    max-width: 200px;
+    max-height: 60vh;
+}
+
+.screenshot::before {
+    content: '';
+    display: block;
+    padding-top: calc(100% / 2.17);
+}
+
+.screenshot>* {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Changelog */
+.changelog {
+    text-align: left;
+}
+
+/* Features */
+.feature-title,
+h2 {
+    font-size: 1.5em;
+    font-weight: 550;
+    color: var(--featureTitleColor);
+    margin-bottom: 10px;
+}
+
+.feature-content {
+    font-size: 1em;
+    color: var(--featureContentColor);
+    line-height: 1.5;
+}
+
+div.feature {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 18px;
+    margin-bottom: 18px;
+}
+
+div.feature>div {
+    flex: 1;
+}
+
+.screenshot-container {
+    overflow: hidden;
+    position: relative;
+    left: 3em;
+}
+
+.flipped {
+    flex-direction: row-reverse !important;
+    text-align: right;
+}
+
+/* Links */
+a {
+    text-decoration: none;
+    color: white;
+}
+
+a.inline {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+/* Footer */
+footer {
+    width: 100%;
+    height: fit-content;
+    min-height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 12px;
+    box-sizing: border-box;
+    margin: 12px;
+    flex-direction: column;
+}
+
+footer>p {
+    color: var(--footerTextColor);
+    font-size: 1em;
+    margin: 12px;
+    padding: 12px;
+}
+
+footer>.poweredBySection{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Sections */
+section {
+    background-color: var(--sectionBgColor);
+    width: 100%;
+    min-height: 20vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 12px;
+    margin: 12px;
+    padding-bottom: 48px;
+    margin-top: 48px;
+}
+
+.discordWrapper {
+    background-color: unset;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 12px;
+    margin: 12px;
+    width: unset;
+    min-height: unset !important;  
+}
+
+
+section>div {
+    width: 60vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+section>div>div.screenshot-container {
+    padding: 10px;
+    color: var(--featureTitleColor);
+    align-items: end;
+    float: right;
+    max-width: 40%;
+}
+
+section>div>div.screenshot-container>img {
+    margin: auto;
+}
+
+section>div.section-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+section>div>a {
+    background-color: var(--purpleButtonColor) !important;
+}
+
+section>div>div {
+    flex-grow: 1;
+    text-align: left;
+}
+
+/* Horizontal Rule */
+hr {
+    width: 80%;
+    margin: 20px 0;
+    border: 1px solid var(--borderColor);
+    margin: auto;
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+/* Buttons */
+button.noUI {
+    all: unset;
+    cursor: pointer;
+    touch-action: manipulation;
+}
+
+/* Mobile Menu */
+.mobileMenu {
+    display: none;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 0 !important;
+    padding-inline-start: 0 !important;
+    background-color: var(--headerBgColor);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    width: 90vw;
+    position: absolute;
+    top: 5.5em;
+    left: 50%;
+    transform: translateX(-50%) translateY(-10px);
+    border-radius: 10px;
+    z-index: 1000;
+    animation: fadeOut .2s;
+}
+
+.showMenu {
+    display: flex;
+    animation: fadeIn .2s;
+}
+
+
+ul.specs {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    align-items: start;
+    justify-content: center;
+    padding: 10px 0px 10px 0px;
+    color: var(--featureContentColor);
+}
+
+.hide {
+    display: none;
+}
+
+.button {
+    background-color: rgba(60, 60, 60, 0.30);
+    color: #cacaca;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 12px;
+    font-size: 1em;
+    font-weight: 550;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-decoration: none;
+}
+
+
+.button:hover {
+    background-color: #333333;
+}
+
+
+
+
+
+
+
+.fa-solid, .fa-brands, .fa-regular {
+    width: 1em;
+    margin-right: 10px;
+}
+
+span>i {
+    width: initial !important;
+}
+
+.linkCompany>i {
+    margin-right: 0px;
+}
+
+button>.fa-solid {
+    margin-right: 10px;
+}
+
+.dangerZone {
+    background-color: rgba(220, 60, 60, 0.30);
+}
+
+.dangerZone:hover {
+    background-color: rgba(180, 40, 40, 0.60);
+}
+
+/* The Modal (background) */
+.modal {
+    display: flex;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 99;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100vw;
+    /* Full width */
+    height: 100vh;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: rgb(26, 26, 26);
+    margin: 15% auto;
+    /* 15% from the top and centered */
+    padding: 20px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: fit-content;
+    height: fit-content;
+}
+
+.modalButtons {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.modalSettings {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: rgba(60, 60, 60, 0.30);
+    padding: 24px;
+    margin: 12px;
+    border-radius: 8px;
+}
+
+h3>.fa-solid {
+    margin-right: 5px;
+}
+
+.modalSettings {
+    color: #cacaca;
+}
+
+input[type="radio"] {
+    opacity: 0;
+    position: fixed;
+    width: 0;
+}
+
+.app-icon {
+    height: 128px;
+    width: 128px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    margin: auto;
+}
+
+.icon-background {
+    background-color: rgba(60, 60, 60, 0.30);
+    padding: 10px;
+    border-radius: 25%;
+    margin: auto;
+    height: 128px;
+    width: 128px;
+    color: #005bb5;
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    justify-content: center;
+    font-size: 4em;
+}
+
+.options {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: left;
+    gap: 10px;
+}
+
+label.button, select.button{
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+.linkCompany {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.linkCompany>a {
+    color: #cacaca
+}
+
+.linkCompany>a:hover {
+    color: #ffffff;
+    transition: color 0.2s;
+}
+
+#cookieBanner {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background-color: rgba(60, 60, 60, 0);
+    padding: 10px;
+    border-radius: 8px;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    z-index: 1000;
+    color: #cacaca;
+    border: none;
+    width: 100%;
+}
+
+.cookies {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--headerBgColor);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    width: fit-content;
+    border-radius: 12px;
+    padding: 12px;
+}
+
+.cookieTitle {
+    color: var(--appNameColor);
+}
+
+.cookies>button {
+margin-left: 12px;
+}
+
+.sosumi {
+    width: 80vw;
+    font-size: 1em;
+}
+
+h2 {
+    font-weight: 550;
+}
+
+li>a>i {
+    margin-right: 0px !important;
+}
+
+.contact {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 12px;
+    margin: 12px;
+    width: 100%;
+    color: white;
+}
+
+.contact>a {
+   color: inherit;
+}
+
+.twitter {
+    background-color: #1da1f2;
+}
+
+.discord {
+    background-color: #7289da;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+/* Mobile Header */
+#mobile-header {
+    display: none;
+}
+
+/* Media Queries */
+@media screen and (max-width: 734px) {
+    header>div {
+        width: 90vw;
+    }
+
+    div.feature {
+        flex-direction: column !important;
+        text-align: left;
+    }
+
+    main {
+        padding: 10vw;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    section {
+        height: fit-content;
+        padding-top: 10vw;
+        padding-bottom: 10vw;
+    }
+
+    section>div {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    section>div>div {
+        text-align: center;
+    }
+
+    #desktop-header {
+        display: none;
+    }
+
+    #mobile-header {
+        display: flex;
+    }
+
+    .screenshot-container {
+        left: 0px;
+        margin: 12px;
+    }
+
+    section>div>div.screenshot-container {
+        padding: 10px;
+        color: var(--featureTitleColor);
+        max-width: inherit;
+    }
+}
