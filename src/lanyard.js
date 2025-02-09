@@ -115,35 +115,44 @@ function updateActivityInfo(activities, status) {
 }
 
 function updateActivityImages(activities) {
-    // Check if there are any activities to process
-    if (!activities || activities.length === 0) {
+    const activityLogoLarge = document.getElementById("activityLogoLarge");
+    const activityLogoSmall = document.getElementById("activityLogoSmall");
+
+    // Hide images if there are no activities or assets
+    if (!activities || activities.length === 0 || !activities.some(activity => activity.assets && activity.assets.large_image)) {
+        if (activityLogoLarge) activityLogoLarge.style.display = "none";
+        if (activityLogoSmall) activityLogoSmall.style.display = "none";
         return;
     }
 
     // Process each activity
     activities.forEach(function (activity) {
-        // Check if activity has assets with large_image
         if (activity.assets && activity.assets.large_image) {
-            const activityLogoLarge = document.getElementById("activityLogoLarge");
-            const activityLogoSmall = document.getElementById("activityLogoSmall");
-
-            // Ensure that the large image element exists before setting the source
-            if (activityLogoLarge && activity.assets.large_image) {
+            if (activityLogoLarge) {
                 const largeImageUrl = getImageUrl(activity.assets.large_image, activity.application_id);
                 if (largeImageUrl) {
                     activityLogoLarge.src = largeImageUrl;
                     activityLogoLarge.alt = "Large image for " + activity.name;
                     activityLogoLarge.title = activity.name;
+                    activityLogoLarge.style.display = "block"; // Show when available
+                } else {
+                    activityLogoLarge.style.display = "none";
                 }
             }
 
-            // Ensure that the small image element exists before setting the source
-            if (activityLogoSmall && activity.assets.small_image) {
-                const smallImageUrl = getImageUrl(activity.assets.small_image, activity.application_id);
-                if (smallImageUrl) {
-                    activityLogoSmall.src = smallImageUrl;
-                    activityLogoSmall.alt = "Small image for " + activity.name;
-                    activityLogoSmall.title = activity.name;
+            if (activityLogoSmall) {
+                if (activity.assets.small_image) {
+                    const smallImageUrl = getImageUrl(activity.assets.small_image, activity.application_id);
+                    if (smallImageUrl) {
+                        activityLogoSmall.src = smallImageUrl;
+                        activityLogoSmall.alt = "Small image for " + activity.name;
+                        activityLogoSmall.title = activity.name;
+                        activityLogoSmall.style.display = "block"; // Show when available
+                    } else {
+                        activityLogoSmall.style.display = "none";
+                    }
+                } else {
+                    activityLogoSmall.style.display = "none";
                 }
             }
         }
@@ -153,25 +162,37 @@ function updateActivityImages(activities) {
 function updateActivityDetails(activities) {
     const activityName = document.getElementById("activityName");
     const activityDetails = document.getElementById("activityDetails");
-    const activityState = document.getElementById("activityState"); // Ensure this element exists in HTML
+    const activityState = document.getElementById("activityState");
 
+    // Hide activity text elements if there are no activities
     if (!activities || activities.length === 0) {
-        activityName.textContent = "No activity";
-        activityDetails.textContent = "";
-        activityState.textContent = "";
+        if (activityName) activityName.style.display = "none";
+        if (activityDetails) activityDetails.style.display = "none";
+        if (activityState) activityState.style.display = "none";
         return;
     }
 
-    // Assuming only displaying the first activity for now
+    // Display the first activity
     const activity = activities[0];
 
-    if (activityName && activityDetails) {
+    if (activityName) {
         activityName.textContent = activity.name;
-        activityDetails.textContent = activity.details || "No details available";
-        activityState.textContent = activity.state || ""; // Display state if available
-        updateActivityTime(activity.timestamps, ""); 
+        activityName.style.display = "block"; // Show when available
     }
+
+    if (activityDetails) {
+        activityDetails.textContent = activity.details || "No details available";
+        activityDetails.style.display = activity.details ? "block" : "none";
+    }
+
+    if (activityState) {
+        activityState.textContent = activity.state || "";
+        activityState.style.display = activity.state ? "block" : "none";
+    }
+
+    updateActivityTime(activity.timestamps, ""); 
 }
+
 
 function updateAppleMusicInfo(activity) {
     const amLanyardDiscord = document.getElementById("amLanyardDiscord");
