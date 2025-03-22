@@ -29,11 +29,7 @@ if (document.querySelector('.discordWrapper')) {
         console.log("%c[Lanyard] Received data from API for user ID " + userID, "color:green;");
       }
     };
-  
-    function isMobilePlatform() {
-      return window.innerWidth < 739;
-    }
-  
+
     const fetchDataInterval = setInterval(updateLanyardData, 900);
   
     function updateLanyardData() {
@@ -109,8 +105,8 @@ if (document.querySelector('.discordWrapper')) {
   
       activities.forEach(function (activity) {
         if (activity.assets && activity.assets.large_image) {
-          updateImage(activityLogoLarge, activity.assets.large_image, activity.application_id, activity.details); // Use activity.details here
-          updateImage(activityLogoSmall, activity.assets.small_image, activity.application_id, activity.details); // Use activity.details here
+          updateImage(activityLogoLarge, activity.assets.large_image, activity.application_id, activity.details);
+          updateImage(activityLogoSmall, activity.assets.small_image, activity.application_id, activity.details); 
         }
       });
     }
@@ -213,8 +209,8 @@ if (document.querySelector('.discordWrapper')) {
     function updateImage(element, image, appId, activityDetails = '') {
       if (image) {
         element.src = getImageUrl(image, appId);
-        element.alt = `Image for ${activityDetails || image}`; // Use activity.details here
-        element.title = activityDetails || image; // Use activity.details here
+        element.alt = `Image for ${activityDetails || image}`;
+        element.title = activityDetails || image;
         element.style.display = "block";
       } else {
         element.style.display = "none";
