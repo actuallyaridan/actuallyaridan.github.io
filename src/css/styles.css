@@ -700,6 +700,11 @@ li>a>i {
     background-color: #7289da;
 }
 
+.app-description span {
+    border-bottom: var(--accent-color) 2px solid;
+}
+
+
 /* Animations */
 @keyframes fadeIn {
     from {
