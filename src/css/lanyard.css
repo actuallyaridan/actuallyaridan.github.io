@@ -27,7 +27,8 @@
     -webkit-appearance: none;
     appearance: none;
     text-align: right;
-margin: 0px;
+    margin: 0px;
+    margin-bottom: 8px;
     display: block;
 }
 

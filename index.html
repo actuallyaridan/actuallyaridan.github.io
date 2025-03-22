@@ -75,18 +75,18 @@
     </header>
 
     <main class="container">
-        <div id="app-info">
-            <img src="/assets/uploads/images/image.png" alt="A selfie where I'm standing in a white t-shirt in front of a tree" class="app-icon">
+        <div id="info" class="withBanner">
+            <img src="/assets/uploads/images/image.png" alt="A selfie where I'm standing in a white t-shirt in front of a tree" class="icon">
             <div>
-                <h1 class="app-name">Adnan Bukvic</h1>
-                <p class="app-description titleColor">a swedish <span id="techEnthu">tech
+                <h1 class="name">Adnan Bukvic</h1>
+                <p class="description titleColor">a swedish <span id="techEnthu">tech
                         enthusiast</span><span id="frontEndWebDev">front end web developer</span><span
                         id="backEndWebDev">back-end web developer</span><span id="itTech">IT-technician</span></p>
                 <p id="statusWrapper" class="dcloading">Loading</p>
             </div>
         </div>
 
-        <div class="feature">
+        <div class="section">
             <section class="discordWrapper" id="currentdiscord">
 
                 <div id="lanyardDiscord">
@@ -170,26 +170,26 @@
         </div>
 
         <hr>
-        <div class="feature">
+        <div class="section">
             <div>
-                <p class="feature-content">I'm Adnan. I'm a creative guy
+                <p class="section-content">I'm Adnan. I'm a creative guy
                     that loves making new solutions to old things. I love learning new things and I've liked computers,
                     phones and networking ever since I was a child. I'm always up-to-date about their software and
                     hardware. I even like modifying electronics to do new things like replacing the hard drive in iPods
                     with an SD card! I also know a bunch of languages too!</p>
             </div>
-            <div class="screenshot-container">
-                <img class="Screenshot" src="/assets/uploads/images/on-bus.jpg">
+            <div class="photo-container">
+                <img class="photo" src="/assets/uploads/images/on-bus.jpg">
             </div>
         </div>
-        <div id="app-info">
-            <h1 class="app-name">Hobbies</h1>
+        <div id="info">
+            <h1 class="name">Hobbies</h1>
         </div>
         </div>
 
-        <div class="feature">
+        <div class="section">
             <div>
-                <p class="feature-content">I have a computer that runs both Windows and macOS - it's a hackinntosh. It runs the latest version of macOS great, with graphic acceleration, WiFi and Bluetooth. It works great, however, due to my graphics card being incompatible with macOS, DRM content, like Netflix, doesn't play in Safari, but does work properly in other browsers. <br>Here are the specs of it if you'd like to build something similar:</p>
+                <p class="section-content">I have a computer that runs both Windows and macOS - it's a hackinntosh. It runs the latest version of macOS great, with graphic acceleration, WiFi and Bluetooth. It works great, however, due to my graphics card being incompatible with macOS, DRM content, like Netflix, doesn't play in Safari, but does work properly in other browsers. <br>Here are the specs of it if you'd like to build something similar:</p>
                 <ul class="specs">
                     <li><i class="fa-solid fa-microchip"></i>AMD Ryzen 5 3600</li>
                     <li><i class="fa-solid fa-gamepad"></i>Radeon RX 6700 XT</li>
@@ -200,15 +200,15 @@
                 </ul>
             </div>
 
-            <div class="screenshot-container">
-                <img class="Screenshot" src="/assets/uploads/images/with-pc.jpg">
+            <div class="photo-container">
+                <img class="photo" src="/assets/uploads/images/with-pc.jpg">
             </div>
         </div>
 
-        <div class="feature">
+        <div class="section">
             <div>
-                <p class="feature-content">I enjoy collecting, repairing, and modifying vintage Apple products, like iPods. I open them, repair them if needed and then modify them with larger batteries, replace the internal spinning hard drive with an SD card and also flash custom firmware on them! It's a really fun hobby and being able to tinker with them is really calming.</p>
-                <p class="feature-content">I currently have a...</p>
+                <p class="section-content">I enjoy collecting, repairing, and modifying vintage Apple products, like iPods. I open them, repair them if needed and then modify them with larger batteries, replace the internal spinning hard drive with an SD card and also flash custom firmware on them! It's a really fun hobby and being able to tinker with them is really calming.</p>
+                <p class="section-content">I currently have a...</p>
                 <ul class="specs">
                     <li>a 5.5th Generation iPod Video with a 5000mAh battery and 128GB SD card storage, along with a transparent click wheel and top case</li>
                     <li>a 2nd Generation iPod Mini with a new battery and 64GB of Compact Flash storage</li>
@@ -217,8 +217,8 @@
                 </ul>
             </div>
 
-            <div class="screenshot-container">
-                <img class="Screenshot" src="/assets/uploads/images/ipod.png">
+            <div class="photo-container">
+                <img class="photo" src="/assets/uploads/images/ipod.png">
             </div>
         </div>
     </main>
@@ -283,7 +283,7 @@
     </dialog>
     <script> 
         document.addEventListener("DOMContentLoaded", function () {
-    const spans = Array.from(document.querySelectorAll(".app-description span"));
+    const spans = Array.from(document.querySelectorAll(".description span"));
     let currentIndex = 0;
     let shuffledSpans = [];
 

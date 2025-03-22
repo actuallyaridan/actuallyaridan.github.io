@@ -147,33 +147,33 @@ li.active>a {
 }
 
 /* App Info */
-#app-info {
+#info {
     text-align: center;
     margin-top: 42px;
 }
 
-#app-info>div {
+#info>div {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-.app-icon {
+.icon {
     width: 128px;
     border-radius: 25%;
     text-align: center;
     margin: auto;
 }
 
-.app-name {
+.name {
     font-size: 2em;
     font-weight: 550;
     color: var(--appNameColor);
     margin: 10px 0;
 }
 
-.app-description {
+.description {
     font-size: 1em;
     color: var(--appDescriptionColor);
     margin-bottom: 20px;
@@ -197,8 +197,8 @@ li.active>a {
     background-color: var(--buttonHoverBgColor);
 }
 
-/* Screenshots */
-.screenshot-container {
+/* photos */
+.photo-container {
     width: 100%;
     overflow-x: auto;
     display: flex;
@@ -209,7 +209,7 @@ li.active>a {
     text-align: center;
 }
 
-.screenshot {
+.photo {
     width: 100%;
     background-color: var(--borderColor);
     border-radius: 15px;
@@ -224,13 +224,13 @@ li.active>a {
     max-height: 60vh;
 }
 
-.screenshot::before {
+.photo::before {
     content: '';
     display: block;
     padding-top: calc(100% / 2.17);
 }
 
-.screenshot>* {
+.photo>* {
     position: absolute;
     top: 0;
     left: 0;
@@ -244,7 +244,7 @@ li.active>a {
 }
 
 /* Features */
-.feature-title,
+.section-title,
 h2 {
     font-size: 1.5em;
     font-weight: 550;
@@ -252,13 +252,13 @@ h2 {
     margin-bottom: 10px;
 }
 
-.feature-content {
+.section-content {
     font-size: 1em;
     color: var(--featureContentColor);
     line-height: 1.5;
 }
 
-div.feature {
+div.section {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -267,11 +267,11 @@ div.feature {
     margin-bottom: 18px;
 }
 
-div.feature>div {
+div.section>div {
     flex: 1;
 }
 
-.screenshot-container {
+.photo-container {
     overflow: hidden;
     position: relative;
     left: 3em;
@@ -360,7 +360,7 @@ section>div {
     align-items: center;
 }
 
-section>div>div.screenshot-container {
+section>div>div.photo-container {
     padding: 10px;
     color: var(--featureTitleColor);
     align-items: end;
@@ -368,7 +368,7 @@ section>div>div.screenshot-container {
     max-width: 40%;
 }
 
-section>div>div.screenshot-container>img {
+section>div>div.photo-container>img {
     margin: auto;
 }
 
@@ -566,7 +566,7 @@ input[type="radio"] {
     width: 0;
 }
 
-.app-icon {
+.icon {
     height: 128px;
     width: 128px;
     display: flex;
@@ -700,10 +700,50 @@ li>a>i {
     background-color: #7289da;
 }
 
-.app-description span {
+.description span {
     border-bottom: var(--accent-color) 2px solid;
 }
 
+.withBanner {
+    position: relative;
+    background-image: url(/assets/uploads/images/banner.jpeg);
+    background-size: cover;
+    background-position: center;
+    border-radius: 12px;
+    transition: background 0.5s ease-in-out; /* Smooth transition */
+}
+
+.withBanner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3); /* Dark overlay */
+    border-radius: 12px;
+}
+
+.withBanner>div {
+    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(60, 60, 60, 0.30);
+    border: 2px solid rgba(60, 60, 60, 0.30);
+    --webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+}
+
+.withBanner > * {
+    position: relative;
+    color: white; /* Adjust text color as needed */
+    text-align: center; /* Center text */
+    padding: 10px; /* Optional: padding for text */
+}
+
+.noBack {
+    background: none;
+    border: none;
+}
 
 /* Animations */
 @keyframes fadeIn {
@@ -737,7 +777,7 @@ li>a>i {
         width: 90vw;
     }
 
-    div.feature {
+    div.section {
         flex-direction: column !important;
         text-align: left;
     }
@@ -771,12 +811,12 @@ li>a>i {
         display: flex;
     }
 
-    .screenshot-container {
+    .photo-container {
         left: 0px;
         margin: 12px;
     }
 
-    section>div>div.screenshot-container {
+    section>div>div.photo-container {
         padding: 10px;
         color: var(--featureTitleColor);
         max-width: inherit;
