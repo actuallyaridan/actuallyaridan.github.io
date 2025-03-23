@@ -1,67 +1,85 @@
 :root {
-    /* Color Palette */
-    --backgroundColor: #151E29;
-    --textColor: #8d8d8d;
-    --headerBgColor: #2d40589a;
-    --headerTextColor: rgba(255, 255, 255, 0.575);
-    --headerTextHoverColor: rgba(255, 255, 255, 0.758);
-    --headerBorderColor: #007bff9c;
-    --headerActiveBorderColor: #007aff;
-    --buttonBgColor: #007aff;
-    --buttonHoverBgColor: #005bb5;
-    --appNameColor: #ffffff;
-    --appDescriptionColor: #eeeeee;
-    --featureTitleColor: #cacaca;
-    --featureContentColor: #b4b4b4;
-    --footerTextColor: rgba(255, 255, 255, 0.575);
-    --sectionBgColor: #3C3C3C4D;
-    --purpleButtonColor: #6e5494;
-    --borderColor: #333333;
+    --text-color: #ffffff;
+    --background-color: #121212;
+    --header-background-color: #0c0c0c88;
     --accent-color: #007aff;
+    --accent-color-to-active: #007bff9c;
+    --accent-color-hover: #005bb5;
+    --header-text-color: rgba(255, 255, 255, 0.575);
+    --header-text-color-hover: rgba(255, 255, 255, 0.758);
+    --paragraph-color: #b4b4b4;
+    --border-color: #333333;
+    --title-color: #ffffff;
+    --subtitle-color: #eeeeee;
+    --secondary-title-color: #cacaca;
+    --footer-text-color: rgba(255, 255, 255, 0.575);
+    --button-background-color: rgba(60, 60, 60, 0.30);
+    --button-hover-background-color: #333333;
+    --danger-zone-background-color: rgba(220, 60, 60, 0.30);
+    --danger-zone-hover-background-color: rgba(180, 40, 40, 0.60);
+    --modal-background-color: rgb(26, 26, 26);
+    --twitter-background-color: #1da1f2;
+    --icon-background-color: rgba(60, 60, 60, 0.30);
+    --icon-color: #005bb5;
+    --card-background-color: var(--icon-background-color);
 }
 
-:root {
-    --backgroundColor: #121212;
-    --textColor: rgb(255, 255, 255);
-    --headerBgColor: #0c0c0c88;
-    --headerTextColor: rgb(203, 203, 203);
-    --buttonBgColor: #007aff;
-}
-/*
-html[data-theme='auto'] {
-    --backgroundColor: #f1f1f1;
-    --textColor: rgb(0, 0, 0);
-    --headerBgColor: #e1e1e188;
-    --headerTextColor: rgb(3, 3, 3);
-    --buttonBgColor: #007aff;
-}
-*/
 /* General Reset */
 @font-face {
     font-family: Jost;
     src: url(/src/fonts/Jost.ttf);
 }
 
-/* Fallback for prefers-color-scheme: light
+/* Light theme variables*/
+
 @media (prefers-color-scheme: light) {
     :root {
-        --backgroundColor: #f1f1f1;
-        --textColor: rgb(0, 0, 0);
-        --headerBgColor: #e1e1e188;
-        --headerTextColor: rgb(3, 3, 3);
-        --buttonBgColor: #007aff;
+        --text-color: #000000;
+        --background-color: #f1f1f1;
+        --header-background-color: #e1e1e188;
+        --accent-color: #007aff;
+        --accent-color-to-active: #007bff9c;
+        --accent-color-hover: #005bb5;
+        --header-text-color: rgba(0, 0, 0, 0.575);
+        --header-text-color-hover: rgba(0, 0, 0, 0.758);
+        --paragraph-color: #4a4a4a;
+        --border-color: #cccccc;
+        --title-color: #000000;
+        --invert-title-color: #ffffff;
+        --subtitle-color: #333333;
+        --secondary-title-color: #555555;
+        --footer-text-color: rgba(0, 0, 0, 0.575);
+        --button-background-color: rgba(200, 200, 200, 0.30);
+        --button-hover-background-color: #dddddd;
+        --danger-zone-background-color: rgba(220, 60, 60, 0.30);
+        --danger-zone-hover-background-color: rgba(180, 40, 40, 0.60);
+        --modal-background-color: rgb(240, 240, 240);
+        --twitter-background-color: #1da1f2;
+        --icon-background-color: rgba(200, 200, 200, 0.30);
+        --icon-color: #007aff;
+        --card-background-color: var(--icon-background-color);
     }
 }
-*/
-
 /* Fallback for prefers-color-scheme: dark */
 @media (prefers-color-scheme: dark) {
     :root {
-        --backgroundColor: #121212;
-        --textColor: rgb(255, 255, 255);
-        --headerBgColor: #0c0c0c88;
-        --headerTextColor: rgb(203, 203, 203);
-        --buttonBgColor: #007aff;
+        --text-color: #ffffff;
+        --background-color: #121212;
+        --header-background-color: #0c0c0c88;
+        --accent-color: #007aff;
+        --accent-color-to-active: #007bff9c;
+        --accent-color-hover: #005bb5;
+        --header-text-color: rgba(255, 255, 255, 0.575);
+        --header-text-color-hover: rgba(255, 255, 255, 0.758);
+        --paragraph-color: #b4b4b4;
+        --border-color: #333333;
+        --title-color: #ffffff;
+        --invert-title-color: #000;
+        --subtitle-color: #eeeeee;
+        --secondary-title-color: #cacaca;
+        --footer-text-color: rgba(255, 255, 255, 0.575);
+        --icon-background-color: rgba(60, 60, 60, 0.30);
+        --card-background-color: var(--icon-background-color);
     }
 }
 
@@ -76,8 +94,8 @@ body,
 
 /* Body */
 body {
-    background-color: var(--backgroundColor);
-    color: var(--textColor);
+    background-color: var(--background-color);
+    color: var(--text-color);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -93,7 +111,9 @@ header {
     z-index: 2;
 }
 
-
+#mobile-header {
+    display: none;
+}
 
 header>div {
     display: flex;
@@ -102,7 +122,7 @@ header>div {
     align-items: center;
     width: 80vw;
     height: 4em;
-    background-color: var(--headerBgColor);
+    background-color: var(--header-background-color);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     margin: auto;
@@ -125,19 +145,19 @@ ul {
 
 li>a {
     text-decoration: none;
-    color: var(--headerTextColor);
+    color: var(--header-text-color);
     border-bottom: 2px solid transparent;
     transition: all 0.3s;
 }
 
 li>a:hover {
-    color: var(--headerTextHoverColor);
-    border-bottom: 2px solid var(--headerBorderColor);
+    color: var(--header-text-color-hover);
+    border-bottom: 2px solid var(--accent-color-to-active);
 }
 
 li.active>a {
-    border-bottom: 2px solid var(--headerActiveBorderColor);
-    color: white;
+    border-bottom: 2px solid var(--accent-color);
+    color: var(--text-color);
 }
 
 /* Container */
@@ -169,20 +189,24 @@ li.active>a {
 .name {
     font-size: 2em;
     font-weight: 550;
-    color: var(--appNameColor);
+    color: var(--title-color);
     margin: 10px 0;
 }
 
 .description {
     font-size: 1em;
-    color: var(--appDescriptionColor);
+    color: var(--invert-title-color);
     margin-bottom: 20px;
+}
+
+.inverted {
+    color: var(--invert-title-color) !important;
 }
 
 /* Buttons */
 .get-button {
-    background-color: var(--buttonBgColor);
-    color: white;
+    background-color: var(--accent-color);
+    color: var(--text-color);
     border: none;
     padding: 10px 20px;
     border-radius: 25px;
@@ -194,10 +218,10 @@ li.active>a {
 }
 
 .get-button:hover {
-    background-color: var(--buttonHoverBgColor);
+    background-color: var(--accent-color-hover);
 }
 
-/* photos */
+/* Photos */
 .photo-container {
     width: 100%;
     overflow-x: auto;
@@ -211,14 +235,14 @@ li.active>a {
 
 .photo {
     width: 100%;
-    background-color: var(--borderColor);
+    background-color: var(--border-color);
     border-radius: 15px;
     background-size: cover;
     background-position: center;
     flex: 0 0 auto;
     text-align: center;
     margin: auto;
-    border: 2px solid var(--borderColor);
+    border: 2px solid var(--border-color);
     position: relative;
     max-width: 200px;
     max-height: 60vh;
@@ -248,13 +272,13 @@ li.active>a {
 h2 {
     font-size: 1.5em;
     font-weight: 550;
-    color: var(--featureTitleColor);
+    color: var(--secondary-title-color);
     margin-bottom: 10px;
 }
 
 .section-content {
     font-size: 1em;
-    color: var(--featureContentColor);
+    color: var(--paragraph-color);
     line-height: 1.5;
 }
 
@@ -285,7 +309,7 @@ div.section>div {
 /* Links */
 a {
     text-decoration: none;
-    color: white;
+    color: var(--text-color);
 }
 
 a.inline {
@@ -309,49 +333,19 @@ footer {
 }
 
 footer>p {
-    color: var(--footerTextColor);
+    color: var(--footer-text-color);
     font-size: 1em;
     margin: 12px;
     padding: 12px;
 }
 
-footer>.poweredBySection{
+footer>.poweredBySection {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     gap: 10px;
 }
-
-/* Sections */
-section {
-    background-color: var(--sectionBgColor);
-    width: 100%;
-    min-height: 20vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 12px;
-    margin: 12px;
-    padding-bottom: 48px;
-    margin-top: 48px;
-}
-
-.discordWrapper {
-    background-color: unset;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 12px;
-    margin: 12px;
-    width: unset;
-    min-height: unset !important;  
-}
-
 
 section>div {
     width: 60vw;
@@ -362,7 +356,7 @@ section>div {
 
 section>div>div.photo-container {
     padding: 10px;
-    color: var(--featureTitleColor);
+    color: var(--secondary-title-color);
     align-items: end;
     float: right;
     max-width: 40%;
@@ -381,11 +375,6 @@ section>div.section-header {
     margin-bottom: 20px;
 }
 
-
-section>div>a {
-    background-color: var(--purpleButtonColor) !important;
-}
-
 section>div>div {
     flex-grow: 1;
     text-align: left;
@@ -395,7 +384,7 @@ section>div>div {
 hr {
     width: 80%;
     margin: 20px 0;
-    border: 1px solid var(--borderColor);
+    border: 1px solid var(--border-color);
     margin: auto;
     margin-top: 2em;
     margin-bottom: 2em;
@@ -417,7 +406,7 @@ button.noUI {
     flex-wrap: wrap;
     padding: 0 !important;
     padding-inline-start: 0 !important;
-    background-color: var(--headerBgColor);
+    background-color: var(--header-background-color);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     width: 90vw;
@@ -435,7 +424,6 @@ button.noUI {
     animation: fadeIn .2s;
 }
 
-
 ul.specs {
     display: flex;
     flex-direction: column;
@@ -443,7 +431,7 @@ ul.specs {
     align-items: start;
     justify-content: center;
     padding: 10px 0px 10px 0px;
-    color: var(--featureContentColor);
+    color: var(--paragraph-color);
 }
 
 .hide {
@@ -451,8 +439,8 @@ ul.specs {
 }
 
 .button {
-    background-color: rgba(60, 60, 60, 0.30);
-    color: #cacaca;
+    background-color: var(--button-background-color);
+    color: var(--secondary-title-color);
     border: none;
     padding: 10px 20px;
     border-radius: 12px;
@@ -463,18 +451,13 @@ ul.specs {
     text-decoration: none;
 }
 
-
 .button:hover {
-    background-color: #333333;
+    background-color: var(--button-hover-background-color);
 }
 
-
-
-
-
-
-
-.fa-solid, .fa-brands, .fa-regular {
+.fa-solid,
+.fa-brands,
+.fa-regular {
     width: 1em;
     margin-right: 10px;
 }
@@ -492,40 +475,30 @@ button>.fa-solid {
 }
 
 .dangerZone {
-    background-color: rgba(220, 60, 60, 0.30);
+    background-color: var(--danger-zone-background-color);
 }
 
 .dangerZone:hover {
-    background-color: rgba(180, 40, 40, 0.60);
+    background-color: var(--danger-zone-hover-background-color);
 }
 
 /* The Modal (background) */
 .modal {
     display: flex;
-    /* Hidden by default */
     position: fixed;
-    /* Stay in place */
     z-index: 99;
-    /* Sit on top */
     left: 0;
     top: 0;
     width: 100vw;
-    /* Full width */
     height: 100vh;
-    /* Full height */
     overflow: auto;
-    /* Enable scroll if needed */
-    background-color: rgb(0, 0, 0);
-    /* Fallback color */
     background-color: rgba(0, 0, 0, 0.4);
-    /* Black w/ opacity */
 }
 
 /* Modal Content/Box */
 .modal-content {
-    background-color: rgb(26, 26, 26);
+    background-color: var(--modal-background-color);
     margin: 15% auto;
-    /* 15% from the top and centered */
     padding: 20px;
     border-radius: 12px;
     display: flex;
@@ -546,7 +519,7 @@ button>.fa-solid {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    background-color: rgba(60, 60, 60, 0.30);
+    background-color: var(--button-background-color);
     padding: 24px;
     margin: 12px;
     border-radius: 8px;
@@ -557,7 +530,7 @@ h3>.fa-solid {
 }
 
 .modalSettings {
-    color: #cacaca;
+    color: var(--secondary-title-color);
 }
 
 input[type="radio"] {
@@ -577,13 +550,13 @@ input[type="radio"] {
 }
 
 .icon-background {
-    background-color: rgba(60, 60, 60, 0.30);
+    background-color: var(--icon-background-color);
     padding: 10px;
     border-radius: 25%;
     margin: auto;
     height: 128px;
     width: 128px;
-    color: #005bb5;
+    color: var(--icon-color);
     display: flex;
     align-items: center;
     justify-self: center;
@@ -601,7 +574,8 @@ input[type="radio"] {
     gap: 10px;
 }
 
-label.button, select.button{
+label.button,
+select.button {
     margin-top: 4px;
     margin-bottom: 4px;
 }
@@ -614,52 +588,12 @@ label.button, select.button{
 }
 
 .linkCompany>a {
-    color: #cacaca
+    color: var(--secondary-title-color);
 }
 
 .linkCompany>a:hover {
-    color: #ffffff;
+    color: var(--text-color);
     transition: color 0.2s;
-}
-
-#cookieBanner {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    background-color: rgba(60, 60, 60, 0);
-    padding: 10px;
-    border-radius: 8px;
-    position: fixed;
-    bottom: 10px;
-    right: 10px;
-    z-index: 1000;
-    color: #cacaca;
-    border: none;
-    width: 100%;
-}
-
-.cookies {
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--headerBgColor);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    width: fit-content;
-    border-radius: 12px;
-    padding: 12px;
-}
-
-.cookieTitle {
-    color: var(--appNameColor);
-}
-
-.cookies>button {
-margin-left: 12px;
 }
 
 .sosumi {
@@ -667,7 +601,8 @@ margin-left: 12px;
     font-size: 1em;
 }
 
-h2, h3 {
+h2,
+h3 {
     font-weight: 550;
 }
 
@@ -685,19 +620,15 @@ li>a>i {
     padding: 12px;
     margin: 12px;
     width: 100%;
-    color: white;
+    color: var(--text-color);
 }
 
 .contact>a {
-   color: inherit;
+    color: inherit;
 }
 
 .twitter {
-    background-color: #1da1f2;
-}
-
-.discord {
-    background-color: #7289da;
+    background-color: var(--twitter-background-color);
 }
 
 .description span {
@@ -710,7 +641,7 @@ li>a>i {
     background-size: cover;
     background-position: center;
     border-radius: 12px;
-    transition: background 0.5s ease-in-out; /* Smooth transition */
+    transition: background 0.5s ease-in-out;
 }
 
 .withBanner::before {
@@ -720,24 +651,28 @@ li>a>i {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.3); /* Dark overlay */
+    background: rgba(0, 0, 0, 0.3);
     border-radius: 12px;
 }
 
 .withBanner>div {
     background-color: rgba(0, 0, 0, 0.3);
-    background-color: rgba(60, 60, 60, 0.30);
-    border: 2px solid rgba(60, 60, 60, 0.30);
+    background-color: var(--button-background-color);
+    border: 2px solid var(--button-background-color);
     --webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     border-radius: 12px;
 }
 
-.withBanner > * {
+.withBanner>div>h1 {
+    color: var(--invert-title-color);
+}
+
+.withBanner>* {
     position: relative;
-    color: white; /* Adjust text color as needed */
-    text-align: center; /* Center text */
-    padding: 10px; /* Optional: padding for text */
+    color: var(--text-color);
+    text-align: center;
+    padding: 10px;
 }
 
 .noBack {
@@ -745,90 +680,7 @@ li>a>i {
     border: none;
 }
 
-select {
-    appearance: none;
-    border: none;
-    cursor: pointer;
-}
 
-.checkbox-wrapper-51 {
-    display: flex;
-    align-items: center; /* Align items (label and toggle) vertically */
-  }
-  
-  .checkbox-wrapper-51 input[type="checkbox"] {
-    visibility: hidden;
-    display: none;
-  }
-  
-  .checkbox-wrapper-51 .toggle {
-    position: relative;
-    display: block;
-    cursor: pointer;
-    -webkit-tap-highlight-color: transparent;
-    transform: translate3d(0, 0, 0);
-  }
-  
-  .checkbox-wrapper-51 .toggle:before {
-    content: "";
-    position: relative;
-    top: 5px;
-    left: 1px;
-    width: 40px;
-    height: 22px;
-    display: inline-block;
-    background: var(--borderColor);
-    border-radius: 12px;
-    transition: background 0.2s ease;
-    margin-right: 4px;
-  }
-  
-  .checkbox-wrapper-51 .toggle span {
-    position: absolute;
-    top: 4;
-    left: 0;
-    width: 24px;
-    height: 24px;
-    display: block;
-    background: #cacaca;
-    border-radius: 50%;
-    transition: all 0.2s ease;
-  }
-  
-  .checkbox-wrapper-51 .toggle span svg {
-    margin: 7px;
-    fill: none;
-  }
-  
-  .checkbox-wrapper-51 .toggle span svg path {
-    stroke: var(--borderColor);
-    stroke-width: 2;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    stroke-dasharray: 24;
-    stroke-dashoffset: 0;
-    transition: all 0.5s linear;
-  }
-  
-  .checkbox-wrapper-51 input[type="checkbox"]:checked + .toggle:before {
-    background: var(--accent-color);
-  }
-  
-  .checkbox-wrapper-51 input[type="checkbox"]:checked + .toggle span {
-    transform: translateX(18px);
-  }
-  
-  .checkbox-wrapper-51 input[type="checkbox"]:checked + .toggle span path {
-    stroke: var(--accent-color);
-    stroke-dasharray: 25;
-    stroke-dashoffset: 25;
-  }
-  
-  /* Optional: Add spacing between the label and toggle */
-  .checkbox-wrapper-51 label {
-    margin-right: 10px;
-  }
-  
 /* Animations */
 @keyframes fadeIn {
     from {
@@ -850,10 +702,6 @@ select {
     }
 }
 
-/* Mobile Header */
-#mobile-header {
-    display: none;
-}
 
 /* Media Queries */
 @media screen and (max-width: 734px) {
@@ -902,7 +750,7 @@ select {
 
     section>div>div.photo-container {
         padding: 10px;
-        color: var(--featureTitleColor);
+        color: var(--secondary-title-color);
         max-width: inherit;
     }
 }

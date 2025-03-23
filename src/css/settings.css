@@ -1,0 +1,123 @@
+#cookieBanner {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background-color: rgba(60, 60, 60, 0);
+    padding: 10px;
+    border-radius: 8px;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    z-index: 1000;
+    color: var(--title-color);
+    border: none;
+    width: 100%;
+}
+
+.cookies {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--header-background-color);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    width: fit-content;
+    border-radius: 12px;
+    padding: 12px;
+}
+
+.cookieTitle {
+    color: var(--title-color);
+}
+
+.cookies>button {
+    margin-left: 12px;
+}
+select {
+    appearance: none;
+    border: none;
+    cursor: pointer;
+}
+
+.checkbox-wrapper-51 {
+    display: flex;
+    align-items: center;
+    /* Align items (label and toggle) vertically */
+}
+
+.checkbox-wrapper-51 input[type="checkbox"] {
+    visibility: hidden;
+    display: none;
+}
+
+.checkbox-wrapper-51 .toggle {
+    position: relative;
+    display: block;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    transform: translate3d(0, 0, 0);
+}
+
+.checkbox-wrapper-51 .toggle:before {
+    content: "";
+    position: relative;
+    top: 5px;
+    left: 1px;
+    width: 40px;
+    height: 22px;
+    display: inline-block;
+    background: var(--border-color);
+    border-radius: 12px;
+    transition: background 0.2s ease;
+    margin-right: 4px;
+}
+
+.checkbox-wrapper-51 .toggle span {
+    position: absolute;
+    top: 4;
+    left: 0;
+    width: 24px;
+    height: 24px;
+    display: block;
+    background: var(--title-color);
+    border-radius: 50%;
+    transition: all 0.2s ease;
+}
+
+.checkbox-wrapper-51 .toggle span svg {
+    margin: 7px;
+    fill: none;
+}
+
+.checkbox-wrapper-51 .toggle span svg path {
+    stroke: var(--border-color);
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 24;
+    stroke-dashoffset: 0;
+    transition: all 0.5s linear;
+}
+
+.checkbox-wrapper-51 input[type="checkbox"]:checked+.toggle:before {
+    background: var(--accent-color);
+}
+
+.checkbox-wrapper-51 input[type="checkbox"]:checked+.toggle span {
+    transform: translateX(18px);
+}
+
+.checkbox-wrapper-51 input[type="checkbox"]:checked+.toggle span path {
+    stroke: var(--accent-color);
+    stroke-dasharray: 25;
+    stroke-dashoffset: 25;
+}
+
+/* Optional: Add spacing between the label and toggle */
+.checkbox-wrapper-51 label {
+    margin-right: 10px;
+}
