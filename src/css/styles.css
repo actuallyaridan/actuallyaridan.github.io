@@ -199,8 +199,8 @@ li.active>a {
     margin-bottom: 20px;
 }
 
-.inverted {
-    color: var(--invert-title-color) !important;
+.white {
+    color: white !important;
 }
 
 /* Buttons */
@@ -665,7 +665,7 @@ li>a>i {
 }
 
 .withBanner>div>h1 {
-    color: var(--invert-title-color);
+    color: white;
 }
 
 .withBanner>* {

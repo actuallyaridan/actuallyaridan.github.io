@@ -14,7 +14,7 @@ if (document.querySelector('.discordWrapper')) {
     websocket = new WebSocket("wss://api.lanyard.rest/socket");
 
     websocket.onopen = function () {
-      console.log("[Lanyard] Ready to connect. Sending handshake...");
+      console.log("[Lanyard] Ready. Attempting to connect...");
     };
 
     websocket.onmessage = function (event) {
@@ -22,7 +22,7 @@ if (document.querySelector('.discordWrapper')) {
       console.log(data);
 
       if (data.op === 1) {
-        console.log("%c[Lanyard] Connection to Lanyard WebSocket returned 200 (OK)", "color:green;");
+        console.log("%c[Lanyard] Successfully connected Lanyard WebSocket", "color:green;");
         console.log("[Lanyard] Subscribing to user ID " + userID + "...");
         sendMessage({ op: 2, d: { subscribe_to_id: userID } });
 
@@ -35,7 +35,7 @@ if (document.querySelector('.discordWrapper')) {
     };
 
     websocket.onerror = function (error) {
-      console.error("[Lanyard] WebSocket encountered an error:", error);
+      console.error("[Lanyard] Failed to connect to Lanyard WebSocket:", error);
       websocket.close();
     };
 
