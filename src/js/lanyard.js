@@ -22,7 +22,7 @@ if (document.querySelector('.discordWrapper')) {
       console.log(data);
 
       if (data.op === 1) {
-        console.log("%c[Lanyard] Successfully connected Lanyard WebSocket", "color:green;");
+        console.log("%c[Lanyard] Successfully connected to Lanyard WebSocket", "color:green;");
         console.log("[Lanyard] Subscribing to user ID " + userID + "...");
         sendMessage({ op: 2, d: { subscribe_to_id: userID } });
 
