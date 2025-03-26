@@ -7,10 +7,7 @@
 
 #statusWrapper {
     list-style-type: none;
-    color: #000; /* Fallback for var(--text-color) */
-    color: rgb(0, 0, 0);
-    color: rgb(0, 0, 0);
-    color: var(--text-color);
+    color: white;
     font-family: Jost, sans-serif;
     padding: 8px;
     text-decoration: none;
