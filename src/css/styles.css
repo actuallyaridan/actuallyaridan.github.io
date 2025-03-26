@@ -111,6 +111,14 @@ header {
     z-index: 2;
 }
 
+.emoji {
+    font-size: 1em;
+    width: 0.8em;
+    height: 0.8em;
+    margin: 0 0.2em;
+    vertical-align: -0.1em;
+}
+
 #mobile-header {
     display: none;
 }
@@ -419,6 +427,13 @@ button.noUI {
     animation: fadeOut .2s;
 }
 
+.mobileMenu>ul{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
 .showMenu {
     display: flex;
     animation: fadeIn .2s;
@@ -680,6 +695,200 @@ li>a>i {
     border: none;
 }
 
+
+.articlePreview {
+    display: flex;
+    flex-grow: 2;
+    padding: 10px;
+    flex-direction: column !important;
+    justify-content: center;
+    align-items: start;
+    text-align: left;
+    margin: 12px;
+    padding: 12px;
+    border-radius: 12px;
+    background-color: var(--card-background-color);
+}
+
+.articlePreview>.preview {
+    flex: 3;
+}
+
+.preview>span {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: start;
+    gap: 10px;
+}
+
+.preview>span>.date {
+    margin-top: .25em;
+    display: flex;
+}
+
+.preview > span > h3 {
+    margin: 0;
+    font-size: 1.2em;
+    flex-grow: 1;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    line-clamp: 2;
+    -webkit-line-clamp: 2; /* Limits to 2 lines */
+    word-break: break-word; /* Ensures long words break properly */
+}
+
+.previewContent {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    line-clamp: 3;
+    -webkit-line-clamp: 3; /* Limits to 2 lines */
+    word-break: break-word; /* Ensures long words break properly */
+}
+
+
+.articlePreview>.readMore {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.articlePreview>.readMore>a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.articlePreview>.readMore>a>i {
+    margin: 0px;
+}
+
+.categories {
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+.categories>span {
+    background-color: var(--button-background-color);
+    border: 2px solid var(--button-background-color);
+    color: var(--secondary-title-color);
+    padding: 5px 10px;
+    border-radius: 6px;
+    font-size: 1em;
+    text-decoration: none;
+}
+
+
+.categories>span.blue {
+    background-color: var(--accent-color);
+    border: 2px solid var(--accent-color-hover);
+    color: white;
+}
+
+
+
+/* Article content styles */
+#articleContent {
+    margin: 20px auto;
+    max-width: 900px;
+    font-family: "Arial", sans-serif;
+    line-height: 1.6;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Headers */
+#articleContent h1, #articleContent h2, #articleContent h3 {
+    font-family: "Roboto", sans-serif;
+    color: #333;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+#articleContent h1 {
+    font-size: 2em;
+}
+
+#articleContent h2 {
+    font-size: 1.6em;
+}
+
+#articleContent h3 {
+    font-size: 1.4em;
+}
+
+/* Article styles */
+.full-article {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0px;
+}
+
+.article-title {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.article-meta {
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+}
+
+.article-content {
+    line-height: 1.6;
+}
+
+.article-content img {
+    max-width: 100%;
+    height: auto;
+}
+
+.loading {
+    text-align: center;
+    padding: 2rem;
+    color: var(--text-secondary);
+}
+
+.error-message {
+    text-align: center;
+    padding: 2rem;
+    color: var(--error);
+}
+
+.article-navigation {
+    margin-top: 3rem;
+    text-align: center;
+}
+
+.backButton {
+    margin: 0px;
+    gap: 0px;
+}
+
+.backButton>i {
+    margin: 0px;
+    gap: 0px;
+    color: var(--paragraph-color);
+}
 
 /* Animations */
 @keyframes fadeIn {

@@ -3,14 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description"
-        content="aridan.net">
+    <meta name="description" content="aridan.net">
     <meta name="keywords"
         content="aridan, actuallyaridan, adnan, bukvic, twitter, discord, lanyard, api, web, developer, front-end, back-end, it, technician, tech, enthusiast">
     <meta name="author" content="actualluaridan">
     <meta name="robots" content="index, follow">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - aridan.net</title>
+    <title>Articles - aridan.net</title>
     <link href="favicon.png" rel="icon" id="site-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
@@ -18,13 +17,14 @@
     <link rel="stylesheet" href="/src/css/styles.css">
     <link rel="stylesheet" href="/src/css/lanyard.css">
     <script src="/src/js/general.js" async></script>
-    <script src="/src/js/lanyard.js" async></script>
+    <script src="/src/js/displayArticle.js" defer></script>
+    <script src="/src/js/lanyard.js" defer></script>
     <script defer="" src="https://cdn.jsdelivr.net/npm/@twemoji/api@latest/dist/twemoji.min.js"
         crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <meta property="og:title" content="aridan.net">
-    <meta property="og:description"
-        content="aridan.net">
+    <meta property="og:description" content="aridan.net">
     <meta property="og:image" content="/images/image.png">
     <meta property="og:url" content="https://aridan.net">
     <meta name="twitter:card" content="summary_large_image">
@@ -37,8 +37,8 @@
                 <li><a href="/">aridan.net</a></li>
                 <li><a href="/experience/">Experience</a></li>
                 <li><a href="/projects/">Projects</a></li>
-                <li><a href="/articles/">Articles</a></li>
-                <li class="active"><a href="/contact/">Contact</a></li>
+                <li class="active"><a href="/articles/">Articles</a></li>
+                <li><a href="/contact/">Contact</a></li>
             </ul>
             <ul>
                 <li><a href="/settings"><i class="fa-solid fa-gear" title="Settings"></i></a></li>
@@ -63,8 +63,8 @@
             <ul>
                 <li><a href="/experience/">Experience</a></li>
                 <li><a href="/projects/">Projects</a></li>
-                <li><a href="/articles/">Articles</a></li>
-                <li class="active"><a href="/contact/">Contact</a></li>
+                <li class="active"><a href="/articles/">Articles</a></li>
+                <li><a href="/contact/">Contact</a></li>
             </ul>
             <ul>
                 <li><a href="/settings"><i class="fa-solid fa-gear" title="Settings"></i></a></li>
@@ -77,23 +77,19 @@
     </header>
 
     <main class="container">
-        <div id="info">
-            <p class="icon"><i class="fa-solid fa-address-book icon-background"></i></p>
-            <div>
-                <h1 class="name">Get in touch</h1>
-            </div>
-        </div>
-        <hr>
-        <div class="section">
-            <div>
-                <h2 class="section-title">Can we build it? ...maybe</h2>
-                <p class="section-content">This website is under construction.</p>
-            </div>
-            <div class="photo-container">
-                <p class="photo noBack">🏗️</p>
-            </div>
-        </div>
+
+
     </main>
+    <div id="loading" style="display: none;">
+        <div>
+            <div id="loadingSpinner" class="lds-ring">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
     <footer>
     </footer>
     <dialog>

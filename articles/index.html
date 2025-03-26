@@ -10,7 +10,7 @@
     <meta name="author" content="actualluaridan">
     <meta name="robots" content="index, follow">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - aridan.net</title>
+    <title>Articles - aridan.net</title>
     <link href="favicon.png" rel="icon" id="site-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
@@ -18,7 +18,8 @@
     <link rel="stylesheet" href="/src/css/styles.css">
     <link rel="stylesheet" href="/src/css/lanyard.css">
     <script src="/src/js/general.js" async></script>
-    <script src="/src/js/lanyard.js" async></script>
+    <script src="/src/js/previewArticles.js" deafer></script>
+    <script src="/src/js/lanyard.js" defer></script>
     <script defer="" src="https://cdn.jsdelivr.net/npm/@twemoji/api@latest/dist/twemoji.min.js"
         crossorigin="anonymous"></script>
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -37,8 +38,8 @@
                 <li><a href="/">aridan.net</a></li>
                 <li><a href="/experience/">Experience</a></li>
                 <li><a href="/projects/">Projects</a></li>
-                <li><a href="/articles/">Articles</a></li>
-                <li class="active"><a href="/contact/">Contact</a></li>
+                <li class="active"><a href="/articles/">Articles</a></li>
+                <li><a href="/contact/">Contact</a></li>
             </ul>
             <ul>
                 <li><a href="/settings"><i class="fa-solid fa-gear" title="Settings"></i></a></li>
@@ -63,8 +64,8 @@
             <ul>
                 <li><a href="/experience/">Experience</a></li>
                 <li><a href="/projects/">Projects</a></li>
-                <li><a href="/articles/">Articles</a></li>
-                <li class="active"><a href="/contact/">Contact</a></li>
+                <li class="active"><a href="/articles/">Articles</a></li>
+                <li><a href="/contact/">Contact</a></li>
             </ul>
             <ul>
                 <li><a href="/settings"><i class="fa-solid fa-gear" title="Settings"></i></a></li>
@@ -78,21 +79,23 @@
 
     <main class="container">
         <div id="info">
-            <p class="icon"><i class="fa-solid fa-address-book icon-background"></i></p>
+            <p class="icon"><i class="fa-solid fa-newspaper icon-background"></i></p>
             <div>
-                <h1 class="name">Get in touch</h1>
+                <h1 class="name">Articles</h1>
+                <p class="description titleColor">Here you can learn about neiche things I've done. Some regarding this website, some about other stuff I do, or just random stuff I want to share with the world!</p>
             </div>
         </div>
         <hr>
-        <div class="section">
+        <div id="loading" style="display: none;">
             <div>
-                <h2 class="section-title">Can we build it? ...maybe</h2>
-                <p class="section-content">This website is under construction.</p>
+                <div id="loadingSpinner" class="lds-ring">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
             </div>
-            <div class="photo-container">
-                <p class="photo noBack">🏗️</p>
-            </div>
-        </div>
+        </div>        
     </main>
     <footer>
     </footer>
