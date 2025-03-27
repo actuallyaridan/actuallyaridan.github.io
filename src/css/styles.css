@@ -652,7 +652,7 @@ li>a>i {
 
 .withBanner {
     position: relative;
-    background-image: url(/assets/uploads/images/banner.jpeg);
+    background-image: url(/assets/uploads/images/banner.webp);
     background-size: cover;
     background-position: center;
     border-radius: 12px;
