@@ -890,6 +890,41 @@ li>a>i {
     color: var(--paragraph-color);
 }
 
+code {
+    background-color: var(--card-background-color);
+    padding: 2px;
+    border-radius: 4px;
+    font-family: "Courier New", Courier, monospace;
+    color: var(--paragraph-color);
+    font-size: 0.9em;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 100%;
+    display: block;
+    margin: 0.5em 0;
+    padding: 0.5em;
+    border-radius: 4px;
+    margin-bottom: 12px;
+
+
+}
+
+.article-content>p{
+    color: var(--paragraph-color);
+    margin-bottom: 12px;
+}
+
+.article-content>h3{
+    color: var(--secondary-title-color);
+}
+
+.article-content>ol{
+    color: var(--paragraph-color);
+    margin-left: 2em;
+    margin-bottom: 12px;
+}
+
 /* Animations */
 @keyframes fadeIn {
     from {

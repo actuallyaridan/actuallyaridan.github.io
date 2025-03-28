@@ -39,6 +39,9 @@
     display: flex;
     font-family: Jost, sans-serif;
     color: white;
+    margin: auto;
+align-items: center;
+justify-content: center;
 }
 
 #loadedLanyard {
@@ -136,11 +139,11 @@ img.albumArt {
 div#discord {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
-    will-change: width;
-    transition: width 0.2s;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    max-width: 80vw;
+    overflow-x: scroll;
 }
 
 #discordName,
@@ -181,6 +184,7 @@ div#discord {
 #amLanyardDiscord {
     min-width: 15vw;
     word-wrap: break-word;
+    min-width: 250px;
     max-width: 350px;
 }
 

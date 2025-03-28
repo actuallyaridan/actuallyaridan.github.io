@@ -63,7 +63,7 @@ if (document.querySelector('.discordWrapper')) {
 
   connectWebSocket();
 
-  const fetchDataInterval = setInterval(updateLanyardData, 900);
+  const fetchDataInterval = setInterval(updateLanyardData, 1000);
 
   function updateLanyardData() {
     try {
@@ -86,9 +86,20 @@ if (document.querySelector('.discordWrapper')) {
     const statusWrapper = document.getElementById("statusWrapper");
     if (statusWrapper) {
       statusWrapper.className = status;
-      statusWrapper.textContent = capitalizeFirstLetter(status);
+      if (status === "online") {
+        statusWrapper.textContent = "Online";
+      } else if (status === "offline") {
+        statusWrapper.textContent = "Not near a computer";
+      } else if (status === "dnd") {
+        statusWrapper.textContent = "Do not disturb";
+      } else if (status === "idle") {
+        statusWrapper.textContent = "Doing nothing";
+      } else {
+        statusWrapper.textContent = capitalizeFirstLetter(status);
+      }
     }
   }
+
 
   function updateActivityInfo(activities, status) {
     const lanyardDiscord = document.getElementById("lanyardDiscord");
@@ -128,18 +139,15 @@ if (document.querySelector('.discordWrapper')) {
 
   function updateActivityImages(activities) {
     const activityLogoLarge = document.getElementById("activityLogoLarge");
-    const activityLogoSmall = document.getElementById("activityLogoSmall");
 
     if (!activities || activities.length === 0 || !activities.some(activity => activity.assets && activity.assets.large_image)) {
       toggleDisplay(activityLogoLarge, false);
-      toggleDisplay(activityLogoSmall, false);
       return;
     }
 
     activities.forEach(function (activity) {
       if (activity.assets && activity.assets.large_image) {
         updateImage(activityLogoLarge, activity.assets.large_image, activity.application_id, activity.details);
-        updateImage(activityLogoSmall, activity.assets.small_image, activity.application_id, activity.details);
       }
     });
   }
@@ -179,14 +187,12 @@ if (document.querySelector('.discordWrapper')) {
   function updateAppleMusicInfo(activity) {
     const amLanyardDiscord = document.getElementById("amLanyardDiscord");
     const amActivityLogoLarge = document.getElementById("amActivityLogoLarge");
-    const amActivityLogoSmall = document.getElementById("amActivityLogoSmall");
 
     toggleDisplay(amLanyardDiscord, true);
 
     if (activity.assets) {
       const { large_image, small_image } = activity.assets;
       updateImage(amActivityLogoLarge, large_image, activity.application_id, activity.details);
-      updateImage(amActivityLogoSmall, small_image, activity.application_id, activity.details);
     }
 
     document.getElementById("amActivityName").textContent = activity.name;

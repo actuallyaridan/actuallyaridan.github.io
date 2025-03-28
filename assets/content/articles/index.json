@@ -2,11 +2,7 @@
     {
         "title": "Display your current Discord activity on your website using Lanyard",
         "date": "03/01/2025",
-        "preview": "This website uses Lanyard to display my current Discord activity, such as the game I'm playing, the current song I'm listening to, and more. It's all updated in real-time using Lanyard’s API. In this article, I will show you how to set it up.",
-        "categories": [
-            { "name": "This website", "color": "blue" },
-            { "name": "Lanyard", "color": "yellow" }
-        ],
+        "preview": "Learn how to use Lanyard to display your real-time Discord activity on your website. This guide will walk you through what Lanyard is, how it works, and how to set it up.",
         "link": "/articles/view/index.html?article=lanyard-setup"
     }
 ]
