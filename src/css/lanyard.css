@@ -5,7 +5,7 @@
     src: url(/src/fonts/SevenSegment.otf) format("opentype");
 }
 
-#statusWrapper {
+.statusWrapper {
     list-style-type: none;
     color: white;
     font-family: Jost, sans-serif;
@@ -27,6 +27,10 @@
     margin: 0px;
     margin-bottom: 8px;
     display: block;
+}
+
+.statusWrapper.hide{
+    display: none;
 }
 
 .divider {
