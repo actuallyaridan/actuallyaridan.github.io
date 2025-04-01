@@ -98,7 +98,7 @@ if (document.querySelector('.discordWrapper')) {
     lastStatus = status;
 
     document.querySelectorAll(".statusWrapper").forEach(el => el.classList.add("hide"));
-    
+
     const statusElement = document.getElementById(`statusWrapper${capitalizeFirstLetter(status)}`);
     statusElement?.classList.remove("hide");
   }
@@ -157,7 +157,7 @@ if (document.querySelector('.discordWrapper')) {
     updateElementText(elements.amActivityName, activity.name);
     updateElementText(elements.amActivityState, formatActivityState(activity.state));
     updateElementText(elements.amActivityDetails, activity.details);
-    
+
     updateActivityTime(activity.timestamps, "am");
   }
 
@@ -168,8 +168,8 @@ if (document.querySelector('.discordWrapper')) {
     const elapsedElem = document.getElementById(prefix + "Elapsed");
 
     let timeData = timestamps?.end ? calculateTimeDifference(new Date(timestamps.end), now) :
-                   timestamps?.start ? calculateTimeDifference(now, new Date(timestamps.start)) :
-                   null;
+      timestamps?.start ? calculateTimeDifference(now, new Date(timestamps.start)) :
+        null;
 
     updateElementText(timeElem, timeData ? formatTime(timeData) : "-:-");
     toggleTimeDisplay(remainingElem, elapsedElem, !!timestamps?.end);
