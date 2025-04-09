@@ -153,7 +153,8 @@ div#discord {
 #discordName,
 #discordActivity,
 #amLanyardDiscord,
-#discordNameUser {
+#discordNameUser,
+#lyricsCard {
     justify-content: center;
     align-items: center;
     padding: 8px;
@@ -185,7 +186,8 @@ div#discord {
 }
 
 #discordActivity,
-#amLanyardDiscord {
+#amLanyardDiscord,
+#lyricsCard {
     min-width: 15vw;
     word-wrap: break-word;
     min-width: 250px;
@@ -368,6 +370,17 @@ i>h3{
     padding: 12px;
     border-radius: 12px;
     background-color: var(--card-background-color); /* Fallback for var(--darker-accent-color) */
+}
+
+#lyricsCard{
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    text-align: left;
+    margin: 12px;
+    padding: 12px;
+    border-radius: 12px;
+    background-color: var(--card-background-color);
 }
 
 #discordActivityImages,

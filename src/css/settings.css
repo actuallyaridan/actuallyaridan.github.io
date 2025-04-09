@@ -37,21 +37,46 @@
 .cookies>button {
     margin-left: 12px;
 }
+
 select {
+    color: var(--secondary-title-color);
+    /* must be here */
     appearance: none;
+    background: transparent;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' fill='currentColor'%3E%3Cpath d='M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center right 0.75rem;
+    background-size: 1em;
+
+    color: var(--secondary-title-color);
+    /* must be here */
+    padding-right: 2.5rem;
     border: none;
-    cursor: pointer;
+    border-radius: 2px;
+    margin-right: 2rem;
+    padding: 1rem;
 }
+
 
 .checkbox-wrapper-51 {
     display: flex;
     align-items: center;
-    /* Align items (label and toggle) vertically */
+    justify-content: space-between;
+    width: 100%;
+    /* Ensure the wrapper takes up full width */
 }
 
 .checkbox-wrapper-51 input[type="checkbox"] {
     visibility: hidden;
     display: none;
+}
+
+.checkbox-wrapper-51 .title {
+    margin-right: 10px;
+    flex-grow: 1;
+    /* Allow label to take up available space */
+    white-space: nowrap;
+    /* Prevent text wrapping */
 }
 
 .checkbox-wrapper-51 .toggle {
@@ -60,12 +85,15 @@ select {
     cursor: pointer;
     -webkit-tap-highlight-color: transparent;
     transform: translate3d(0, 0, 0);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .checkbox-wrapper-51 .toggle:before {
     content: "";
     position: relative;
-    top: 5px;
+    top: 0px;
     left: 1px;
     width: 40px;
     height: 22px;
@@ -78,12 +106,12 @@ select {
 
 .checkbox-wrapper-51 .toggle span {
     position: absolute;
-    top: 4;
+    top: -1;
     left: 0;
     width: 24px;
     height: 24px;
     display: block;
-    background: var(--title-color);
+    background: #f9f9f9;
     border-radius: 50%;
     transition: all 0.2s ease;
 }
@@ -117,7 +145,114 @@ select {
     stroke-dashoffset: 25;
 }
 
-/* Optional: Add spacing between the label and toggle */
-.checkbox-wrapper-51 label {
-    margin-right: 10px;
+
+
+.dangerZone {
+    background-color: var(--danger-zone-background-color);
+}
+
+.dangerZone:hover {
+    background-color: var(--danger-zone-hover-background-color);
+}
+
+/* The Modal (background) */
+.modal {
+    display: flex;
+    position: fixed;
+    z-index: 99;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: var(--modal-background-color);
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: fit-content;
+    height: fit-content;
+    max-width: 90%;
+}
+
+.modalDescription {
+    color: var(--secondary-title-color);
+    margin-bottom: 12px;
+    text-align: center;
+}
+
+.modalButtons {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.modalSettings {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: var(--button-background-color);
+    padding: 24px;
+    margin: 12px;
+    border-radius: 8px;
+
+}
+
+.modalSettings>div>div>div {
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+
+h3>.fa-solid {
+    margin-right: 5px;
+}
+
+.modalSettings {
+    color: var(--secondary-title-color);
+}
+
+input[type="radio"] {
+    opacity: 0;
+    position: fixed;
+    width: 0;
+}
+
+.options,
+#language {
+    margin-top: 6px;
+    margin-bottom: 6px;
+}
+
+
+
+.blue {
+    background-color: #007aff;
+}
+.green {
+    background-color: #4cd964;
+}
+.red {
+    background-color: #ff3b30;
+}
+.purple {
+    background-color: #5856d6;
+}
+
+.colorOptions>label>span {
+    display: inline-block;
+    padding: 0.3em 0.3em;
+    margin: auto -5 auto 8;
+    border-radius: 50%;
+}
+
+.showMenuNoAnimation{
+    display: flex;
 }

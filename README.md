@@ -1,4 +1,4 @@
-# <img src="/src/favicons/icon-192.png" width="32px" height="32px"> aridan.net
+# <img src="/assets/media/favicons/icon-192.png" width="32px" height="32px"> aridan.net
 A modern, fast and lightweight website that can be used to show general information about a person.
 Supports multiple languages and follows accessibility guidelines for a more open internet. 
 

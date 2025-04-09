@@ -111,12 +111,39 @@ header {
     z-index: 2;
 }
 
+.noUI {
+    all: inherit;
+    cursor: pointer;
+    touch-action: manipulation;
+    position: relative;
+    top: 1px;
+}
+
+
 .emoji {
     font-size: 1em;
     width: 0.8em;
     height: 0.8em;
     margin: 0 0.2em;
     vertical-align: -0.1em;
+}
+
+.icon>.emoji {
+    font-size: inherit;
+    width: inherit;
+    height: inherit;
+    background-color: var(--icon-background-color);
+padding: 10px;
+border-radius: 25%;
+margin: auto;
+height: 128px;
+width: 128px;
+color: var(--icon-color);
+display: flex;
+align-items: center;
+justify-self: center;
+justify-content: center;
+font-size: 4em;
 }
 
 #mobile-header {
@@ -151,19 +178,19 @@ ul {
     align-items: center;
 }
 
-li>a {
+li>a, li>button.noUI {
     text-decoration: none;
     color: var(--header-text-color);
     border-bottom: 2px solid transparent;
     transition: all 0.3s;
 }
 
-li>a:hover {
+li>a:hover, li>button.noUI:hover {
     color: var(--header-text-color-hover);
     border-bottom: 2px solid var(--accent-color-to-active);
 }
 
-li.active>a {
+li.active>a, li.active>button.noUI {
     border-bottom: 2px solid var(--accent-color);
     color: var(--text-color);
 }
@@ -398,12 +425,6 @@ hr {
     margin-bottom: 2em;
 }
 
-/* Buttons */
-button.noUI {
-    all: unset;
-    cursor: pointer;
-    touch-action: manipulation;
-}
 
 /* Mobile Menu */
 .mobileMenu {
@@ -489,70 +510,7 @@ button>.fa-solid {
     margin-right: 10px;
 }
 
-.dangerZone {
-    background-color: var(--danger-zone-background-color);
-}
 
-.dangerZone:hover {
-    background-color: var(--danger-zone-hover-background-color);
-}
-
-/* The Modal (background) */
-.modal {
-    display: flex;
-    position: fixed;
-    z-index: 99;
-    left: 0;
-    top: 0;
-    width: 100vw;
-    height: 100vh;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.4);
-}
-
-/* Modal Content/Box */
-.modal-content {
-    background-color: var(--modal-background-color);
-    margin: 15% auto;
-    padding: 20px;
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    width: fit-content;
-    height: fit-content;
-}
-
-.modalButtons {
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-}
-
-.modalSettings {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    background-color: var(--button-background-color);
-    padding: 24px;
-    margin: 12px;
-    border-radius: 8px;
-}
-
-h3>.fa-solid {
-    margin-right: 5px;
-}
-
-.modalSettings {
-    color: var(--secondary-title-color);
-}
-
-input[type="radio"] {
-    opacity: 0;
-    position: fixed;
-    width: 0;
-}
 
 .icon {
     height: 128px;
@@ -621,7 +579,7 @@ h3 {
     font-weight: 550;
 }
 
-li>a>i {
+li>a>i, li>button.noUI>i {
     margin-right: 0px !important;
 }
 
@@ -998,3 +956,4 @@ code {
         max-width: inherit;
     }
 }
+
