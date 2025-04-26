@@ -256,3 +256,16 @@ input[type="radio"] {
 .showMenuNoAnimation{
     display: flex;
 }
+
+
+
+
+
+
+
+
+
+
+input[type="radio"]:checked+label {
+    background-color: var(--background-color);
+}

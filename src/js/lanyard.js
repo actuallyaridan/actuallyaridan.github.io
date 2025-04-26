@@ -73,21 +73,28 @@ function sendMessage(message) {
 
 function updateLanyardData() {
   try {
-    const discordData = discordDataLatest || {};
-    const activities = discordData.activities || [];
-    const discordStatus = discordData.discord_status || "";
+      const discordData = discordDataLatest || {};
+      const activities = discordData.activities || [];
+      const discordStatus = discordData.discord_status || "";
 
-    updateStatusWrapper(discordStatus);
-    updateActivityInfo(activities, discordStatus);
+      updateStatusWrapper(discordStatus);
+      updateActivityInfo(activities, discordStatus);
 
-    toggleDisplay(elements.loadingDiv, false);
-    toggleDisplay(elements.contentDiv, true);
-    toggleDisplay(elements.errorMessage, false);
+      // Update progress bars for any music activities
+      const musicActivity = activities.find(activity => 
+          activity.name === "Apple Music" || activity.application_id === "773825528921849856"
+      );
+      if (musicActivity) {
+          updateProgressBar(musicActivity.timestamps);
+      }
+
+      toggleDisplay(elements.loadingDiv, false);
+      toggleDisplay(elements.contentDiv, true);
+      toggleDisplay(elements.errorMessage, false);
   } catch (error) {
-    handleError(error);
+      handleError(error);
   }
 }
-
 function updateStatusWrapper(status) {
   if (status === lastStatus) return;
   lastStatus = status;
@@ -146,7 +153,7 @@ function updateAppleMusicInfo(activity) {
   toggleDisplay(elements.amLanyardDiscord, true);
 
   if (activity.assets) {
-    updateImage(elements.amActivityLogoLarge, activity.assets.large_image, activity.application_id, activity.details);
+      updateImage(elements.amActivityLogoLarge, activity.assets.large_image, activity.application_id, activity.details);
   }
 
   updateElementText(elements.amActivityName, activity.name);
@@ -154,6 +161,32 @@ function updateAppleMusicInfo(activity) {
   updateElementText(elements.amActivityDetails, activity.details);
 
   updateActivityTime(activity.timestamps, "am");
+  updateProgressBar(activity.timestamps); // Add this line
+}
+
+// Add this new function to update the progress bar
+function updateProgressBar(timestamps) {
+  const progressBar = document.getElementById("amProgressBar");
+  if (!timestamps?.start || !timestamps?.end) {
+      progressBar.style.width = "0%";
+      return;
+  }
+
+  const now = Date.now();
+  const startTime = new Date(timestamps.start).getTime();
+  const endTime = new Date(timestamps.end).getTime();
+
+  // Ensure we're within the track's duration
+  if (now < startTime) {
+      progressBar.style.width = "0%";
+  } else if (now > endTime) {
+      progressBar.style.width = "100%";
+  } else {
+      const duration = endTime - startTime;
+      const elapsed = now - startTime;
+      const percentage = (elapsed / duration) * 100;
+      progressBar.style.width = `${percentage}%`;
+  }
 }
 
 function updateActivityTime(timestamps, prefix = "") {

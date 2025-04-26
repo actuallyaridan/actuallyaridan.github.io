@@ -490,3 +490,13 @@ div.iconContainer{
     width: unset;
     min-height: unset !important;
 }
+
+
+
+.progress-bar {
+    height: 100%;
+    background-color: var(--accent-color); /* Apple Music green */
+    border-radius: 2px;
+    width: 0%;
+    transition: width 0.2s linear;
+}

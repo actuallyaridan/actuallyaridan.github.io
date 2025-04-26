@@ -1,86 +1,132 @@
+/* Base variables - default to LIGHT theme (changed from dark) */
 :root {
+    /* Text colors */
+    --text-color: #000000;
+    --header-text-color: rgba(0, 0, 0, 0.575);
+    --header-text-color-hover: rgba(0, 0, 0, 0.758);
+    --paragraph-color: #4a4a4a;
+    --title-color: #000000;
+    --invert-title-color: #ffffff;
+    --subtitle-color: #333333;
+    --secondary-title-color: #555555;
+    --footer-text-color: rgba(0, 0, 0, 0.575);
+    
+    /* Background colors */
+    --background-color: #f1f1f1;
+    --header-background-color: #e1e1e188;
+    --button-background-color: rgba(200, 200, 200, 0.30);
+    --button-hover-background-color: #dddddd;
+    --danger-zone-background-color: rgba(220, 60, 60, 0.30);
+    --danger-zone-hover-background-color: rgba(180, 40, 40, 0.60);
+    --modal-background-color: rgb(240, 240, 240);
+    --icon-background-color: rgba(200, 200, 200, 0.30);
+    --card-background-color: var(--icon-background-color);
+    
+    /* Other colors */
+    --border-color: #cccccc;
+}
+
+/* Dark theme class */
+.theme-dark {
+    /* Text colors */
     --text-color: #ffffff;
-    --background-color: #121212;
-    --header-background-color: #0c0c0c88;
-    --accent-color: #007aff;
-    --accent-color-to-active: #007bff9c;
-    --accent-color-hover: #005bb5;
     --header-text-color: rgba(255, 255, 255, 0.575);
     --header-text-color-hover: rgba(255, 255, 255, 0.758);
     --paragraph-color: #b4b4b4;
-    --border-color: #333333;
     --title-color: #ffffff;
+    --invert-title-color: #000;
     --subtitle-color: #eeeeee;
     --secondary-title-color: #cacaca;
     --footer-text-color: rgba(255, 255, 255, 0.575);
+    
+    /* Background colors */
+    --background-color: #121212;
+    --header-background-color: #0c0c0c88;
     --button-background-color: rgba(60, 60, 60, 0.30);
     --button-hover-background-color: #333333;
-    --danger-zone-background-color: rgba(220, 60, 60, 0.30);
-    --danger-zone-hover-background-color: rgba(180, 40, 40, 0.60);
     --modal-background-color: rgb(26, 26, 26);
-    --twitter-background-color: #1da1f2;
     --icon-background-color: rgba(60, 60, 60, 0.30);
-    --icon-color: #005bb5;
     --card-background-color: var(--icon-background-color);
+    
+    /* Border */
+    --border-color: #333333;
 }
 
-/* General Reset */
-@font-face {
-    font-family: Jost;
-    src: url(/src/fonts/Jost.ttf);
+/* Auto theme - uses media query for dark mode */
+.theme-auto {
+    /* Uses light theme by default (base variables) */
 }
 
-/* Light theme variables*/
-
-@media (prefers-color-scheme: light) {
-    :root {
-        --text-color: #000000;
-        --background-color: #f1f1f1;
-        --header-background-color: #e1e1e188;
-        --accent-color: #007aff;
-        --accent-color-to-active: #007bff9c;
-        --accent-color-hover: #005bb5;
-        --header-text-color: rgba(0, 0, 0, 0.575);
-        --header-text-color-hover: rgba(0, 0, 0, 0.758);
-        --paragraph-color: #4a4a4a;
-        --border-color: #cccccc;
-        --title-color: #000000;
-        --invert-title-color: #ffffff;
-        --subtitle-color: #333333;
-        --secondary-title-color: #555555;
-        --footer-text-color: rgba(0, 0, 0, 0.575);
-        --button-background-color: rgba(200, 200, 200, 0.30);
-        --button-hover-background-color: #dddddd;
-        --danger-zone-background-color: rgba(220, 60, 60, 0.30);
-        --danger-zone-hover-background-color: rgba(180, 40, 40, 0.60);
-        --modal-background-color: rgb(240, 240, 240);
-        --twitter-background-color: #1da1f2;
-        --icon-background-color: rgba(200, 200, 200, 0.30);
-        --icon-color: #007aff;
-        --card-background-color: var(--icon-background-color);
-    }
-}
-/* Fallback for prefers-color-scheme: dark */
 @media (prefers-color-scheme: dark) {
-    :root {
+    .theme-auto {
+        /* Text colors */
         --text-color: #ffffff;
-        --background-color: #121212;
-        --header-background-color: #0c0c0c88;
-        --accent-color: #007aff;
-        --accent-color-to-active: #007bff9c;
-        --accent-color-hover: #005bb5;
         --header-text-color: rgba(255, 255, 255, 0.575);
         --header-text-color-hover: rgba(255, 255, 255, 0.758);
         --paragraph-color: #b4b4b4;
-        --border-color: #333333;
         --title-color: #ffffff;
         --invert-title-color: #000;
         --subtitle-color: #eeeeee;
         --secondary-title-color: #cacaca;
         --footer-text-color: rgba(255, 255, 255, 0.575);
+        
+        /* Background colors */
+        --background-color: #121212;
+        --header-background-color: #0c0c0c88;
+        --button-background-color: rgba(60, 60, 60, 0.30);
+        --button-hover-background-color: #333333;
+        --modal-background-color: rgb(26, 26, 26);
         --icon-background-color: rgba(60, 60, 60, 0.30);
         --card-background-color: var(--icon-background-color);
+        
+        /* Border */
+        --border-color: #333333;
     }
+}
+
+
+.color-blue {
+    --accent-color: #007aff;
+    --accent-color-to-active: #007bff9c;
+    --accent-color-hover: #005bb5;
+    --icon-color: #005bb5;
+}
+
+
+.color-red {
+    --accent-color: #ff3b30;
+    --accent-color-to-active: #ff3b309c;
+    --accent-color-hover: #cc3026;
+    --icon-color: #cc3026;
+}
+
+.color-green {
+    --accent-color: #4cd964;
+    --accent-color-to-active: #4cd9649c;
+    --accent-color-hover: #3dae50;
+    --icon-color: #3dae50;
+}
+
+
+
+.color-purple {
+    --accent-color: #5856d6;
+    --accent-color-to-active: #5856d69c;
+    --accent-color-hover: #4645ab;
+    --icon-color: #4645ab;
+}
+
+.color-monochrome {
+    --accent-color: #666666;
+    --accent-color-to-active: #6666669c;
+    --accent-color-hover: #4d4d4d;
+    --icon-color: #4d4d4d;
+}
+
+/* Rest of your CSS remains the same */
+@font-face {
+    font-family: Jost;
+    src: url(/src/fonts/Jost.ttf);
 }
 
 body,
