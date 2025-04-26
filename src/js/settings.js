@@ -1,9 +1,9 @@
-// Immediately set theme based on localStorage before page renders
+
 (function() {
     const savedTheme = localStorage.getItem('theme');
     const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     
-    // Clear existing classes first
+
     document.documentElement.className = '';
     
     if (savedTheme === 'dark' || (!savedTheme && systemDark)) {
@@ -19,7 +19,7 @@ function initThemeSettings() {
     const colorOptions = document.querySelectorAll('input[name="accent-color"]');
     const resetButton = document.querySelector('.dangerZone');
     
-    // Check if elements exist (Safari sometimes has timing issues)
+
     if (!settingsDialog || themeOptions.length === 0 || colorOptions.length === 0 || !resetButton) {
         setTimeout(initThemeSettings, 100);
         return;
@@ -42,13 +42,13 @@ function initThemeSettings() {
     resetButton.addEventListener('click', resetSettings);
     
     function initializeSettings() {
-        // Theme initialization
+
         const savedTheme = localStorage.getItem('theme') || 'auto';
         const themeRadio = document.querySelector(`input[name="theme-color"][value="${savedTheme}"]`);
         if (themeRadio) themeRadio.checked = true;
         applyTheme(savedTheme);
         
-        // Color initialization
+
         const savedColor = localStorage.getItem('accentColor') || 'blue';
         const colorRadio = document.querySelector(`input[name="accent-color"][value="${savedColor}"]`);
         if (colorRadio) colorRadio.checked = true;
@@ -70,7 +70,7 @@ function initThemeSettings() {
         
         document.documentElement.classList.add(`theme-${themeValue}`);
         
-        // Re-apply current color
+
         const currentColor = localStorage.getItem('accentColor') || 'blue';
         document.documentElement.classList.add(`color-${currentColor}`);
     }
@@ -101,7 +101,6 @@ function initThemeSettings() {
     }
 }
 
-// Use both DOMContentLoaded and readystatechange for Safari compatibility
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initThemeSettings);
 } else {

@@ -1,6 +1,5 @@
-/* Base variables - default to LIGHT theme (changed from dark) */
+
 :root {
-    /* Text colors */
     --text-color: #000000;
     --header-text-color: rgba(0, 0, 0, 0.575);
     --header-text-color-hover: rgba(0, 0, 0, 0.758);
@@ -11,7 +10,6 @@
     --secondary-title-color: #555555;
     --footer-text-color: rgba(0, 0, 0, 0.575);
     
-    /* Background colors */
     --background-color: #f1f1f1;
     --header-background-color: #e1e1e188;
     --button-background-color: rgba(200, 200, 200, 0.30);
@@ -21,8 +19,7 @@
     --modal-background-color: rgb(240, 240, 240);
     --icon-background-color: rgba(200, 200, 200, 0.30);
     --card-background-color: var(--icon-background-color);
-    
-    /* Other colors */
+
     --border-color: #cccccc;
 }
 
@@ -39,7 +36,7 @@
     --secondary-title-color: #cacaca;
     --footer-text-color: rgba(255, 255, 255, 0.575);
     
-    /* Background colors */
+
     --background-color: #121212;
     --header-background-color: #0c0c0c88;
     --button-background-color: rgba(60, 60, 60, 0.30);
@@ -48,18 +45,13 @@
     --icon-background-color: rgba(60, 60, 60, 0.30);
     --card-background-color: var(--icon-background-color);
     
-    /* Border */
+
     --border-color: #333333;
 }
 
-/* Auto theme - uses media query for dark mode */
-.theme-auto {
-    /* Uses light theme by default (base variables) */
-}
 
 @media (prefers-color-scheme: dark) {
     .theme-auto {
-        /* Text colors */
         --text-color: #ffffff;
         --header-text-color: rgba(255, 255, 255, 0.575);
         --header-text-color-hover: rgba(255, 255, 255, 0.758);
@@ -70,7 +62,6 @@
         --secondary-title-color: #cacaca;
         --footer-text-color: rgba(255, 255, 255, 0.575);
         
-        /* Background colors */
         --background-color: #121212;
         --header-background-color: #0c0c0c88;
         --button-background-color: rgba(60, 60, 60, 0.30);
@@ -79,7 +70,6 @@
         --icon-background-color: rgba(60, 60, 60, 0.30);
         --card-background-color: var(--icon-background-color);
         
-        /* Border */
         --border-color: #333333;
     }
 }
@@ -123,7 +113,6 @@
     --icon-color: #4d4d4d;
 }
 
-/* Rest of your CSS remains the same */
 @font-face {
     font-family: Jost;
     src: url(/src/fonts/Jost.ttf);
@@ -138,7 +127,7 @@ body,
     font-family: "Jost", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
-/* Body */
+
 body {
     background-color: var(--background-color);
     color: var(--text-color);
@@ -149,7 +138,7 @@ body {
     overflow-y: scroll;
 }
 
-/* Header */
+
 header {
     position: sticky;
     flex-direction: column;
