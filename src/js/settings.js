@@ -1,22 +1,29 @@
 // Immediately set theme based on localStorage before page renders
 (function() {
     const savedTheme = localStorage.getItem('theme');
-    const savedColor = localStorage.getItem('accentColor') || 'blue'; // Get saved color or default
     const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     
+    // Clear existing classes first
+    document.documentElement.className = '';
+    
     if (savedTheme === 'dark' || (!savedTheme && systemDark)) {
-        document.documentElement.classList.add('theme-dark', `color-${savedColor}`);
+        document.documentElement.classList.add('theme-dark', 'color-blue');
     } else {
-        document.documentElement.classList.add('theme-light', `color-${savedColor}`);
+        document.documentElement.classList.add('theme-light', 'color-blue');
     }
 })();
 
-
-document.addEventListener('DOMContentLoaded', function() {
+function initThemeSettings() {
     const settingsDialog = document.getElementById('settingsDialog');
     const themeOptions = document.querySelectorAll('input[name="theme-color"]');
     const colorOptions = document.querySelectorAll('input[name="accent-color"]');
     const resetButton = document.querySelector('.dangerZone');
+    
+    // Check if elements exist (Safari sometimes has timing issues)
+    if (!settingsDialog || themeOptions.length === 0 || colorOptions.length === 0 || !resetButton) {
+        setTimeout(initThemeSettings, 100);
+        return;
+    }
     
     initializeSettings();
     
@@ -37,13 +44,15 @@ document.addEventListener('DOMContentLoaded', function() {
     function initializeSettings() {
         // Theme initialization
         const savedTheme = localStorage.getItem('theme') || 'auto';
-        document.querySelector(`input[name="theme-color"][value="${savedTheme}"]`).checked = true;
+        const themeRadio = document.querySelector(`input[name="theme-color"][value="${savedTheme}"]`);
+        if (themeRadio) themeRadio.checked = true;
         applyTheme(savedTheme);
         
         // Color initialization
         const savedColor = localStorage.getItem('accentColor') || 'blue';
-        document.querySelector(`input[name="accent-color"][value="${savedColor}"]`).checked = true;
-        // Don't need to apply color here as it's already set in the IIFE
+        const colorRadio = document.querySelector(`input[name="accent-color"][value="${savedColor}"]`);
+        if (colorRadio) colorRadio.checked = true;
+        applyAccentColor(savedColor);
     }
     
     function handleThemeChange(themeValue) {
@@ -52,15 +61,18 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     function applyTheme(themeValue) {
-        const currentColor = localStorage.getItem('accentColor') || 'blue';
-        document.documentElement.className = ''; // Clear all classes
+        document.documentElement.className = '';
         
         if (themeValue === 'auto') {
             const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-            document.documentElement.classList.add(systemDark ? 'theme-dark' : 'theme-light', `color-${currentColor}`);
-        } else {
-            document.documentElement.classList.add(`theme-${themeValue}`, `color-${currentColor}`);
+            themeValue = systemDark ? 'dark' : 'light';
         }
+        
+        document.documentElement.classList.add(`theme-${themeValue}`);
+        
+        // Re-apply current color
+        const currentColor = localStorage.getItem('accentColor') || 'blue';
+        document.documentElement.classList.add(`color-${currentColor}`);
     }
     
     function handleColorChange(colorValue) {
@@ -69,9 +81,8 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     function applyAccentColor(colorValue) {
-        // Replace any existing color class with the new one
-        document.documentElement.className = document.documentElement.className
-            .replace(/\bcolor-\w+/g, '') + ` color-${colorValue}`;
+        const classes = document.documentElement.className.split(' ').filter(cls => !cls.startsWith('color-'));
+        document.documentElement.className = classes.join(' ') + ` color-${colorValue}`;
     }
     
     function resetSettings() {
@@ -79,16 +90,32 @@ document.addEventListener('DOMContentLoaded', function() {
             localStorage.removeItem('theme');
             localStorage.removeItem('accentColor');
             
-            document.querySelector('input[name="theme-color"][value="auto"]').checked = true;
-            document.querySelector('input[name="accent-color"][value="blue"]').checked = true;
+            const autoTheme = document.querySelector('input[name="theme-color"][value="auto"]');
+            const blueColor = document.querySelector('input[name="accent-color"][value="blue"]');
+            if (autoTheme) autoTheme.checked = true;
+            if (blueColor) blueColor.checked = true;
             
             applyTheme('auto');
             applyAccentColor('blue');
         }
     }
+}
+
+// Use both DOMContentLoaded and readystatechange for Safari compatibility
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initThemeSettings);
+} else {
+    setTimeout(initThemeSettings, 0);
+}
+
+document.addEventListener('readystatechange', function() {
+    if (document.readyState === 'complete') {
+        setTimeout(initThemeSettings, 0);
+    }
 });
 
 function toggleSettings() {
     const dialog = document.getElementById('settingsDialog');
+    if (!dialog) return;
     dialog.open ? dialog.close() : dialog.showModal();
 }
