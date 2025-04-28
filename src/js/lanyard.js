@@ -25,8 +25,21 @@ const elements = {
   amElapsed: document.getElementById("amElapsed"),
 };
 
+["amLanyardDiscord", "discordActivity"].forEach((id) =>
+  document.getElementById(id)?.classList.add("activity")
+);
+
+function toggleLoading(isLoading) {
+  document.querySelectorAll(".activity").forEach((el) => {
+    el.classList.toggle("loadingUpdating", isLoading);
+    el.querySelector(".smallLoader")?.classList.toggle("showSmallLoader", isLoading);
+  });
+}
+
 function connectWebSocket() {
-  console.log('[Lanyard] Preparing connection to Lanyard WebSocket at wss://api.lanyard.rest/socket...');
+  console.log(
+    "[Lanyard] Preparing connection to Lanyard WebSocket at wss://api.lanyard.rest/socket..."
+  );
   webSocket = new WebSocket("wss://api.lanyard.rest/socket");
 
   webSocket.onopen = () => {
@@ -38,10 +51,17 @@ function connectWebSocket() {
     const data = JSON.parse(event.data);
 
     if (data.op === 1) {
-      console.log("%c[Lanyard] Successfully subscribed to user ID " + userID, "color:green;");
+      console.log(
+        `%c[Lanyard] Successfully subscribed to user ID ${userID}`,
+        "color:green;"
+      );
       if (heartbeatInterval) clearInterval(heartbeatInterval);
-      heartbeatInterval = setInterval(() => sendMessage({ op: 3 }), data.d.heartbeat_interval);
+      heartbeatInterval = setInterval(
+        () => sendMessage({ op: 3 }),
+        data.d.heartbeat_interval
+      );
     } else if (data.op === 0) {
+      toggleLoading(true);
       discordDataLatest = data.d;
     }
   };
@@ -73,35 +93,41 @@ function sendMessage(message) {
 
 function updateLanyardData() {
   try {
-      const discordData = discordDataLatest || {};
-      const activities = discordData.activities || [];
-      const discordStatus = discordData.discord_status || "";
+    const discordData = discordDataLatest || {};
+    const activities = discordData.activities || [];
+    const discordStatus = discordData.discord_status || "";
 
-      updateStatusWrapper(discordStatus);
-      updateActivityInfo(activities, discordStatus);
+    updateStatusWrapper(discordStatus);
+    updateActivityInfo(activities, discordStatus);
 
-      // Update progress bars for any music activities
-      const musicActivity = activities.find(activity => 
-          activity.name === "Apple Music" || activity.application_id === "773825528921849856"
-      );
-      if (musicActivity) {
-          updateProgressBar(musicActivity.timestamps);
-      }
+    const musicActivity = activities.find(
+      (activity) =>
+        activity.name === "Apple Music" ||
+        activity.application_id === "773825528921849856"
+    );
+    if (musicActivity) updateProgressBar(musicActivity.timestamps);
 
-      toggleDisplay(elements.loadingDiv, false);
-      toggleDisplay(elements.contentDiv, true);
-      toggleDisplay(elements.errorMessage, false);
+    toggleDisplay(elements.loadingDiv, false);
+    toggleDisplay(elements.contentDiv, true);
+    toggleDisplay(elements.errorMessage, false);
   } catch (error) {
-      handleError(error);
+    handleError(error);
+  } finally {
+    toggleLoading(false);
   }
 }
+
 function updateStatusWrapper(status) {
   if (status === lastStatus) return;
   lastStatus = status;
 
-  document.querySelectorAll(".statusWrapper").forEach(el => el.classList.add("hide"));
+  document
+    .querySelectorAll(".statusWrapper")
+    .forEach((el) => el.classList.add("hide"));
 
-  const statusElement = document.getElementById(`statusWrapper${capitalizeFirstLetter(status)}`);
+  const statusElement = document.getElementById(
+    `statusWrapper${capitalizeFirstLetter(status)}`
+  );
   statusElement?.classList.remove("hide");
 }
 
@@ -109,41 +135,62 @@ function updateActivityInfo(activities, status) {
   toggleDisplay(elements.lanyardDiscord, status === "online");
 
   let appleMusicActivity = null;
-  const otherActivities = activities.filter(activity => {
-    if (activity.name === "Apple Music" || activity.application_id === "773825528921849856") {
+  const otherActivities = activities.filter((activity) => {
+    if (
+      activity.name === "Apple Music" ||
+      activity.application_id === "773825528921849856"
+    ) {
       appleMusicActivity = activity;
       return false;
     }
     return true;
   });
 
-  appleMusicActivity ? updateAppleMusicInfo(appleMusicActivity) : toggleDisplay(elements.amLanyardDiscord, false);
-  toggleDisplay(document.getElementById("discordActivity"), otherActivities.length > 0);
+  appleMusicActivity
+    ? updateAppleMusicInfo(appleMusicActivity)
+    : toggleDisplay(elements.amLanyardDiscord, false);
+
+  toggleDisplay(
+    document.getElementById("discordActivity"),
+    otherActivities.length > 0
+  );
 
   updateActivityImages(otherActivities);
   updateActivityDetails(otherActivities);
 }
 
 function updateActivityImages(activities) {
-  const hasImage = activities.some(activity => activity.assets?.large_image);
+  const hasImage = activities.some((activity) => activity.assets?.large_image);
   toggleDisplay(elements.activityLogoLarge, hasImage);
 
-  activities.forEach(activity => {
+  activities.forEach((activity) => {
     if (activity.assets?.large_image) {
-      updateImage(elements.activityLogoLarge, activity.assets.large_image, activity.application_id, activity.details);
+      updateImage(
+        elements.activityLogoLarge,
+        activity.assets.large_image,
+        activity.application_id,
+        activity.details
+      );
     }
   });
 }
 
 function updateActivityDetails(activities) {
   if (!activities.length) {
-    [elements.activityName, elements.activityDetails, elements.activityState].forEach(el => toggleDisplay(el, false));
+    [
+      elements.activityName,
+      elements.activityDetails,
+      elements.activityState,
+    ].forEach((el) => toggleDisplay(el, false));
     return;
   }
 
   const activity = activities[0];
   updateElementText(elements.activityName, activity.name);
-  updateElementText(elements.activityDetails, activity.details || "No details available");
+  updateElementText(
+    elements.activityDetails,
+    activity.details || "No details available"
+  );
   updateElementText(elements.activityState, activity.state || "");
 
   updateActivityTime(activity.timestamps);
@@ -153,53 +200,61 @@ function updateAppleMusicInfo(activity) {
   toggleDisplay(elements.amLanyardDiscord, true);
 
   if (activity.assets) {
-      updateImage(elements.amActivityLogoLarge, activity.assets.large_image, activity.application_id, activity.details);
+    updateImage(
+      elements.amActivityLogoLarge,
+      activity.assets.large_image,
+      activity.application_id,
+      activity.details
+    );
   }
 
   updateElementText(elements.amActivityName, activity.name);
-  updateElementText(elements.amActivityState, formatActivityState(activity.state));
+  updateElementText(
+    elements.amActivityState,
+    formatActivityState(activity.state)
+  );
   updateElementText(elements.amActivityDetails, activity.details);
 
   updateActivityTime(activity.timestamps, "am");
-  updateProgressBar(activity.timestamps); // Add this line
+  updateProgressBar(activity.timestamps);
 }
 
-// Add this new function to update the progress bar
 function updateProgressBar(timestamps) {
   const progressBar = document.getElementById("amProgressBar");
+  if (!progressBar) return;
+
   if (!timestamps?.start || !timestamps?.end) {
-      progressBar.style.width = "0%";
-      return;
+    progressBar.style.width = "0%";
+    return;
   }
 
   const now = Date.now();
   const startTime = new Date(timestamps.start).getTime();
   const endTime = new Date(timestamps.end).getTime();
 
-  // Ensure we're within the track's duration
   if (now < startTime) {
-      progressBar.style.width = "0%";
+    progressBar.style.width = "0%";
   } else if (now > endTime) {
-      progressBar.style.width = "100%";
+    progressBar.style.width = "100%";
   } else {
-      const duration = endTime - startTime;
-      const elapsed = now - startTime;
-      const percentage = (elapsed / duration) * 100;
-      progressBar.style.width = `${percentage}%`;
+    const duration = endTime - startTime;
+    const elapsed = now - startTime;
+    const percentage = (elapsed / duration) * 100;
+    progressBar.style.width = `${percentage}%`;
   }
 }
 
 function updateActivityTime(timestamps, prefix = "") {
   const now = new Date();
-  const timeElem = document.getElementById(prefix + "ActivityTime");
-  const remainingElem = document.getElementById(prefix + "Remaining");
-  const elapsedElem = document.getElementById(prefix + "Elapsed");
+  const timeElem = document.getElementById(`${prefix}ActivityTime`);
+  const remainingElem = document.getElementById(`${prefix}Remaining`);
+  const elapsedElem = document.getElementById(`${prefix}Elapsed`);
 
-  let timeData = timestamps?.end
+  const timeData = timestamps?.end
     ? calculateTimeDifference(new Date(timestamps.end), now)
     : timestamps?.start
-    ? calculateTimeDifference(now, new Date(timestamps.start))
-    : null;
+      ? calculateTimeDifference(now, new Date(timestamps.start))
+      : null;
 
   updateElementText(timeElem, timeData ? formatTime(timeData) : "-:-");
   toggleTimeDisplay(remainingElem, elapsedElem, !!timestamps?.end);
@@ -210,7 +265,7 @@ function calculateTimeDifference(end, start) {
   return {
     hours: Math.floor(seconds / 3600),
     minutes: Math.floor((seconds % 3600) / 60),
-    seconds: seconds % 60
+    seconds: seconds % 60,
   };
 }
 
@@ -221,7 +276,10 @@ function formatTime({ hours, minutes, seconds }) {
 }
 
 function updateImage(element, image, appId, details = "") {
-  if (!image) return (element.style.display = "none");
+  if (!image) {
+    element.style.display = "none";
+    return;
+  }
   element.src = getImageUrl(image, appId);
   element.alt = `Image for ${details || image}`;
   element.title = details || image;
@@ -234,8 +292,8 @@ function updateElementText(element, text) {
 }
 
 function toggleTimeDisplay(remainingElem, elapsedElem, isRemaining) {
-  remainingElem.classList.toggle("hide", !isRemaining);
-  elapsedElem.classList.toggle("hide", isRemaining);
+  if (remainingElem) remainingElem.classList.toggle("hide", !isRemaining);
+  if (elapsedElem) elapsedElem.classList.toggle("hide", isRemaining);
 }
 
 function getImageUrl(image, appId) {
@@ -263,13 +321,14 @@ function formatActivityState(state) {
 
 function handleError(error) {
   console.error("Error:", error);
-  elements.errorMessage.textContent = `An error occurred: ${error.message || error}`;
+  elements.errorMessage.textContent = `An error occurred: ${error.message || error
+    }`;
   toggleDisplay(elements.spinner, false);
   toggleDisplay(elements.contentDiv, false);
   toggleDisplay(elements.errorMessage, true);
 }
 
-if (document.querySelector('.discordWrapper')) {
+if (document.querySelector(".discordWrapper")) {
   connectWebSocket();
   setInterval(updateLanyardData, 1000);
 }
