@@ -193,8 +193,8 @@ header>div {
     width: 80vw;
     height: 4em;
     background-color: var(--header-background-color);
-    backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
     margin: auto;
     margin-top: 12px;
     padding: 12px;
@@ -471,8 +471,8 @@ hr {
     padding: 0 !important;
     padding-inline-start: 0 !important;
     background-color: var(--header-background-color);
-    backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
     width: 90vw;
     position: absolute;
     top: 5.5em;
@@ -667,7 +667,7 @@ li>a>i, li>button.noUI>i {
     background-color: rgba(0, 0, 0, 0.3);
     background-color: var(--button-background-color);
     border: 2px solid var(--button-background-color);
-    --webkit-backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     border-radius: 12px;
 }
@@ -727,8 +727,8 @@ li>a>i, li>button.noUI>i {
     overflow: hidden;
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    line-clamp: 2;
     -webkit-line-clamp: 2; /* Limits to 2 lines */
+    line-clamp: 2;
     word-break: break-word; /* Ensures long words break properly */
 }
 
@@ -736,8 +736,8 @@ li>a>i, li>button.noUI>i {
     overflow: hidden;
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    line-clamp: 3;
     -webkit-line-clamp: 3; /* Limits to 2 lines */
+    line-clamp: 3;
     word-break: break-word; /* Ensures long words break properly */
 }
 
