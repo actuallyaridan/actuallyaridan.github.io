@@ -331,6 +331,7 @@ div#loading>div {
 #amActivityState {
     color: var(--paragraph-color);
     margin-top: 12px;
+    margin-right: 6px;
 }
 
 #activityName,

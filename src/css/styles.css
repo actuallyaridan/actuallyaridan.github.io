@@ -705,6 +705,7 @@ li>a>i, li>button.noUI>i {
 
 .articlePreview>.preview {
     flex: 3;
+    width: 100%;
 }
 
 .preview>span {
