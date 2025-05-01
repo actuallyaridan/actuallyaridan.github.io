@@ -1,165 +1,149 @@
-async function fetchFullArticle() {
-    const loadingSpinner = document.getElementById('loading');
-    const articleContainer = document.querySelector('main.container');
-    
-    try {
-        // Show loading spinner before starting the fetch
-        loadingSpinner.style.display = 'block';
+// displayArticle.js
 
-        // Get article name from URL
-        const urlParams = new URLSearchParams(window.location.search);
-        const articleName = urlParams.get('article');
-        console.log('Loading article:', articleName);
-        
-        if (!articleName) {
-            throw new Error('No article provided. Please specify an article name in the URL query string.');
-        }
-
-        // Fetch the markdown file
-        const response = await fetch(`/assets/content/articles/${articleName}.md`);
-        if (!response.ok) {
-            throw new Error('No article with that name was found. Check the URL and try again.');
-        }
-        const markdown = await response.text();
-        console.log('Raw markdown:', markdown);
-
-        // Parse the markdown
-        const { metadata, content } = parseMarkdown(markdown);
-        console.log('Parsed metadata:', metadata);
-        console.log('Parsed content:', content);
-
-        // Generate article HTML content
-        const articleHTML = `
-            <article class="full-article">
-                <div id="info">
-                    <p class="icon"><i class="fa-solid fa-newspaper icon-background"></i></p>
-                    <div>
-                        <h1 class="name">${metadata.title}</h1>
-                        <p class="description titleColor">${metadata.date}</p>
-                                            <a href="/articles/" title="Back to articles" class="button backButton">
-                        <i class="fa-solid fa-arrow-left"></i>
-                    </a>
-                    </div>
-                </div>
-                <hr>
-                <div>
-                    <h1 class="article-title"></h1>
-                    <p></p>
-                    <div class="article-meta">
-                        <div class="categories">
-                            ${Array.isArray(metadata.categories) ? 
-                                metadata.categories.map(cat => 
-                                    `<span class="${cat.color}">${cat.name}</span>`
-                                ).join('') : ''}
-                        </div>
-                    </div>
-                </div>
-                <div class="article-content">
-                    ${marked.parse(content)}
-                </div>
-            </article>
-        `;
-        
-        articleContainer.innerHTML = articleHTML;
-        
-    } catch (error) {
-        console.error('Error loading article:', error);
-        articleContainer.innerHTML = `
-        <div id="info">
-            <p class="icon"><i class="fa-solid fa-xmark icon-background"></i></p>
-            <div>
-                <h1 class="name">Can't display article</h1>
-                <p class="description titleColor">${error.message}</p>
-                <a href="/articles/" class="button">Back to Articles</a>
-            </div>
-        </div>
-        `;
-    } finally {
-        // Hide loading spinner after processing is complete
-        loadingSpinner.style.display = 'none';
-    }
-}
-
-// Updated markdown parser that's more flexible
-function parseMarkdown(markdown) {
-    // Normalize line endings and trim
-    markdown = markdown.replace(/\r\n/g, '\n').trim();
-    
-    // Check for front matter (between --- or --- lines)
-    const frontMatterRegex = /^---\n([\s\S]+?)\n---\n([\s\S]*)$/;
-    const match = markdown.match(frontMatterRegex);
-    
-    if (!match) {
-        // If no front matter, treat entire document as content
-        return {
-            metadata: {
-                title: 'Untitled Article',
-                date: new Date().toLocaleDateString(),
-                categories: []  // Ensure categories is an empty array by default
-            },
-            content: markdown
-        };
-    }
-    
-    const frontMatter = match[1];
-    const content = match[2].trim();
-    
-    // Parse YAML front matter
-    const metadata = parseFrontMatter(frontMatter);
-    
-    return { metadata, content };
-}
-
-// Helper function to parse front matter
+// ———— 1. Front Matter Parser ————
 function parseFrontMatter(frontMatter) {
-    const metadata = { categories: [] };  // Ensure categories is initialized as an array
-    const lines = frontMatter.split('\n');
-    
-    let currentKey = null;
-    let currentValue = [];
-    
+    const metadata   = { categories: [] };
+    const lines      = frontMatter.split('\n');
+    let   currentKey = null;
+    let   currentVal = [];
+  
     for (const line of lines) {
-        if (line.includes(':')) {
-            // If we were building a multi-line value, save it first
-            if (currentKey && currentValue.length > 0) {
-                metadata[currentKey] = currentValue.join('\n').trim();
-                currentValue = [];
-            }
-            
-            // Start new key-value pair
-            const [key, ...valueParts] = line.split(':');
-            currentKey = key.trim();
-            const value = valueParts.join(':').trim();
-            
-            // Remove surrounding quotes if present
-            metadata[currentKey] = value.replace(/^['"](.*)['"]$/, '$1');
-        } else if (currentKey && line.trim().startsWith('-')) {
-            // Handle array items (like categories)
-            if (!metadata[currentKey]) metadata[currentKey] = [];
-            metadata[currentKey].push(line.trim().substring(1).trim());
-        } else if (currentKey) {
-            // Continuation of multi-line value
-            currentValue.push(line);
+      if (line.includes(':')) {
+        // flush previous multi‐line value
+        if (currentKey && currentVal.length) {
+          metadata[currentKey] = currentVal.join('\n').trim();
+          currentVal = [];
         }
+        const [key, ...rest] = line.split(':');
+        currentKey = key.trim();
+        let value = rest.join(':').trim();
+        // strip quotes
+        value = value.replace(/^['"](.*)['"]$/, '$1');
+        metadata[currentKey] = value;
+      }
+      else if (currentKey && line.trim().startsWith('-')) {
+        // array item
+        metadata[currentKey] = metadata[currentKey] || [];
+        metadata[currentKey].push(line.replace(/^\s*-\s*/, '').trim());
+      }
+      else if (currentKey) {
+        // continuation of multi‐line
+        currentVal.push(line);
+      }
     }
-    
-    // Ensure categories is always an array
-    if (metadata.categories && !Array.isArray(metadata.categories)) {
-        metadata.categories = [];
+  
+    // flush last
+    if (currentKey && currentVal.length) {
+      metadata[currentKey] = currentVal.join('\n').trim();
     }
-
-    // Process categories into objects if they are strings
-    if (metadata.categories && Array.isArray(metadata.categories)) {
-        metadata.categories = metadata.categories.map(cat => {
-            const catMatch = cat.match(/name: "(.*?)"\s+color: "(.*?)"/);
-            return catMatch ? {
-                name: catMatch[1],
-                color: catMatch[2]
-            } : { name: cat, color: 'default' };
-        });
+  
+    // ensure categories is always an array of objects
+    if (Array.isArray(metadata.categories)) {
+      metadata.categories = metadata.categories.map(catLine => {
+        // expect: name: "Foo" color: "bar"
+        const m = catLine.match(/name:\s*"(.*?)"\s+color:\s*"(.*?)"/);
+        if (m) return { name: m[1], color: m[2] };
+        return { name: catLine, color: 'default' };
+      });
+    } else {
+      metadata.categories = [];
     }
-    
+  
     return metadata;
-}
-
-document.addEventListener("DOMContentLoaded", fetchFullArticle);
+  }
+  
+  // ———— 2. Markdown Parser ————
+  function parseMarkdown(markdown) {
+    // normalize newlines
+    markdown = markdown.replace(/\r\n/g, '\n').trim();
+  
+    // front matter regex
+    const fm = /^---\n([\s\S]+?)\n---\n([\s\S]*)$/;
+    const m  = markdown.match(fm);
+    if (!m) {
+      return {
+        metadata: {
+          title:      'Untitled Article',
+          date:       new Date().toLocaleDateString(),
+          categories: []
+        },
+        content: markdown
+      };
+    }
+  
+    const frontMatter = m[1];
+    const content     = m[2].trim();
+    const metadata    = parseFrontMatter(frontMatter);
+  
+    return { metadata, content };
+  }
+  
+  // (Optional) expose for debugging in console
+  // window.parseMarkdown = parseMarkdown;
+  
+  
+  // ———— 3. Fetch, Render & Highlight ————
+  async function fetchFullArticle() {
+    const loadingSpinner   = document.getElementById('loading');
+    const articleContainer = document.querySelector('main.container');
+  
+    try {
+      // show spinner
+      loadingSpinner.style.display = 'block';
+  
+      // get ?article=foo
+      const params      = new URLSearchParams(window.location.search);
+      const articleName = params.get('article');
+      if (!articleName) throw new Error('No article specified in URL.');
+  
+      // fetch markdown
+      const res = await fetch(`/assets/content/articles/${articleName}.md`);
+      if (!res.ok) throw new Error('Article not found.');
+  
+      const md = await res.text();
+      const { metadata, content } = parseMarkdown(md);
+  
+      // build HTML
+      const articleHTML = `
+        <article class="full-article">
+          <div id="info">
+            <p class="icon"><i class="fa-solid fa-newspaper icon-background"></i></p>
+            <div>
+              <h1 class="name">${metadata.title}</h1>
+              <p class="description titleColor">${metadata.date}</p>
+              <a href="/articles/" title="Back to articles" class="button backButton">
+                <i class="fa-solid fa-arrow-left"></i>
+              </a>
+            </div>
+          </div>
+          <hr>
+          <div class="article-content">
+            ${marked.parse(content)}
+          </div>
+        </article>
+      `;
+  
+      // inject and highlight
+      articleContainer.innerHTML = articleHTML;
+      Prism.highlightAll();
+  
+    } catch (error) {
+      console.error('Error loading article:', error);
+      articleContainer.innerHTML = `
+        <div id="info">
+          <p class="icon"><i class="fa-solid fa-xmark icon-background"></i></p>
+          <div>
+            <h1 class="name">Can't display article</h1>
+            <p class="description titleColor">${error.message}</p>
+            <a href="/articles/" class="button">Back to Articles</a>
+          </div>
+        </div>
+      `;
+    } finally {
+      loadingSpinner.style.display = 'none';
+    }
+  }
+  
+  // ———— 4. Initialize on DOM Ready ————
+  document.addEventListener('DOMContentLoaded', fetchFullArticle);
+  

@@ -201,8 +201,24 @@ header>div {
     border-radius: 10px;
 }
 
-/* Navigation */
 ul {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    gap: 5px;
+    text-align: left;
+    color: var(--paragraph-color);
+}
+
+ul::marker, ol::marker {
+    color: var(--paragraph-color);
+    font-size: 1em;
+}
+
+/* Navigation */
+ul.notAList, ul.specs {
     list-style-type: none;
     display: flex;
     flex-direction: row;
@@ -212,6 +228,7 @@ ul {
     justify-content: center;
     align-items: center;
 }
+
 
 li>a, li>button.noUI {
     text-decoration: none;
@@ -917,6 +934,39 @@ code {
     color: var(--paragraph-color);
     margin-left: 2em;
     margin-bottom: 12px;
+}
+
+code{
+    font-family: Consolas,Monaco,'Andale Mono','Ubuntu Mono',monospace;
+    font-size: 0.9em !important;
+}
+
+:not(pre)>code[class*=language-], pre[class*=language-] {
+    background-color: var(--card-background-color);
+    text-shadow: none;
+    padding: 2px;
+    border-radius: 4px;
+    font-family: Consolas,Monaco,'Andale Mono','Ubuntu Mono',monospace;
+    color: var(--paragraph-color);
+    font-size: 0.9em;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 100%;
+    display: block;
+    margin: 0.5em 0;
+    padding: 0.5em;
+    border-radius: 4px;
+}
+
+code[class*=language-], pre[class*=language-]{
+    text-shadow: none;
+}
+
+span.token{
+    font-size: 1em !important;
+    font-family: unset;
+    background-color: unset !important;
 }
 
 /* Animations */

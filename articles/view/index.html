@@ -1,54 +1,82 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">    
-<script src="/src/js/settings.js" async></script>
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="aridan.net">
-    <meta name="keywords"
-        content="aridan, actuallyaridan, adnan, bukvic, twitter, discord, lanyard, api, web, developer, front-end, back-end, it, technician, tech, enthusiast">
+    <meta name="keywords" content="aridan, actuallyaridan, adnan, bukvic, twitter, discord, lanyard, api, web, developer, front-end, back-end, it, technician, tech, enthusiast">
     <meta name="author" content="actualluaridan">
     <meta name="robots" content="index, follow">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
     <title>Articles - aridan.net</title>
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer">
-    <link rel="stylesheet" href="/src/css/styles.css">
-    <link rel="stylesheet" href="/src/css/settings.css">
-    <link rel="stylesheet" href="/src/css/lanyard.css">
-    <script src="/src/js/general.js"></script>
-
-    <script src="/src/js/displayArticle.js" defer></script>
-    <script src="/src/js/lanyard.js" defer></script>
-    <script defer="" src="https://cdn.jsdelivr.net/npm/@twemoji/api@latest/dist/twemoji.min.js"
-        crossorigin="anonymous"></script>
+  
+    <!-- Favicon & Touch Icons -->
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/media/favicons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/media/favicons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/media/favicons/favicon-16x16.png">
     <link rel="manifest" href="/assets/media/favicons/site.webmanifest">
     <link rel="shortcut icon" href="/assets/media/favicons/favicon.ico">
+  
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  
+    <!-- Prism.js Syntax Highlighting -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+  
+    <!-- Marked.js Markdown Parser -->
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  
+    <!-- Your Custom Styles -->
+    <link rel="stylesheet" href="/src/css/styles.css">
+    <link rel="stylesheet" href="/src/css/settings.css">
+    <link rel="stylesheet" href="/src/css/lanyard.css">
+  
+    <!-- Settings & General Scripts (load early if they set globals) -->
+    <script src="/src/js/settings.js" async></script>
+    <script src="/src/js/general.js" defer></script>
+  
+    <!-- Article Renderer & Lanyard (must come after Prism & Marked) -->
+    <script src="/src/js/displayArticle.js" defer></script>
+    <script src="/src/js/lanyard.js" defer></script>
+  
+    <!-- Twemoji (optional) -->
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/@twemoji/api@latest/dist/twemoji.min.js"
+      crossorigin="anonymous"
+    ></script>
+  
+    <!-- Open Graph -->
     <meta property="og:title" content="aridan.net">
     <meta property="og:description" content="aridan.net">
     <meta property="og:image" content="/images/image.png">
     <meta property="og:url" content="https://aridan.net">
     <meta name="twitter:card" content="summary_large_image">
-</head>
+  </head>
+  
 
 <body>
     <header id="desktop-header">
         <div>
-            <ul>
+            <ul class="notAList">
                 <li><a href="/">aridan.net</a></li>
                 <li><a href="/experience/">Experience</a></li>
                 <li><a href="/projects/">Projects</a></li>
                 <li class="active"><a href="/articles/">Articles</a></li>
                 <li><a href="/contact/">Contact</a></li>
             </ul>
-            <ul>
+            <ul class="notAList">
                 <li><button class="noUI" onClick="toggleSettings()"><i class="fa-solid fa-gear" title="Settings"></i></a></li>
                 <li><a href="https://github.com/actuallyaridan"><i class="fa-brands fa-github"
                             title="GitHub"></i></a></li>
@@ -60,21 +88,21 @@
 
     <header id="mobile-header">
         <div>
-            <ul>
+            <ul class="notAList">
                 <li><a href="/">aridan.net</a></li>
             </ul>
-            <ul>
+            <ul class="notAList">
                   <li><button title="Menu" class="noUI" onclick="toggleMenu()"><i class="fa-solid fa-bars"></i></button></li>
             </ul>
         </div>
         <menu class="mobileMenu" id="mobileMenuID">
-            <ul>
+            <ul class="notAList">
                 <li><a href="/experience/">Experience</a></li>
                 <li><a href="/projects/">Projects</a></li>
                 <li class="active"><a href="/articles/">Articles</a></li>
                 <li><a href="/contact/">Contact</a></li>
             </ul>
-            <ul>
+            <ul class="notAList">
                 <li><button class="noUI" onClick="toggleSettings()"><i class="fa-solid fa-gear" title="Settings"></i></a></li>
                 <li><a href="https://github.com/actuallyaridan"><i class="fa-brands fa-github"
                             title="GitHub"></i></a></li>
